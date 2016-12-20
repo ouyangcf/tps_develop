@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="s_test1" log="false" className="com.unlcn.ils.tps.ininterface.AccountInterface" method="getAccountByid">
+  <name></name>
+  <inputs/>
+  <outputs>
+    <output autoValue="Result" desc="@Description:从接口获取账户信息" id="result" name="方法返回值" type="java.util.List"/>
+  </outputs>
+  <params/>
+  <return signature="QList&lt;QAccount;>;" type="java.util.List"/>
+</CustomRule>

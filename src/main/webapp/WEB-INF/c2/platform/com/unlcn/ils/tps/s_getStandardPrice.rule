@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="s_getStandardPrice" className="com.unlcn.ils.tps.services.StandardPriceService" method="getData">
+  <instanceCreator>
+    <params/>
+  </instanceCreator>
+  <name>得到标准价格</name>
+  <inputs>
+    <input collection="false" desc="" id="startcityname" required="true" type="String"/>
+    <input collection="false" desc="" id="destcityname" required="true" type="String"/>
+    <input collection="false" desc="" id="styleid" required="true" type="String"/>
+  </inputs>
+  <outputs>
+    <output autoValue="Result" desc="" id="result" name="方法返回值" type="java.util.Map"/>
+  </outputs>
+  <params>
+    <param autoValue="Input.startcityname" name="startcityname" signature="QString;" type="String"/>
+    <param autoValue="Input.destcityname" name="destcityname" signature="QString;" type="String"/>
+    <param autoValue="Input.styleid" name="styleid" signature="QString;" type="String"/>
+  </params>
+  <return signature="QMap&lt;QString;QString;>;" type="java.util.Map"/>
+</CustomRule>

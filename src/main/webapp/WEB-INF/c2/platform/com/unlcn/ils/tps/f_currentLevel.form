@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form:Form xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dync="http://www.chinacreator.com/platform/mvc/ui/dync" xmlns:form="http://www.chinacreator.com/platform/mvc/form" name="当前级别录入" sn="currentLevel" type="form">
+  <form:control type="page/normal">
+    <form:attributes source="page/normal">
+      <dync:attribute default="" group="HTML" id="showHead" name="显示标题" value="">
+        <dync:render/>
+        <dync:children/>
+      </dync:attribute>
+      <dync:attribute default="" group="HTML" id="title" name="标题" value="">
+        <dync:render/>
+        <dync:children/>
+      </dync:attribute>
+      <dync:attribute default="" group="HTML" id="desc" name="描述" value="">
+        <dync:render/>
+        <dync:children/>
+      </dync:attribute>
+      <dync:attribute default="false" group="HTML" id="fixedHeight" name="自动高度" value="true">
+        <dync:render/>
+        <dync:children/>
+      </dync:attribute>
+      <dync:attribute default="false" group="HTML" id="compact" name="紧凑页面" value="false">
+        <dync:render/>
+        <dync:children/>
+      </dync:attribute>
+      <dync:attribute default="false" group="HTML" id="dirtyCheck" name="脏检查" value="false">
+        <dync:render/>
+        <dync:children/>
+      </dync:attribute>
+      <dync:attribute default="" group="注入配置" id="angularJsServices" name="注入服务" value="">
+        <dync:render/>
+        <dync:children/>
+      </dync:attribute>
+      <dync:attribute default="" group="事件" id="beforeDataSourceLoad" name="数据源加载前" value="">
+        <dync:render/>
+        <dync:children/>
+      </dync:attribute>
+      <dync:attribute default="" group="事件" id="afterDataSourceLoad" name="数据源加载后" value="">
+        <dync:render/>
+        <dync:children/>
+      </dync:attribute>
+      <dync:attribute default="" group="事件" id="onload" name="页面加载完成" value="">
+        <dync:render/>
+        <dync:children/>
+      </dync:attribute>
+    </form:attributes>
+  </form:control>
+  <form:child xsi:type="form:Group" id="div4" name="简单容器(DIV)">
+    <form:control type="container/div">
+      <form:attributes source="container/div">
+        <dync:attribute default="" group="高级自定义" id="cssClass" name="自定义class" value="condition_div">
+          <dync:render colSpan="2" height="0" multi="false" name="text"/>
+          <dync:children/>
+        </dync:attribute>
+      </form:attributes>
+    </form:control>
+    <form:child xsi:type="form:Group" id="div3" name="简单容器(DIV)">
+      <form:control type="container/div">
+        <form:attributes source="container/div">
+          <dync:attribute default="" group="高级自定义" id="cssClass" name="自定义class" value="condition_box">
+            <dync:render colSpan="2" height="0" multi="false" name="text"/>
+            <dync:children/>
+          </dync:attribute>
+        </form:attributes>
+      </form:control>
+      <form:child xsi:type="form:Group" id="div2" name="简单容器(DIV)">
+        <form:control type="container/div">
+          <form:attributes source="container/div">
+            <dync:attribute default="12" group="HTML配置" id="span" name="占位数" value="6">
+              <dync:render colSpan="1" height="0" multi="false" name="text"/>
+              <dync:children/>
+            </dync:attribute>
+          </form:attributes>
+        </form:control>
+        <form:child xsi:type="form:Field" binding="$model.entity.shipperLineid" id="shipper_name" name="分供方" customize="true">
+          <form:control type="widget/select_tree">
+            <form:attributes source="widget/select_tree">
+              <dync:attribute default="" group="树数据设置" id="treeBinding" name="树数据源" value="$model.shippertree">
+                <dync:render colSpan="1" height="0" multi="false" name="text"/>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="搜索 ..." group="树显示设置" id="searchPlaceholder" name="搜索框占位符" value="请选择">
+                <dync:render colSpan="1" height="0" multi="false" name="text"/>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="6" group="控件外观" id="span" name="占位数" value="11">
+                <dync:render colSpan="1" height="0" multi="false" name="text"/>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="未选中数据 ..." group="控件外观" id="placeholder" name="占位字符串" value="请选择">
+                <dync:render colSpan="1" height="0" multi="false" name="text"/>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="auto" group="树显示设置" id="height" name="高度" value="300">
+                <dync:render colSpan="1" height="0" multi="false" name="text"/>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="false" group="控件外观" id="required" name="必填项" value="true">
+                <dync:render colSpan="1" height="0" multi="false" name="checkboxAndExpr"/>
+                <dync:children/>
+              </dync:attribute>
+            </form:attributes>
+          </form:control>
+          <form:validation/>
+        </form:child>
+        <form:child xsi:type="form:Group" id="div1" name="简单容器(DIV)">
+          <form:control type="container/div">
+            <form:attributes source="container/div">
+              <dync:attribute default="12" group="HTML配置" id="span" name="占位数" value="1">
+                <dync:render colSpan="1" height="0" multi="false" name="text"/>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="" group="高级自定义" id="html" name="自定义HTML" value="div1_html">
+                <dync:render colSpan="2" height="0" multi="false" name="html"/>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="" group="高级自定义" id="style" name="自定义style" value="margin-top: 4px;padding-left:0px;color:red;">
+                <dync:render colSpan="2" height="0" multi="false" name="text"/>
+                <dync:children/>
+              </dync:attribute>
+            </form:attributes>
+          </form:control>
+        </form:child>
+        <form:child xsi:type="form:Field" binding="$model.entity.levelLineid" id="level_name" name="当前级别" customize="true">
+          <form:control type="widget/select_simple">
+            <form:attributes source="widget/select_simple">
+              <dync:attribute default="6" group="基本设置" id="span" name="占位数" value="11">
+                <dync:render colSpan="1" height="0" multi="false" name="text"/>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="" group="下拉框设置" id="selectOptions" name="选项" value="$model.levelList.result">
+                <dync:render colSpan="1" height="0" multi="false" name="text"/>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="name" group="下拉框设置" id="optionName" name="显示属性名" value="levelName">
+                <dync:render colSpan="1" height="0" multi="false" name="text"/>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="id" group="下拉框设置" id="optionId" name="值属性名" value="lineid">
+                <dync:render colSpan="1" height="0" multi="false" name="text"/>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="" group="下拉框设置" id="nullValue" name="空值选项名" value="请选择">
+                <dync:render colSpan="1" height="0" multi="false" name="text"/>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="false" group="基本设置" id="selectRequired" name="必填项" value="true">
+                <dync:render colSpan="1" height="0" multi="false" name="checkboxAndExpr"/>
+                <dync:children/>
+              </dync:attribute>
+            </form:attributes>
+          </form:control>
+          <form:validation/>
+        </form:child>
+      </form:child>
+      <form:child xsi:type="form:Group" id="div" name="简单容器(DIV)">
+        <form:control type="container/div">
+          <form:attributes source="container/div">
+            <dync:attribute default="12" group="HTML配置" id="span" name="占位数" value="6">
+              <dync:render colSpan="1" height="0" multi="false" name="text"/>
+              <dync:children/>
+            </dync:attribute>
+          </form:attributes>
+        </form:control>
+        <form:child xsi:type="form:Field" binding="$model.entity.startCityid" id="routlineid" name="分供方线路" customize="true">
+          <form:control type="widget/select_tree">
+            <form:attributes source="widget/select_tree">
+              <dync:attribute default="" group="树数据设置" id="treeBinding" name="树数据源" value="$model.lineTree">
+                <dync:render colSpan="1" height="0" multi="false" name="text"/>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="6" group="控件外观" id="span" name="占位数" value="11">
+                <dync:render colSpan="1" height="0" multi="false" name="text"/>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="未选中数据 ..." group="控件外观" id="placeholder" name="占位字符串" value="请选择">
+                <dync:render colSpan="1" height="0" multi="false" name="text"/>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="auto" group="树显示设置" id="height" name="高度" value="300">
+                <dync:render colSpan="1" height="0" multi="false" name="text"/>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="false" group="控件外观" id="required" name="必填项" value="true">
+                <dync:render colSpan="1" height="0" multi="false" name="checkboxAndExpr"/>
+                <dync:children/>
+              </dync:attribute>
+            </form:attributes>
+          </form:control>
+          <form:validation/>
+        </form:child>
+        <form:child xsi:type="form:Group" id="div6" name="简单容器(DIV)">
+          <form:control type="container/div">
+            <form:attributes source="container/div">
+              <dync:attribute default="12" group="HTML配置" id="span" name="占位数" value="1">
+                <dync:render colSpan="1" height="0" multi="false" name="text"/>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="" group="高级自定义" id="html" name="自定义HTML" value="div1_html">
+                <dync:render colSpan="2" height="0" multi="false" name="html"/>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="" group="高级自定义" id="style" name="自定义style" value="margin-top: 4px;padding-left:0px;color:red;">
+                <dync:render colSpan="2" height="0" multi="false" name="text"/>
+                <dync:children/>
+              </dync:attribute>
+            </form:attributes>
+          </form:control>
+        </form:child>
+        <form:child xsi:type="form:Field" binding="$model.entity.active" id="active" name="禁用状态" customize="true">
+          <form:control type="widget/select_simple">
+            <form:attributes source="widget/select_simple">
+              <dync:attribute default="6" group="基本设置" id="span" name="占位数" value="11">
+                <dync:render colSpan="1" height="0" multi="false" name="text"/>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="" group="下拉框设置" id="selectOptions" name="选项" value="{0:&quot;禁用&quot;,1:&quot;可用&quot;}">
+                <dync:render colSpan="1" height="0" multi="false" name="text"/>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="" group="下拉框设置" id="nullValue" name="空值选项名" value="请选择">
+                <dync:render colSpan="1" height="0" multi="false" name="text"/>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="true" group="基本设置" id="show" name="可见" value="false">
+                <dync:render colSpan="1" height="0" multi="false" name="checkboxAndExpr"/>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="false" group="基本设置" id="selectRequired" name="必填项" value="true">
+                <dync:render colSpan="1" height="0" multi="false" name="checkboxAndExpr"/>
+                <dync:children/>
+              </dync:attribute>
+            </form:attributes>
+          </form:control>
+          <form:validation/>
+        </form:child>
+      </form:child>
+      <form:child xsi:type="form:Group" id="div5" name="简单容器(DIV)">
+        <form:control type="container/div">
+          <form:attributes source="container/div">
+            <dync:attribute default="12" group="HTML配置" id="span" name="占位数" value="6">
+              <dync:render colSpan="1" height="0" multi="false" name="text"/>
+              <dync:children/>
+            </dync:attribute>
+          </form:attributes>
+        </form:control>
+        <form:child xsi:type="form:Field" binding="$model.entity.activeMemo" id="activeMemo" name="禁用说明" customize="true">
+          <form:control type="widget/text">
+            <form:attributes source="widget/text">
+              <dync:attribute default="6" group="基本设置" id="span" name="占位数" value="11">
+                <dync:render colSpan="1" height="0" multi="false" name="text"/>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="true" group="文本框设置" id="show" name="可见" value="false">
+                <dync:render colSpan="1" height="0" multi="false" name="checkboxAndExpr"/>
+                <dync:children/>
+              </dync:attribute>
+            </form:attributes>
+          </form:control>
+          <form:validation/>
+        </form:child>
+      </form:child>
+      <form:child xsi:type="form:Group" id="div1" name="简单容器(DIV)">
+        <form:control type="container/div">
+          <form:attributes source="container/div">
+            <dync:attribute default="" group="高级自定义" id="cssClass" name="自定义class" value="search_div">
+              <dync:render colSpan="2" height="0" multi="false" name="text"/>
+              <dync:children/>
+            </dync:attribute>
+            <dync:attribute default="12" group="HTML配置" id="span" name="占位数" value="6">
+              <dync:render colSpan="1" height="0" multi="false" name="text"/>
+              <dync:children/>
+            </dync:attribute>
+          </form:attributes>
+        </form:control>
+        <form:child xsi:type="form:Field" id="button" name="提交" customize="true">
+          <form:control type="widget/button">
+            <form:attributes source="widget/button">
+              <dync:attribute default="" group="事件设置" id="click" name="点击事件" value="button_click($event)">
+                <dync:render colSpan="1" height="0" multi="false" name="event">
+                  <dync:item name="params" value="$event"/>
+                </dync:render>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="btn-primary" group="HTML设置" id="style" name="样式" value="btn-success">
+                <dync:render colSpan="1" height="0" multi="false" name="select">
+                  <dync:item name="默认" value="btn-default"/>
+                  <dync:item name="主要" value="btn-primary"/>
+                  <dync:item name="成功" value="btn-success"/>
+                  <dync:item name="信息" value="btn-info"/>
+                  <dync:item name="警告" value="btn-warning"/>
+                  <dync:item name="危险" value="btn-danger"/>
+                  <dync:item name="链接" value="btn-link"/>
+                  <dync:item name="通用" value="btn-white no-border"/>
+                </dync:render>
+                <dync:children/>
+              </dync:attribute>
+            </form:attributes>
+          </form:control>
+          <form:validation/>
+        </form:child>
+        <form:child xsi:type="form:Field" id="button1" name="重置" customize="true">
+          <form:control type="widget/button">
+            <form:attributes source="widget/button">
+              <dync:attribute default="btn-primary" group="HTML设置" id="style" name="样式" value="btn-warning">
+                <dync:render colSpan="1" height="0" multi="false" name="select">
+                  <dync:item name="默认" value="btn-default"/>
+                  <dync:item name="主要" value="btn-primary"/>
+                  <dync:item name="成功" value="btn-success"/>
+                  <dync:item name="信息" value="btn-info"/>
+                  <dync:item name="警告" value="btn-warning"/>
+                  <dync:item name="危险" value="btn-danger"/>
+                  <dync:item name="链接" value="btn-link"/>
+                  <dync:item name="通用" value="btn-white no-border"/>
+                </dync:render>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="" group="事件设置" id="click" name="点击事件" value="button1_click($event)">
+                <dync:render colSpan="1" height="0" multi="false" name="event">
+                  <dync:item name="params" value="$event"/>
+                </dync:render>
+                <dync:children/>
+              </dync:attribute>
+            </form:attributes>
+          </form:control>
+          <form:validation/>
+        </form:child>
+      </form:child>
+    </form:child>
+  </form:child>
+  <form:datasources>
+    <form:datasource xsi:type="form:Inputs"/>
+    <form:datasource xsi:type="form:TreeDataSource" id="shippertree" name="树型数据源" impl="com.unlcn.ils.tps.services.ShipperService" type="custom"/>
+    <form:datasource xsi:type="form:LogicDataSource" id="getRoutLineid" name="获取线路id" logic="rule:com.unlcn.ils.tps.s_getRoutLineid" sn="s_getRoutLineid"/>
+    <form:datasource xsi:type="form:LogicDataSource" id="levelList" name="获取级别" logic="rule:com.unlcn.ils.tps.s_getAfterLevelName" sn="s_getAfterLevelName"/>
+    <form:datasource xsi:type="form:EntityDataSource" id="entity" name="单实体数据源" entity="entity:com.unlcn.ils.tps.e_currentlevel"/>
+    <form:datasource xsi:type="form:PagingDataSource" id="list" name="列表型数据源" logic="com.unlcn.ils.tps.services.LevelChangeSelectService" pageSize="10" type="custom"/>
+    <form:datasource xsi:type="form:TreeDataSource" id="lineTree" name="树型数据源" impl="com.unlcn.ils.tps.services.LineTreeService" type="custom"/>
+  </form:datasources>
+  <form:scripts>
+button_click:function($event){
+	if($model.entity.shipperLineid==null||$model.entity.shipperLineid==undefined)
+	{
+		Messenger.post({type:'error',message:'请选择分供方'});
+		return false;
+	}
+	if($model.entity.startCityid==null||$model.entity.startCityid==undefined)
+	{
+		Messenger.post({type:'error',message:'请选择线路序号'});
+		return false;
+	}
+	if($model.entity.levelLineid==null||$model.entity.levelLineid==undefined)
+	{
+		Messenger.post({type:'error',message:'请选择当前级别'});
+		return false;
+	}
+/*	if($model.entity.active==null||$model.entity.active==undefined)
+	{
+		Messenger.post({type:'error',message:'请选择禁用状态'});
+		return false;
+	}
+	if($model.entity.activeMemo==null||$model.entity.activeMemo==undefined||$model.entity.activeMemo.length==0)
+	{if($model.entity.active==0)
+		{
+			Messenger.post({type:'error',message:'请填写禁用说明'});
+		return false;
+		}
+	}*/
+	Messenger.post({type:'info',message:'正在提交'});
+	$http.post(&quot;ws/s_setCurrentLevel&quot;,{&quot;data&quot;:$model.entity})
+	.success(function(data){
+		if(data.result==false){
+			Messenger.post({type:'error',message:'该分供方和线路已存在'});
+			return;
+		}
+		else{
+			Messenger.post({type:'success',message:'提交成功'});
+			$view.mainForm.clean();
+		}
+		
+	})
+	.error(function(data){
+		Messenger.post({type:'error',message:'提交失败'});
+	})
+	
+	
+},
+
+button1_click:function($event){
+	$view.mainForm.clean();
+}</form:scripts>
+  <form:htmls>
+&lt;script type=&quot;text/ng-template&quot; id=&quot;div1_html&quot;>
+*
+&lt;/script>
+</form:htmls>
+</form:Form>

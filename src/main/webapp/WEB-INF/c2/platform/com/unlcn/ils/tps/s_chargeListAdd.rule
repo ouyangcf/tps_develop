@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="s_chargeListAdd" log="false" className="com.unlcn.ils.tps.services.ChargeListMaintain" method="add">
+  <name>其他费用字典维护新增</name>
+  <inputs>
+    <input collection="false" desc="" id="data" required="true" type="com.unlcn.ils.tps.E_charge_list"/>
+  </inputs>
+  <outputs>
+    <output autoValue="Result" desc="@Description:新增支付周期字典" id="result" name="方法返回值" type="com.unlcn.ils.tps.E_charge_list"/>
+  </outputs>
+  <params>
+    <param autoValue="Input.data" name="data" signature="QE_charge_list;" type="com.unlcn.ils.tps.E_charge_list"/>
+  </params>
+  <return signature="QE_charge_list;" type="com.unlcn.ils.tps.E_charge_list"/>
+</CustomRule>

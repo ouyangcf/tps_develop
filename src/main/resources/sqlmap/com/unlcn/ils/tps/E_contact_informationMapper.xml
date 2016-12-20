@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><mapper namespace="com.unlcn.ils.tps.E_contact_informationMapper">	
+
+<!-- ElementID:column_sql,Generated=true -->
+<sql id="column_sql">
+		  tps_contact_information.lineid ,
+		  tps_contact_information.join_id ,
+		  tps_contact_information.join_flag ,
+		  tps_contact_information.contact_respons ,
+		  tps_contact_information.contact_name ,
+		  tps_contact_information.contact_phone ,
+		  tps_contact_information.contact_qq ,
+		  tps_contact_information.contact_email ,
+		  tps_contact_information.create_time ,
+		  tps_contact_information.create_user ,
+		  tps_contact_information.active ,
+		  tps_contact_information.active_user ,
+		  tps_contact_information.active_time ,
+		  tps_contact_information.active_memo 
+</sql>
+
+<!-- ElementID:whereClause_sql,Generated=true -->
+<sql id="whereClause_sql">
+	    <if test="lineid != null">and tps_contact_information.lineid = #{lineid}</if>
+	    <if test="joinId != null">and tps_contact_information.join_id = #{joinId}</if>
+	    <if test="joinFlag != null">and tps_contact_information.join_flag = #{joinFlag}</if>
+	    <if test="contactRespons != null">and tps_contact_information.contact_respons = #{contactRespons}</if>
+	    <if test="contactName != null">and tps_contact_information.contact_name = #{contactName}</if>
+	    <if test="contactPhone != null">and tps_contact_information.contact_phone = #{contactPhone}</if>
+	    <if test="contactQq != null">and tps_contact_information.contact_qq = #{contactQq}</if>
+	    <if test="contactEmail != null">and tps_contact_information.contact_email = #{contactEmail}</if>
+	    <if test="createTime != null">and tps_contact_information.create_time = #{createTime}</if>
+	    <if test="createUser != null">and tps_contact_information.create_user = #{createUser}</if>
+	    <if test="active != null">and tps_contact_information.active = #{active}</if>
+	    <if test="activeUser != null">and tps_contact_information.active_user = #{activeUser}</if>
+	    <if test="activeTime != null">and tps_contact_information.active_time = #{activeTime}</if>
+	    <if test="activeMemo != null">and tps_contact_information.active_memo = #{activeMemo}</if>
+</sql>
+
+
+<!-- ElementID:E_contact_informationResult,Generated=true -->
+<resultMap id="E_contact_informationResult" type="com.unlcn.ils.tps.E_contact_information">
+	<id property="lineid" column="lineid"/>
+	<result property="joinId" column="join_id"/>
+	<result property="joinFlag" column="join_flag"/>
+	<result property="contactRespons" column="contact_respons"/>
+	<result property="contactName" column="contact_name"/>
+	<result property="contactPhone" column="contact_phone"/>
+	<result property="contactQq" column="contact_qq"/>
+	<result property="contactEmail" column="contact_email"/>
+	<result property="createTime" column="create_time"/>
+	<result property="createUser" column="create_user"/>
+	<result property="active" column="active"/>
+	<result property="activeUser" column="active_user"/>
+	<result property="activeTime" column="active_time"/>
+	<result property="activeMemo" column="active_memo"/>
+</resultMap>
+
+
+<!-- ElementName:cache,Generated=true -->
+<cache type="C2_Default_Dao_Cache"/>
+
+<!-- ElementID:count,Generated=true -->
+<select id="count" parameterType="com.unlcn.ils.tps.E_contact_information" resultType="int">
+	select count(*) from tps_contact_information 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+<!-- ElementID:update,Generated=true -->
+<update id="update" parameterType="com.unlcn.ils.tps.E_contact_information">
+	update tps_contact_information
+<set>
+	<if test="joinId != null">join_id=#{joinId,jdbcType=NUMERIC},</if>
+	<if test="joinFlag != null">join_flag=#{joinFlag,jdbcType=NUMERIC},</if>
+	<if test="contactRespons != null">contact_respons=#{contactRespons,jdbcType=VARCHAR},</if>
+	<if test="contactName != null">contact_name=#{contactName,jdbcType=VARCHAR},</if>
+	<if test="contactPhone != null">contact_phone=#{contactPhone,jdbcType=VARCHAR},</if>
+	<if test="contactQq != null">contact_qq=#{contactQq,jdbcType=VARCHAR},</if>
+	<if test="contactEmail != null">contact_email=#{contactEmail,jdbcType=VARCHAR},</if>
+	<if test="createTime != null">create_time=#{createTime,jdbcType=TIMESTAMP},</if>
+	<if test="createUser != null">create_user=#{createUser,jdbcType=VARCHAR},</if>
+	<if test="active != null">active=#{active,jdbcType=NUMERIC},</if>
+	<if test="activeUser != null">active_user=#{activeUser,jdbcType=VARCHAR},</if>
+	<if test="activeTime != null">active_time=#{activeTime,jdbcType=TIMESTAMP},</if>
+	<if test="activeMemo != null">active_memo=#{activeMemo,jdbcType=VARCHAR}</if>
+</set>
+<where>
+	<choose>
+        <when test="lineid != null">and lineid = #{lineid}</when>
+        <otherwise>and lineid = </otherwise>
+    </choose>
+</where>
+</update>
+
+<!-- ElementID:updateNull,Generated=true -->
+<update id="updateNull" parameterType="map">
+	update tps_contact_information
+	<set>
+		<trim suffixOverrides=",">
+		    <if test="joinId==null">join_id = null,</if>
+		    <if test="joinFlag==null">join_flag = null,</if>
+		    <if test="contactRespons==null">contact_respons = null,</if>
+		    <if test="contactName==null">contact_name = null,</if>
+		    <if test="contactPhone==null">contact_phone = null,</if>
+		    <if test="contactQq==null">contact_qq = null,</if>
+		    <if test="contactEmail==null">contact_email = null,</if>
+		    <if test="createTime==null">create_time = null,</if>
+		    <if test="createUser==null">create_user = null,</if>
+		    <if test="active==null">active = null,</if>
+		    <if test="activeUser==null">active_user = null,</if>
+		    <if test="activeTime==null">active_time = null,</if>
+		    <if test="activeMemo==null">active_memo = null,</if>
+		</trim>
+	</set>
+	<where>
+		<choose>
+			<when test="lineid != null">and lineid = #{lineid}</when>
+			<otherwise>and lineid = </otherwise>
+		</choose>
+	</where>
+</update>
+
+<!-- ElementID:delete,Generated=true -->
+<delete id="delete" parameterType="com.unlcn.ils.tps.E_contact_information">
+    delete from tps_contact_information where 1=1 and lineid = #{lineid}
+</delete>
+
+<!-- ElementID:select,Generated=true -->
+<select id="select" parameterType="com.unlcn.ils.tps.E_contact_information" resultMap="E_contact_informationResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_contact_information 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:deleteBatch,Generated=true -->
+<delete id="deleteBatch" parameterType="List">
+	delete from tps_contact_information where lineid in
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<foreach collection="list" item="entity" separator=",">
+	#{entity.lineid}
+</foreach>
+</trim>
+</delete>
+
+<!-- ElementID:selectAll,Generated=true -->
+<select id="selectAll" resultMap="E_contact_informationResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_contact_information 
+</select>
+
+<!-- ElementID:selectByID,Generated=true -->
+<select id="selectByID" parameterType="java.lang.String" resultMap="E_contact_informationResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_contact_information 
+		 where tps_contact_information.lineid = #{lineid,jdbcType=VARCHAR}
+</select>
+
+<!-- ElementID:selectByPage,Generated=true -->
+<select id="selectByPage" parameterType="com.unlcn.ils.tps.E_contact_information" resultMap="E_contact_informationResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_contact_information 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:selectMany,Generated=true -->
+<select id="selectMany" parameterType="list" resultMap="E_contact_informationResult">
+select 
+	<include refid="column_sql"/> 
+	from tps_contact_information 
+	where tps_contact_information.lineid in (
+		select distinct lineid from tps_contact_information inner join
+<foreach collection="list" item="entity" separator="inner join">
+		(select 
+			distinct lineid
+			from tps_contact_information 
+			<where>
+	        <if test="entity.lineid != null">and tps_contact_information.lineid = #{entity.lineid}</if>
+	        <if test="entity.joinId != null">and tps_contact_information.join_id = #{entity.joinId}</if>
+	        <if test="entity.joinFlag != null">and tps_contact_information.join_flag = #{entity.joinFlag}</if>
+	        <if test="entity.contactRespons != null">and tps_contact_information.contact_respons = #{entity.contactRespons}</if>
+	        <if test="entity.contactName != null">and tps_contact_information.contact_name = #{entity.contactName}</if>
+	        <if test="entity.contactPhone != null">and tps_contact_information.contact_phone = #{entity.contactPhone}</if>
+	        <if test="entity.contactQq != null">and tps_contact_information.contact_qq = #{entity.contactQq}</if>
+	        <if test="entity.contactEmail != null">and tps_contact_information.contact_email = #{entity.contactEmail}</if>
+	        <if test="entity.createTime != null">and tps_contact_information.create_time = #{entity.createTime}</if>
+	        <if test="entity.createUser != null">and tps_contact_information.create_user = #{entity.createUser}</if>
+	        <if test="entity.active != null">and tps_contact_information.active = #{entity.active}</if>
+	        <if test="entity.activeUser != null">and tps_contact_information.active_user = #{entity.activeUser}</if>
+	        <if test="entity.activeTime != null">and tps_contact_information.active_time = #{entity.activeTime}</if>
+	        <if test="entity.activeMemo != null">and tps_contact_information.active_memo = #{entity.activeMemo}</if>
+			</where>
+		) ${entity.tableAlias} using (lineid)
+</foreach>
+)
+</select>
+
+<!-- ElementID:insert,Generated=true -->
+<insert id="insert" parameterType="com.unlcn.ils.tps.E_contact_information">
+	insert into tps_contact_information(
+	         <if test="lineid != null">lineid</if>
+	         <if test="joinId != null">,join_id</if>
+	         <if test="joinFlag != null">,join_flag</if>
+	         <if test="contactRespons != null">,contact_respons</if>
+	         <if test="contactName != null">,contact_name</if>
+	         <if test="contactPhone != null">,contact_phone</if>
+	         <if test="contactQq != null">,contact_qq</if>
+	         <if test="contactEmail != null">,contact_email</if>
+	         <if test="createTime != null">,create_time</if>
+	         <if test="createUser != null">,create_user</if>
+	         <if test="active != null">,active</if>
+	         <if test="activeUser != null">,active_user</if>
+	         <if test="activeTime != null">,active_time</if>
+	         <if test="activeMemo != null">,active_memo</if>
+	 	 	 )
+	 values (
+	         <if test="lineid != null">#{lineid,jdbcType=VARCHAR}</if>
+	         <if test="joinId != null">,#{joinId,jdbcType=NUMERIC}</if>
+	         <if test="joinFlag != null">,#{joinFlag,jdbcType=NUMERIC}</if>
+	         <if test="contactRespons != null">,#{contactRespons,jdbcType=VARCHAR}</if>
+	         <if test="contactName != null">,#{contactName,jdbcType=VARCHAR}</if>
+	         <if test="contactPhone != null">,#{contactPhone,jdbcType=VARCHAR}</if>
+	         <if test="contactQq != null">,#{contactQq,jdbcType=VARCHAR}</if>
+	         <if test="contactEmail != null">,#{contactEmail,jdbcType=VARCHAR}</if>
+	         <if test="createTime != null">,#{createTime,jdbcType=TIMESTAMP}</if>
+	         <if test="createUser != null">,#{createUser,jdbcType=VARCHAR}</if>
+	         <if test="active != null">,#{active,jdbcType=NUMERIC}</if>
+	         <if test="activeUser != null">,#{activeUser,jdbcType=VARCHAR}</if>
+	         <if test="activeTime != null">,#{activeTime,jdbcType=TIMESTAMP}</if>
+	         <if test="activeMemo != null">,#{activeMemo,jdbcType=VARCHAR}</if>
+	 	 	 )
+</insert>
+
+<!-- ElementID:insertBatch,Generated=true -->
+<insert id="insertBatch" parameterType="list">
+	insert into tps_contact_information (lineid,join_id,join_flag,contact_respons,contact_name,contact_phone,contact_qq,contact_email,create_time,create_user,active,active_user,active_time,active_memo) 
+<foreach collection="list" item="entity" index="index" separator="union all">
+		select 
+		#{entity.lineid,jdbcType = VARCHAR},
+				#{entity.joinId,jdbcType = NUMERIC},
+				#{entity.joinFlag,jdbcType = NUMERIC},
+				#{entity.contactRespons,jdbcType = VARCHAR},
+				#{entity.contactName,jdbcType = VARCHAR},
+				#{entity.contactPhone,jdbcType = VARCHAR},
+				#{entity.contactQq,jdbcType = VARCHAR},
+				#{entity.contactEmail,jdbcType = VARCHAR},
+				#{entity.createTime,jdbcType = TIMESTAMP},
+				#{entity.createUser,jdbcType = VARCHAR},
+				#{entity.active,jdbcType = NUMERIC},
+				#{entity.activeUser,jdbcType = VARCHAR},
+				#{entity.activeTime,jdbcType = TIMESTAMP},
+				#{entity.activeMemo,jdbcType = VARCHAR}
+		from dual
+</foreach>
+</insert>
+</mapper>

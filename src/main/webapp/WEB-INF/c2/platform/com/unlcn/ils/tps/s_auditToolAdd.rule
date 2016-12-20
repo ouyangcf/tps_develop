@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="s_auditToolAdd" log="false" className="com.unlcn.ils.tps.services.AuditToolMaintain" method="add">
+  <name>沟通方式新增</name>
+  <inputs>
+    <input collection="false" desc="" id="data" required="true" type="com.unlcn.ils.tps.E_audit_tool"/>
+  </inputs>
+  <outputs>
+    <output autoValue="Result" desc="@Description:新增沟通方式字典" id="result" name="方法返回值" type="com.unlcn.ils.tps.E_audit_tool"/>
+  </outputs>
+  <params>
+    <param autoValue="Input.data" name="data" signature="QE_audit_tool;" type="com.unlcn.ils.tps.E_audit_tool"/>
+  </params>
+  <return signature="QE_audit_tool;" type="com.unlcn.ils.tps.E_audit_tool"/>
+</CustomRule>

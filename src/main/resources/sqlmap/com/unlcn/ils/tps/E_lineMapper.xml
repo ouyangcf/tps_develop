@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><mapper namespace="com.unlcn.ils.tps.E_lineMapper">	
+
+<!-- ElementID:column_sql,Generated=false -->
+<sql id="column_sql">
+		  tps_line.lineid ,
+		  tps_line.lineno ,
+		  tps_line.start_city_id ,
+		  tps_line.start_city ,
+		  tps_line.start_province_id ,
+		  tps_line.dest_province ,
+		  tps_line.dest_province_id ,
+		  tps_line.create_time ,
+		  tps_line.create_user ,
+		  tps_line.active ,
+		  tps_line.active_user ,
+		  tps_line.active_time ,
+		  tps_line.active_memo ,
+		  tps_line.start_province ,
+		  trans_way_T1.lineid T1_lineid ,
+		  trans_way_T1.trans_name T1_trans_name 
+</sql>
+
+<!-- ElementID:whereClause_sql,Generated=true -->
+<sql id="whereClause_sql">
+	    <if test="lineid != null">and tps_line.lineid = #{lineid}</if>
+	    <if test="lineno != null">and tps_line.lineno = #{lineno}</if>
+	    <if test="startCityId != null">and tps_line.start_city_id = #{startCityId}</if>
+	    <if test="startCity != null">and tps_line.start_city = #{startCity}</if>
+	    <if test="startProvinceId != null">and tps_line.start_province_id = #{startProvinceId}</if>
+	    <if test="startProvince != null">and tps_line.start_province = #{startProvince}</if>
+	    <if test="destProvinceId != null">and tps_line.dest_province_id = #{destProvinceId}</if>
+	    <if test="destProvince != null">and tps_line.dest_province = #{destProvince}</if>
+	    <if test="createTime != null">and tps_line.create_time = #{createTime}</if>
+	    <if test="createUser != null">and tps_line.create_user = #{createUser}</if>
+	    <if test="active != null">and tps_line.active = #{active}</if>
+	    <if test="activeUser != null">and tps_line.active_user = #{activeUser}</if>
+	    <if test="activeTime != null">and tps_line.active_time = #{activeTime}</if>
+	    <if test="activeMemo != null">and tps_line.active_memo = #{activeMemo}</if>
+		<if test="transway != null and transway.lineid !=null">and tps_line.transway = #{transway.lineid}</if>
+</sql>
+
+
+<!-- ElementID:E_lineResult,Generated=true -->
+<resultMap id="E_lineResult" type="com.unlcn.ils.tps.E_line">
+	<id property="lineid" column="lineid"/>
+	<result property="lineno" column="lineno"/>
+	<result property="startCityId" column="start_city_id"/>
+	<result property="startCity" column="start_city"/>
+	<result property="startProvinceId" column="start_province_id"/>
+	<result property="startProvince" column="start_province"/>
+	<result property="destProvinceId" column="dest_province_id"/>
+	<result property="destProvince" column="dest_province"/>
+	<result property="createTime" column="create_time"/>
+	<result property="createUser" column="create_user"/>
+	<result property="active" column="active"/>
+	<result property="activeUser" column="active_user"/>
+	<result property="activeTime" column="active_time"/>
+	<result property="activeMemo" column="active_memo"/>
+	<association property="transway" column="T1_lineid" javaType="com.unlcn.ils.tps.E_transway" resultMap="E_transwayResult" columnPrefix="T1_"/>	
+</resultMap>
+
+
+<!-- ElementName:cache,Generated=true -->
+<cache type="C2_Default_Dao_Cache"/>
+
+<!-- ElementID:count,Generated=true -->
+<select id="count" parameterType="com.unlcn.ils.tps.E_line" resultType="int">
+	select count(*) from tps_line 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+<!-- ElementID:update,Generated=true -->
+<update id="update" parameterType="com.unlcn.ils.tps.E_line">
+	update tps_line
+<set>
+	<if test="lineno != null">lineno=#{lineno,jdbcType=VARCHAR},</if>
+	<if test="startCityId != null">start_city_id=#{startCityId,jdbcType=NUMERIC},</if>
+	<if test="startCity != null">start_city=#{startCity,jdbcType=VARCHAR},</if>
+	<if test="startProvinceId != null">start_province_id=#{startProvinceId,jdbcType=NUMERIC},</if>
+	<if test="startProvince != null">start_province=#{startProvince,jdbcType=VARCHAR},</if>
+	<if test="destProvinceId != null">dest_province_id=#{destProvinceId,jdbcType=NUMERIC},</if>
+	<if test="destProvince != null">dest_province=#{destProvince,jdbcType=VARCHAR},</if>
+	<if test="createTime != null">create_time=#{createTime,jdbcType=TIMESTAMP},</if>
+	<if test="createUser != null">create_user=#{createUser,jdbcType=VARCHAR},</if>
+	<if test="active != null">active=#{active,jdbcType=NUMERIC},</if>
+	<if test="activeUser != null">active_user=#{activeUser,jdbcType=VARCHAR},</if>
+	<if test="activeTime != null">active_time=#{activeTime,jdbcType=TIMESTAMP},</if>
+	<if test="activeMemo != null">active_memo=#{activeMemo,jdbcType=VARCHAR},</if>
+	<if test="transway != null and transway.lineid !=null">transway=#{transway.lineid,jdbcType=NUMERIC}</if>
+</set>
+<where>
+	<choose>
+        <when test="lineid != null">and lineid = #{lineid}</when>
+        <otherwise>and lineid = </otherwise>
+    </choose>
+</where>
+</update>
+
+<!-- ElementID:updateNull,Generated=true -->
+<update id="updateNull" parameterType="map">
+	update tps_line
+	<set>
+		<trim suffixOverrides=",">
+		    <if test="lineno==null">lineno = null,</if>
+		    <if test="startCityId==null">start_city_id = null,</if>
+		    <if test="startCity==null">start_city = null,</if>
+		    <if test="startProvinceId==null">start_province_id = null,</if>
+		    <if test="startProvince==null">start_province = null,</if>
+		    <if test="destProvinceId==null">dest_province_id = null,</if>
+		    <if test="destProvince==null">dest_province = null,</if>
+		    <if test="createTime==null">create_time = null,</if>
+		    <if test="createUser==null">create_user = null,</if>
+		    <if test="active==null">active = null,</if>
+		    <if test="activeUser==null">active_user = null,</if>
+		    <if test="activeTime==null">active_time = null,</if>
+		    <if test="activeMemo==null">active_memo = null,</if>
+		    <if test="transway==null">transway = null,</if>
+		</trim>
+	</set>
+	<where>
+		<choose>
+			<when test="lineid != null">and lineid = #{lineid}</when>
+			<otherwise>and lineid = </otherwise>
+		</choose>
+	</where>
+</update>
+
+<update id="deleteLogic" parameterType="com.unlcn.ils.tps.E_line">
+	update tps_line set tps_line.active = 0,
+		tps_line.active_Time=Now(),tps_line.active_user=#{activeuser},tps_line.active_memo=#{activememo}
+where 1=1 and lineid in 
+	<foreach collection="list" item="entity" index="index" open="(" separator="," close=")">
+				<if test="entity.lineid != null">
+					#{entity.lineid}
+				</if>
+		</foreach>
+</update>
+
+<!-- ElementID:delete,Generated=true -->
+<delete id="delete" parameterType="com.unlcn.ils.tps.E_line">
+    delete from tps_line where 1=1 and lineid = #{lineid}
+</delete>
+
+<!-- ElementID:select,Generated=true -->
+<select id="select" parameterType="com.unlcn.ils.tps.E_line" resultMap="E_lineResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_line 
+		<include refid="one2one_sql"/>
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:deleteBatch,Generated=true -->
+<delete id="deleteBatch" parameterType="List">
+	delete from tps_line where lineid in
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<foreach collection="list" item="entity" separator=",">
+	#{entity.lineid}
+</foreach>
+</trim>
+</delete>
+
+<!-- ElementID:selectAll,Generated=true -->
+<select id="selectAll" resultMap="E_lineResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_line 
+		<include refid="one2one_sql"/>
+</select>
+
+<!-- ElementID:selectByID,Generated=true -->
+<select id="selectByID" parameterType="java.lang.String" resultMap="E_lineResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_line 
+		<include refid="one2one_sql"/>
+		 where tps_line.lineid = #{lineid,jdbcType=VARCHAR}
+</select>
+
+<!-- ElementID:selectByPage,Generated=true -->
+<select id="selectByPage" parameterType="com.unlcn.ils.tps.E_line" resultMap="E_lineResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_line 
+		<include refid="one2one_sql"/>
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:selectMany,Generated=true -->
+<select id="selectMany" parameterType="list" resultMap="E_lineResult">
+select 
+	<include refid="column_sql"/> 
+	from tps_line 
+	<include refid="one2one_sql"/>
+	where tps_line.lineid in (
+		select distinct lineid from tps_line inner join
+<foreach collection="list" item="entity" separator="inner join">
+		(select 
+			distinct lineid
+			from tps_line 
+			<where>
+	        <if test="entity.lineid != null">and tps_line.lineid = #{entity.lineid}</if>
+	        <if test="entity.lineno != null">and tps_line.lineno = #{entity.lineno}</if>
+	        <if test="entity.startCityId != null">and tps_line.start_city_id = #{entity.startCityId}</if>
+	        <if test="entity.startCity != null">and tps_line.start_city = #{entity.startCity}</if>
+	        <if test="entity.startProvinceId != null">and tps_line.start_province_id = #{entity.startProvinceId}</if>
+	        <if test="entity.startProvince != null">and tps_line.start_province = #{entity.startProvince}</if>
+	        <if test="entity.destProvinceId != null">and tps_line.dest_province_id = #{entity.destProvinceId}</if>
+	        <if test="entity.destProvince != null">and tps_line.dest_province = #{entity.destProvince}</if>
+	        <if test="entity.createTime != null">and tps_line.create_time = #{entity.createTime}</if>
+	        <if test="entity.createUser != null">and tps_line.create_user = #{entity.createUser}</if>
+	        <if test="entity.active != null">and tps_line.active = #{entity.active}</if>
+	        <if test="entity.activeUser != null">and tps_line.active_user = #{entity.activeUser}</if>
+	        <if test="entity.activeTime != null">and tps_line.active_time = #{entity.activeTime}</if>
+	        <if test="entity.activeMemo != null">and tps_line.active_memo = #{entity.activeMemo}</if>
+			</where>
+		) ${entity.tableAlias} using (lineid)
+</foreach>
+)
+</select>
+
+<!-- ElementID:insert,Generated=true -->
+<insert id="insert" parameterType="com.unlcn.ils.tps.E_line">
+	insert into tps_line(
+	         <if test="lineid != null">lineid</if>
+	         <if test="lineno != null">,lineno</if>
+	         <if test="startCityId != null">,start_city_id</if>
+	         <if test="startCity != null">,start_city</if>
+	         <if test="startProvinceId != null">,start_province_id</if>
+	         <if test="startProvince != null">,start_province</if>
+	         <if test="destProvinceId != null">,dest_province_id</if>
+	         <if test="destProvince != null">,dest_province</if>
+	         <if test="createTime != null">,create_time</if>
+	         <if test="createUser != null">,create_user</if>
+	         <if test="active != null">,active</if>
+	         <if test="activeUser != null">,active_user</if>
+	         <if test="activeTime != null">,active_time</if>
+	         <if test="activeMemo != null">,active_memo</if>
+	 	 	 <if test="transway != null and transway.lineid !=null">,transway</if>
+	 	 )
+	 values (
+	         <if test="lineid != null">#{lineid,jdbcType=VARCHAR}</if>
+	         <if test="lineno != null">,#{lineno,jdbcType=VARCHAR}</if>
+	         <if test="startCityId != null">,#{startCityId,jdbcType=NUMERIC}</if>
+	         <if test="startCity != null">,#{startCity,jdbcType=VARCHAR}</if>
+	         <if test="startProvinceId != null">,#{startProvinceId,jdbcType=NUMERIC}</if>
+	         <if test="startProvince != null">,#{startProvince,jdbcType=VARCHAR}</if>
+	         <if test="destProvinceId != null">,#{destProvinceId,jdbcType=NUMERIC}</if>
+	         <if test="destProvince != null">,#{destProvince,jdbcType=VARCHAR}</if>
+	         <if test="createTime != null">,#{createTime,jdbcType=TIMESTAMP}</if>
+	         <if test="createUser != null">,#{createUser,jdbcType=VARCHAR}</if>
+	         <if test="active != null">,#{active,jdbcType=NUMERIC}</if>
+	         <if test="activeUser != null">,#{activeUser,jdbcType=VARCHAR}</if>
+	         <if test="activeTime != null">,#{activeTime,jdbcType=TIMESTAMP}</if>
+	         <if test="activeMemo != null">,#{activeMemo,jdbcType=VARCHAR}</if>
+	 	 	 <if test="transway != null and transway.lineid !=null">,#{transway.lineid,jdbcType=NUMERIC}</if>
+	 	 )
+</insert>
+
+<!-- ElementID:insertBatch,Generated=true -->
+<insert id="insertBatch" parameterType="list">
+	insert into tps_line (lineid,lineno,start_city_id,start_city,start_province_id,start_province,dest_province_id,dest_province,create_time,create_user,active,active_user,active_time,active_memo,transway) 
+<foreach collection="list" item="entity" index="index" separator="union all">
+		select 
+		#{entity.lineid,jdbcType = VARCHAR},
+				#{entity.lineno,jdbcType = VARCHAR},
+				#{entity.startCityId,jdbcType = NUMERIC},
+				#{entity.startCity,jdbcType = VARCHAR},
+				#{entity.startProvinceId,jdbcType = NUMERIC},
+				#{entity.startProvince,jdbcType = VARCHAR},
+				#{entity.destProvinceId,jdbcType = NUMERIC},
+				#{entity.destProvince,jdbcType = VARCHAR},
+				#{entity.createTime,jdbcType = TIMESTAMP},
+				#{entity.createUser,jdbcType = VARCHAR},
+				#{entity.active,jdbcType = NUMERIC},
+				#{entity.activeUser,jdbcType = VARCHAR},
+				#{entity.activeTime,jdbcType = TIMESTAMP},
+				#{entity.activeMemo,jdbcType = VARCHAR},
+						 #{entity.transway.lineid,jdbcType=NUMERIC}
+		from dual
+</foreach>
+</insert>
+
+
+<select id="selectByStartCityID" parameterType="java.lang.Integer" resultMap="E_lineResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_line 
+		<include refid="one2one_sql"/>
+		 where tps_line.start_city_id = #{startCityId}
+</select>
+<select id="selectByDestProvinceID" parameterType="java.lang.Integer" resultMap="E_lineResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_line 
+		<include refid="one2one_sql"/>
+		 where tps_line.dest_province_id = #{destProvinceId}
+</select>
+
+
+
+
+
+<!--Generated=true-->
+<sql id="one2one_sql">
+	     left outer join trans_way trans_way_T1 on tps_line.transway=trans_way_T1.lineid
+</sql>
+<!--Generated=true-->
+<resultMap id="E_transwayResult" type="com.unlcn.ils.tps.E_transway">
+	<id property="lineid" column="lineid"/>
+	<result property="transName" column="trans_name"/>
+	<result property="createTime" column="create_time"/>
+	<result property="createUser" column="create_user"/>
+	<result property="active" column="active"/>
+	<result property="activeUser" column="active_user"/>
+	<result property="activeTime" column="active_time"/>
+	<result property="activeMemo" column="active_memo"/>
+</resultMap>
+</mapper>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="s_getStyleByCustomer" log="false" className="com.unlcn.ils.tps.services.StyleService" method="getDataByCustomerId">
+  <instanceCreator>
+    <params/>
+  </instanceCreator>
+  <name>得到车型</name>
+  <inputs>
+    <input collection="false" desc="" id="customerid" required="true" type="String"/>
+  </inputs>
+  <outputs>
+    <output autoValue="Result" desc="" id="result" name="方法返回值" type="java.util.List"/>
+  </outputs>
+  <params>
+    <param autoValue="Input.customerid" name="customerid" signature="QString;" type="String"/>
+  </params>
+  <return signature="QList&lt;QMap&lt;QString;QString;>;>;" type="java.util.List"/>
+</CustomRule>

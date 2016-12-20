@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><mapper namespace="com.unlcn.ils.tps.E_configure_detailMapper">	
+
+<!-- ElementID:column_sql,Generated=true -->
+<sql id="column_sql">
+		  tps_configure_detail.lineid ,
+		  tps_configure_detail.configure_lineid ,
+		  tps_configure_detail.item_name ,
+		  tps_configure_detail.opearate_name ,
+		  tps_configure_detail.description ,
+		  tps_configure_detail.weight ,
+		  tps_configure_detail.requirements ,
+		  tps_configure_detail.totalvalue ,
+		  tps_configure_detail.subvalue ,
+		  tps_configure_detail.lowvalue ,
+		  tps_configure_detail.cal_description ,
+		  tps_configure_detail.checkvalue ,
+		  tps_configure_detail.finacialdesc ,
+		  tps_configure_detail.start_date ,
+		  tps_configure_detail.end_date ,
+		  tps_configure_detail.create_username ,
+		  tps_configure_detail.create_time ,
+		  tps_configure_detail.active ,
+		  tps_configure_detail.active_user ,
+		  tps_configure_detail.active_time ,
+		  tps_configure_detail.active_memo 
+</sql>
+
+<!-- ElementID:whereClause_sql,Generated=true -->
+<sql id="whereClause_sql">
+	    <if test="lineid != null">and tps_configure_detail.lineid = #{lineid}</if>
+	    <if test="configureLineid != null">and tps_configure_detail.configure_lineid = #{configureLineid}</if>
+	    <if test="itemName != null">and tps_configure_detail.item_name = #{itemName}</if>
+	    <if test="opearateName != null">and tps_configure_detail.opearate_name = #{opearateName}</if>
+	    <if test="description != null">and tps_configure_detail.description = #{description}</if>
+	    <if test="weight != null">and tps_configure_detail.weight = #{weight}</if>
+	    <if test="requirements != null">and tps_configure_detail.requirements = #{requirements}</if>
+	    <if test="totalvalue != null">and tps_configure_detail.totalvalue = #{totalvalue}</if>
+	    <if test="subvalue != null">and tps_configure_detail.subvalue = #{subvalue}</if>
+	    <if test="lowvalue != null">and tps_configure_detail.lowvalue = #{lowvalue}</if>
+	    <if test="calDescription != null">and tps_configure_detail.cal_description = #{calDescription}</if>
+	    <if test="checkvalue != null">and tps_configure_detail.checkvalue = #{checkvalue}</if>
+	    <if test="finacialdesc != null">and tps_configure_detail.finacialdesc = #{finacialdesc}</if>
+	    <if test="startDate != null">and tps_configure_detail.start_date = #{startDate}</if>
+	    <if test="endDate != null">and tps_configure_detail.end_date = #{endDate}</if>
+	    <if test="createUsername != null">and tps_configure_detail.create_username = #{createUsername}</if>
+	    <if test="createTime != null">and tps_configure_detail.create_time = #{createTime}</if>
+	    <if test="active != null">and tps_configure_detail.active = #{active}</if>
+	    <if test="activeUser != null">and tps_configure_detail.active_user = #{activeUser}</if>
+	    <if test="activeTime != null">and tps_configure_detail.active_time = #{activeTime}</if>
+	    <if test="activeMemo != null">and tps_configure_detail.active_memo = #{activeMemo}</if>
+</sql>
+
+
+<!-- ElementID:E_configure_detailResult,Generated=true -->
+<resultMap id="E_configure_detailResult" type="com.unlcn.ils.tps.E_configure_detail">
+	<id property="lineid" column="lineid"/>
+	<result property="configureLineid" column="configure_lineid"/>
+	<result property="itemName" column="item_name"/>
+	<result property="opearateName" column="opearate_name"/>
+	<result property="description" column="description"/>
+	<result property="weight" column="weight"/>
+	<result property="requirements" column="requirements"/>
+	<result property="totalvalue" column="totalvalue"/>
+	<result property="subvalue" column="subvalue"/>
+	<result property="lowvalue" column="lowvalue"/>
+	<result property="calDescription" column="cal_description"/>
+	<result property="checkvalue" column="checkvalue"/>
+	<result property="finacialdesc" column="finacialdesc"/>
+	<result property="startDate" column="start_date"/>
+	<result property="endDate" column="end_date"/>
+	<result property="createUsername" column="create_username"/>
+	<result property="createTime" column="create_time"/>
+	<result property="active" column="active"/>
+	<result property="activeUser" column="active_user"/>
+	<result property="activeTime" column="active_time"/>
+	<result property="activeMemo" column="active_memo"/>
+</resultMap>
+
+
+<!-- ElementName:cache,Generated=true -->
+<cache type="C2_Default_Dao_Cache"/>
+
+<!-- ElementID:count,Generated=true -->
+<select id="count" parameterType="com.unlcn.ils.tps.E_configure_detail" resultType="int">
+	select count(*) from tps_configure_detail 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+<!-- ElementID:update,Generated=true -->
+<update id="update" parameterType="com.unlcn.ils.tps.E_configure_detail">
+	update tps_configure_detail
+<set>
+	<if test="configureLineid != null">configure_lineid=#{configureLineid,jdbcType=VARCHAR},</if>
+	<if test="itemName != null">item_name=#{itemName,jdbcType=NUMERIC},</if>
+	<if test="opearateName != null">opearate_name=#{opearateName,jdbcType=VARCHAR},</if>
+	<if test="description != null">description=#{description,jdbcType=VARCHAR},</if>
+	<if test="weight != null">weight=#{weight,jdbcType=NUMERIC},</if>
+	<if test="requirements != null">requirements=#{requirements,jdbcType=VARCHAR},</if>
+	<if test="totalvalue != null">totalvalue=#{totalvalue,jdbcType=NUMERIC},</if>
+	<if test="subvalue != null">subvalue=#{subvalue,jdbcType=NUMERIC},</if>
+	<if test="lowvalue != null">lowvalue=#{lowvalue,jdbcType=NUMERIC},</if>
+	<if test="calDescription != null">cal_description=#{calDescription,jdbcType=VARCHAR},</if>
+	<if test="checkvalue != null">checkvalue=#{checkvalue,jdbcType=NUMERIC},</if>
+	<if test="finacialdesc != null">finacialdesc=#{finacialdesc,jdbcType=NUMERIC},</if>
+	<if test="startDate != null">start_date=#{startDate,jdbcType=TIMESTAMP},</if>
+	<if test="endDate != null">end_date=#{endDate,jdbcType=TIMESTAMP},</if>
+	<if test="createUsername != null">create_username=#{createUsername,jdbcType=VARCHAR},</if>
+	<if test="createTime != null">create_time=#{createTime,jdbcType=TIMESTAMP},</if>
+	<if test="active != null">active=#{active,jdbcType=NUMERIC},</if>
+	<if test="activeUser != null">active_user=#{activeUser,jdbcType=VARCHAR},</if>
+	<if test="activeTime != null">active_time=#{activeTime,jdbcType=TIMESTAMP},</if>
+	<if test="activeMemo != null">active_memo=#{activeMemo,jdbcType=VARCHAR}</if>
+</set>
+<where>
+	<choose>
+        <when test="lineid != null">and lineid = #{lineid}</when>
+        <otherwise>and lineid = </otherwise>
+    </choose>
+</where>
+</update>
+
+<!-- ElementID:updateNull,Generated=true -->
+<update id="updateNull" parameterType="map">
+	update tps_configure_detail
+	<set>
+		<trim suffixOverrides=",">
+		    <if test="configureLineid==null">configure_lineid = null,</if>
+		    <if test="itemName==null">item_name = null,</if>
+		    <if test="opearateName==null">opearate_name = null,</if>
+		    <if test="description==null">description = null,</if>
+		    <if test="weight==null">weight = null,</if>
+		    <if test="requirements==null">requirements = null,</if>
+		    <if test="totalvalue==null">totalvalue = null,</if>
+		    <if test="subvalue==null">subvalue = null,</if>
+		    <if test="lowvalue==null">lowvalue = null,</if>
+		    <if test="calDescription==null">cal_description = null,</if>
+		    <if test="checkvalue==null">checkvalue = null,</if>
+		    <if test="finacialdesc==null">finacialdesc = null,</if>
+		    <if test="startDate==null">start_date = null,</if>
+		    <if test="endDate==null">end_date = null,</if>
+		    <if test="createUsername==null">create_username = null,</if>
+		    <if test="createTime==null">create_time = null,</if>
+		    <if test="active==null">active = null,</if>
+		    <if test="activeUser==null">active_user = null,</if>
+		    <if test="activeTime==null">active_time = null,</if>
+		    <if test="activeMemo==null">active_memo = null,</if>
+		</trim>
+	</set>
+	<where>
+		<choose>
+			<when test="lineid != null">and lineid = #{lineid}</when>
+			<otherwise>and lineid = </otherwise>
+		</choose>
+	</where>
+</update>
+
+<!-- ElementID:delete,Generated=true -->
+<delete id="delete" parameterType="com.unlcn.ils.tps.E_configure_detail">
+    delete from tps_configure_detail where 1=1 and lineid = #{lineid}
+</delete>
+
+<!-- ElementID:select,Generated=true -->
+<select id="select" parameterType="com.unlcn.ils.tps.E_configure_detail" resultMap="E_configure_detailResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_configure_detail 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:deleteBatch,Generated=true -->
+<delete id="deleteBatch" parameterType="List">
+	delete from tps_configure_detail where lineid in
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<foreach collection="list" item="entity" separator=",">
+	#{entity.lineid}
+</foreach>
+</trim>
+</delete>
+
+<!-- ElementID:selectAll,Generated=true -->
+<select id="selectAll" resultMap="E_configure_detailResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_configure_detail 
+</select>
+
+<!-- ElementID:selectByID,Generated=true -->
+<select id="selectByID" parameterType="java.lang.String" resultMap="E_configure_detailResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_configure_detail 
+		 where tps_configure_detail.lineid = #{lineid,jdbcType=VARCHAR}
+</select>
+
+<!-- ElementID:selectByPage,Generated=true -->
+<select id="selectByPage" parameterType="com.unlcn.ils.tps.E_configure_detail" resultMap="E_configure_detailResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_configure_detail 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:selectMany,Generated=true -->
+<select id="selectMany" parameterType="list" resultMap="E_configure_detailResult">
+select 
+	<include refid="column_sql"/> 
+	from tps_configure_detail 
+	where tps_configure_detail.lineid in (
+		select distinct lineid from tps_configure_detail inner join
+<foreach collection="list" item="entity" separator="inner join">
+		(select 
+			distinct lineid
+			from tps_configure_detail 
+			<where>
+	        <if test="entity.lineid != null">and tps_configure_detail.lineid = #{entity.lineid}</if>
+	        <if test="entity.configureLineid != null">and tps_configure_detail.configure_lineid = #{entity.configureLineid}</if>
+	        <if test="entity.itemName != null">and tps_configure_detail.item_name = #{entity.itemName}</if>
+	        <if test="entity.opearateName != null">and tps_configure_detail.opearate_name = #{entity.opearateName}</if>
+	        <if test="entity.description != null">and tps_configure_detail.description = #{entity.description}</if>
+	        <if test="entity.weight != null">and tps_configure_detail.weight = #{entity.weight}</if>
+	        <if test="entity.requirements != null">and tps_configure_detail.requirements = #{entity.requirements}</if>
+	        <if test="entity.totalvalue != null">and tps_configure_detail.totalvalue = #{entity.totalvalue}</if>
+	        <if test="entity.subvalue != null">and tps_configure_detail.subvalue = #{entity.subvalue}</if>
+	        <if test="entity.lowvalue != null">and tps_configure_detail.lowvalue = #{entity.lowvalue}</if>
+	        <if test="entity.calDescription != null">and tps_configure_detail.cal_description = #{entity.calDescription}</if>
+	        <if test="entity.checkvalue != null">and tps_configure_detail.checkvalue = #{entity.checkvalue}</if>
+	        <if test="entity.finacialdesc != null">and tps_configure_detail.finacialdesc = #{entity.finacialdesc}</if>
+	        <if test="entity.startDate != null">and tps_configure_detail.start_date = #{entity.startDate}</if>
+	        <if test="entity.endDate != null">and tps_configure_detail.end_date = #{entity.endDate}</if>
+	        <if test="entity.createUsername != null">and tps_configure_detail.create_username = #{entity.createUsername}</if>
+	        <if test="entity.createTime != null">and tps_configure_detail.create_time = #{entity.createTime}</if>
+	        <if test="entity.active != null">and tps_configure_detail.active = #{entity.active}</if>
+	        <if test="entity.activeUser != null">and tps_configure_detail.active_user = #{entity.activeUser}</if>
+	        <if test="entity.activeTime != null">and tps_configure_detail.active_time = #{entity.activeTime}</if>
+	        <if test="entity.activeMemo != null">and tps_configure_detail.active_memo = #{entity.activeMemo}</if>
+			</where>
+		) ${entity.tableAlias} using (lineid)
+</foreach>
+)
+</select>
+
+<!-- ElementID:insert,Generated=true -->
+<insert id="insert" parameterType="com.unlcn.ils.tps.E_configure_detail">
+	insert into tps_configure_detail(
+	         <if test="lineid != null">lineid</if>
+	         <if test="configureLineid != null">,configure_lineid</if>
+	         <if test="itemName != null">,item_name</if>
+	         <if test="opearateName != null">,opearate_name</if>
+	         <if test="description != null">,description</if>
+	         <if test="weight != null">,weight</if>
+	         <if test="requirements != null">,requirements</if>
+	         <if test="totalvalue != null">,totalvalue</if>
+	         <if test="subvalue != null">,subvalue</if>
+	         <if test="lowvalue != null">,lowvalue</if>
+	         <if test="calDescription != null">,cal_description</if>
+	         <if test="checkvalue != null">,checkvalue</if>
+	         <if test="finacialdesc != null">,finacialdesc</if>
+	         <if test="startDate != null">,start_date</if>
+	         <if test="endDate != null">,end_date</if>
+	         <if test="createUsername != null">,create_username</if>
+	         <if test="createTime != null">,create_time</if>
+	         <if test="active != null">,active</if>
+	         <if test="activeUser != null">,active_user</if>
+	         <if test="activeTime != null">,active_time</if>
+	         <if test="activeMemo != null">,active_memo</if>
+	 	 	 )
+	 values (
+	         <if test="lineid != null">#{lineid,jdbcType=VARCHAR}</if>
+	         <if test="configureLineid != null">,#{configureLineid,jdbcType=VARCHAR}</if>
+	         <if test="itemName != null">,#{itemName,jdbcType=NUMERIC}</if>
+	         <if test="opearateName != null">,#{opearateName,jdbcType=VARCHAR}</if>
+	         <if test="description != null">,#{description,jdbcType=VARCHAR}</if>
+	         <if test="weight != null">,#{weight,jdbcType=NUMERIC}</if>
+	         <if test="requirements != null">,#{requirements,jdbcType=VARCHAR}</if>
+	         <if test="totalvalue != null">,#{totalvalue,jdbcType=NUMERIC}</if>
+	         <if test="subvalue != null">,#{subvalue,jdbcType=NUMERIC}</if>
+	         <if test="lowvalue != null">,#{lowvalue,jdbcType=NUMERIC}</if>
+	         <if test="calDescription != null">,#{calDescription,jdbcType=VARCHAR}</if>
+	         <if test="checkvalue != null">,#{checkvalue,jdbcType=NUMERIC}</if>
+	         <if test="finacialdesc != null">,#{finacialdesc,jdbcType=NUMERIC}</if>
+	         <if test="startDate != null">,#{startDate,jdbcType=TIMESTAMP}</if>
+	         <if test="endDate != null">,#{endDate,jdbcType=TIMESTAMP}</if>
+	         <if test="createUsername != null">,#{createUsername,jdbcType=VARCHAR}</if>
+	         <if test="createTime != null">,#{createTime,jdbcType=TIMESTAMP}</if>
+	         <if test="active != null">,#{active,jdbcType=NUMERIC}</if>
+	         <if test="activeUser != null">,#{activeUser,jdbcType=VARCHAR}</if>
+	         <if test="activeTime != null">,#{activeTime,jdbcType=TIMESTAMP}</if>
+	         <if test="activeMemo != null">,#{activeMemo,jdbcType=VARCHAR}</if>
+	 	 	 )
+</insert>
+
+<!-- ElementID:insertBatch,Generated=true -->
+<insert id="insertBatch" parameterType="list">
+	insert into tps_configure_detail (lineid,configure_lineid,item_name,opearate_name,description,weight,requirements,totalvalue,subvalue,lowvalue,cal_description,checkvalue,finacialdesc,start_date,end_date,create_username,create_time,active,active_user,active_time,active_memo) 
+<foreach collection="list" item="entity" index="index" separator="union all">
+		select 
+		#{entity.lineid,jdbcType = VARCHAR},
+				#{entity.configureLineid,jdbcType = VARCHAR},
+				#{entity.itemName,jdbcType = NUMERIC},
+				#{entity.opearateName,jdbcType = VARCHAR},
+				#{entity.description,jdbcType = VARCHAR},
+				#{entity.weight,jdbcType = NUMERIC},
+				#{entity.requirements,jdbcType = VARCHAR},
+				#{entity.totalvalue,jdbcType = NUMERIC},
+				#{entity.subvalue,jdbcType = NUMERIC},
+				#{entity.lowvalue,jdbcType = NUMERIC},
+				#{entity.calDescription,jdbcType = VARCHAR},
+				#{entity.checkvalue,jdbcType = NUMERIC},
+				#{entity.finacialdesc,jdbcType = NUMERIC},
+				#{entity.startDate,jdbcType = TIMESTAMP},
+				#{entity.endDate,jdbcType = TIMESTAMP},
+				#{entity.createUsername,jdbcType = VARCHAR},
+				#{entity.createTime,jdbcType = TIMESTAMP},
+				#{entity.active,jdbcType = NUMERIC},
+				#{entity.activeUser,jdbcType = VARCHAR},
+				#{entity.activeTime,jdbcType = TIMESTAMP},
+				#{entity.activeMemo,jdbcType = VARCHAR}
+		from dual
+</foreach>
+</insert>
+<select id="getAllItemNameByConfigureId" parameterType="java.lang.String" resultMap="E_configure_detailResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_configure_detail 
+		 where tps_configure_detail.configure_lineid = #{configure_lineid}
+</select>
+</mapper>

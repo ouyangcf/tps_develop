@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="s_payPeriodEdit" log="false" className="com.unlcn.ils.tps.services.PayPeriodMaintain" method="payPeriodEdit">
+  <name>支付周期字典维护编辑</name>
+  <inputs>
+    <input collection="false" desc="" id="idList" required="true" type="Integer"/>
+    <input collection="false" desc="" id="data" required="true" type="com.unlcn.ils.tps.E_pay_period"/>
+  </inputs>
+  <outputs>
+    <output autoValue="Result" desc="@Description:支付方式编辑" id="result" name="方法返回值" type="boolean"/>
+  </outputs>
+  <params>
+    <param autoValue="Input.idList" name="idList" signature="QInteger;" type="Integer"/>
+    <param autoValue="Input.data" name="data" signature="QE_pay_period;" type="com.unlcn.ils.tps.E_pay_period"/>
+  </params>
+  <return signature="Z" type="boolean"/>
+</CustomRule>

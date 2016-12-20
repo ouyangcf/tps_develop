@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="s_quotationAuditSetAdd" log="false" className="com.unlcn.ils.tps.services.QutoationService" method="quotationAuditSetAdd">
+  <instanceCreator>
+    <params/>
+  </instanceCreator>
+  <name>报价单审核流程维护</name>
+  <inputs>
+    <input collection="false" desc="" id="data" required="true" type="com.unlcn.ils.tps.E_quotation_audit_set"/>
+  </inputs>
+  <outputs>
+    <output autoValue="Result" desc="" id="result" name="方法返回值" type="boolean"/>
+  </outputs>
+  <params>
+    <param autoValue="Input.data" name="data" signature="QE_quotation_audit_set;" type="com.unlcn.ils.tps.E_quotation_audit_set"/>
+  </params>
+  <return signature="Z" type="boolean"/>
+</CustomRule>

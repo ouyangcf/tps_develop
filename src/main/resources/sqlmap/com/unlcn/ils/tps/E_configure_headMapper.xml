@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><mapper namespace="com.unlcn.ils.tps.E_configure_headMapper">	
+
+<!-- ElementID:column_sql,Generated=true -->
+<sql id="column_sql">
+		  tps_configure_head.lineid ,
+		  tps_configure_head.configure_name ,
+		  tps_configure_head.create_username ,
+		  tps_configure_head.create_time ,
+		  tps_configure_head.active ,
+		  tps_configure_head.active_user ,
+		  tps_configure_head.active_time ,
+		  tps_configure_head.active_memo 
+</sql>
+
+<!-- ElementID:whereClause_sql,Generated=true -->
+<sql id="whereClause_sql">
+	    <if test="lineid != null">and tps_configure_head.lineid = #{lineid}</if>
+	    <if test="configureName != null">and tps_configure_head.configure_name = #{configureName}</if>
+	    <if test="createUsername != null">and tps_configure_head.create_username = #{createUsername}</if>
+	    <if test="createTime != null">and tps_configure_head.create_time = #{createTime}</if>
+	    <if test="active != null">and tps_configure_head.active = #{active}</if>
+	    <if test="activeUser != null">and tps_configure_head.active_user = #{activeUser}</if>
+	    <if test="activeTime != null">and tps_configure_head.active_time = #{activeTime}</if>
+	    <if test="activeMemo != null">and tps_configure_head.active_memo = #{activeMemo}</if>
+</sql>
+
+
+<!-- ElementID:E_configure_headResult,Generated=true -->
+<resultMap id="E_configure_headResult" type="com.unlcn.ils.tps.E_configure_head">
+	<id property="lineid" column="lineid"/>
+	<result property="configureName" column="configure_name"/>
+	<result property="createUsername" column="create_username"/>
+	<result property="createTime" column="create_time"/>
+	<result property="active" column="active"/>
+	<result property="activeUser" column="active_user"/>
+	<result property="activeTime" column="active_time"/>
+	<result property="activeMemo" column="active_memo"/>
+</resultMap>
+
+
+<!-- ElementName:cache,Generated=true -->
+<cache type="C2_Default_Dao_Cache"/>
+
+<!-- ElementID:count,Generated=true -->
+<select id="count" parameterType="com.unlcn.ils.tps.E_configure_head" resultType="int">
+	select count(*) from tps_configure_head 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+<!-- ElementID:update,Generated=true -->
+<update id="update" parameterType="com.unlcn.ils.tps.E_configure_head">
+	update tps_configure_head
+<set>
+	<if test="configureName != null">configure_name=#{configureName,jdbcType=VARCHAR},</if>
+	<if test="createUsername != null">create_username=#{createUsername,jdbcType=VARCHAR},</if>
+	<if test="createTime != null">create_time=#{createTime,jdbcType=TIMESTAMP},</if>
+	<if test="active != null">active=#{active,jdbcType=NUMERIC},</if>
+	<if test="activeUser != null">active_user=#{activeUser,jdbcType=VARCHAR},</if>
+	<if test="activeTime != null">active_time=#{activeTime,jdbcType=TIMESTAMP},</if>
+	<if test="activeMemo != null">active_memo=#{activeMemo,jdbcType=VARCHAR}</if>
+</set>
+<where>
+	<choose>
+        <when test="lineid != null">and lineid = #{lineid}</when>
+        <otherwise>and lineid = </otherwise>
+    </choose>
+</where>
+</update>
+
+<!-- ElementID:updateNull,Generated=true -->
+<update id="updateNull" parameterType="map">
+	update tps_configure_head
+	<set>
+		<trim suffixOverrides=",">
+		    <if test="configureName==null">configure_name = null,</if>
+		    <if test="createUsername==null">create_username = null,</if>
+		    <if test="createTime==null">create_time = null,</if>
+		    <if test="active==null">active = null,</if>
+		    <if test="activeUser==null">active_user = null,</if>
+		    <if test="activeTime==null">active_time = null,</if>
+		    <if test="activeMemo==null">active_memo = null,</if>
+		</trim>
+	</set>
+	<where>
+		<choose>
+			<when test="lineid != null">and lineid = #{lineid}</when>
+			<otherwise>and lineid = </otherwise>
+		</choose>
+	</where>
+</update>
+
+<!-- ElementID:delete,Generated=true -->
+<delete id="delete" parameterType="com.unlcn.ils.tps.E_configure_head">
+    delete from tps_configure_head where 1=1 and lineid = #{lineid}
+</delete>
+
+<!-- ElementID:select,Generated=true -->
+<select id="select" parameterType="com.unlcn.ils.tps.E_configure_head" resultMap="E_configure_headResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_configure_head 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:deleteBatch,Generated=true -->
+<delete id="deleteBatch" parameterType="List">
+	delete from tps_configure_head where lineid in
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<foreach collection="list" item="entity" separator=",">
+	#{entity.lineid}
+</foreach>
+</trim>
+</delete>
+
+<!-- ElementID:selectAll,Generated=true -->
+<select id="selectAll" resultMap="E_configure_headResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_configure_head 
+</select>
+
+<!-- ElementID:selectByID,Generated=true -->
+<select id="selectByID" parameterType="java.lang.String" resultMap="E_configure_headResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_configure_head 
+		 where tps_configure_head.lineid = #{lineid,jdbcType=VARCHAR}
+</select>
+
+<!-- ElementID:selectByPage,Generated=true -->
+<select id="selectByPage" parameterType="com.unlcn.ils.tps.E_configure_head" resultMap="E_configure_headResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_configure_head 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:selectMany,Generated=true -->
+<select id="selectMany" parameterType="list" resultMap="E_configure_headResult">
+select 
+	<include refid="column_sql"/> 
+	from tps_configure_head 
+	where tps_configure_head.lineid in (
+		select distinct lineid from tps_configure_head inner join
+<foreach collection="list" item="entity" separator="inner join">
+		(select 
+			distinct lineid
+			from tps_configure_head 
+			<where>
+	        <if test="entity.lineid != null">and tps_configure_head.lineid = #{entity.lineid}</if>
+	        <if test="entity.configureName != null">and tps_configure_head.configure_name = #{entity.configureName}</if>
+	        <if test="entity.createUsername != null">and tps_configure_head.create_username = #{entity.createUsername}</if>
+	        <if test="entity.createTime != null">and tps_configure_head.create_time = #{entity.createTime}</if>
+	        <if test="entity.active != null">and tps_configure_head.active = #{entity.active}</if>
+	        <if test="entity.activeUser != null">and tps_configure_head.active_user = #{entity.activeUser}</if>
+	        <if test="entity.activeTime != null">and tps_configure_head.active_time = #{entity.activeTime}</if>
+	        <if test="entity.activeMemo != null">and tps_configure_head.active_memo = #{entity.activeMemo}</if>
+			</where>
+		) ${entity.tableAlias} using (lineid)
+</foreach>
+)
+</select>
+
+<!-- ElementID:insert,Generated=true -->
+<insert id="insert" parameterType="com.unlcn.ils.tps.E_configure_head">
+	insert into tps_configure_head(
+	         <if test="lineid != null">lineid</if>
+	         <if test="configureName != null">,configure_name</if>
+	         <if test="createUsername != null">,create_username</if>
+	         <if test="createTime != null">,create_time</if>
+	         <if test="active != null">,active</if>
+	         <if test="activeUser != null">,active_user</if>
+	         <if test="activeTime != null">,active_time</if>
+	         <if test="activeMemo != null">,active_memo</if>
+	 	 	 )
+	 values (
+	         <if test="lineid != null">#{lineid,jdbcType=VARCHAR}</if>
+	         <if test="configureName != null">,#{configureName,jdbcType=VARCHAR}</if>
+	         <if test="createUsername != null">,#{createUsername,jdbcType=VARCHAR}</if>
+	         <if test="createTime != null">,#{createTime,jdbcType=TIMESTAMP}</if>
+	         <if test="active != null">,#{active,jdbcType=NUMERIC}</if>
+	         <if test="activeUser != null">,#{activeUser,jdbcType=VARCHAR}</if>
+	         <if test="activeTime != null">,#{activeTime,jdbcType=TIMESTAMP}</if>
+	         <if test="activeMemo != null">,#{activeMemo,jdbcType=VARCHAR}</if>
+	 	 	 )
+</insert>
+
+<!-- ElementID:insertBatch,Generated=true -->
+<insert id="insertBatch" parameterType="list">
+	insert into tps_configure_head (lineid,configure_name,create_username,create_time,active,active_user,active_time,active_memo) 
+<foreach collection="list" item="entity" index="index" separator="union all">
+		select 
+		#{entity.lineid,jdbcType = VARCHAR},
+				#{entity.configureName,jdbcType = VARCHAR},
+				#{entity.createUsername,jdbcType = VARCHAR},
+				#{entity.createTime,jdbcType = TIMESTAMP},
+				#{entity.active,jdbcType = NUMERIC},
+				#{entity.activeUser,jdbcType = VARCHAR},
+				#{entity.activeTime,jdbcType = TIMESTAMP},
+				#{entity.activeMemo,jdbcType = VARCHAR}
+		from dual
+</foreach>
+</insert>
+<select id="getMaxId" resultMap="E_configure_headResult">
+	SELECT * FROM tps_configure_head ORDER BY Create_Time DESC;
+</select>
+</mapper>

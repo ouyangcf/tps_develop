@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="s_setCurrentLevel" log="false" className="com.unlcn.ils.tps.services.LevelService" method="setCurrentLevel">
+  <instanceCreator>
+    <params/>
+  </instanceCreator>
+  <name>当前级别录入</name>
+  <inputs>
+    <input collection="false" desc="" id="data" required="true" type="com.unlcn.ils.tps.E_currentlevel"/>
+  </inputs>
+  <outputs>
+    <output autoValue="Result" desc="@Description:在当前级别表中新增数据" id="result" name="方法返回值" type="boolean"/>
+  </outputs>
+  <params>
+    <param autoValue="Input.data" name="data" signature="QE_currentlevel;" type="com.unlcn.ils.tps.E_currentlevel"/>
+  </params>
+  <return signature="Z" type="boolean"/>
+</CustomRule>

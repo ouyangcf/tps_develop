@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><mapper namespace="com.unlcn.ils.tps.E_checkdetailMapper">	
+
+<!-- ElementID:column_sql,Generated=true -->
+<sql id="column_sql">
+		  tps_check_detail.lineid ,
+		  tps_check_detail.checkhead_lineid ,
+		  tps_check_detail.checkdoc_lineid ,
+		  tps_check_detail.item_lineid ,
+		  tps_check_detail.item_name ,
+		  tps_check_detail.operate_lineid ,
+		  tps_check_detail.operate_name ,
+		  tps_check_detail.argue_status ,
+		  tps_check_detail.check_number ,
+		  tps_check_detail.check_money ,
+		  tps_check_detail.check_memo ,
+		  tps_check_detail.create_username ,
+		  tps_check_detail.create_time ,
+		  tps_check_detail.active ,
+		  tps_check_detail.active_user ,
+		  tps_check_detail.active_time ,
+		  tps_check_detail.active_memo 
+</sql>
+
+<!-- ElementID:whereClause_sql,Generated=true -->
+<sql id="whereClause_sql">
+	    <if test="lineid != null">and tps_check_detail.lineid = #{lineid}</if>
+	    <if test="checkheadLineid != null">and tps_check_detail.checkhead_lineid = #{checkheadLineid}</if>
+	    <if test="checkdocLineid != null">and tps_check_detail.checkdoc_lineid = #{checkdocLineid}</if>
+	    <if test="itemLineid != null">and tps_check_detail.item_lineid = #{itemLineid}</if>
+	    <if test="itemName != null">and tps_check_detail.item_name = #{itemName}</if>
+	    <if test="operateLineid != null">and tps_check_detail.operate_lineid = #{operateLineid}</if>
+	    <if test="operateName != null">and tps_check_detail.operate_name = #{operateName}</if>
+	    <if test="argueStatus != null">and tps_check_detail.argue_status = #{argueStatus}</if>
+	    <if test="checkNumber != null">and tps_check_detail.check_number = #{checkNumber}</if>
+	    <if test="checkMoney != null">and tps_check_detail.check_money = #{checkMoney}</if>
+	    <if test="checkMemo != null">and tps_check_detail.check_memo = #{checkMemo}</if>
+	    <if test="createUsername != null">and tps_check_detail.create_username = #{createUsername}</if>
+	    <if test="createTime != null">and tps_check_detail.create_time = #{createTime}</if>
+	    <if test="active != null">and tps_check_detail.active = #{active}</if>
+	    <if test="activeUser != null">and tps_check_detail.active_user = #{activeUser}</if>
+	    <if test="activeTime != null">and tps_check_detail.active_time = #{activeTime}</if>
+	    <if test="activeMemo != null">and tps_check_detail.active_memo = #{activeMemo}</if>
+</sql>
+
+
+<!-- ElementID:E_checkdetailResult,Generated=true -->
+<resultMap id="E_checkdetailResult" type="com.unlcn.ils.tps.E_checkdetail">
+	<id property="lineid" column="lineid"/>
+	<result property="checkheadLineid" column="checkhead_lineid"/>
+	<result property="checkdocLineid" column="checkdoc_lineid"/>
+	<result property="itemLineid" column="item_lineid"/>
+	<result property="itemName" column="item_name"/>
+	<result property="operateLineid" column="operate_lineid"/>
+	<result property="operateName" column="operate_name"/>
+	<result property="argueStatus" column="argue_status"/>
+	<result property="checkNumber" column="check_number"/>
+	<result property="checkMoney" column="check_money"/>
+	<result property="checkMemo" column="check_memo"/>
+	<result property="createUsername" column="create_username"/>
+	<result property="createTime" column="create_time"/>
+	<result property="active" column="active"/>
+	<result property="activeUser" column="active_user"/>
+	<result property="activeTime" column="active_time"/>
+	<result property="activeMemo" column="active_memo"/>
+</resultMap>
+
+
+<!-- ElementName:cache,Generated=true -->
+<cache type="C2_Default_Dao_Cache"/>
+
+<!-- ElementID:count,Generated=true -->
+<select id="count" parameterType="com.unlcn.ils.tps.E_checkdetail" resultType="int">
+	select count(*) from tps_check_detail 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+<!-- ElementID:update,Generated=true -->
+<update id="update" parameterType="com.unlcn.ils.tps.E_checkdetail">
+	update tps_check_detail
+<set>
+	<if test="checkheadLineid != null">checkhead_lineid=#{checkheadLineid,jdbcType=VARCHAR},</if>
+	<if test="checkdocLineid != null">checkdoc_lineid=#{checkdocLineid,jdbcType=VARCHAR},</if>
+	<if test="itemLineid != null">item_lineid=#{itemLineid,jdbcType=NUMERIC},</if>
+	<if test="itemName != null">item_name=#{itemName,jdbcType=VARCHAR},</if>
+	<if test="operateLineid != null">operate_lineid=#{operateLineid,jdbcType=NUMERIC},</if>
+	<if test="operateName != null">operate_name=#{operateName,jdbcType=VARCHAR},</if>
+	<if test="argueStatus != null">argue_status=#{argueStatus,jdbcType=NUMERIC},</if>
+	<if test="checkNumber != null">check_number=#{checkNumber,jdbcType=NUMERIC},</if>
+	<if test="checkMoney != null">check_money=#{checkMoney,jdbcType=NUMERIC},</if>
+	<if test="checkMemo != null">check_memo=#{checkMemo,jdbcType=VARCHAR},</if>
+	<if test="createUsername != null">create_username=#{createUsername,jdbcType=VARCHAR},</if>
+	<if test="createTime != null">create_time=#{createTime,jdbcType=TIMESTAMP},</if>
+	<if test="active != null">active=#{active,jdbcType=NUMERIC},</if>
+	<if test="activeUser != null">active_user=#{activeUser,jdbcType=VARCHAR},</if>
+	<if test="activeTime != null">active_time=#{activeTime,jdbcType=TIMESTAMP},</if>
+	<if test="activeMemo != null">active_memo=#{activeMemo,jdbcType=VARCHAR}</if>
+</set>
+<where>
+	<choose>
+        <when test="lineid != null">and lineid = #{lineid}</when>
+        <otherwise>and lineid = </otherwise>
+    </choose>
+</where>
+</update>
+
+<!-- ElementID:updateNull,Generated=true -->
+<update id="updateNull" parameterType="map">
+	update tps_check_detail
+	<set>
+		<trim suffixOverrides=",">
+		    <if test="checkheadLineid==null">checkhead_lineid = null,</if>
+		    <if test="checkdocLineid==null">checkdoc_lineid = null,</if>
+		    <if test="itemLineid==null">item_lineid = null,</if>
+		    <if test="itemName==null">item_name = null,</if>
+		    <if test="operateLineid==null">operate_lineid = null,</if>
+		    <if test="operateName==null">operate_name = null,</if>
+		    <if test="argueStatus==null">argue_status = null,</if>
+		    <if test="checkNumber==null">check_number = null,</if>
+		    <if test="checkMoney==null">check_money = null,</if>
+		    <if test="checkMemo==null">check_memo = null,</if>
+		    <if test="createUsername==null">create_username = null,</if>
+		    <if test="createTime==null">create_time = null,</if>
+		    <if test="active==null">active = null,</if>
+		    <if test="activeUser==null">active_user = null,</if>
+		    <if test="activeTime==null">active_time = null,</if>
+		    <if test="activeMemo==null">active_memo = null,</if>
+		</trim>
+	</set>
+	<where>
+		<choose>
+			<when test="lineid != null">and lineid = #{lineid}</when>
+			<otherwise>and lineid = </otherwise>
+		</choose>
+	</where>
+</update>
+
+<!-- ElementID:delete,Generated=true -->
+<delete id="delete" parameterType="com.unlcn.ils.tps.E_checkdetail">
+    delete from tps_check_detail where 1=1 and lineid = #{lineid}
+</delete>
+
+<!-- ElementID:select,Generated=true -->
+<select id="select" parameterType="com.unlcn.ils.tps.E_checkdetail" resultMap="E_checkdetailResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_check_detail 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:deleteBatch,Generated=true -->
+<delete id="deleteBatch" parameterType="List">
+	delete from tps_check_detail where lineid in
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<foreach collection="list" item="entity" separator=",">
+	#{entity.lineid}
+</foreach>
+</trim>
+</delete>
+
+<!-- ElementID:selectAll,Generated=true -->
+<select id="selectAll" resultMap="E_checkdetailResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_check_detail 
+</select>
+
+<!-- ElementID:selectByID,Generated=true -->
+<select id="selectByID" parameterType="java.lang.String" resultMap="E_checkdetailResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_check_detail 
+		 where tps_check_detail.lineid = #{lineid,jdbcType=VARCHAR}
+</select>
+
+<!-- ElementID:selectByPage,Generated=true -->
+<select id="selectByPage" parameterType="com.unlcn.ils.tps.E_checkdetail" resultMap="E_checkdetailResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_check_detail 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:selectMany,Generated=true -->
+<select id="selectMany" parameterType="list" resultMap="E_checkdetailResult">
+select 
+	<include refid="column_sql"/> 
+	from tps_check_detail 
+	where tps_check_detail.lineid in (
+		select distinct lineid from tps_check_detail inner join
+<foreach collection="list" item="entity" separator="inner join">
+		(select 
+			distinct lineid
+			from tps_check_detail 
+			<where>
+	        <if test="entity.lineid != null">and tps_check_detail.lineid = #{entity.lineid}</if>
+	        <if test="entity.checkheadLineid != null">and tps_check_detail.checkhead_lineid = #{entity.checkheadLineid}</if>
+	        <if test="entity.checkdocLineid != null">and tps_check_detail.checkdoc_lineid = #{entity.checkdocLineid}</if>
+	        <if test="entity.itemLineid != null">and tps_check_detail.item_lineid = #{entity.itemLineid}</if>
+	        <if test="entity.itemName != null">and tps_check_detail.item_name = #{entity.itemName}</if>
+	        <if test="entity.operateLineid != null">and tps_check_detail.operate_lineid = #{entity.operateLineid}</if>
+	        <if test="entity.operateName != null">and tps_check_detail.operate_name = #{entity.operateName}</if>
+	        <if test="entity.argueStatus != null">and tps_check_detail.argue_status = #{entity.argueStatus}</if>
+	        <if test="entity.checkNumber != null">and tps_check_detail.check_number = #{entity.checkNumber}</if>
+	        <if test="entity.checkMoney != null">and tps_check_detail.check_money = #{entity.checkMoney}</if>
+	        <if test="entity.checkMemo != null">and tps_check_detail.check_memo = #{entity.checkMemo}</if>
+	        <if test="entity.createUsername != null">and tps_check_detail.create_username = #{entity.createUsername}</if>
+	        <if test="entity.createTime != null">and tps_check_detail.create_time = #{entity.createTime}</if>
+	        <if test="entity.active != null">and tps_check_detail.active = #{entity.active}</if>
+	        <if test="entity.activeUser != null">and tps_check_detail.active_user = #{entity.activeUser}</if>
+	        <if test="entity.activeTime != null">and tps_check_detail.active_time = #{entity.activeTime}</if>
+	        <if test="entity.activeMemo != null">and tps_check_detail.active_memo = #{entity.activeMemo}</if>
+			</where>
+		) ${entity.tableAlias} using (lineid)
+</foreach>
+)
+</select>
+
+<!-- ElementID:insert,Generated=true -->
+<insert id="insert" parameterType="com.unlcn.ils.tps.E_checkdetail">
+	insert into tps_check_detail(
+	         <if test="lineid != null">lineid</if>
+	         <if test="checkheadLineid != null">,checkhead_lineid</if>
+	         <if test="checkdocLineid != null">,checkdoc_lineid</if>
+	         <if test="itemLineid != null">,item_lineid</if>
+	         <if test="itemName != null">,item_name</if>
+	         <if test="operateLineid != null">,operate_lineid</if>
+	         <if test="operateName != null">,operate_name</if>
+	         <if test="argueStatus != null">,argue_status</if>
+	         <if test="checkNumber != null">,check_number</if>
+	         <if test="checkMoney != null">,check_money</if>
+	         <if test="checkMemo != null">,check_memo</if>
+	         <if test="createUsername != null">,create_username</if>
+	         <if test="createTime != null">,create_time</if>
+	         <if test="active != null">,active</if>
+	         <if test="activeUser != null">,active_user</if>
+	         <if test="activeTime != null">,active_time</if>
+	         <if test="activeMemo != null">,active_memo</if>
+	 	 	 )
+	 values (
+	         <if test="lineid != null">#{lineid,jdbcType=VARCHAR}</if>
+	         <if test="checkheadLineid != null">,#{checkheadLineid,jdbcType=VARCHAR}</if>
+	         <if test="checkdocLineid != null">,#{checkdocLineid,jdbcType=VARCHAR}</if>
+	         <if test="itemLineid != null">,#{itemLineid,jdbcType=NUMERIC}</if>
+	         <if test="itemName != null">,#{itemName,jdbcType=VARCHAR}</if>
+	         <if test="operateLineid != null">,#{operateLineid,jdbcType=NUMERIC}</if>
+	         <if test="operateName != null">,#{operateName,jdbcType=VARCHAR}</if>
+	         <if test="argueStatus != null">,#{argueStatus,jdbcType=NUMERIC}</if>
+	         <if test="checkNumber != null">,#{checkNumber,jdbcType=NUMERIC}</if>
+	         <if test="checkMoney != null">,#{checkMoney,jdbcType=NUMERIC}</if>
+	         <if test="checkMemo != null">,#{checkMemo,jdbcType=VARCHAR}</if>
+	         <if test="createUsername != null">,#{createUsername,jdbcType=VARCHAR}</if>
+	         <if test="createTime != null">,#{createTime,jdbcType=TIMESTAMP}</if>
+	         <if test="active != null">,#{active,jdbcType=NUMERIC}</if>
+	         <if test="activeUser != null">,#{activeUser,jdbcType=VARCHAR}</if>
+	         <if test="activeTime != null">,#{activeTime,jdbcType=TIMESTAMP}</if>
+	         <if test="activeMemo != null">,#{activeMemo,jdbcType=VARCHAR}</if>
+	 	 	 )
+</insert>
+
+<!-- ElementID:insertBatch,Generated=true -->
+<insert id="insertBatch" parameterType="list">
+	insert into tps_check_detail (lineid,checkhead_lineid,checkdoc_lineid,item_lineid,item_name,operate_lineid,operate_name,argue_status,check_number,check_money,check_memo,create_username,create_time,active,active_user,active_time,active_memo) 
+<foreach collection="list" item="entity" index="index" separator="union all">
+		select 
+		#{entity.lineid,jdbcType = VARCHAR},
+				#{entity.checkheadLineid,jdbcType = VARCHAR},
+				#{entity.checkdocLineid,jdbcType = VARCHAR},
+				#{entity.itemLineid,jdbcType = NUMERIC},
+				#{entity.itemName,jdbcType = VARCHAR},
+				#{entity.operateLineid,jdbcType = NUMERIC},
+				#{entity.operateName,jdbcType = VARCHAR},
+				#{entity.argueStatus,jdbcType = NUMERIC},
+				#{entity.checkNumber,jdbcType = NUMERIC},
+				#{entity.checkMoney,jdbcType = NUMERIC},
+				#{entity.checkMemo,jdbcType = VARCHAR},
+				#{entity.createUsername,jdbcType = VARCHAR},
+				#{entity.createTime,jdbcType = TIMESTAMP},
+				#{entity.active,jdbcType = NUMERIC},
+				#{entity.activeUser,jdbcType = VARCHAR},
+				#{entity.activeTime,jdbcType = TIMESTAMP},
+				#{entity.activeMemo,jdbcType = VARCHAR}
+		from dual
+</foreach>
+</insert>
+<select id="selectByCheckHeadLineid" parameterType="java.lang.String" resultMap="E_checkdetailResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_check_detail 
+		 where tps_check_detail.checkhead_lineid = #{checkhead_lineid}
+</select>
+<select id="selectByCheckDocLineid" parameterType="java.lang.String" resultMap="E_checkdetailResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_check_detail 
+		 where tps_check_detail.checkdoc_lineid = #{checkdoc_lineid}
+</select>
+<select id="selectByItemLineid" parameterType="java.lang.Integer" resultMap="E_checkdetailResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_check_detail 
+		 where tps_check_detail.item_lineid = #{item_lineid}
+</select>
+<select id="selectByOperateLineid" parameterType="java.lang.Integer" resultMap="E_checkdetailResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_check_detail 
+		 where tps_check_detail.operate_lineid = #{operate_lineid}
+</select>
+<select id="selectByTime" parameterType="com.unlcn.ils.tps.E_checkdetail" resultMap="E_checkdetailResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_check_detail 
+		 where tps_check_detail.create_time &gt;= #{createTime}
+		 and tps_check_detail.create_time &lt;= #{activeTime}
+</select>
+</mapper>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="s_updateCheckDetail" log="false" className="com.unlcn.ils.tps.services.CheckDetailService" method="updateArgueStatus">
+  <name>更新过期未申诉的明细表状态</name>
+  <inputs>
+    <input collection="false" desc="" id="idList" required="true" type="java.util.List"/>
+  </inputs>
+  <outputs/>
+  <params>
+    <param autoValue="Input.idList" name="idList" signature="QList&lt;QInteger;>;" type="java.util.List"/>
+  </params>
+  <return signature="V" type="void"/>
+</CustomRule>

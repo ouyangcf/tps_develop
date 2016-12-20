@@ -1,0 +1,253 @@
+﻿<html><head>
+ 
+		<meta charset="UTF-8">
+		<!-- <base href="http://rd.unlcn.com:80/ils/"> -->
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+	<body>
+		<div class="crm-home">
+			<div class="banner"><img src="images/banner_01.jpg"></div>
+			<div class="submenu">
+				<dl class="column">
+					<dt><img src="images/column_01.png"></dt>
+					<dd>客服标准管理</dd>
+				</dl>
+				<dl class="column">
+					<dt><img src="images/column_02.png"></dt>
+					<dd>客户档案管理</dd>
+				</dl>
+				<dl class="column">
+					<dt><img src="images/column_03.png"></dt>
+					<dd>客诉异常管理</dd>
+				</dl>
+				<dl class="column">
+					<dt><img src="images/column_04.png"></dt>
+					<dd>订单交付管理</dd>
+				</dl>
+				<dl class="column">
+					<dt><img src="images/column_05.png"></dt>
+					<dd>知识库管理</dd>
+				</dl>
+				<div id="reportdiv" class="more" onclick="isShow()"></div>
+				<ul id="reportdivitems" class="item"><li onclick="showReport(this,3)" class="check"><span>日数据</span></li><li onclick="showReport(this,2)" class="check"><span>周数据</span></li><li onclick="showReport(this,1)" class="check"><span>月数据</span></li>
+				</ul>
+			</div>
+			<div class="area">
+				<div id="reportAreaDiv" class="floor attic"><div id="reportlist2" class="list"><div class="base"><h2>周数据</h2><iframe  scrolling="no" frameborder ="0" width="355" height="230" src="/tps/ReportServer?formlet=demoweek.frm"></iframe></div></div><div id="reportlist1" class="list"><div class="base"><h2>月数据</h2><iframe  scrolling="no" frameborder ="0" width="355" height="230" src="/tps/ReportServer?formlet=demomonth.frm" ></iframe></div></div>
+				
+				</div>
+				
+				
+				<div id="reportfloorDiv" class="floor attic"><div id="reportlist3" class="list time"><div class="base"><h2>日数据</h2><iframe  scrolling="no" frameborder ="0" width="355" height="230" src="/tps/ReportServer?formlet=demoday.frm" ></iframe></div></div>
+					<div class="list wait waitdiv" style="width: 248px;">
+						<div class="base">
+							<h2>待办事项</h2>
+							<ul class="text" id="curTodoUl">
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			
+		</div>
+		
+		<div class="link-box">
+			<a href="javascript:void(0)" onclick=""><img src="images/link_01.jpg"></a>
+			<a href="javascript:void(0)" onclick=""><img src="images/link_02.jpg"></a>
+			<a href="javascript:void(0)" onclick="dolink('#/')"><img src="images/link_03.jpg"></a>
+			<a href="javascript:void(0)" onclick=""><img src="images/link_04.jpg"></a>
+		</div>
+		
+		<script type="text/javascript" src="assets/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				//给定顶部楼层宽度和间隙
+				var attWidth = $(".attic").width();
+				var floorWidth = $(".floor").width();
+				var waitWidth = floorWidth * 0.25 - 15;
+				var listWidth = (attWidth - 30) / 3;
+				$(".crm-home .area .floor .wait").width(""+waitWidth+"px");
+				$(".crm-home .area .attic .list").width(""+listWidth+"px");
+				$(window).resize(function(){
+					var attWidth = $(".attic").width();
+					var floorWidth = $(".floor").width();
+					var waitWidth = floorWidth * 0.25 - 15;
+					var listWidth = (attWidth - 30) / 3;
+					$(".crm-home .area .floor .wait").width(""+waitWidth+"px");
+					$(".crm-home .area .attic .list").width(""+listWidth+"px");
+				})
+			})
+		   loadCurTodoList();
+		   loadReport();
+		   loadMenus();
+			//待办跳转
+		   function dotask(url){
+				parent.window.location.href=url;
+		   }
+			
+		   //右侧图标跳转
+		   function dolink(url){
+			   parent.window.location.href=url;
+			   parent.window.location.reload();   
+		   }
+		   
+		   //是否显示table业
+		   function isShow(){
+			if($('#reportdivitems').is(':visible')){
+				$('#reportdivitems').hide();
+			}else{
+				$('#reportdivitems').show();
+			}
+		   }
+		   
+		   //是否显示报表 
+		   function showReport(event,index){
+			   if($(event).hasClass('check')){
+			     $(event).removeClass("check");
+			     $("#reportlist"+index).hide();
+			   }else{
+				 $(event).addClass("check");  
+				 $("#reportlist"+index).show();
+			   }
+		   }
+			
+	   //加载代办事项
+	function loadCurTodoList(){
+		debugger;
+		$.ajax({
+			headers : {
+				'Accept' : 'application/json',
+				'Content-Type' : 'application/json'
+			},
+			'type' : 'POST',
+			'url' : '../ws/s_getDeals',
+			//'data' : JSON.stringify({
+			//	userId : userId
+			//}),
+			 data: '{}',
+             traditional: true,
+			'dataType' : 'json',
+			'success' : function(data, type, request) {
+				//for (var i in data) {  
+                    //var jsonObj =data[i]; 
+                    debugger;
+                    console.info(data.result);
+                    if (data.result.length==0) {
+ 		var nothing='<li><a href="javascript:void(0)">'+'暂无事项处理'+'</li>'
+                    	$("#curTodoUl").prepend(nothing);                   	
+                    	return;
+                    }
+                    var jsonObj =data.result; 
+                    for (var j = 0; j < jsonObj.length; j++) {  
+                    	var appendHtml='<li><a href="javascript:void(0)" onclick="dotask(\''+jsonObj[j].form +'\')">'+jsonObj[j].tips+'</li>'
+                    	$("#curTodoUl").prepend(appendHtml);
+                    }  
+                  
+
+               // }  
+			},
+			'error' : function(xmlhttprequest, errorinfo) {
+				showMsg("系统错误！请联系管理员");
+			}
+		});
+		
+		
+	}
+	   
+	   
+	   //加载代办事项
+	function loadMenus(){
+		$.ajax({
+			headers : {
+				'Accept' : 'application/json',
+				'Content-Type' : 'application/json'
+			},
+			'type' : 'POST',
+			'url' : 'ws/getMenuByPermission',
+			//'data' : JSON.stringify({
+			//	userId : userId
+			//}),
+			 data: '{}',
+             traditional: true,
+			'dataType' : 'json',
+			'success' : function(data, type, request) {
+				for (var i in data) {
+					 var jsonObj =data.result; 
+					  for (var j = 0; j < jsonObj.length; j++) { 
+						  if(jsonObj[j].t=='CRM'){
+							  var crmobj = jsonObj[j].c;
+							  for(var m=0;m<crmobj.length;m++){
+								 // alert(crmobj[m].t)
+							  }
+							  
+						  }
+					  }
+					
+                }  
+			},
+			'error' : function(xmlhttprequest, errorinfo) {
+				showMsg("系统错误！请联系管理员");
+			}
+		});
+		
+		
+	}
+		
+	   
+	  //加载报表
+	function loadReport(){
+		$.ajax({
+			headers : {
+				'Accept' : 'application/json',
+				'Content-Type' : 'application/json'
+			},
+			'type' : 'POST',
+			'url' : 'ws/queryByDictTypeName',
+			'data' : JSON.stringify({
+				typeName : '报表管理'
+			}),
+             traditional: true,
+			'dataType' : 'json',
+			'success' : function(data, type, request) {
+				for (var i in data) {  
+                    var jsonObj =data[i]; 
+                    for (var j = 0; j < jsonObj.length; j++) {  
+                    	var reportItemsHtml = '<li onclick="showReport(this,'+j+')" class="check"><span>'+jsonObj[j].dictdataName+'</span></li>';
+                    	 $("#reportdivitems").prepend(reportItemsHtml);
+                    	 
+                     var appendHtml='<div id="reportlist'+j+'" class="list">'+
+					                   '<div class="base">'+
+						                  '<h2>'+jsonObj[j].dictdataName+'</h2>'+
+						                    '<div class="content"><img src="'+jsonObj[j].dictdataValue+'" /></div>'+
+				                    	'</div>'+
+				                     '</div>';
+                     var dictdataName=jsonObj[j].dictdataName;
+				           if(dictdataName.indexOf('交互及时率')<0){
+				               $("#reportAreaDiv").prepend(appendHtml);
+				           }else{
+				        	   var appendfootHtml='<div  id="reportlist'+j+'" class="list time">'+
+			                   '<div class="base">'+
+				                  '<h2>'+jsonObj[j].dictdataName+'</h2>'+
+				                    '<div class="content"><img src="'+jsonObj[j].dictdataValue+'" /></div>'+
+		                    	'</div>'+
+		                     '</div>';
+				        	   $("#reportfloorDiv").prepend(appendfootHtml);
+				           }
+                    }
+                  
+                  
+                }  
+			},
+			'error' : function(xmlhttprequest, errorinfo) {
+				showMsg("系统错误！请联系管理员");
+			}
+		});
+		
+		
+	}
+		</script>
+	
+
+</body></html>

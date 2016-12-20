@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><mapper namespace="com.unlcn.ils.tps.E_accountMapper">	
+
+<!-- ElementID:column_sql,Generated=true -->
+<sql id="column_sql">
+		  td_account.id ,
+		  td_account.customer_id ,
+		  td_account.owner_type ,
+		  td_account.name ,
+		  td_account.bank ,
+		  td_account.account_number ,
+		  td_account.account_filepath ,
+		  td_account.bank_open_branch ,
+		  td_account.owner_name ,
+		  td_account.desc_ ,
+		  td_account.start_time ,
+		  td_account.end_time ,
+		  td_account.status ,
+		  td_account.type ,
+		  td_account.oper_user ,
+		  td_account.oper_time ,
+		  td_account.flag 
+</sql>
+
+<!-- ElementID:whereClause_sql,Generated=true -->
+<sql id="whereClause_sql">
+	    <if test="id != null">and td_account.id = #{id}</if>
+	    <if test="customerId != null">and td_account.customer_id = #{customerId}</if>
+	    <if test="ownerType != null">and td_account.owner_type = #{ownerType}</if>
+	    <if test="name != null">and td_account.name = #{name}</if>
+	    <if test="bank != null">and td_account.bank = #{bank}</if>
+	    <if test="accountNumber != null">and td_account.account_number = #{accountNumber}</if>
+	    <if test="accountFilepath != null">and td_account.account_filepath = #{accountFilepath}</if>
+	    <if test="bankOpenBranch != null">and td_account.bank_open_branch = #{bankOpenBranch}</if>
+	    <if test="ownerName != null">and td_account.owner_name = #{ownerName}</if>
+	    <if test="desc != null">and td_account.desc_ = #{desc}</if>
+	    <if test="startTime != null">and td_account.start_time = #{startTime}</if>
+	    <if test="endTime != null">and td_account.end_time = #{endTime}</if>
+	    <if test="status != null">and td_account.status = #{status}</if>
+	    <if test="type != null">and td_account.type = #{type}</if>
+	    <if test="operUser != null">and td_account.oper_user = #{operUser}</if>
+	    <if test="operTime != null">and td_account.oper_time = #{operTime}</if>
+	    <if test="flag != null">and td_account.flag = #{flag}</if>
+</sql>
+
+
+<!-- ElementID:E_accountResult,Generated=true -->
+<resultMap id="E_accountResult" type="com.unlcn.ils.tps.E_account">
+	<id property="id" column="id"/>
+	<result property="customerId" column="customer_id"/>
+	<result property="ownerType" column="owner_type"/>
+	<result property="name" column="name"/>
+	<result property="bank" column="bank"/>
+	<result property="accountNumber" column="account_number"/>
+	<result property="accountFilepath" column="account_filepath"/>
+	<result property="bankOpenBranch" column="bank_open_branch"/>
+	<result property="ownerName" column="owner_name"/>
+	<result property="desc" column="desc_"/>
+	<result property="startTime" column="start_time"/>
+	<result property="endTime" column="end_time"/>
+	<result property="status" column="status"/>
+	<result property="type" column="type"/>
+	<result property="operUser" column="oper_user"/>
+	<result property="operTime" column="oper_time"/>
+	<result property="flag" column="flag"/>
+</resultMap>
+
+
+<!-- ElementName:cache,Generated=true -->
+<cache type="C2_Default_Dao_Cache"/>
+
+<!-- ElementID:insert,Generated=true -->
+<insert id="insert" parameterType="com.unlcn.ils.tps.E_account">
+	insert into td_account(
+	         <if test="id != null">id</if>
+	         <if test="customerId != null">,customer_id</if>
+	         <if test="ownerType != null">,owner_type</if>
+	         <if test="name != null">,name</if>
+	         <if test="bank != null">,bank</if>
+	         <if test="accountNumber != null">,account_number</if>
+	         <if test="accountFilepath != null">,account_filepath</if>
+	         <if test="bankOpenBranch != null">,bank_open_branch</if>
+	         <if test="ownerName != null">,owner_name</if>
+	         <if test="desc != null">,desc_</if>
+	         <if test="startTime != null">,start_time</if>
+	         <if test="endTime != null">,end_time</if>
+	         <if test="status != null">,status</if>
+	         <if test="type != null">,type</if>
+	         <if test="operUser != null">,oper_user</if>
+	         <if test="operTime != null">,oper_time</if>
+	         <if test="flag != null">,flag</if>
+	 	 	 )
+	 values (
+	         <if test="id != null">#{id,jdbcType=VARCHAR}</if>
+	         <if test="customerId != null">,#{customerId,jdbcType=VARCHAR}</if>
+	         <if test="ownerType != null">,#{ownerType,jdbcType=VARCHAR}</if>
+	         <if test="name != null">,#{name,jdbcType=VARCHAR}</if>
+	         <if test="bank != null">,#{bank,jdbcType=VARCHAR}</if>
+	         <if test="accountNumber != null">,#{accountNumber,jdbcType=VARCHAR}</if>
+	         <if test="accountFilepath != null">,#{accountFilepath,jdbcType=VARCHAR}</if>
+	         <if test="bankOpenBranch != null">,#{bankOpenBranch,jdbcType=VARCHAR}</if>
+	         <if test="ownerName != null">,#{ownerName,jdbcType=VARCHAR}</if>
+	         <if test="desc != null">,#{desc,jdbcType=VARCHAR}</if>
+	         <if test="startTime != null">,#{startTime,jdbcType=TIMESTAMP}</if>
+	         <if test="endTime != null">,#{endTime,jdbcType=TIMESTAMP}</if>
+	         <if test="status != null">,#{status,jdbcType=VARCHAR}</if>
+	         <if test="type != null">,#{type,jdbcType=VARCHAR}</if>
+	         <if test="operUser != null">,#{operUser,jdbcType=VARCHAR}</if>
+	         <if test="operTime != null">,#{operTime,jdbcType=TIMESTAMP}</if>
+	         <if test="flag != null">,#{flag,jdbcType=NUMERIC}</if>
+	 	 	 )
+</insert>
+
+<!-- ElementID:count,Generated=true -->
+<select id="count" parameterType="com.unlcn.ils.tps.E_account" resultType="int">
+	select count(*) from td_account 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+<!-- ElementID:update,Generated=true -->
+<update id="update" parameterType="com.unlcn.ils.tps.E_account">
+	update td_account
+<set>
+	<if test="customerId != null">customer_id=#{customerId,jdbcType=VARCHAR},</if>
+	<if test="ownerType != null">owner_type=#{ownerType,jdbcType=VARCHAR},</if>
+	<if test="name != null">name=#{name,jdbcType=VARCHAR},</if>
+	<if test="bank != null">bank=#{bank,jdbcType=VARCHAR},</if>
+	<if test="accountNumber != null">account_number=#{accountNumber,jdbcType=VARCHAR},</if>
+	<if test="accountFilepath != null">account_filepath=#{accountFilepath,jdbcType=VARCHAR},</if>
+	<if test="bankOpenBranch != null">bank_open_branch=#{bankOpenBranch,jdbcType=VARCHAR},</if>
+	<if test="ownerName != null">owner_name=#{ownerName,jdbcType=VARCHAR},</if>
+	<if test="desc != null">desc_=#{desc,jdbcType=VARCHAR},</if>
+	<if test="startTime != null">start_time=#{startTime,jdbcType=TIMESTAMP},</if>
+	<if test="endTime != null">end_time=#{endTime,jdbcType=TIMESTAMP},</if>
+	<if test="status != null">status=#{status,jdbcType=VARCHAR},</if>
+	<if test="type != null">type=#{type,jdbcType=VARCHAR},</if>
+	<if test="operUser != null">oper_user=#{operUser,jdbcType=VARCHAR},</if>
+	<if test="operTime != null">oper_time=#{operTime,jdbcType=TIMESTAMP},</if>
+	<if test="flag != null">flag=#{flag,jdbcType=NUMERIC}</if>
+</set>
+<where>
+	<choose>
+        <when test="id != null">and id = #{id}</when>
+        <otherwise>and id = </otherwise>
+    </choose>
+</where>
+</update>
+
+<!-- ElementID:updateNull,Generated=true -->
+<update id="updateNull" parameterType="map">
+	update td_account
+	<set>
+		<trim suffixOverrides=",">
+		    <if test="customerId==null">customer_id = null,</if>
+		    <if test="ownerType==null">owner_type = null,</if>
+		    <if test="name==null">name = null,</if>
+		    <if test="bank==null">bank = null,</if>
+		    <if test="accountNumber==null">account_number = null,</if>
+		    <if test="accountFilepath==null">account_filepath = null,</if>
+		    <if test="bankOpenBranch==null">bank_open_branch = null,</if>
+		    <if test="ownerName==null">owner_name = null,</if>
+		    <if test="desc==null">desc_ = null,</if>
+		    <if test="startTime==null">start_time = null,</if>
+		    <if test="endTime==null">end_time = null,</if>
+		    <if test="status==null">status = null,</if>
+		    <if test="type==null">type = null,</if>
+		    <if test="operUser==null">oper_user = null,</if>
+		    <if test="operTime==null">oper_time = null,</if>
+		    <if test="flag==null">flag = null,</if>
+		</trim>
+	</set>
+	<where>
+		<choose>
+			<when test="id != null">and id = #{id}</when>
+			<otherwise>and id = </otherwise>
+		</choose>
+	</where>
+</update>
+
+<!-- ElementID:delete,Generated=true -->
+<delete id="delete" parameterType="com.unlcn.ils.tps.E_account">
+    delete from td_account where 1=1 and id = #{id}
+</delete>
+
+<!-- ElementID:select,Generated=true -->
+<select id="select" parameterType="com.unlcn.ils.tps.E_account" resultMap="E_accountResult">
+	select 
+		<include refid="column_sql"/>
+	    from td_account 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:insertBatch,Generated=true -->
+<insert id="insertBatch" parameterType="list">
+	insert into td_account (id,customer_id,owner_type,name,bank,account_number,account_filepath,bank_open_branch,owner_name,desc_,start_time,end_time,status,type,oper_user,oper_time,flag) 
+<foreach collection="list" item="entity" index="index" separator="union all">
+		select 
+		#{entity.id,jdbcType = VARCHAR},
+				#{entity.customerId,jdbcType = VARCHAR},
+				#{entity.ownerType,jdbcType = VARCHAR},
+				#{entity.name,jdbcType = VARCHAR},
+				#{entity.bank,jdbcType = VARCHAR},
+				#{entity.accountNumber,jdbcType = VARCHAR},
+				#{entity.accountFilepath,jdbcType = VARCHAR},
+				#{entity.bankOpenBranch,jdbcType = VARCHAR},
+				#{entity.ownerName,jdbcType = VARCHAR},
+				#{entity.desc,jdbcType = VARCHAR},
+				#{entity.startTime,jdbcType = TIMESTAMP},
+				#{entity.endTime,jdbcType = TIMESTAMP},
+				#{entity.status,jdbcType = VARCHAR},
+				#{entity.type,jdbcType = VARCHAR},
+				#{entity.operUser,jdbcType = VARCHAR},
+				#{entity.operTime,jdbcType = TIMESTAMP},
+				#{entity.flag,jdbcType = NUMERIC}
+		from dual
+</foreach>
+</insert>
+
+<!-- ElementID:deleteBatch,Generated=true -->
+<delete id="deleteBatch" parameterType="List">
+	delete from td_account where id in
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<foreach collection="list" item="entity" separator=",">
+	#{entity.id}
+</foreach>
+</trim>
+</delete>
+
+<!-- ElementID:selectAll,Generated=true -->
+<select id="selectAll" resultMap="E_accountResult">
+	select 
+		<include refid="column_sql"/>
+	    from td_account 
+</select>
+
+<!-- ElementID:selectByID,Generated=true -->
+<select id="selectByID" parameterType="java.lang.String" resultMap="E_accountResult">
+	select 
+		<include refid="column_sql"/>
+	    from td_account 
+		 where td_account.id = #{id,jdbcType=VARCHAR}
+</select>
+
+<!-- ElementID:selectByPage,Generated=true -->
+<select id="selectByPage" parameterType="com.unlcn.ils.tps.E_account" resultMap="E_accountResult">
+	select 
+		<include refid="column_sql"/>
+	    from td_account 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:selectMany,Generated=true -->
+<select id="selectMany" parameterType="list" resultMap="E_accountResult">
+select 
+	<include refid="column_sql"/> 
+	from td_account 
+	where td_account.id in (
+		select distinct id from td_account inner join
+<foreach collection="list" item="entity" separator="inner join">
+		(select 
+			distinct id
+			from td_account 
+			<where>
+	        <if test="entity.id != null">and td_account.id = #{entity.id}</if>
+	        <if test="entity.customerId != null">and td_account.customer_id = #{entity.customerId}</if>
+	        <if test="entity.ownerType != null">and td_account.owner_type = #{entity.ownerType}</if>
+	        <if test="entity.name != null">and td_account.name = #{entity.name}</if>
+	        <if test="entity.bank != null">and td_account.bank = #{entity.bank}</if>
+	        <if test="entity.accountNumber != null">and td_account.account_number = #{entity.accountNumber}</if>
+	        <if test="entity.accountFilepath != null">and td_account.account_filepath = #{entity.accountFilepath}</if>
+	        <if test="entity.bankOpenBranch != null">and td_account.bank_open_branch = #{entity.bankOpenBranch}</if>
+	        <if test="entity.ownerName != null">and td_account.owner_name = #{entity.ownerName}</if>
+	        <if test="entity.desc != null">and td_account.desc_ = #{entity.desc}</if>
+	        <if test="entity.startTime != null">and td_account.start_time = #{entity.startTime}</if>
+	        <if test="entity.endTime != null">and td_account.end_time = #{entity.endTime}</if>
+	        <if test="entity.status != null">and td_account.status = #{entity.status}</if>
+	        <if test="entity.type != null">and td_account.type = #{entity.type}</if>
+	        <if test="entity.operUser != null">and td_account.oper_user = #{entity.operUser}</if>
+	        <if test="entity.operTime != null">and td_account.oper_time = #{entity.operTime}</if>
+	        <if test="entity.flag != null">and td_account.flag = #{entity.flag}</if>
+			</where>
+		) ${entity.tableAlias} using (id)
+</foreach>
+)
+</select>
+</mapper>

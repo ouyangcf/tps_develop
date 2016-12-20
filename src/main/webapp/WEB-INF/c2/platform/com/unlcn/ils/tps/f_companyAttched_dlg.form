@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form:Form xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dync="http://www.chinacreator.com/platform/mvc/ui/dync" xmlns:form="http://www.chinacreator.com/platform/mvc/form" name="公司附件上传" sn="companyAttched_dlg" type="form">
+  <form:control type="page/modal">
+    <form:attributes source="page/modal">
+      <dync:attribute default="" group="HTML" id="title" name="标题" value="附件上传">
+        <dync:render colSpan="2" height="0" multi="false" name="text"/>
+        <dync:children/>
+      </dync:attribute>
+      <dync:attribute default="" group="事件" id="onload" name="页面加载完成" value="page_onload()">
+        <dync:render colSpan="2" height="0" multi="false" name="event">
+          <dync:item name="param" value=""/>
+        </dync:render>
+        <dync:children/>
+      </dync:attribute>
+    </form:attributes>
+  </form:control>
+  <form:child xsi:type="form:Group" id="newGroupId1" name="新分组">
+    <form:control type="container/div">
+      <form:attributes source="container/div">
+        <dync:attribute default="false" group="HTML配置" id="pure" name="简单div" value="false">
+          <dync:render/>
+          <dync:children/>
+        </dync:attribute>
+        <dync:attribute default="12" group="HTML配置" id="span" name="占位数" value="12">
+          <dync:render/>
+          <dync:children/>
+        </dync:attribute>
+        <dync:attribute default="0" group="HTML配置" id="offset" name="偏移" value="0">
+          <dync:render/>
+          <dync:children/>
+        </dync:attribute>
+        <dync:attribute default="" group="HTML配置" id="collapse" name="隐藏" value="true">
+          <dync:render/>
+          <dync:children/>
+        </dync:attribute>
+        <dync:attribute default="false" group="HTML配置" id="defaultCollapse" name="隐藏默认值" value="false">
+          <dync:render/>
+          <dync:children/>
+        </dync:attribute>
+        <dync:attribute default="false" group="HTML配置" id="autoHeight" name="自动高度" value="false">
+          <dync:render/>
+          <dync:children/>
+        </dync:attribute>
+        <dync:attribute default="false" group="HTML配置" id="nopadding" name="无内边距" value="false">
+          <dync:render/>
+          <dync:children/>
+        </dync:attribute>
+        <dync:attribute default="" group="高级自定义" id="html" name="自定义HTML" value="">
+          <dync:render/>
+          <dync:children/>
+        </dync:attribute>
+        <dync:attribute default="" group="高级自定义" id="cssClass" name="自定义class" value="">
+          <dync:render/>
+          <dync:children/>
+        </dync:attribute>
+        <dync:attribute default="" group="高级自定义" id="style" name="自定义style" value="">
+          <dync:render/>
+          <dync:children/>
+        </dync:attribute>
+      </form:attributes>
+    </form:control>
+    <form:child xsi:type="form:Field" binding="$params.fileUpload" id="fileUpload" name="文件上传" customize="true">
+      <form:control type="widget/multiple_file_input_iframe">
+        <form:attributes source="widget/multiple_file_input_iframe">
+          <dync:attribute default="" group="事件" id="onSuccess" name="上传成功" value="fileUpload_onSuccess(data)">
+            <dync:render colSpan="2" height="0" multi="false" name="event">
+              <dync:item name="params" value="data"/>
+            </dync:render>
+            <dync:children/>
+          </dync:attribute>
+          <dync:attribute default="" group="事件" id="onError" name="上传失败" value="fileUpload_onError(data)">
+            <dync:render colSpan="2" height="0" multi="false" name="event">
+              <dync:item name="params" value="data"/>
+            </dync:render>
+            <dync:children/>
+          </dync:attribute>
+        </form:attributes>
+      </form:control>
+      <form:validation/>
+    </form:child>
+  </form:child>
+  <form:child xsi:type="form:Group" id="div" name="简单容器(DIV)">
+    <form:control type="container/div">
+      <form:attributes source="container/div">
+        <dync:attribute default="" group="高级自定义" id="cssClass" name="自定义class" value="condition_div">
+          <dync:render colSpan="2" height="0" multi="false" name="text"/>
+          <dync:children/>
+        </dync:attribute>
+        <dync:attribute default="" group="HTML配置" id="collapse" name="隐藏" value="true">
+          <dync:render colSpan="2" height="0" multi="false" name="text"/>
+          <dync:children/>
+        </dync:attribute>
+      </form:attributes>
+    </form:control>
+    <form:child xsi:type="form:Group" id="div1" name="简单容器(DIV)">
+      <form:control type="container/div">
+        <form:attributes source="container/div">
+          <dync:attribute default="" group="高级自定义" id="cssClass" name="自定义class" value="search_div">
+            <dync:render colSpan="2" height="0" multi="false" name="text"/>
+            <dync:children/>
+          </dync:attribute>
+          <dync:attribute default="" group="高级自定义" id="style" name="自定义style" value="padding-right:15px;">
+            <dync:render colSpan="2" height="0" multi="false" name="text"/>
+            <dync:children/>
+          </dync:attribute>
+        </form:attributes>
+      </form:control>
+      <form:child xsi:type="form:Field" id="buttonUpon" name="上传" customize="true">
+        <form:control type="widget/button">
+          <form:attributes source="widget/button">
+            <dync:attribute default="btn-primary" group="HTML设置" id="style" name="样式" value="btn-success">
+              <dync:render colSpan="1" height="0" multi="false" name="select">
+                <dync:item name="默认" value="btn-default"/>
+                <dync:item name="主要" value="btn-primary"/>
+                <dync:item name="成功" value="btn-success"/>
+                <dync:item name="信息" value="btn-info"/>
+                <dync:item name="警告" value="btn-warning"/>
+                <dync:item name="危险" value="btn-danger"/>
+                <dync:item name="链接" value="btn-link"/>
+                <dync:item name="通用" value="btn-white no-border"/>
+              </dync:render>
+              <dync:children/>
+            </dync:attribute>
+            <dync:attribute default="" group="事件设置" id="click" name="点击事件" value="buttonUpon_click($event)">
+              <dync:render colSpan="1" height="0" multi="false" name="event">
+                <dync:item name="params" value="$event"/>
+              </dync:render>
+              <dync:children/>
+            </dync:attribute>
+          </form:attributes>
+        </form:control>
+        <form:validation/>
+      </form:child>
+      <form:child xsi:type="form:Field" id="button22" name="取消" customize="true">
+        <form:control type="widget/button">
+          <form:attributes source="widget/button">
+            <dync:attribute default="btn-primary" group="HTML设置" id="style" name="样式" value="btn-warning">
+              <dync:render colSpan="1" height="0" multi="false" name="select">
+                <dync:item name="默认" value="btn-default"/>
+                <dync:item name="主要" value="btn-primary"/>
+                <dync:item name="成功" value="btn-success"/>
+                <dync:item name="信息" value="btn-info"/>
+                <dync:item name="警告" value="btn-warning"/>
+                <dync:item name="危险" value="btn-danger"/>
+                <dync:item name="链接" value="btn-link"/>
+                <dync:item name="通用" value="btn-white no-border"/>
+              </dync:render>
+              <dync:children/>
+            </dync:attribute>
+            <dync:attribute default="" group="事件设置" id="click" name="点击事件" value="button22_click($event)">
+              <dync:render colSpan="1" height="0" multi="false" name="event">
+                <dync:item name="params" value="$event"/>
+              </dync:render>
+              <dync:children/>
+            </dync:attribute>
+          </form:attributes>
+        </form:control>
+        <form:validation/>
+      </form:child>
+    </form:child>
+  </form:child>
+  <form:child xsi:type="form:Group" id="div2" name="简单容器(DIV)">
+    <form:control type="container/div">
+      <form:attributes source="container/div">
+        <dync:attribute default="" group="高级自定义" id="cssClass" name="自定义class" value="condition_div">
+          <dync:render colSpan="2" height="0" multi="false" name="text"/>
+          <dync:children/>
+        </dync:attribute>
+      </form:attributes>
+    </form:control>
+    <form:child xsi:type="form:Field" id="fileInputIframe" name="营业执照照片" customize="true">
+      <form:control type="widget/file_input_iframe">
+        <form:attributes source="widget/file_input_iframe">
+          <dync:attribute default="" group="事件" id="onSuccess" name="上传成功" value="fileInputIframe_onSuccess(data)">
+            <dync:render colSpan="2" height="0" multi="false" name="event">
+              <dync:item name="params" value="data"/>
+            </dync:render>
+            <dync:children/>
+          </dync:attribute>
+          <dync:attribute default="" group="事件" id="onError" name="上传失败" value="fileInputIframe_onError(data)">
+            <dync:render colSpan="2" height="0" multi="false" name="event">
+              <dync:item name="params" value="data"/>
+            </dync:render>
+            <dync:children/>
+          </dync:attribute>
+          <dync:attribute default="dbdir" group="HTML属性" id="process" name="上传处理器" value="dir">
+            <dync:render colSpan="1" height="0" multi="false" name="text"/>
+            <dync:children/>
+          </dync:attribute>
+          <dync:attribute default="75" group="布局属性" id="lableWidth" name="lable宽度" value="100">
+            <dync:render colSpan="1" height="0" multi="false" name="text"/>
+            <dync:children/>
+          </dync:attribute>
+          <dync:attribute default="6" group="布局属性" id="span" name="占位数" value="8">
+            <dync:render colSpan="1" height="0" multi="false" name="text"/>
+            <dync:children/>
+          </dync:attribute>
+        </form:attributes>
+      </form:control>
+      <form:validation/>
+    </form:child>
+    <form:child xsi:type="form:Group" id="div4" name="简单容器(DIV)">
+      <form:control type="container/div">
+        <form:attributes source="container/div">
+          <dync:attribute default="12" group="HTML配置" id="span" name="占位数" value="1">
+            <dync:render colSpan="1" height="0" multi="false" name="text"/>
+            <dync:children/>
+          </dync:attribute>
+          <dync:attribute default="" group="高级自定义" id="style" name="自定义style" value="margin-top:10px">
+            <dync:render colSpan="2" height="0" multi="false" name="text"/>
+            <dync:children/>
+          </dync:attribute>
+        </form:attributes>
+      </form:control>
+      <form:child xsi:type="form:Field" id="buttonA1" name="照片预览" customize="true">
+        <form:control type="widget/button_a">
+          <form:attributes source="widget/button_a">
+            <dync:attribute default="" group="HTML设置" id="icon" name="图标" value="fa-arrows-alt">
+              <dync:render colSpan="1" height="0" multi="false" name="selectIcon"/>
+              <dync:children/>
+            </dync:attribute>
+            <dync:attribute default="" group="事件设置" id="click" name="单击事件" value="buttonA1_click($event)">
+              <dync:render colSpan="1" height="0" multi="false" name="event">
+                <dync:item name="params" value="$event"/>
+              </dync:render>
+              <dync:children/>
+            </dync:attribute>
+          </form:attributes>
+        </form:control>
+        <form:validation/>
+      </form:child>
+    </form:child>
+    <form:child xsi:type="form:Group" id="div6" name="简单容器(DIV)">
+      <form:control type="container/div">
+        <form:attributes source="container/div">
+          <dync:attribute default="12" group="HTML配置" id="span" name="占位数" value="2">
+            <dync:render colSpan="1" height="0" multi="false" name="text"/>
+            <dync:children/>
+          </dync:attribute>
+          <dync:attribute default="" group="高级自定义" id="cssClass" name="自定义class" value="search_div">
+            <dync:render colSpan="2" height="0" multi="false" name="text"/>
+            <dync:children/>
+          </dync:attribute>
+          <dync:attribute default="" group="高级自定义" id="style" name="自定义style" value="padding-right:50px;">
+            <dync:render colSpan="2" height="0" multi="false" name="text"/>
+            <dync:children/>
+          </dync:attribute>
+        </form:attributes>
+      </form:control>
+      <form:child xsi:type="form:Field" id="button1" name="上传" customize="true">
+        <form:control type="widget/button">
+          <form:attributes source="widget/button">
+            <dync:attribute default="" group="事件设置" id="click" name="点击事件" value="button1_click($event)">
+              <dync:render colSpan="1" height="0" multi="false" name="event">
+                <dync:item name="params" value="$event"/>
+              </dync:render>
+              <dync:children/>
+            </dync:attribute>
+          </form:attributes>
+        </form:control>
+        <form:validation/>
+      </form:child>
+    </form:child>
+  </form:child>
+  <form:child xsi:type="form:Group" id="div3" name="简单容器(DIV)">
+    <form:control type="container/div">
+      <form:attributes source="container/div">
+        <dync:attribute default="" group="高级自定义" id="cssClass" name="自定义class" value="condition_div">
+          <dync:render colSpan="2" height="0" multi="false" name="text"/>
+          <dync:children/>
+        </dync:attribute>
+      </form:attributes>
+    </form:control>
+    <form:child xsi:type="form:Field" id="fileInputIframe1" name="道路运输许可证" customize="true">
+      <form:control type="widget/file_input_iframe">
+        <form:attributes source="widget/file_input_iframe">
+          <dync:attribute default="" group="事件" id="onSuccess" name="上传成功" value="fileInputIframe1_onSuccess(data)">
+            <dync:render colSpan="2" height="0" multi="false" name="event">
+              <dync:item name="params" value="data"/>
+            </dync:render>
+            <dync:children/>
+          </dync:attribute>
+          <dync:attribute default="" group="事件" id="onError" name="上传失败" value="fileInputIframe1_onError(data)">
+            <dync:render colSpan="2" height="0" multi="false" name="event">
+              <dync:item name="params" value="data"/>
+            </dync:render>
+            <dync:children/>
+          </dync:attribute>
+          <dync:attribute default="dbdir" group="HTML属性" id="process" name="上传处理器" value="dir">
+            <dync:render colSpan="1" height="0" multi="false" name="text"/>
+            <dync:children/>
+          </dync:attribute>
+          <dync:attribute default="75" group="布局属性" id="lableWidth" name="lable宽度" value="100">
+            <dync:render colSpan="1" height="0" multi="false" name="text"/>
+            <dync:children/>
+          </dync:attribute>
+          <dync:attribute default="6" group="布局属性" id="span" name="占位数" value="8">
+            <dync:render colSpan="1" height="0" multi="false" name="text"/>
+            <dync:children/>
+          </dync:attribute>
+        </form:attributes>
+      </form:control>
+      <form:validation/>
+    </form:child>
+    <form:child xsi:type="form:Group" id="div5" name="简单容器(DIV)">
+      <form:control type="container/div">
+        <form:attributes source="container/div">
+          <dync:attribute default="12" group="HTML配置" id="span" name="占位数" value="1">
+            <dync:render colSpan="1" height="0" multi="false" name="text"/>
+            <dync:children/>
+          </dync:attribute>
+          <dync:attribute default="" group="高级自定义" id="style" name="自定义style" value="margin-top:10px">
+            <dync:render colSpan="2" height="0" multi="false" name="text"/>
+            <dync:children/>
+          </dync:attribute>
+        </form:attributes>
+      </form:control>
+      <form:child xsi:type="form:Field" id="buttonA2" name="照片预览" customize="true">
+        <form:control type="widget/button_a">
+          <form:attributes source="widget/button_a">
+            <dync:attribute default="" group="HTML设置" id="icon" name="图标" value="fa-arrows-alt">
+              <dync:render colSpan="1" height="0" multi="false" name="selectIcon"/>
+              <dync:children/>
+            </dync:attribute>
+            <dync:attribute default="" group="事件设置" id="click" name="单击事件" value="buttonA2_click($event)">
+              <dync:render colSpan="1" height="0" multi="false" name="event">
+                <dync:item name="params" value="$event"/>
+              </dync:render>
+              <dync:children/>
+            </dync:attribute>
+          </form:attributes>
+        </form:control>
+        <form:validation/>
+      </form:child>
+    </form:child>
+    <form:child xsi:type="form:Group" id="div7" name="简单容器(DIV)">
+      <form:control type="container/div">
+        <form:attributes source="container/div">
+          <dync:attribute default="12" group="HTML配置" id="span" name="占位数" value="2">
+            <dync:render colSpan="1" height="0" multi="false" name="text"/>
+            <dync:children/>
+          </dync:attribute>
+          <dync:attribute default="" group="高级自定义" id="cssClass" name="自定义class" value="search_div">
+            <dync:render colSpan="2" height="0" multi="false" name="text"/>
+            <dync:children/>
+          </dync:attribute>
+          <dync:attribute default="" group="高级自定义" id="style" name="自定义style" value="padding-right:50px;">
+            <dync:render colSpan="2" height="0" multi="false" name="text"/>
+            <dync:children/>
+          </dync:attribute>
+        </form:attributes>
+      </form:control>
+      <form:child xsi:type="form:Field" id="button2" name="上传" customize="true">
+        <form:control type="widget/button">
+          <form:attributes source="widget/button">
+            <dync:attribute default="" group="事件设置" id="click" name="点击事件" value="button2_click($event)">
+              <dync:render colSpan="1" height="0" multi="false" name="event">
+                <dync:item name="params" value="$event"/>
+              </dync:render>
+              <dync:children/>
+            </dync:attribute>
+          </form:attributes>
+        </form:control>
+        <form:validation/>
+      </form:child>
+    </form:child>
+  </form:child>
+  <form:child xsi:type="form:Group" id="divView" name="简单容器(DIV)">
+    <form:control type="container/div">
+      <form:attributes source="container/div">
+        <dync:attribute default="" group="高级自定义" id="html" name="自定义HTML" value="divView_html">
+          <dync:render colSpan="2" height="0" multi="false" name="html"/>
+          <dync:children/>
+        </dync:attribute>
+        <dync:attribute default="" group="高级自定义" id="style" name="自定义style" value="text-align:center;">
+          <dync:render colSpan="2" height="0" multi="false" name="text"/>
+          <dync:children/>
+        </dync:attribute>
+      </form:attributes>
+    </form:control>
+  </form:child>
+  <form:datasources>
+    <form:datasource xsi:type="form:Inputs">
+      <form:input desc="" id="URL1" name="营业执照"/>
+      <form:input desc="" id="URL2" name="道路运输许可证"/>
+    </form:datasource>
+  </form:datasources>
+  <form:scripts>
+
+fileUpload_onSuccess:function(data){
+	Messenger.post({message:&quot;文件上传成功!&quot;,type:&quot;success&quot;,hideAfter:2,showCloseButton:true});
+	$http.post(&quot;ws/s_companyAttached&quot;,{&quot;mapList&quot;:data,&quot;id&quot;:$params.info})
+		.success(function(data){Modal.instance.close();
+		});		
+},
+
+fileUpload_onError:function(data){
+	Messenger.post({message:&quot;文件上传失败!&quot;,type:&quot;error&quot;,hideAfter:2,showCloseButton:true});		
+},
+
+
+button22_click:function($event){
+	Modal.instance.close();
+},
+
+buttonUpon_click:function($event){
+	Messenger.post({message:&quot;正在上传，请稍后!&quot;,type:&quot;info&quot;,hideAfter:2,showCloseButton:true});		
+	$view.fileUpload.submit();
+	
+},
+
+fileInputIframe_onSuccess:function(data){
+	Messenger.post({message:&quot;加载成功，请点击上传按钮!&quot;,type:&quot;info&quot;,hideAfter:2,showCloseButton:true});
+	$params.URL1 = data;
+},
+
+fileInputIframe_onError:function(data){
+	Messenger.post({message:&quot;文件上传失败!&quot;,type:&quot;error&quot;,hideAfter:2,showCloseButton:true});	
+},
+
+fileInputIframe1_onSuccess:function(data){
+	Messenger.post({message:&quot;加载成功，请点击上传按钮!&quot;,type:&quot;info&quot;,hideAfter:2,showCloseButton:true});	
+	$params.URL2 = data;
+},
+
+fileInputIframe1_onError:function(data){
+	Messenger.post({message:&quot;文件上传失败!&quot;,type:&quot;error&quot;,hideAfter:2,showCloseButton:true});	
+},
+
+button1_click:function($event){
+	Messenger.post({message:&quot;正在上传，请稍后!&quot;,type:&quot;info&quot;,hideAfter:2,showCloseButton:true});
+	var data1 = $params.URL1;
+	$http.post(&quot;ws/s_addFileBuss&quot;,{&quot;data&quot;:data1,&quot;id&quot;:$params.info})
+		.success(function(data){
+		Messenger.post({message:&quot;文件上传成功!&quot;,type:&quot;success&quot;,hideAfter:2,showCloseButton:true});
+		Modal.instance.close();
+		});	
+},
+
+button2_click:function($event){
+	Messenger.post({message:&quot;正在上传，请稍后!&quot;,type:&quot;info&quot;,hideAfter:2,showCloseButton:true});
+	var data2 = $params.URL2;
+	$http.post(&quot;ws/s_addFileTrans&quot;,{&quot;data&quot;:data2,&quot;id&quot;:$params.info})
+		.success(function(data){
+		Messenger.post({message:&quot;文件上传成功!&quot;,type:&quot;success&quot;,hideAfter:2,showCloseButton:true});
+		Modal.instance.close();
+		});
+},
+
+buttonA1_click:function($event){
+	var uur = $params.URL1.url;
+	$img_view = $(&quot;&lt;img/>&quot;);
+	$img_view.attr(&quot;src&quot;,uur);
+	$('#img_id').empty().append($img_view);
+	$view.divView.toggle();
+},
+
+buttonA2_click:function($event){
+	var uur = $params.URL2.url;
+	$img_view = $(&quot;&lt;img/>&quot;);
+	$img_view.attr(&quot;src&quot;,uur);
+	$('#img_id').empty().append($img_view);
+	$view.divView.toggle();
+},
+
+page_onload:function(){
+	$view.divView.toggle();
+}</form:scripts>
+  <form:htmls>
+&lt;script type=&quot;text/ng-template&quot; id=&quot;divView_html&quot;>
+	&lt;div id=&quot;img_id&quot;>&lt;/div>
+&lt;/script></form:htmls>
+</form:Form>

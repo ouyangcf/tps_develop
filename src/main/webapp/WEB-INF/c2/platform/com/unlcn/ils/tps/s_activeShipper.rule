@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="s_activeShipper" log="false" className="com.unlcn.ils.tps.services.ShipperInfoManageService" method="activeShipper">
+  <instanceCreator>
+    <params/>
+  </instanceCreator>
+  <name>分供方信息禁用</name>
+  <inputs>
+    <input collection="false" desc="" id="idList" required="true" type="java.util.List"/>
+    <input collection="false" desc="" id="reason" required="true"/>
+  </inputs>
+  <outputs>
+    <output autoValue="Result" desc="" id="result" name="方法返回值" type="boolean"/>
+  </outputs>
+  <params>
+    <param autoValue="Input.idList" name="idList" signature="QList&lt;QString;>;" type="java.util.List"/>
+    <param autoValue="Input.reason" name="reason" signature="QString;" type="String"/>
+  </params>
+  <return signature="Z" type="boolean"/>
+</CustomRule>

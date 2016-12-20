@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form:Form xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dync="http://www.chinacreator.com/platform/mvc/ui/dync" xmlns:form="http://www.chinacreator.com/platform/mvc/form" name="获取意向线路" sn="getInterLine_dlg_n" type="form">
+  <form:control type="page/modal">
+    <form:attributes source="page/modal">
+      <dync:attribute default="" group="事件" id="onload" name="页面加载完成" value="page_onload()">
+        <dync:render colSpan="2" height="0" multi="false" name="event">
+          <dync:item name="param" value=""/>
+        </dync:render>
+        <dync:children/>
+      </dync:attribute>
+      <dync:attribute default="" group="HTML" id="width" name="页面宽度" value="50%">
+        <dync:render colSpan="2" height="0" multi="false" name="text"/>
+        <dync:children/>
+      </dync:attribute>
+    </form:attributes>
+  </form:control>
+  <form:child xsi:type="form:Group" id="widgetbox" name="意向线路">
+    <form:control type="container/widgetbox">
+      <form:attributes source="container/widgetbox"/>
+    </form:control>
+    <form:child xsi:type="form:Group" id="widgexbox_toolbar" name="widgexbox_toolbar">
+      <form:control type="container/toolbar_widget">
+        <form:attributes source="container/toolbar_widget"/>
+      </form:control>
+    </form:child>
+    <form:child xsi:type="form:Group" id="div19" name="简单容器(DIV)">
+      <form:control type="container/div">
+        <form:attributes source="container/div"/>
+      </form:control>
+      <form:child xsi:type="form:Group" binding="$model.cutom_interline" id="cutom_interline" name="列表型数据源">
+        <form:control type="container/table_jqgrid">
+          <form:attributes source="container/table_jqgrid">
+            <dync:attribute default="true" group="表格设置" id="firstRequest" name="自动加载数据" value="false">
+              <dync:render colSpan="1" height="0" multi="false" name="checkbox"/>
+              <dync:children/>
+            </dync:attribute>
+            <dync:attribute default="true" group="工具栏" id="topToolbar" name="顶部工具栏" value="false">
+              <dync:render colSpan="1" height="0" multi="false" name="checkbox"/>
+              <dync:children/>
+            </dync:attribute>
+            <dync:attribute default="true" group="表格设置" id="multiselect" name="多选" value="false">
+              <dync:render colSpan="1" height="0" multi="false" name="checkbox"/>
+              <dync:children/>
+            </dync:attribute>
+          </form:attributes>
+        </form:control>
+        <form:child xsi:type="form:Field" binding="start_city" id="start_city" name="起运地" customize="true">
+          <form:control type="widget/col_jqgrid">
+            <form:attributes source="widget/col_jqgrid"/>
+          </form:control>
+          <form:validation/>
+        </form:child>
+        <form:child xsi:type="form:Field" binding="dest_province" id="dest_province" name="目的省份" customize="true">
+          <form:control type="widget/col_jqgrid">
+            <form:attributes source="widget/col_jqgrid"/>
+          </form:control>
+          <form:validation/>
+        </form:child>
+        <form:child xsi:type="form:Field" binding="qty" id="qty" name="意向台数" customize="true">
+          <form:control type="widget/col_jqgrid">
+            <form:attributes source="widget/col_jqgrid"/>
+          </form:control>
+          <form:validation/>
+        </form:child>
+        <form:child xsi:type="form:Field" binding="price" id="price" name="意向价格" customize="true">
+          <form:control type="widget/col_jqgrid">
+            <form:attributes source="widget/col_jqgrid"/>
+          </form:control>
+          <form:validation/>
+        </form:child>
+        <form:child xsi:type="form:Field" binding="lineid" id="lineid" name="lineid" customize="true">
+          <form:control type="widget/col_jqgrid">
+            <form:attributes source="widget/col_jqgrid">
+              <dync:attribute default="false" group="表格设置" id="hidden" name="隐藏列" value="true">
+                <dync:render colSpan="1" height="0" multi="false" name="checkbox"/>
+                <dync:children/>
+              </dync:attribute>
+            </form:attributes>
+          </form:control>
+          <form:validation/>
+        </form:child>
+        <form:child xsi:type="form:Group" id="toolbar_table2" name="toolbar_table">
+          <form:control type="container/toolbar_table">
+            <form:attributes source="container/toolbar_table"/>
+          </form:control>
+          <form:child xsi:type="form:Field" id="buttonDel2" name="删除">
+            <form:control type="widget/button_a_table">
+              <form:attributes source="widget/button_a_table">
+                <dync:attribute id="clickType" value="delete">
+                  <dync:render/>
+                  <dync:children/>
+                </dync:attribute>
+                <dync:attribute id="icon" value="fa-trash-o">
+                  <dync:render/>
+                  <dync:children/>
+                </dync:attribute>
+                <dync:attribute id="iconColor" value="red">
+                  <dync:render/>
+                  <dync:children/>
+                </dync:attribute>
+              </form:attributes>
+            </form:control>
+          </form:child>
+          <form:child xsi:type="form:Field" id="buttonAdd2" name="新增">
+            <form:control type="widget/button_a_table">
+              <form:attributes source="widget/button_a_table">
+                <dync:attribute id="clickType" value="add">
+                  <dync:render/>
+                  <dync:children/>
+                </dync:attribute>
+                <dync:attribute id="icon" value="fa-plus">
+                  <dync:render/>
+                  <dync:children/>
+                </dync:attribute>
+                <dync:attribute id="iconColor" value="purple">
+                  <dync:render/>
+                  <dync:children/>
+                </dync:attribute>
+              </form:attributes>
+            </form:control>
+          </form:child>
+          <form:child xsi:type="form:Field" id="buttonEdit2" name="编辑">
+            <form:control type="widget/button_a_table">
+              <form:attributes source="widget/button_a_table">
+                <dync:attribute id="clickType" value="edit">
+                  <dync:render/>
+                  <dync:children/>
+                </dync:attribute>
+                <dync:attribute id="icon" value="fa-pencil">
+                  <dync:render/>
+                  <dync:children/>
+                </dync:attribute>
+                <dync:attribute id="iconColor" value="blue">
+                  <dync:render/>
+                  <dync:children/>
+                </dync:attribute>
+              </form:attributes>
+            </form:control>
+          </form:child>
+          <form:child xsi:type="form:Field" id="buttonView2" name="查看">
+            <form:control type="widget/button_a_table">
+              <form:attributes source="widget/button_a_table">
+                <dync:attribute id="clickType" value="get">
+                  <dync:render/>
+                  <dync:children/>
+                </dync:attribute>
+                <dync:attribute id="icon" value="fa-bars">
+                  <dync:render/>
+                  <dync:children/>
+                </dync:attribute>
+                <dync:attribute id="iconColor" value="grey">
+                  <dync:render/>
+                  <dync:children/>
+                </dync:attribute>
+              </form:attributes>
+            </form:control>
+          </form:child>
+          <form:child xsi:type="form:Field" id="buttonSearch2" name="查找">
+            <form:control type="widget/button_a_table">
+              <form:attributes source="widget/button_a_table">
+                <dync:attribute id="clickType" value="search">
+                  <dync:render/>
+                  <dync:children/>
+                </dync:attribute>
+                <dync:attribute id="icon" value="fa-search">
+                  <dync:render/>
+                  <dync:children/>
+                </dync:attribute>
+                <dync:attribute id="iconColor" value="orange">
+                  <dync:render/>
+                  <dync:children/>
+                </dync:attribute>
+              </form:attributes>
+            </form:control>
+          </form:child>
+          <form:child xsi:type="form:Field" id="buttonRefresh2" name="刷新">
+            <form:control type="widget/button_a_table">
+              <form:attributes source="widget/button_a_table">
+                <dync:attribute id="clickType" value="refrash">
+                  <dync:render/>
+                  <dync:children/>
+                </dync:attribute>
+                <dync:attribute id="icon" value="fa-refresh">
+                  <dync:render/>
+                  <dync:children/>
+                </dync:attribute>
+                <dync:attribute id="iconColor" value="green">
+                  <dync:render/>
+                  <dync:children/>
+                </dync:attribute>
+              </form:attributes>
+            </form:control>
+          </form:child>
+        </form:child>
+      </form:child>
+    </form:child>
+  </form:child>
+  <form:datasources>
+    <form:datasource xsi:type="form:Inputs"/>
+    <form:datasource xsi:type="form:PagingDataSource" id="cutom_interline" name="列表型数据源" logic="com.unlcn.ils.tps.services.JoinInterLine" pageSize="10" type="custom"/>
+  </form:datasources>
+  <form:scripts>
+
+page_onload:function(){
+	var conditions = { groupOp:&quot;AND&quot;, rules:[{field:&quot;joinId&quot;,op:&quot;eq&quot;,data:$params.lineId.joinid},{field:&quot;joinFlag&quot;,op:&quot;eq&quot;,data:1}]};
+	$view.cutom_interline.refresh({filters:conditions});	
+}</form:scripts>
+</form:Form>

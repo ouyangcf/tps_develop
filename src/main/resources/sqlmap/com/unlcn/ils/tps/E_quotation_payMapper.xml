@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><mapper namespace="com.unlcn.ils.tps.E_quotation_payMapper">	
+
+<!-- ElementID:column_sql,Generated=true -->
+<sql id="column_sql">
+		  tps_quotation_pay.lineid ,
+		  tps_quotation_pay.payment_name ,
+		  tps_quotation_pay.create_time ,
+		  tps_quotation_pay.create_user ,
+		  tps_quotation_pay.active ,
+		  tps_quotation_pay.active_user ,
+		  tps_quotation_pay.active_time ,
+		  tps_quotation_pay.active_memo ,
+		  tps_quotation_pay.scale ,
+		  tps_quotation_pay.cardno ,
+		  tps_quotation_head_T1.lineid T1_lineid ,
+		  tps_quotation_head_T1.shipper_id T1_shipper_id ,
+		  tps_quotation_head_T1.quotation_no T1_quotation_no ,
+		  tps_quotation_head_T1.invoiceway T1_invoiceway ,
+		  tps_quotation_head_T1.urgent T1_urgent ,
+		  tps_quotation_head_T1.begin_date T1_begin_date ,
+		  tps_quotation_head_T1.end_date T1_end_date ,
+		  tps_quotation_head_T1.share_id T1_share_id ,
+		  tps_quotation_head_T1.quotation_type T1_quotation_type ,
+		  tps_quotation_head_T1.contract_id T1_contract_id ,
+		  tps_quotation_head_T1.standard_price_total T1_standard_price_total ,
+		  tps_quotation_head_T1.quotation_price_total T1_quotation_price_total ,
+		  tps_quotation_head_T1.price_overflow T1_price_overflow ,
+		  tps_quotation_head_T1.overflow_memo T1_overflow_memo ,
+		  tps_quotation_head_T1.other_charge_total T1_other_charge_total ,
+		  tps_quotation_head_T1.check_flag T1_check_flag ,
+		  tps_quotation_head_T1.quotation_flag T1_quotation_flag ,
+		  tps_quotation_head_T1.create_user T1_create_user ,
+		  tps_quotation_head_T1.create_time T1_create_time ,
+		  tps_quotation_head_T1.active T1_active ,
+		  tps_quotation_head_T1.active_user T1_active_user ,
+		  tps_quotation_head_T1.active_time T1_active_time ,
+		  tps_quotation_head_T1.active_memo T1_active_memo ,
+		  tps_quotation_head_T1.print_count T1_print_count ,
+		  tps_quotation_head_T1.transway_name T1_transway_name ,
+		  tps_quotation_head_T1.estimate T1_estimate ,
+		  tps_quotation_head_T1.isapply T1_isapply ,
+		  tps_quotation_head_T1.apply_date T1_apply_date ,
+		  tps_quotation_head_T1.audit_user T1_audit_user ,
+		  tps_quotation_head_T1.flowid T1_flowid ,
+		  tps_payment_method_T2.lineid T2_lineid ,
+		  tps_payment_method_T2.payment_no T2_payment_no ,
+		  tps_payment_method_T2.payment_name T2_payment_name ,
+		  tps_payment_method_T2.payment_type T2_payment_type ,
+		  tps_payment_method_T2.create_time T2_create_time ,
+		  tps_payment_method_T2.create_user T2_create_user ,
+		  tps_payment_method_T2.active T2_active ,
+		  tps_payment_method_T2.active_user T2_active_user ,
+		  tps_payment_method_T2.active_time T2_active_time ,
+		  tps_payment_method_T2.active_memo T2_active_memo 
+</sql>
+
+<!-- ElementID:whereClause_sql,Generated=true -->
+<sql id="whereClause_sql">
+	    <if test="lineid != null">and tps_quotation_pay.lineid = #{lineid}</if>
+	    <if test="paymentName != null">and tps_quotation_pay.payment_name = #{paymentName}</if>
+	    <if test="createTime != null">and tps_quotation_pay.create_time = #{createTime}</if>
+	    <if test="createUser != null">and tps_quotation_pay.create_user = #{createUser}</if>
+	    <if test="active != null">and tps_quotation_pay.active = #{active}</if>
+	    <if test="activeUser != null">and tps_quotation_pay.active_user = #{activeUser}</if>
+	    <if test="activeTime != null">and tps_quotation_pay.active_time = #{activeTime}</if>
+	    <if test="activeMemo != null">and tps_quotation_pay.active_memo = #{activeMemo}</if>
+	    <if test="scale != null">and tps_quotation_pay.scale = #{scale}</if>
+	    <if test="cardno != null">and tps_quotation_pay.cardno = #{cardno}</if>
+		<if test="quotationId != null and quotationId.lineid !=null">and tps_quotation_pay.quotation_id = #{quotationId.lineid}</if>
+		<if test="paymentId != null and paymentId.lineid !=null">and tps_quotation_pay.payment_id = #{paymentId.lineid}</if>
+</sql>
+
+<!-- ElementID:one2one_sql,Generated=true -->
+<sql id="one2one_sql">
+	     left outer join tps_quotation_head tps_quotation_head_T1 on tps_quotation_pay.quotation_id=tps_quotation_head_T1.lineid
+	     left outer join tps_payment_method tps_payment_method_T2 on tps_quotation_pay.payment_id=tps_payment_method_T2.lineid
+</sql>
+
+<!-- ElementID:E_quotation_headResult,Generated=true -->
+<resultMap id="E_quotation_headResult" type="com.unlcn.ils.tps.E_quotation_head">
+	<id property="lineid" column="lineid"/>
+	<result property="shipperId" column="shipper_id"/>
+	<result property="quotationNo" column="quotation_no"/>
+	<result property="invoiceway" column="invoiceway"/>
+	<result property="urgent" column="urgent"/>
+	<result property="beginDate" column="begin_date"/>
+	<result property="endDate" column="end_date"/>
+	<result property="shareId" column="share_id"/>
+	<result property="quotationType" column="quotation_type"/>
+	<result property="contractId" column="contract_id"/>
+	<result property="standardPriceTotal" column="standard_price_total"/>
+	<result property="quotationPriceTotal" column="quotation_price_total"/>
+	<result property="priceOverflow" column="price_overflow"/>
+	<result property="overflowMemo" column="overflow_memo"/>
+	<result property="otherChargeTotal" column="other_charge_total"/>
+	<result property="checkFlag" column="check_flag"/>
+	<result property="quotationFlag" column="quotation_flag"/>
+	<result property="createUser" column="create_user"/>
+	<result property="createTime" column="create_time"/>
+	<result property="active" column="active"/>
+	<result property="activeUser" column="active_user"/>
+	<result property="activeTime" column="active_time"/>
+	<result property="activeMemo" column="active_memo"/>
+	<result property="printCount" column="print_count"/>
+	<result property="transwayName" column="transway_name"/>
+	<result property="estimate" column="estimate"/>
+	<result property="isapply" column="isapply"/>
+	<result property="applyDate" column="apply_date"/>
+	<result property="auditUser" column="audit_user"/>
+	<result property="flowid" column="flowid"/>
+</resultMap>
+<!-- ElementID:E_payment_methodResult,Generated=true -->
+<resultMap id="E_payment_methodResult" type="com.unlcn.ils.tps.E_payment_method">
+	<id property="lineid" column="lineid"/>
+	<result property="paymentNo" column="payment_no"/>
+	<result property="paymentName" column="payment_name"/>
+	<result property="paymentType" column="payment_type"/>
+	<result property="createTime" column="create_time"/>
+	<result property="createUser" column="create_user"/>
+	<result property="active" column="active"/>
+	<result property="activeUser" column="active_user"/>
+	<result property="activeTime" column="active_time"/>
+	<result property="activeMemo" column="active_memo"/>
+</resultMap>
+
+
+<!-- ElementID:E_quotation_payResult,Generated=true -->
+<resultMap id="E_quotation_payResult" type="com.unlcn.ils.tps.E_quotation_pay">
+	<id property="lineid" column="lineid"/>
+	<result property="paymentName" column="payment_name"/>
+	<result property="createTime" column="create_time"/>
+	<result property="createUser" column="create_user"/>
+	<result property="active" column="active"/>
+	<result property="activeUser" column="active_user"/>
+	<result property="activeTime" column="active_time"/>
+	<result property="activeMemo" column="active_memo"/>
+	<result property="scale" column="scale"/>
+	<result property="cardno" column="cardno"/>
+	<association property="quotationId" column="T1_lineid" javaType="com.unlcn.ils.tps.E_quotation_head" resultMap="E_quotation_headResult" columnPrefix="T1_"/>	
+	<association property="paymentId" column="T2_lineid" javaType="com.unlcn.ils.tps.E_payment_method" resultMap="E_payment_methodResult" columnPrefix="T2_"/>	
+</resultMap>
+
+
+<!-- ElementName:cache,Generated=true -->
+<cache type="C2_Default_Dao_Cache"/>
+
+<!-- ElementID:count,Generated=true -->
+<select id="count" parameterType="com.unlcn.ils.tps.E_quotation_pay" resultType="int">
+	select count(*) from tps_quotation_pay 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+<!-- ElementID:update,Generated=true -->
+<update id="update" parameterType="com.unlcn.ils.tps.E_quotation_pay">
+	update tps_quotation_pay
+<set>
+	<if test="paymentName != null">payment_name=#{paymentName,jdbcType=VARCHAR},</if>
+	<if test="createTime != null">create_time=#{createTime,jdbcType=TIMESTAMP},</if>
+	<if test="createUser != null">create_user=#{createUser,jdbcType=VARCHAR},</if>
+	<if test="active != null">active=#{active,jdbcType=NUMERIC},</if>
+	<if test="activeUser != null">active_user=#{activeUser,jdbcType=VARCHAR},</if>
+	<if test="activeTime != null">active_time=#{activeTime,jdbcType=TIMESTAMP},</if>
+	<if test="activeMemo != null">active_memo=#{activeMemo,jdbcType=VARCHAR},</if>
+	<if test="scale != null">scale=#{scale,jdbcType=NUMERIC},</if>
+	<if test="cardno != null">cardno=#{cardno,jdbcType=VARCHAR},</if>
+	<if test="quotationId != null and quotationId.lineid !=null">quotation_id=#{quotationId.lineid,jdbcType=VARCHAR},</if>
+	<if test="paymentId != null and paymentId.lineid !=null">payment_id=#{paymentId.lineid,jdbcType=NUMERIC}</if>
+</set>
+<where>
+	<choose>
+        <when test="lineid != null">and lineid = #{lineid}</when>
+        <otherwise>and lineid = </otherwise>
+    </choose>
+</where>
+</update>
+
+<!-- ElementID:updateNull,Generated=true -->
+<update id="updateNull" parameterType="map">
+	update tps_quotation_pay
+	<set>
+		<trim suffixOverrides=",">
+		    <if test="paymentName==null">payment_name = null,</if>
+		    <if test="createTime==null">create_time = null,</if>
+		    <if test="createUser==null">create_user = null,</if>
+		    <if test="active==null">active = null,</if>
+		    <if test="activeUser==null">active_user = null,</if>
+		    <if test="activeTime==null">active_time = null,</if>
+		    <if test="activeMemo==null">active_memo = null,</if>
+		    <if test="scale==null">scale = null,</if>
+		    <if test="cardno==null">cardno = null,</if>
+		    <if test="quotationId==null">quotation_id = null,</if>
+		    <if test="paymentId==null">payment_id = null,</if>
+		</trim>
+	</set>
+	<where>
+		<choose>
+			<when test="lineid != null">and lineid = #{lineid}</when>
+			<otherwise>and lineid = </otherwise>
+		</choose>
+	</where>
+</update>
+
+<!-- ElementID:delete,Generated=true -->
+<delete id="delete" parameterType="com.unlcn.ils.tps.E_quotation_pay">
+    delete from tps_quotation_pay where 1=1 and lineid = #{lineid}
+</delete>
+
+<!-- ElementID:select,Generated=true -->
+<select id="select" parameterType="com.unlcn.ils.tps.E_quotation_pay" resultMap="E_quotation_payResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_quotation_pay 
+		<include refid="one2one_sql"/>
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:deleteBatch,Generated=true -->
+<delete id="deleteBatch" parameterType="List">
+	delete from tps_quotation_pay where lineid in
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<foreach collection="list" item="entity" separator=",">
+	#{entity.lineid}
+</foreach>
+</trim>
+</delete>
+
+<!-- ElementID:selectAll,Generated=true -->
+<select id="selectAll" resultMap="E_quotation_payResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_quotation_pay 
+		<include refid="one2one_sql"/>
+</select>
+
+<!-- ElementID:selectByID,Generated=true -->
+<select id="selectByID" parameterType="java.lang.String" resultMap="E_quotation_payResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_quotation_pay 
+		<include refid="one2one_sql"/>
+		 where tps_quotation_pay.lineid = #{lineid,jdbcType=VARCHAR}
+</select>
+
+<!-- ElementID:selectByPage,Generated=true -->
+<select id="selectByPage" parameterType="com.unlcn.ils.tps.E_quotation_pay" resultMap="E_quotation_payResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_quotation_pay 
+		<include refid="one2one_sql"/>
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:selectMany,Generated=true -->
+<select id="selectMany" parameterType="list" resultMap="E_quotation_payResult">
+select 
+	<include refid="column_sql"/> 
+	from tps_quotation_pay 
+	<include refid="one2one_sql"/>
+	where tps_quotation_pay.lineid in (
+		select distinct lineid from tps_quotation_pay inner join
+<foreach collection="list" item="entity" separator="inner join">
+		(select 
+			distinct lineid
+			from tps_quotation_pay 
+			<where>
+	        <if test="entity.lineid != null">and tps_quotation_pay.lineid = #{entity.lineid}</if>
+	        <if test="entity.paymentName != null">and tps_quotation_pay.payment_name = #{entity.paymentName}</if>
+	        <if test="entity.createTime != null">and tps_quotation_pay.create_time = #{entity.createTime}</if>
+	        <if test="entity.createUser != null">and tps_quotation_pay.create_user = #{entity.createUser}</if>
+	        <if test="entity.active != null">and tps_quotation_pay.active = #{entity.active}</if>
+	        <if test="entity.activeUser != null">and tps_quotation_pay.active_user = #{entity.activeUser}</if>
+	        <if test="entity.activeTime != null">and tps_quotation_pay.active_time = #{entity.activeTime}</if>
+	        <if test="entity.activeMemo != null">and tps_quotation_pay.active_memo = #{entity.activeMemo}</if>
+	        <if test="entity.scale != null">and tps_quotation_pay.scale = #{entity.scale}</if>
+	        <if test="entity.cardno != null">and tps_quotation_pay.cardno = #{entity.cardno}</if>
+			</where>
+		) ${entity.tableAlias} using (lineid)
+</foreach>
+)
+</select>
+
+<!-- ElementID:insert,Generated=true -->
+<insert id="insert" parameterType="com.unlcn.ils.tps.E_quotation_pay">
+	insert into tps_quotation_pay(
+	         <if test="lineid != null">lineid</if>
+	         <if test="paymentName != null">,payment_name</if>
+	         <if test="createTime != null">,create_time</if>
+	         <if test="createUser != null">,create_user</if>
+	         <if test="active != null">,active</if>
+	         <if test="activeUser != null">,active_user</if>
+	         <if test="activeTime != null">,active_time</if>
+	         <if test="activeMemo != null">,active_memo</if>
+	         <if test="scale != null">,scale</if>
+	         <if test="cardno != null">,cardno</if>
+	 	 	 <if test="quotationId != null and quotationId.lineid !=null">,quotation_id</if>
+	 	 <if test="paymentId != null and paymentId.lineid !=null">,payment_id</if>
+	 	 )
+	 values (
+	         <if test="lineid != null">#{lineid,jdbcType=VARCHAR}</if>
+	         <if test="paymentName != null">,#{paymentName,jdbcType=VARCHAR}</if>
+	         <if test="createTime != null">,#{createTime,jdbcType=TIMESTAMP}</if>
+	         <if test="createUser != null">,#{createUser,jdbcType=VARCHAR}</if>
+	         <if test="active != null">,#{active,jdbcType=NUMERIC}</if>
+	         <if test="activeUser != null">,#{activeUser,jdbcType=VARCHAR}</if>
+	         <if test="activeTime != null">,#{activeTime,jdbcType=TIMESTAMP}</if>
+	         <if test="activeMemo != null">,#{activeMemo,jdbcType=VARCHAR}</if>
+	         <if test="scale != null">,#{scale,jdbcType=NUMERIC}</if>
+	         <if test="cardno != null">,#{cardno,jdbcType=VARCHAR}</if>
+	 	 	 <if test="quotationId != null and quotationId.lineid !=null">,#{quotationId.lineid,jdbcType=VARCHAR}</if>
+	 	 <if test="paymentId != null and paymentId.lineid !=null">,#{paymentId.lineid,jdbcType=NUMERIC}</if>
+	 	 )
+</insert>
+
+<!-- ElementID:insertBatch,Generated=true -->
+<insert id="insertBatch" parameterType="list">
+	insert into tps_quotation_pay (lineid,payment_name,create_time,create_user,active,active_user,active_time,active_memo,scale,cardno,quotation_id,payment_id) 
+<foreach collection="list" item="entity" index="index" separator="union all">
+		select 
+		#{entity.lineid,jdbcType = VARCHAR},
+				#{entity.paymentName,jdbcType = VARCHAR},
+				#{entity.createTime,jdbcType = TIMESTAMP},
+				#{entity.createUser,jdbcType = VARCHAR},
+				#{entity.active,jdbcType = NUMERIC},
+				#{entity.activeUser,jdbcType = VARCHAR},
+				#{entity.activeTime,jdbcType = TIMESTAMP},
+				#{entity.activeMemo,jdbcType = VARCHAR},
+				#{entity.scale,jdbcType = NUMERIC},
+				#{entity.cardno,jdbcType = VARCHAR},
+						 #{entity.quotationId.lineid,jdbcType=VARCHAR},				 #{entity.paymentId.lineid,jdbcType=NUMERIC}
+		from dual
+</foreach>
+</insert>
+</mapper>

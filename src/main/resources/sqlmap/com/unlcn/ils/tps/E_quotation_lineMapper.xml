@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><mapper namespace="com.unlcn.ils.tps.E_quotation_lineMapper">	
+
+<!-- ElementID:column_sql,Generated=true -->
+<sql id="column_sql">
+		  tps_quotation_line.lineid ,
+		  tps_quotation_line.customer_id ,
+		  tps_quotation_line.start_city_id ,
+		  tps_quotation_line.start_city ,
+		  tps_quotation_line.dest_city_id ,
+		  tps_quotation_line.dest_city ,
+		  tps_quotation_line.item_id ,
+		  tps_quotation_line.qty ,
+		  tps_quotation_line.standard_kilometer ,
+		  tps_quotation_line.standard_price ,
+		  tps_quotation_line.quotation_price ,
+		  tps_quotation_line.create_user ,
+		  tps_quotation_line.create_time ,
+		  tps_quotation_line.active ,
+		  tps_quotation_line.active_user ,
+		  tps_quotation_line.active_time ,
+		  tps_quotation_line.active_memo ,
+		  tps_quotation_line.account_qty ,
+		  tps_quotation_line.overflow ,
+		  tps_quotation_head_T1.lineid T1_lineid ,
+		  tps_quotation_head_T1.shipper_id T1_shipper_id ,
+		  tps_quotation_head_T1.quotation_no T1_quotation_no ,
+		  tps_quotation_head_T1.invoiceway T1_invoiceway ,
+		  tps_quotation_head_T1.urgent T1_urgent ,
+		  tps_quotation_head_T1.begin_date T1_begin_date ,
+		  tps_quotation_head_T1.end_date T1_end_date ,
+		  tps_quotation_head_T1.share_id T1_share_id ,
+		  tps_quotation_head_T1.quotation_type T1_quotation_type ,
+		  tps_quotation_head_T1.contract_id T1_contract_id ,
+		  tps_quotation_head_T1.standard_price_total T1_standard_price_total ,
+		  tps_quotation_head_T1.quotation_price_total T1_quotation_price_total ,
+		  tps_quotation_head_T1.price_overflow T1_price_overflow ,
+		  tps_quotation_head_T1.overflow_memo T1_overflow_memo ,
+		  tps_quotation_head_T1.other_charge_total T1_other_charge_total ,
+		  tps_quotation_head_T1.check_flag T1_check_flag ,
+		  tps_quotation_head_T1.quotation_flag T1_quotation_flag ,
+		  tps_quotation_head_T1.create_user T1_create_user ,
+		  tps_quotation_head_T1.create_time T1_create_time ,
+		  tps_quotation_head_T1.active T1_active ,
+		  tps_quotation_head_T1.active_user T1_active_user ,
+		  tps_quotation_head_T1.active_time T1_active_time ,
+		  tps_quotation_head_T1.active_memo T1_active_memo ,
+		  tps_quotation_head_T1.print_count T1_print_count ,
+		  tps_quotation_head_T1.transway_name T1_transway_name ,
+		  tps_quotation_head_T1.estimate T1_estimate ,
+		  tps_quotation_head_T1.isapply T1_isapply ,
+		  tps_quotation_head_T1.apply_date T1_apply_date ,
+		  tps_quotation_head_T1.audit_user T1_audit_user ,
+		  tps_quotation_head_T1.flowid T1_flowid 
+</sql>
+
+<!-- ElementID:whereClause_sql,Generated=true -->
+<sql id="whereClause_sql">
+	    <if test="lineid != null">and tps_quotation_line.lineid = #{lineid}</if>
+	    <if test="customerId != null">and tps_quotation_line.customer_id = #{customerId}</if>
+	    <if test="startCityId != null">and tps_quotation_line.start_city_id = #{startCityId}</if>
+	    <if test="startCity != null">and tps_quotation_line.start_city = #{startCity}</if>
+	    <if test="destCityId != null">and tps_quotation_line.dest_city_id = #{destCityId}</if>
+	    <if test="destCity != null">and tps_quotation_line.dest_city = #{destCity}</if>
+	    <if test="itemId != null">and tps_quotation_line.item_id = #{itemId}</if>
+	    <if test="qty != null">and tps_quotation_line.qty = #{qty}</if>
+	    <if test="standardKilometer != null">and tps_quotation_line.standard_kilometer = #{standardKilometer}</if>
+	    <if test="standardPrice != null">and tps_quotation_line.standard_price = #{standardPrice}</if>
+	    <if test="quotationPrice != null">and tps_quotation_line.quotation_price = #{quotationPrice}</if>
+	    <if test="createUser != null">and tps_quotation_line.create_user = #{createUser}</if>
+	    <if test="createTime != null">and tps_quotation_line.create_time = #{createTime}</if>
+	    <if test="active != null">and tps_quotation_line.active = #{active}</if>
+	    <if test="activeUser != null">and tps_quotation_line.active_user = #{activeUser}</if>
+	    <if test="activeTime != null">and tps_quotation_line.active_time = #{activeTime}</if>
+	    <if test="activeMemo != null">and tps_quotation_line.active_memo = #{activeMemo}</if>
+	    <if test="accountQty != null">and tps_quotation_line.account_qty = #{accountQty}</if>
+	    <if test="overflow != null">and tps_quotation_line.overflow = #{overflow}</if>
+		<if test="quotationId != null and quotationId.lineid !=null">and tps_quotation_line.quotation_id = #{quotationId.lineid}</if>
+</sql>
+
+
+<!-- ElementID:E_quotation_lineResult,Generated=true -->
+<resultMap id="E_quotation_lineResult" type="com.unlcn.ils.tps.E_quotation_line">
+	<id property="lineid" column="lineid"/>
+	<result property="customerId" column="customer_id"/>
+	<result property="startCityId" column="start_city_id"/>
+	<result property="startCity" column="start_city"/>
+	<result property="destCityId" column="dest_city_id"/>
+	<result property="destCity" column="dest_city"/>
+	<result property="itemId" column="item_id"/>
+	<result property="qty" column="qty"/>
+	<result property="standardKilometer" column="standard_kilometer"/>
+	<result property="standardPrice" column="standard_price"/>
+	<result property="quotationPrice" column="quotation_price"/>
+	<result property="createUser" column="create_user"/>
+	<result property="createTime" column="create_time"/>
+	<result property="active" column="active"/>
+	<result property="activeUser" column="active_user"/>
+	<result property="activeTime" column="active_time"/>
+	<result property="activeMemo" column="active_memo"/>
+	<result property="accountQty" column="account_qty"/>
+	<result property="overflow" column="overflow"/>
+	<association property="quotationId" column="T1_lineid" javaType="com.unlcn.ils.tps.E_quotation_head" resultMap="E_quotation_headResult" columnPrefix="T1_"/>	
+</resultMap>
+
+
+<!-- ElementName:cache,Generated=true -->
+<cache type="C2_Default_Dao_Cache"/>
+
+<!-- ElementID:insert,Generated=true -->
+<insert id="insert" parameterType="com.unlcn.ils.tps.E_quotation_line">
+	insert into tps_quotation_line(
+	         <if test="lineid != null">lineid</if>
+	         <if test="customerId != null">,customer_id</if>
+	         <if test="startCityId != null">,start_city_id</if>
+	         <if test="startCity != null">,start_city</if>
+	         <if test="destCityId != null">,dest_city_id</if>
+	         <if test="destCity != null">,dest_city</if>
+	         <if test="itemId != null">,item_id</if>
+	         <if test="qty != null">,qty</if>
+	         <if test="standardKilometer != null">,standard_kilometer</if>
+	         <if test="standardPrice != null">,standard_price</if>
+	         <if test="quotationPrice != null">,quotation_price</if>
+	         <if test="createUser != null">,create_user</if>
+	         <if test="createTime != null">,create_time</if>
+	         <if test="active != null">,active</if>
+	         <if test="activeUser != null">,active_user</if>
+	         <if test="activeTime != null">,active_time</if>
+	         <if test="activeMemo != null">,active_memo</if>
+	         <if test="accountQty != null">,account_qty</if>
+	         <if test="overflow != null">,overflow</if>
+	 	 	 <if test="quotationId != null and quotationId.lineid !=null">,quotation_id</if>
+	 	 )
+	 values (
+	         <if test="lineid != null">#{lineid,jdbcType=VARCHAR}</if>
+	         <if test="customerId != null">,#{customerId,jdbcType=VARCHAR}</if>
+	         <if test="startCityId != null">,#{startCityId,jdbcType=NUMERIC}</if>
+	         <if test="startCity != null">,#{startCity,jdbcType=VARCHAR}</if>
+	         <if test="destCityId != null">,#{destCityId,jdbcType=NUMERIC}</if>
+	         <if test="destCity != null">,#{destCity,jdbcType=VARCHAR}</if>
+	         <if test="itemId != null">,#{itemId,jdbcType=VARCHAR}</if>
+	         <if test="qty != null">,#{qty,jdbcType=NUMERIC}</if>
+	         <if test="standardKilometer != null">,#{standardKilometer,jdbcType=NUMERIC}</if>
+	         <if test="standardPrice != null">,#{standardPrice,jdbcType=NUMERIC}</if>
+	         <if test="quotationPrice != null">,#{quotationPrice,jdbcType=NUMERIC}</if>
+	         <if test="createUser != null">,#{createUser,jdbcType=VARCHAR}</if>
+	         <if test="createTime != null">,#{createTime,jdbcType=TIMESTAMP}</if>
+	         <if test="active != null">,#{active,jdbcType=NUMERIC}</if>
+	         <if test="activeUser != null">,#{activeUser,jdbcType=VARCHAR}</if>
+	         <if test="activeTime != null">,#{activeTime,jdbcType=TIMESTAMP}</if>
+	         <if test="activeMemo != null">,#{activeMemo,jdbcType=VARCHAR}</if>
+	         <if test="accountQty != null">,#{accountQty,jdbcType=NUMERIC}</if>
+	         <if test="overflow != null">,#{overflow,jdbcType=NUMERIC}</if>
+	 	 	 <if test="quotationId != null and quotationId.lineid !=null">,#{quotationId.lineid,jdbcType=VARCHAR}</if>
+	 	 )
+</insert>
+
+<!-- ElementID:count,Generated=true -->
+<select id="count" parameterType="com.unlcn.ils.tps.E_quotation_line" resultType="int">
+	select count(*) from tps_quotation_line 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+<!-- ElementID:update,Generated=true -->
+<update id="update" parameterType="com.unlcn.ils.tps.E_quotation_line">
+	update tps_quotation_line
+<set>
+	<if test="customerId != null">customer_id=#{customerId,jdbcType=VARCHAR},</if>
+	<if test="startCityId != null">start_city_id=#{startCityId,jdbcType=NUMERIC},</if>
+	<if test="startCity != null">start_city=#{startCity,jdbcType=VARCHAR},</if>
+	<if test="destCityId != null">dest_city_id=#{destCityId,jdbcType=NUMERIC},</if>
+	<if test="destCity != null">dest_city=#{destCity,jdbcType=VARCHAR},</if>
+	<if test="itemId != null">item_id=#{itemId,jdbcType=VARCHAR},</if>
+	<if test="qty != null">qty=#{qty,jdbcType=NUMERIC},</if>
+	<if test="standardKilometer != null">standard_kilometer=#{standardKilometer,jdbcType=NUMERIC},</if>
+	<if test="standardPrice != null">standard_price=#{standardPrice,jdbcType=NUMERIC},</if>
+	<if test="quotationPrice != null">quotation_price=#{quotationPrice,jdbcType=NUMERIC},</if>
+	<if test="createUser != null">create_user=#{createUser,jdbcType=VARCHAR},</if>
+	<if test="createTime != null">create_time=#{createTime,jdbcType=TIMESTAMP},</if>
+	<if test="active != null">active=#{active,jdbcType=NUMERIC},</if>
+	<if test="activeUser != null">active_user=#{activeUser,jdbcType=VARCHAR},</if>
+	<if test="activeTime != null">active_time=#{activeTime,jdbcType=TIMESTAMP},</if>
+	<if test="activeMemo != null">active_memo=#{activeMemo,jdbcType=VARCHAR},</if>
+	<if test="accountQty != null">account_qty=#{accountQty,jdbcType=NUMERIC},</if>
+	<if test="overflow != null">overflow=#{overflow,jdbcType=NUMERIC},</if>
+	<if test="quotationId != null and quotationId.lineid !=null">quotation_id=#{quotationId.lineid,jdbcType=VARCHAR}</if>
+</set>
+<where>
+	<choose>
+        <when test="lineid != null">and lineid = #{lineid}</when>
+        <otherwise>and lineid = </otherwise>
+    </choose>
+</where>
+</update>
+
+<!-- ElementID:updateNull,Generated=true -->
+<update id="updateNull" parameterType="map">
+	update tps_quotation_line
+	<set>
+		<trim suffixOverrides=",">
+		    <if test="customerId==null">customer_id = null,</if>
+		    <if test="startCityId==null">start_city_id = null,</if>
+		    <if test="startCity==null">start_city = null,</if>
+		    <if test="destCityId==null">dest_city_id = null,</if>
+		    <if test="destCity==null">dest_city = null,</if>
+		    <if test="itemId==null">item_id = null,</if>
+		    <if test="qty==null">qty = null,</if>
+		    <if test="standardKilometer==null">standard_kilometer = null,</if>
+		    <if test="standardPrice==null">standard_price = null,</if>
+		    <if test="quotationPrice==null">quotation_price = null,</if>
+		    <if test="createUser==null">create_user = null,</if>
+		    <if test="createTime==null">create_time = null,</if>
+		    <if test="active==null">active = null,</if>
+		    <if test="activeUser==null">active_user = null,</if>
+		    <if test="activeTime==null">active_time = null,</if>
+		    <if test="activeMemo==null">active_memo = null,</if>
+		    <if test="accountQty==null">account_qty = null,</if>
+		    <if test="overflow==null">overflow = null,</if>
+		    <if test="quotationId==null">quotation_id = null,</if>
+		</trim>
+	</set>
+	<where>
+		<choose>
+			<when test="lineid != null">and lineid = #{lineid}</when>
+			<otherwise>and lineid = </otherwise>
+		</choose>
+	</where>
+</update>
+
+<!-- ElementID:delete,Generated=true -->
+<delete id="delete" parameterType="com.unlcn.ils.tps.E_quotation_line">
+    delete from tps_quotation_line where 1=1 and lineid = #{lineid}
+</delete>
+
+<!-- ElementID:select,Generated=true -->
+<select id="select" parameterType="com.unlcn.ils.tps.E_quotation_line" resultMap="E_quotation_lineResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_quotation_line 
+		<include refid="one2one_sql"/>
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:insertBatch,Generated=true -->
+<insert id="insertBatch" parameterType="list">
+	insert into tps_quotation_line (lineid,customer_id,start_city_id,start_city,dest_city_id,dest_city,item_id,qty,standard_kilometer,standard_price,quotation_price,create_user,create_time,active,active_user,active_time,active_memo,account_qty,overflow,quotation_id) 
+<foreach collection="list" item="entity" index="index" separator="union all">
+		select 
+		#{entity.lineid,jdbcType = VARCHAR},
+				#{entity.customerId,jdbcType = VARCHAR},
+				#{entity.startCityId,jdbcType = NUMERIC},
+				#{entity.startCity,jdbcType = VARCHAR},
+				#{entity.destCityId,jdbcType = NUMERIC},
+				#{entity.destCity,jdbcType = VARCHAR},
+				#{entity.itemId,jdbcType = VARCHAR},
+				#{entity.qty,jdbcType = NUMERIC},
+				#{entity.standardKilometer,jdbcType = NUMERIC},
+				#{entity.standardPrice,jdbcType = NUMERIC},
+				#{entity.quotationPrice,jdbcType = NUMERIC},
+				#{entity.createUser,jdbcType = VARCHAR},
+				#{entity.createTime,jdbcType = TIMESTAMP},
+				#{entity.active,jdbcType = NUMERIC},
+				#{entity.activeUser,jdbcType = VARCHAR},
+				#{entity.activeTime,jdbcType = TIMESTAMP},
+				#{entity.activeMemo,jdbcType = VARCHAR},
+				#{entity.accountQty,jdbcType = NUMERIC},
+				#{entity.overflow,jdbcType = NUMERIC},
+						 #{entity.quotationId.lineid,jdbcType=VARCHAR}
+		from dual
+</foreach>
+</insert>
+
+
+
+<!-- ElementID:selectAll,Generated=true -->
+<select id="selectAll" resultMap="E_quotation_lineResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_quotation_line 
+		<include refid="one2one_sql"/>
+</select>
+
+
+
+
+<!-- ElementID:selectByPage,Generated=true -->
+<select id="selectByPage" parameterType="com.unlcn.ils.tps.E_quotation_line" resultMap="E_quotation_lineResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_quotation_line 
+		<include refid="one2one_sql"/>
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:selectMany,Generated=true -->
+<select id="selectMany" parameterType="list" resultMap="E_quotation_lineResult">
+select 
+	<include refid="column_sql"/> 
+	from tps_quotation_line 
+	<include refid="one2one_sql"/>
+	where tps_quotation_line.lineid in (
+		select distinct lineid from tps_quotation_line inner join
+<foreach collection="list" item="entity" separator="inner join">
+		(select 
+			distinct lineid
+			from tps_quotation_line 
+			<where>
+	        <if test="entity.lineid != null">and tps_quotation_line.lineid = #{entity.lineid}</if>
+	        <if test="entity.customerId != null">and tps_quotation_line.customer_id = #{entity.customerId}</if>
+	        <if test="entity.startCityId != null">and tps_quotation_line.start_city_id = #{entity.startCityId}</if>
+	        <if test="entity.startCity != null">and tps_quotation_line.start_city = #{entity.startCity}</if>
+	        <if test="entity.destCityId != null">and tps_quotation_line.dest_city_id = #{entity.destCityId}</if>
+	        <if test="entity.destCity != null">and tps_quotation_line.dest_city = #{entity.destCity}</if>
+	        <if test="entity.itemId != null">and tps_quotation_line.item_id = #{entity.itemId}</if>
+	        <if test="entity.qty != null">and tps_quotation_line.qty = #{entity.qty}</if>
+	        <if test="entity.standardKilometer != null">and tps_quotation_line.standard_kilometer = #{entity.standardKilometer}</if>
+	        <if test="entity.standardPrice != null">and tps_quotation_line.standard_price = #{entity.standardPrice}</if>
+	        <if test="entity.quotationPrice != null">and tps_quotation_line.quotation_price = #{entity.quotationPrice}</if>
+	        <if test="entity.createUser != null">and tps_quotation_line.create_user = #{entity.createUser}</if>
+	        <if test="entity.createTime != null">and tps_quotation_line.create_time = #{entity.createTime}</if>
+	        <if test="entity.active != null">and tps_quotation_line.active = #{entity.active}</if>
+	        <if test="entity.activeUser != null">and tps_quotation_line.active_user = #{entity.activeUser}</if>
+	        <if test="entity.activeTime != null">and tps_quotation_line.active_time = #{entity.activeTime}</if>
+	        <if test="entity.activeMemo != null">and tps_quotation_line.active_memo = #{entity.activeMemo}</if>
+	        <if test="entity.accountQty != null">and tps_quotation_line.account_qty = #{entity.accountQty}</if>
+	        <if test="entity.overflow != null">and tps_quotation_line.overflow = #{entity.overflow}</if>
+			</where>
+		) ${entity.tableAlias} using (lineid)
+</foreach>
+)
+</select>
+<!--Generated=true-->
+<delete id="deleteBatch" parameterType="List">
+	delete from tps_quotation_line where lineid in
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<foreach collection="list" item="entity" separator=",">
+	#{entity.lineid}
+</foreach>
+</trim>
+</delete>
+<!--Generated=true-->
+<select id="selectByID" parameterType="java.lang.String" resultMap="E_quotation_lineResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_quotation_line 
+		<include refid="one2one_sql"/>
+		 where tps_quotation_line.lineid = #{lineid,jdbcType=VARCHAR}
+</select>
+<!--Generated=true-->
+<sql id="one2one_sql">
+	     left outer join tps_quotation_head tps_quotation_head_T1 on tps_quotation_line.quotation_id=tps_quotation_head_T1.lineid
+</sql>
+<!--Generated=true-->
+<resultMap id="E_quotation_headResult" type="com.unlcn.ils.tps.E_quotation_head">
+	<id property="lineid" column="lineid"/>
+	<result property="shipperId" column="shipper_id"/>
+	<result property="quotationNo" column="quotation_no"/>
+	<result property="invoiceway" column="invoiceway"/>
+	<result property="urgent" column="urgent"/>
+	<result property="beginDate" column="begin_date"/>
+	<result property="endDate" column="end_date"/>
+	<result property="shareId" column="share_id"/>
+	<result property="quotationType" column="quotation_type"/>
+	<result property="contractId" column="contract_id"/>
+	<result property="standardPriceTotal" column="standard_price_total"/>
+	<result property="quotationPriceTotal" column="quotation_price_total"/>
+	<result property="priceOverflow" column="price_overflow"/>
+	<result property="overflowMemo" column="overflow_memo"/>
+	<result property="otherChargeTotal" column="other_charge_total"/>
+	<result property="checkFlag" column="check_flag"/>
+	<result property="quotationFlag" column="quotation_flag"/>
+	<result property="createUser" column="create_user"/>
+	<result property="createTime" column="create_time"/>
+	<result property="active" column="active"/>
+	<result property="activeUser" column="active_user"/>
+	<result property="activeTime" column="active_time"/>
+	<result property="activeMemo" column="active_memo"/>
+	<result property="printCount" column="print_count"/>
+	<result property="transwayName" column="transway_name"/>
+	<result property="estimate" column="estimate"/>
+	<result property="isapply" column="isapply"/>
+	<result property="applyDate" column="apply_date"/>
+	<result property="auditUser" column="audit_user"/>
+	<result property="flowid" column="flowid"/>
+</resultMap>
+
+<!-- ElementID:selectoverflow,Generated=false -->
+<!-- 查询报价明细价格溢出 -->
+<select id="selectOverflow" parameterType="int" resultType="map">
+	SELECT ROUND(SUM(a.standard_price*a.standard_kilometer*a.qty),2) AS standard_price,
+		ROUND(SUM(a.quotation_price*a.standard_kilometer*a.qty),2) AS quotation_price
+			FROM tps_quotation_line a WHERE a.quotation_id=#{lineid}
+</select>
+</mapper>

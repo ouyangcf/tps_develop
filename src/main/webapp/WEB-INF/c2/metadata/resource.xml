@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PRSet xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/perm">
+  <resources>
+    <resource id="-HmXZ-QKR7GZXDw_z8MiNg" name="删除加盟合作附件" path="ws/s_delJoinFile" type="service"/>
+  </resources>
+</PRSet>

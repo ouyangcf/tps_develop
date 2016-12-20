@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><mapper namespace="com.unlcn.ils.tps.E_complaint_typeMapper">	
+
+<!-- ElementID:column_sql,Generated=true -->
+<sql id="column_sql">
+		  td_complaint_type.lineid ,
+		  td_complaint_type.type_name ,
+		  td_complaint_type.type_desc ,
+		  td_complaint_type.parent_id ,
+		  td_complaint_type.type_status ,
+		  td_complaint_type.oper_user ,
+		  td_complaint_type.oper_time ,
+		  td_complaint_type.type_category 
+</sql>
+
+<!-- ElementID:whereClause_sql,Generated=true -->
+<sql id="whereClause_sql">
+	    <if test="lineid != null">and td_complaint_type.lineid = #{lineid}</if>
+	    <if test="typeName != null">and td_complaint_type.type_name = #{typeName}</if>
+	    <if test="typeDesc != null">and td_complaint_type.type_desc = #{typeDesc}</if>
+	    <if test="parentId != null">and td_complaint_type.parent_id = #{parentId}</if>
+	    <if test="typeStatus != null">and td_complaint_type.type_status = #{typeStatus}</if>
+	    <if test="operUser != null">and td_complaint_type.oper_user = #{operUser}</if>
+	    <if test="operTime != null">and td_complaint_type.oper_time = #{operTime}</if>
+	    <if test="typeCategory != null">and td_complaint_type.type_category = #{typeCategory}</if>
+</sql>
+
+
+<!-- ElementID:E_complaint_typeResult,Generated=true -->
+<resultMap id="E_complaint_typeResult" type="com.unlcn.ils.tps.E_complaint_type">
+	<id property="lineid" column="lineid"/>
+	<result property="typeName" column="type_name"/>
+	<result property="typeDesc" column="type_desc"/>
+	<result property="parentId" column="parent_id"/>
+	<result property="typeStatus" column="type_status"/>
+	<result property="operUser" column="oper_user"/>
+	<result property="operTime" column="oper_time"/>
+	<result property="typeCategory" column="type_category"/>
+</resultMap>
+
+
+<!-- ElementName:cache,Generated=true -->
+<cache type="C2_Default_Dao_Cache"/>
+
+<!-- ElementID:count,Generated=true -->
+<select id="count" parameterType="com.unlcn.ils.tps.E_complaint_type" resultType="int">
+	select count(*) from td_complaint_type 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+<!-- ElementID:update,Generated=true -->
+<update id="update" parameterType="com.unlcn.ils.tps.E_complaint_type">
+	update td_complaint_type
+<set>
+	<if test="typeName != null">type_name=#{typeName,jdbcType=VARCHAR},</if>
+	<if test="typeDesc != null">type_desc=#{typeDesc,jdbcType=VARCHAR},</if>
+	<if test="parentId != null">parent_id=#{parentId,jdbcType=VARCHAR},</if>
+	<if test="typeStatus != null">type_status=#{typeStatus,jdbcType=VARCHAR},</if>
+	<if test="operUser != null">oper_user=#{operUser,jdbcType=VARCHAR},</if>
+	<if test="operTime != null">oper_time=#{operTime,jdbcType=VARCHAR},</if>
+	<if test="typeCategory != null">type_category=#{typeCategory,jdbcType=VARCHAR}</if>
+</set>
+<where>
+	<choose>
+        <when test="lineid != null">and lineid = #{lineid}</when>
+        <otherwise>and lineid = </otherwise>
+    </choose>
+</where>
+</update>
+
+<!-- ElementID:updateNull,Generated=true -->
+<update id="updateNull" parameterType="map">
+	update td_complaint_type
+	<set>
+		<trim suffixOverrides=",">
+		    <if test="typeName==null">type_name = null,</if>
+		    <if test="typeDesc==null">type_desc = null,</if>
+		    <if test="parentId==null">parent_id = null,</if>
+		    <if test="typeStatus==null">type_status = null,</if>
+		    <if test="operUser==null">oper_user = null,</if>
+		    <if test="operTime==null">oper_time = null,</if>
+		    <if test="typeCategory==null">type_category = null,</if>
+		</trim>
+	</set>
+	<where>
+		<choose>
+			<when test="lineid != null">and lineid = #{lineid}</when>
+			<otherwise>and lineid = </otherwise>
+		</choose>
+	</where>
+</update>
+
+<!-- ElementID:delete,Generated=true -->
+<delete id="delete" parameterType="com.unlcn.ils.tps.E_complaint_type">
+    delete from td_complaint_type where 1=1 and lineid = #{lineid}
+</delete>
+
+<!-- ElementID:select,Generated=true -->
+<select id="select" parameterType="com.unlcn.ils.tps.E_complaint_type" resultMap="E_complaint_typeResult">
+	select 
+		<include refid="column_sql"/>
+	    from td_complaint_type 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:deleteBatch,Generated=true -->
+<delete id="deleteBatch" parameterType="List">
+	delete from td_complaint_type where lineid in
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<foreach collection="list" item="entity" separator=",">
+	#{entity.lineid}
+</foreach>
+</trim>
+</delete>
+
+<!-- ElementID:selectAll,Generated=true -->
+<select id="selectAll" resultMap="E_complaint_typeResult">
+	select 
+		<include refid="column_sql"/>
+	    from td_complaint_type 
+</select>
+
+<!-- ElementID:selectByID,Generated=true -->
+<select id="selectByID" parameterType="java.lang.String" resultMap="E_complaint_typeResult">
+	select 
+		<include refid="column_sql"/>
+	    from td_complaint_type 
+		 where td_complaint_type.lineid = #{lineid,jdbcType=VARCHAR}
+</select>
+
+<!-- ElementID:selectByPage,Generated=true -->
+<select id="selectByPage" parameterType="com.unlcn.ils.tps.E_complaint_type" resultMap="E_complaint_typeResult">
+	select 
+		<include refid="column_sql"/>
+	    from td_complaint_type 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:selectMany,Generated=true -->
+<select id="selectMany" parameterType="list" resultMap="E_complaint_typeResult">
+select 
+	<include refid="column_sql"/> 
+	from td_complaint_type 
+	where td_complaint_type.lineid in (
+		select distinct lineid from td_complaint_type inner join
+<foreach collection="list" item="entity" separator="inner join">
+		(select 
+			distinct lineid
+			from td_complaint_type 
+			<where>
+	        <if test="entity.lineid != null">and td_complaint_type.lineid = #{entity.lineid}</if>
+	        <if test="entity.typeName != null">and td_complaint_type.type_name = #{entity.typeName}</if>
+	        <if test="entity.typeDesc != null">and td_complaint_type.type_desc = #{entity.typeDesc}</if>
+	        <if test="entity.parentId != null">and td_complaint_type.parent_id = #{entity.parentId}</if>
+	        <if test="entity.typeStatus != null">and td_complaint_type.type_status = #{entity.typeStatus}</if>
+	        <if test="entity.operUser != null">and td_complaint_type.oper_user = #{entity.operUser}</if>
+	        <if test="entity.operTime != null">and td_complaint_type.oper_time = #{entity.operTime}</if>
+	        <if test="entity.typeCategory != null">and td_complaint_type.type_category = #{entity.typeCategory}</if>
+			</where>
+		) ${entity.tableAlias} using (lineid)
+</foreach>
+)
+</select>
+
+<!-- ElementID:insert,Generated=true -->
+<insert id="insert" parameterType="com.unlcn.ils.tps.E_complaint_type">
+	insert into td_complaint_type(
+	         <if test="lineid != null">lineid</if>
+	         <if test="typeName != null">,type_name</if>
+	         <if test="typeDesc != null">,type_desc</if>
+	         <if test="parentId != null">,parent_id</if>
+	         <if test="typeStatus != null">,type_status</if>
+	         <if test="operUser != null">,oper_user</if>
+	         <if test="operTime != null">,oper_time</if>
+	         <if test="typeCategory != null">,type_category</if>
+	 	 	 )
+	 values (
+	         <if test="lineid != null">#{lineid,jdbcType=VARCHAR}</if>
+	         <if test="typeName != null">,#{typeName,jdbcType=VARCHAR}</if>
+	         <if test="typeDesc != null">,#{typeDesc,jdbcType=VARCHAR}</if>
+	         <if test="parentId != null">,#{parentId,jdbcType=VARCHAR}</if>
+	         <if test="typeStatus != null">,#{typeStatus,jdbcType=VARCHAR}</if>
+	         <if test="operUser != null">,#{operUser,jdbcType=VARCHAR}</if>
+	         <if test="operTime != null">,#{operTime,jdbcType=VARCHAR}</if>
+	         <if test="typeCategory != null">,#{typeCategory,jdbcType=VARCHAR}</if>
+	 	 	 )
+</insert>
+
+<!-- ElementID:insertBatch,Generated=true -->
+<insert id="insertBatch" parameterType="list">
+	insert into td_complaint_type (lineid,type_name,type_desc,parent_id,type_status,oper_user,oper_time,type_category) 
+<foreach collection="list" item="entity" index="index" separator="union all">
+		select 
+		#{entity.lineid,jdbcType = VARCHAR},
+				#{entity.typeName,jdbcType = VARCHAR},
+				#{entity.typeDesc,jdbcType = VARCHAR},
+				#{entity.parentId,jdbcType = VARCHAR},
+				#{entity.typeStatus,jdbcType = VARCHAR},
+				#{entity.operUser,jdbcType = VARCHAR},
+				#{entity.operTime,jdbcType = VARCHAR},
+				#{entity.typeCategory,jdbcType = VARCHAR}
+		from dual
+</foreach>
+</insert>
+</mapper>

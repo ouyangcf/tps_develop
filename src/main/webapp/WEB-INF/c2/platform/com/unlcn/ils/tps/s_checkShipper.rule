@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="s_checkShipper" log="false" className="com.unlcn.ils.tps.services.ShipperInfoManageService" method="checkShipper">
+  <name>检测分供方</name>
+  <inputs>
+    <input collection="false" desc="" id="shipperid" required="true" type="String"/>
+  </inputs>
+  <outputs>
+    <output autoValue="Result" desc="" id="result" name="方法返回值" type="boolean"/>
+  </outputs>
+  <params>
+    <param autoValue="Input.shipperid" name="shipperid" signature="QString;" type="String"/>
+  </params>
+  <return signature="Z" type="boolean"/>
+</CustomRule>

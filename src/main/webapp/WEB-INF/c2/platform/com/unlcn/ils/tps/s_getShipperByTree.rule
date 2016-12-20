@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="s_getShipperByTree" log="false" className="com.unlcn.ils.tps.services.ShipperService" method="getElements">
+  <name>得到分供方(按树)</name>
+  <inputs>
+    <input collection="false" desc="" id="context" required="true" type="com.chinacreator.c2.web.ds.TreeContext"/>
+  </inputs>
+  <outputs>
+    <output autoValue="Result" desc="" id="result" name="方法返回值" type="[Lcom.chinacreator.c2.web.ds.TreeNode;"/>
+  </outputs>
+  <params>
+    <param autoValue="Input.context" name="context" signature="QTreeContext;" type="com.chinacreator.c2.web.ds.TreeContext"/>
+  </params>
+  <return signature="[QTreeNode;" type="[Lcom.chinacreator.c2.web.ds.TreeNode;"/>
+</CustomRule>

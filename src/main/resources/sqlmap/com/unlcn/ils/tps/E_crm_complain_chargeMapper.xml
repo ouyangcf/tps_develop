@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><mapper namespace="com.unlcn.ils.tps.E_crm_complain_chargeMapper">	
+
+<!-- ElementID:column_sql,Generated=true -->
+<sql id="column_sql">
+		  tps_crm_complain_charge.lineid ,
+		  tps_crm_complain_charge.complain_charge_lineid ,
+		  tps_crm_complain_charge.complain_id ,
+		  tps_crm_complain_charge.customer_order ,
+		  tps_crm_complain_charge.category ,
+		  tps_crm_complain_charge.category_id ,
+		  tps_crm_complain_charge.category_name ,
+		  tps_crm_complain_charge.charger_type ,
+		  tps_crm_complain_charge.charger_id ,
+		  tps_crm_complain_charge.charger_name ,
+		  tps_crm_complain_charge.percent ,
+		  tps_crm_complain_charge.charge_memo ,
+		  tps_crm_complain_charge.charge_time ,
+		  tps_crm_complain_charge.create_user ,
+		  tps_crm_complain_charge.createtime ,
+		  tps_crm_complain_charge.realate_flag ,
+		  tps_crm_complain_charge.realate_lineid ,
+		  tps_crm_complain_charge.create_username ,
+		  tps_crm_complain_charge.create_time ,
+		  tps_crm_complain_charge.active ,
+		  tps_crm_complain_charge.active_user ,
+		  tps_crm_complain_charge.active_time ,
+		  tps_crm_complain_charge.active_memo ,
+		  tps_crm_complain_charge.complain_type_relate_flag ,
+		  tps_crm_complain_charge.complain_type_realate_lineid 
+</sql>
+
+<!-- ElementID:whereClause_sql,Generated=true -->
+<sql id="whereClause_sql">
+	    <if test="lineid != null">and tps_crm_complain_charge.lineid = #{lineid}</if>
+	    <if test="complainChargeLineid != null">and tps_crm_complain_charge.complain_charge_lineid = #{complainChargeLineid}</if>
+	    <if test="complainId != null">and tps_crm_complain_charge.complain_id = #{complainId}</if>
+	    <if test="customerOrder != null">and tps_crm_complain_charge.customer_order = #{customerOrder}</if>
+	    <if test="category != null">and tps_crm_complain_charge.category = #{category}</if>
+	    <if test="categoryId != null">and tps_crm_complain_charge.category_id = #{categoryId}</if>
+	    <if test="categoryName != null">and tps_crm_complain_charge.category_name = #{categoryName}</if>
+	    <if test="chargerType != null">and tps_crm_complain_charge.charger_type = #{chargerType}</if>
+	    <if test="chargerId != null">and tps_crm_complain_charge.charger_id = #{chargerId}</if>
+	    <if test="chargerName != null">and tps_crm_complain_charge.charger_name = #{chargerName}</if>
+	    <if test="percent != null">and tps_crm_complain_charge.percent = #{percent}</if>
+	    <if test="chargeMemo != null">and tps_crm_complain_charge.charge_memo = #{chargeMemo}</if>
+	    <if test="chargeTime != null">and tps_crm_complain_charge.charge_time = #{chargeTime}</if>
+	    <if test="createUser != null">and tps_crm_complain_charge.create_user = #{createUser}</if>
+	    <if test="createtime != null">and tps_crm_complain_charge.createtime = #{createtime}</if>
+	    <if test="realateFlag != null">and tps_crm_complain_charge.realate_flag = #{realateFlag}</if>
+	    <if test="realateLineid != null">and tps_crm_complain_charge.realate_lineid = #{realateLineid}</if>
+	    <if test="createUsername != null">and tps_crm_complain_charge.create_username = #{createUsername}</if>
+	    <if test="createTime != null">and tps_crm_complain_charge.create_time = #{createTime}</if>
+	    <if test="active != null">and tps_crm_complain_charge.active = #{active}</if>
+	    <if test="activeUser != null">and tps_crm_complain_charge.active_user = #{activeUser}</if>
+	    <if test="activeTime != null">and tps_crm_complain_charge.active_time = #{activeTime}</if>
+	    <if test="activeMemo != null">and tps_crm_complain_charge.active_memo = #{activeMemo}</if>
+	    <if test="complainTypeRelateFlag != null">and tps_crm_complain_charge.complain_type_relate_flag = #{complainTypeRelateFlag}</if>
+	    <if test="complainTypeRealateLineid != null">and tps_crm_complain_charge.complain_type_realate_lineid = #{complainTypeRealateLineid}</if>
+</sql>
+
+
+<!-- ElementID:E_crm_complain_chargeResult,Generated=true -->
+<resultMap id="E_crm_complain_chargeResult" type="com.unlcn.ils.tps.E_crm_complain_charge">
+	<id property="lineid" column="lineid"/>
+	<result property="complainChargeLineid" column="complain_charge_lineid"/>
+	<result property="complainId" column="complain_id"/>
+	<result property="customerOrder" column="customer_order"/>
+	<result property="category" column="category"/>
+	<result property="categoryId" column="category_id"/>
+	<result property="categoryName" column="category_name"/>
+	<result property="chargerType" column="charger_type"/>
+	<result property="chargerId" column="charger_id"/>
+	<result property="chargerName" column="charger_name"/>
+	<result property="percent" column="percent"/>
+	<result property="chargeMemo" column="charge_memo"/>
+	<result property="chargeTime" column="charge_time"/>
+	<result property="createUser" column="create_user"/>
+	<result property="createtime" column="createtime"/>
+	<result property="realateFlag" column="realate_flag"/>
+	<result property="realateLineid" column="realate_lineid"/>
+	<result property="createUsername" column="create_username"/>
+	<result property="createTime" column="create_time"/>
+	<result property="active" column="active"/>
+	<result property="activeUser" column="active_user"/>
+	<result property="activeTime" column="active_time"/>
+	<result property="activeMemo" column="active_memo"/>
+	<result property="complainTypeRelateFlag" column="complain_type_relate_flag"/>
+	<result property="complainTypeRealateLineid" column="complain_type_realate_lineid"/>
+</resultMap>
+
+
+<!-- ElementName:cache,Generated=true -->
+<cache type="C2_Default_Dao_Cache"/>
+
+<!-- ElementID:count,Generated=true -->
+<select id="count" parameterType="com.unlcn.ils.tps.E_crm_complain_charge" resultType="int">
+	select count(*) from tps_crm_complain_charge 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+<!-- ElementID:update,Generated=true -->
+<update id="update" parameterType="com.unlcn.ils.tps.E_crm_complain_charge">
+	update tps_crm_complain_charge
+<set>
+	<if test="complainChargeLineid != null">complain_charge_lineid=#{complainChargeLineid,jdbcType=VARCHAR},</if>
+	<if test="complainId != null">complain_id=#{complainId,jdbcType=VARCHAR},</if>
+	<if test="customerOrder != null">customer_order=#{customerOrder,jdbcType=VARCHAR},</if>
+	<if test="category != null">category=#{category,jdbcType=VARCHAR},</if>
+	<if test="categoryId != null">category_id=#{categoryId,jdbcType=VARCHAR},</if>
+	<if test="categoryName != null">category_name=#{categoryName,jdbcType=VARCHAR},</if>
+	<if test="chargerType != null">charger_type=#{chargerType,jdbcType=VARCHAR},</if>
+	<if test="chargerId != null">charger_id=#{chargerId,jdbcType=VARCHAR},</if>
+	<if test="chargerName != null">charger_name=#{chargerName,jdbcType=VARCHAR},</if>
+	<if test="percent != null">percent=#{percent,jdbcType=VARCHAR},</if>
+	<if test="chargeMemo != null">charge_memo=#{chargeMemo,jdbcType=VARCHAR},</if>
+	<if test="chargeTime != null">charge_time=#{chargeTime,jdbcType=VARCHAR},</if>
+	<if test="createUser != null">create_user=#{createUser,jdbcType=VARCHAR},</if>
+	<if test="createtime != null">createtime=#{createtime,jdbcType=TIMESTAMP},</if>
+	<if test="realateFlag != null">realate_flag=#{realateFlag,jdbcType=NUMERIC},</if>
+	<if test="realateLineid != null">realate_lineid=#{realateLineid,jdbcType=VARCHAR},</if>
+	<if test="createUsername != null">create_username=#{createUsername,jdbcType=VARCHAR},</if>
+	<if test="createTime != null">create_time=#{createTime,jdbcType=TIMESTAMP},</if>
+	<if test="active != null">active=#{active,jdbcType=NUMERIC},</if>
+	<if test="activeUser != null">active_user=#{activeUser,jdbcType=VARCHAR},</if>
+	<if test="activeTime != null">active_time=#{activeTime,jdbcType=TIMESTAMP},</if>
+	<if test="activeMemo != null">active_memo=#{activeMemo,jdbcType=VARCHAR},</if>
+	<if test="complainTypeRelateFlag != null">complain_type_relate_flag=#{complainTypeRelateFlag,jdbcType=NUMERIC},</if>
+	<if test="complainTypeRealateLineid != null">complain_type_realate_lineid=#{complainTypeRealateLineid,jdbcType=NUMERIC}</if>
+</set>
+<where>
+	<choose>
+        <when test="lineid != null">and lineid = #{lineid}</when>
+        <otherwise>and lineid = </otherwise>
+    </choose>
+</where>
+</update>
+
+<!-- ElementID:updateNull,Generated=true -->
+<update id="updateNull" parameterType="map">
+	update tps_crm_complain_charge
+	<set>
+		<trim suffixOverrides=",">
+		    <if test="complainChargeLineid==null">complain_charge_lineid = null,</if>
+		    <if test="complainId==null">complain_id = null,</if>
+		    <if test="customerOrder==null">customer_order = null,</if>
+		    <if test="category==null">category = null,</if>
+		    <if test="categoryId==null">category_id = null,</if>
+		    <if test="categoryName==null">category_name = null,</if>
+		    <if test="chargerType==null">charger_type = null,</if>
+		    <if test="chargerId==null">charger_id = null,</if>
+		    <if test="chargerName==null">charger_name = null,</if>
+		    <if test="percent==null">percent = null,</if>
+		    <if test="chargeMemo==null">charge_memo = null,</if>
+		    <if test="chargeTime==null">charge_time = null,</if>
+		    <if test="createUser==null">create_user = null,</if>
+		    <if test="createtime==null">createtime = null,</if>
+		    <if test="realateFlag==null">realate_flag = null,</if>
+		    <if test="realateLineid==null">realate_lineid = null,</if>
+		    <if test="createUsername==null">create_username = null,</if>
+		    <if test="createTime==null">create_time = null,</if>
+		    <if test="active==null">active = null,</if>
+		    <if test="activeUser==null">active_user = null,</if>
+		    <if test="activeTime==null">active_time = null,</if>
+		    <if test="activeMemo==null">active_memo = null,</if>
+		    <if test="complainTypeRelateFlag==null">complain_type_relate_flag = null,</if>
+		    <if test="complainTypeRealateLineid==null">complain_type_realate_lineid = null,</if>
+		</trim>
+	</set>
+	<where>
+		<choose>
+			<when test="lineid != null">and lineid = #{lineid}</when>
+			<otherwise>and lineid = </otherwise>
+		</choose>
+	</where>
+</update>
+
+<!-- ElementID:delete,Generated=true -->
+<delete id="delete" parameterType="com.unlcn.ils.tps.E_crm_complain_charge">
+    delete from tps_crm_complain_charge where 1=1 and lineid = #{lineid}
+</delete>
+
+<!-- ElementID:select,Generated=true -->
+<select id="select" parameterType="com.unlcn.ils.tps.E_crm_complain_charge" resultMap="E_crm_complain_chargeResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_crm_complain_charge 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:deleteBatch,Generated=true -->
+<delete id="deleteBatch" parameterType="List">
+	delete from tps_crm_complain_charge where lineid in
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<foreach collection="list" item="entity" separator=",">
+	#{entity.lineid}
+</foreach>
+</trim>
+</delete>
+
+<!-- ElementID:selectAll,Generated=true -->
+<select id="selectAll" resultMap="E_crm_complain_chargeResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_crm_complain_charge 
+</select>
+
+<!-- ElementID:selectByID,Generated=true -->
+<select id="selectByID" parameterType="java.lang.String" resultMap="E_crm_complain_chargeResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_crm_complain_charge 
+		 where tps_crm_complain_charge.lineid = #{lineid,jdbcType=VARCHAR}
+</select>
+
+<!-- ElementID:selectByPage,Generated=true -->
+<select id="selectByPage" parameterType="com.unlcn.ils.tps.E_crm_complain_charge" resultMap="E_crm_complain_chargeResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_crm_complain_charge 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:selectMany,Generated=true -->
+<select id="selectMany" parameterType="list" resultMap="E_crm_complain_chargeResult">
+select 
+	<include refid="column_sql"/> 
+	from tps_crm_complain_charge 
+	where tps_crm_complain_charge.lineid in (
+		select distinct lineid from tps_crm_complain_charge inner join
+<foreach collection="list" item="entity" separator="inner join">
+		(select 
+			distinct lineid
+			from tps_crm_complain_charge 
+			<where>
+	        <if test="entity.lineid != null">and tps_crm_complain_charge.lineid = #{entity.lineid}</if>
+	        <if test="entity.complainChargeLineid != null">and tps_crm_complain_charge.complain_charge_lineid = #{entity.complainChargeLineid}</if>
+	        <if test="entity.complainId != null">and tps_crm_complain_charge.complain_id = #{entity.complainId}</if>
+	        <if test="entity.customerOrder != null">and tps_crm_complain_charge.customer_order = #{entity.customerOrder}</if>
+	        <if test="entity.category != null">and tps_crm_complain_charge.category = #{entity.category}</if>
+	        <if test="entity.categoryId != null">and tps_crm_complain_charge.category_id = #{entity.categoryId}</if>
+	        <if test="entity.categoryName != null">and tps_crm_complain_charge.category_name = #{entity.categoryName}</if>
+	        <if test="entity.chargerType != null">and tps_crm_complain_charge.charger_type = #{entity.chargerType}</if>
+	        <if test="entity.chargerId != null">and tps_crm_complain_charge.charger_id = #{entity.chargerId}</if>
+	        <if test="entity.chargerName != null">and tps_crm_complain_charge.charger_name = #{entity.chargerName}</if>
+	        <if test="entity.percent != null">and tps_crm_complain_charge.percent = #{entity.percent}</if>
+	        <if test="entity.chargeMemo != null">and tps_crm_complain_charge.charge_memo = #{entity.chargeMemo}</if>
+	        <if test="entity.chargeTime != null">and tps_crm_complain_charge.charge_time = #{entity.chargeTime}</if>
+	        <if test="entity.createUser != null">and tps_crm_complain_charge.create_user = #{entity.createUser}</if>
+	        <if test="entity.createtime != null">and tps_crm_complain_charge.createtime = #{entity.createtime}</if>
+	        <if test="entity.realateFlag != null">and tps_crm_complain_charge.realate_flag = #{entity.realateFlag}</if>
+	        <if test="entity.realateLineid != null">and tps_crm_complain_charge.realate_lineid = #{entity.realateLineid}</if>
+	        <if test="entity.createUsername != null">and tps_crm_complain_charge.create_username = #{entity.createUsername}</if>
+	        <if test="entity.createTime != null">and tps_crm_complain_charge.create_time = #{entity.createTime}</if>
+	        <if test="entity.active != null">and tps_crm_complain_charge.active = #{entity.active}</if>
+	        <if test="entity.activeUser != null">and tps_crm_complain_charge.active_user = #{entity.activeUser}</if>
+	        <if test="entity.activeTime != null">and tps_crm_complain_charge.active_time = #{entity.activeTime}</if>
+	        <if test="entity.activeMemo != null">and tps_crm_complain_charge.active_memo = #{entity.activeMemo}</if>
+	        <if test="entity.complainTypeRelateFlag != null">and tps_crm_complain_charge.complain_type_relate_flag = #{entity.complainTypeRelateFlag}</if>
+	        <if test="entity.complainTypeRealateLineid != null">and tps_crm_complain_charge.complain_type_realate_lineid = #{entity.complainTypeRealateLineid}</if>
+			</where>
+		) ${entity.tableAlias} using (lineid)
+</foreach>
+)
+</select>
+
+<!-- ElementID:insert,Generated=true -->
+<insert id="insert" parameterType="com.unlcn.ils.tps.E_crm_complain_charge">
+	insert into tps_crm_complain_charge(
+	         <if test="lineid != null">lineid</if>
+	         <if test="complainChargeLineid != null">,complain_charge_lineid</if>
+	         <if test="complainId != null">,complain_id</if>
+	         <if test="customerOrder != null">,customer_order</if>
+	         <if test="category != null">,category</if>
+	         <if test="categoryId != null">,category_id</if>
+	         <if test="categoryName != null">,category_name</if>
+	         <if test="chargerType != null">,charger_type</if>
+	         <if test="chargerId != null">,charger_id</if>
+	         <if test="chargerName != null">,charger_name</if>
+	         <if test="percent != null">,percent</if>
+	         <if test="chargeMemo != null">,charge_memo</if>
+	         <if test="chargeTime != null">,charge_time</if>
+	         <if test="createUser != null">,create_user</if>
+	         <if test="createtime != null">,createtime</if>
+	         <if test="realateFlag != null">,realate_flag</if>
+	         <if test="realateLineid != null">,realate_lineid</if>
+	         <if test="createUsername != null">,create_username</if>
+	         <if test="createTime != null">,create_time</if>
+	         <if test="active != null">,active</if>
+	         <if test="activeUser != null">,active_user</if>
+	         <if test="activeTime != null">,active_time</if>
+	         <if test="activeMemo != null">,active_memo</if>
+	         <if test="complainTypeRelateFlag != null">,complain_type_relate_flag</if>
+	         <if test="complainTypeRealateLineid != null">,complain_type_realate_lineid</if>
+	 	 	 )
+	 values (
+	         <if test="lineid != null">#{lineid,jdbcType=VARCHAR}</if>
+	         <if test="complainChargeLineid != null">,#{complainChargeLineid,jdbcType=VARCHAR}</if>
+	         <if test="complainId != null">,#{complainId,jdbcType=VARCHAR}</if>
+	         <if test="customerOrder != null">,#{customerOrder,jdbcType=VARCHAR}</if>
+	         <if test="category != null">,#{category,jdbcType=VARCHAR}</if>
+	         <if test="categoryId != null">,#{categoryId,jdbcType=VARCHAR}</if>
+	         <if test="categoryName != null">,#{categoryName,jdbcType=VARCHAR}</if>
+	         <if test="chargerType != null">,#{chargerType,jdbcType=VARCHAR}</if>
+	         <if test="chargerId != null">,#{chargerId,jdbcType=VARCHAR}</if>
+	         <if test="chargerName != null">,#{chargerName,jdbcType=VARCHAR}</if>
+	         <if test="percent != null">,#{percent,jdbcType=VARCHAR}</if>
+	         <if test="chargeMemo != null">,#{chargeMemo,jdbcType=VARCHAR}</if>
+	         <if test="chargeTime != null">,#{chargeTime,jdbcType=VARCHAR}</if>
+	         <if test="createUser != null">,#{createUser,jdbcType=VARCHAR}</if>
+	         <if test="createtime != null">,#{createtime,jdbcType=TIMESTAMP}</if>
+	         <if test="realateFlag != null">,#{realateFlag,jdbcType=NUMERIC}</if>
+	         <if test="realateLineid != null">,#{realateLineid,jdbcType=VARCHAR}</if>
+	         <if test="createUsername != null">,#{createUsername,jdbcType=VARCHAR}</if>
+	         <if test="createTime != null">,#{createTime,jdbcType=TIMESTAMP}</if>
+	         <if test="active != null">,#{active,jdbcType=NUMERIC}</if>
+	         <if test="activeUser != null">,#{activeUser,jdbcType=VARCHAR}</if>
+	         <if test="activeTime != null">,#{activeTime,jdbcType=TIMESTAMP}</if>
+	         <if test="activeMemo != null">,#{activeMemo,jdbcType=VARCHAR}</if>
+	         <if test="complainTypeRelateFlag != null">,#{complainTypeRelateFlag,jdbcType=NUMERIC}</if>
+	         <if test="complainTypeRealateLineid != null">,#{complainTypeRealateLineid,jdbcType=NUMERIC}</if>
+	 	 	 )
+</insert>
+
+<!-- ElementID:insertBatch,Generated=true -->
+<insert id="insertBatch" parameterType="list">
+	insert into tps_crm_complain_charge (lineid,complain_charge_lineid,complain_id,customer_order,category,category_id,category_name,charger_type,charger_id,charger_name,percent,charge_memo,charge_time,create_user,createtime,realate_flag,realate_lineid,create_username,create_time,active,active_user,active_time,active_memo,complain_type_relate_flag,complain_type_realate_lineid) 
+<foreach collection="list" item="entity" index="index" separator="union all">
+		select 
+		#{entity.lineid,jdbcType = VARCHAR},
+				#{entity.complainChargeLineid,jdbcType = VARCHAR},
+				#{entity.complainId,jdbcType = VARCHAR},
+				#{entity.customerOrder,jdbcType = VARCHAR},
+				#{entity.category,jdbcType = VARCHAR},
+				#{entity.categoryId,jdbcType = VARCHAR},
+				#{entity.categoryName,jdbcType = VARCHAR},
+				#{entity.chargerType,jdbcType = VARCHAR},
+				#{entity.chargerId,jdbcType = VARCHAR},
+				#{entity.chargerName,jdbcType = VARCHAR},
+				#{entity.percent,jdbcType = VARCHAR},
+				#{entity.chargeMemo,jdbcType = VARCHAR},
+				#{entity.chargeTime,jdbcType = VARCHAR},
+				#{entity.createUser,jdbcType = VARCHAR},
+				#{entity.createtime,jdbcType = TIMESTAMP},
+				#{entity.realateFlag,jdbcType = NUMERIC},
+				#{entity.realateLineid,jdbcType = VARCHAR},
+				#{entity.createUsername,jdbcType = VARCHAR},
+				#{entity.createTime,jdbcType = TIMESTAMP},
+				#{entity.active,jdbcType = NUMERIC},
+				#{entity.activeUser,jdbcType = VARCHAR},
+				#{entity.activeTime,jdbcType = TIMESTAMP},
+				#{entity.activeMemo,jdbcType = VARCHAR},
+				#{entity.complainTypeRelateFlag,jdbcType = NUMERIC},
+				#{entity.complainTypeRealateLineid,jdbcType = NUMERIC}
+		from dual
+</foreach>
+</insert>
+<select id="selectByCrmId" parameterType="java.lang.String" resultMap="E_crm_complain_chargeResult">
+	select * from tps_crm_complain_charge where tps_crm_complain_charge.complain_charge_lineid=#{complain_charge_lineid}
+</select>
+</mapper>

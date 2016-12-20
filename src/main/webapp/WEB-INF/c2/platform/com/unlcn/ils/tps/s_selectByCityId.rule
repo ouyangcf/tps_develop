@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="s_selectByCityId" log="false" className="com.unlcn.ils.tps.services.JoinDriverService" method="selectByCityId">
+  <name>根据城市id选司机主键</name>
+  <inputs>
+    <input collection="false" desc="" id="cityId" required="true" type="java.lang.Integer"/>
+  </inputs>
+  <outputs>
+    <output autoValue="Result" desc="" id="result" name="方法返回值" type="java.util.List"/>
+  </outputs>
+  <params>
+    <param autoValue="Input.cityId" name="cityId" signature="QInteger;" type="java.lang.Integer"/>
+  </params>
+  <return signature="QList&lt;QInteger;>;" type="java.util.List"/>
+</CustomRule>

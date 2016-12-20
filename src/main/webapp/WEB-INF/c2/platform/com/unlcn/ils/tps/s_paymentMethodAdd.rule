@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="s_paymentMethodAdd" log="false" className="com.unlcn.ils.tps.services.PaymentMethodMaintain" method="add">
+  <instanceCreator>
+    <params/>
+  </instanceCreator>
+  <name>支付方式字典维护新增</name>
+  <inputs>
+    <input collection="false" desc="" id="data" required="true" type="com.unlcn.ils.tps.E_payment_method"/>
+  </inputs>
+  <outputs>
+    <output autoValue="Result" desc="@Description:新增级别字典" id="result" name="方法返回值" type="com.unlcn.ils.tps.E_payment_method"/>
+  </outputs>
+  <params>
+    <param autoValue="Input.data" name="data" signature="QE_payment_method;" type="com.unlcn.ils.tps.E_payment_method"/>
+  </params>
+  <return signature="QE_payment_method;" type="com.unlcn.ils.tps.E_payment_method"/>
+</CustomRule>

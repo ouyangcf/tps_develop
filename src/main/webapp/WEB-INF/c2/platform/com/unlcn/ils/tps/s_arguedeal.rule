@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="s_arguedeal" log="false" className="com.unlcn.ils.tps.services.ArgueService" method="ArgueDeal">
+  <instanceCreator>
+    <params/>
+  </instanceCreator>
+  <name>申诉处理</name>
+  <inputs>
+    <input collection="false" desc="" id="e_argue" required="true" type="com.unlcn.ils.tps.E_argue"/>
+    <input collection="false" desc="" id="e_revise" required="true" type="com.unlcn.ils.tps.E_revise"/>
+    <input collection="false" desc="" id="e_substract" required="true" type="com.unlcn.ils.tps.E_substract"/>
+  </inputs>
+  <outputs>
+    <output autoValue="Result" desc="" id="result" name="方法返回值" type="boolean"/>
+  </outputs>
+  <params>
+    <param autoValue="Input.e_argue" name="e_argue" signature="QE_argue;" type="com.unlcn.ils.tps.E_argue"/>
+    <param autoValue="Input.e_revise" name="e_revise" signature="QE_revise;" type="com.unlcn.ils.tps.E_revise"/>
+    <param autoValue="Input.e_substract" name="e_substract" signature="QE_substract;" type="com.unlcn.ils.tps.E_substract"/>
+  </params>
+  <return signature="Z" type="boolean"/>
+</CustomRule>

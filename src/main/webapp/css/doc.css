@@ -1,0 +1,210 @@
+a {
+	color: #0886e9;
+    text-decoration: none
+}
+
+a:hover {
+    text-decoration: underline
+}
+
+h1,  h2, h3, dd, ul, ol {
+    margin: 0;
+    padding: 0
+}
+
+.doc-wrap ul,.doc-wrap ol {
+    list-style: none
+}
+
+
+.doc-wrap {
+    *zoom: 1;
+    padding: 0;
+    width: 1180px;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    position: relative;
+    background-color: #eee;
+}
+
+.doc-wrap:before, .doc-wrap:after {
+    display: table;
+    content: ""
+}
+
+.doc-wrap:after {
+    clear: both
+}
+
+.doc-main {
+    margin-left: 280px;
+    padding: 10px 40px 20px 40px;
+    _padding: 8px 40px 20px 20px;
+    background: #fff;
+    border-style: solid;
+    border-color: #ccc;
+    border-width: 0 0 0 1px
+}
+
+.crumb {
+    font-size: 12px;
+    color: #333;
+    margin-bottom: 20px;
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #ccc;
+    background: #fff
+}
+
+.crumb li {
+    display: inline;
+    zoom: 1;
+    padding: 0 5px
+}
+
+.crumb a {
+    color: #0886e9
+}
+
+.crumb a:hover {
+    text-decoration: none
+}
+
+.crumb .active {
+    color: #777
+}
+
+.crumb .divider {
+    color: #d9d9d9
+}
+
+.doc-sidebar {
+    float: left;
+    background: #eee;
+    width: 280px;
+    font-size: 14px;
+    padding-bottom: 20px;
+    border-style: solid;
+    border-color: #ccc;
+    border-width: 0;
+}
+
+.doc-sidebar h1 {
+    height: 59px;
+    line-height: 59px;
+    font-size: 18px;
+    color: #666;
+    font-weight: bold;
+    padding: 0 30px;
+    background: none;
+    border-bottom: 1px solid #ccc;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.doc-list {
+    *zoom: 1;
+    margin-left: 280px;
+    padding: 10px 40px 20px 40px;
+    background: #fff;
+    border-style: solid;
+    border-color: #ccc;
+    border-width: 0 0 0 1px
+}
+
+.doc-list:before, .doc-list:after {
+    display: table;
+    content: ""
+}
+
+.doc-list:after {
+    clear: both
+}
+
+.doc-list > li {
+    float: left;
+    width: 270px;
+    height: 140px;
+    padding: 10px 0;
+    margin-bottom: 20px
+}
+
+.doc-list h3 {
+    color: #999;
+    font-size: 16px;
+    font-weight: normal
+}
+
+.doc-list .service {
+    font-size: 14px;
+    margin-top: 20px
+}
+
+.doc-list .service a {
+    color: #0886e9
+}
+
+.doc-list .service a:hover {
+    text-decoration: none
+}
+
+.doc-list .iconfont {
+    color: #0886e9;
+    margin-right: 8px
+}
+
+.doc-list .icon-glossary {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    width: 16px
+}
+
+.doc-sidebar li {
+    height: 49px;
+    line-height: 49px;
+    font-size: 20px;
+    color: #333;
+    padding: 0;
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    border-color: #ccc;
+    background: url(/img/doc/icons.png) 240px 20px no-repeat
+}
+
+.doc-sidebar li a {
+    display: block;
+    color: #333;
+    outline: none;
+    padding: 0 30px
+}
+
+.doc-sidebar li a:hover {
+    text-decoration: none
+}
+
+.doc-sidebar li .iconfont {
+    float: left;
+    width: 16px;
+    height: 49px;
+    line-height: 49px;
+    margin: 0 20px 0 30px;
+}
+
+.doc-sidebar li:hover {
+    background: #249cfa url(/img/doc/icons.png) 240px -22px no-repeat
+}
+
+.doc-sidebar li:hover a, .doc-sidebar li:hover .iconfont {
+    color: #fff
+}
+
+.doc-sidebar .current {
+    background: #249cfa url(/img/doc/icons.png) 240px -22px no-repeat
+}
+
+.doc-sidebar .current a, .doc-sidebar .current .iconfont {
+    color: #fff
+}

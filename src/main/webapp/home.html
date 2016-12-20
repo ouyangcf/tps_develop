@@ -1,0 +1,17 @@
+<div ng-controller="HomeController">
+<h1></h1>
+
+<button ng-click='showline()'>线路维护</button>
+</div>
+
+<script type="text/javascript">
+	app.registerCtrl('HomeController', ['$scope','$http',function ($scope,$http) {
+	
+		$scope.showline=function()
+		{
+			debugger;
+			openTab("f/test2");			
+		}
+	}]);
+	
+</script>

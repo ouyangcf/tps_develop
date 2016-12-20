@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form:Form xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dync="http://www.chinacreator.com/platform/mvc/ui/dync" xmlns:form="http://www.chinacreator.com/platform/mvc/form" name="客服标准关联" sn="complaintType2operate_dlg" type="form">
+  <form:control type="page/modal">
+    <form:attributes source="page/modal">
+      <dync:attribute default="" group="事件" id="onload" name="页面加载完成" value="page_onload()">
+        <dync:render colSpan="2" height="0" multi="false" name="event">
+          <dync:item name="param" value=""/>
+        </dync:render>
+        <dync:children/>
+      </dync:attribute>
+    </form:attributes>
+  </form:control>
+  <form:child xsi:type="form:Group" id="widgetbox" name="客服标准关联">
+    <form:control type="container/widgetbox">
+      <form:attributes source="container/widgetbox"/>
+    </form:control>
+    <form:child xsi:type="form:Group" id="widgexbox_toolbar" name="widgexbox_toolbar">
+      <form:control type="container/toolbar_widget">
+        <form:attributes source="container/toolbar_widget"/>
+      </form:control>
+    </form:child>
+    <form:child xsi:type="form:Group" id="div1" name="简单容器(DIV)">
+      <form:control type="container/div">
+        <form:attributes source="container/div">
+          <dync:attribute default="" group="高级自定义" id="cssClass" name="自定义class" value="condition_div">
+            <dync:render colSpan="2" height="0" multi="false" name="text"/>
+            <dync:children/>
+          </dync:attribute>
+        </form:attributes>
+      </form:control>
+      <form:child xsi:type="form:Group" id="div2" name="简单容器(DIV)">
+        <form:control type="container/div">
+          <form:attributes source="container/div">
+            <dync:attribute default="" group="高级自定义" id="cssClass" name="自定义class" value="condition_box">
+              <dync:render colSpan="2" height="0" multi="false" name="text"/>
+              <dync:children/>
+            </dync:attribute>
+          </form:attributes>
+        </form:control>
+        <form:child xsi:type="form:Field" binding="$params.checkitem" id="checkitem" name="考核项目">
+          <form:control type="widget/select_simple">
+            <form:attributes source="widget/select_simple">
+              <dync:attribute default="" group="下拉框设置" id="nullValue" name="空值选项名" value="全部">
+                <dync:render colSpan="1" height="0" multi="false" name="text"/>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="" group="事件设置" id="change" name="值变换事件" value="itemLineid_change()">
+                <dync:render colSpan="2" height="0" multi="false" name="event">
+                  <dync:item name="params" value=""/>
+                </dync:render>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="false" group="基本设置" id="selectRequired" name="必填项" value="true">
+                <dync:render colSpan="1" height="0" multi="false" name="checkboxAndExpr"/>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="6" group="基本设置" id="span" name="占位数" value="5">
+                <dync:render colSpan="1" height="0" multi="false" name="text"/>
+                <dync:children/>
+              </dync:attribute>
+            </form:attributes>
+          </form:control>
+        </form:child>
+        <form:child xsi:type="form:Group" id="div" name="简单容器(DIV)">
+          <form:control type="container/div">
+            <form:attributes source="container/div">
+              <dync:attribute default="12" group="HTML配置" id="span" name="占位数" value="1">
+                <dync:render colSpan="1" height="0" multi="false" name="text"/>
+                <dync:children/>
+              </dync:attribute>
+            </form:attributes>
+          </form:control>
+        </form:child>
+        <form:child xsi:type="form:Field" binding="$params.checktype" id="checktype" name="考核类型">
+          <form:control type="widget/select_simple">
+            <form:attributes source="widget/select_simple">
+              <dync:attribute default="" group="下拉框设置" id="nullValue" name="空值选项名" value="全部">
+                <dync:render colSpan="1" height="0" multi="false" name="text"/>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="" group="事件设置" id="change" name="值变换事件" value="operateLineid_change()">
+                <dync:render colSpan="2" height="0" multi="false" name="event">
+                  <dync:item name="params" value=""/>
+                </dync:render>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="false" group="基本设置" id="selectRequired" name="必填项" value="true">
+                <dync:render colSpan="1" height="0" multi="false" name="checkboxAndExpr"/>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="6" group="基本设置" id="span" name="占位数" value="5">
+                <dync:render colSpan="1" height="0" multi="false" name="text"/>
+                <dync:children/>
+              </dync:attribute>
+            </form:attributes>
+          </form:control>
+        </form:child>
+      </form:child>
+      <form:child xsi:type="form:Group" id="div29" name="简单容器(DIV)">
+        <form:control type="container/div">
+          <form:attributes source="container/div">
+            <dync:attribute default="" group="高级自定义" id="cssClass" name="自定义class" value="search_div">
+              <dync:render colSpan="2" height="0" multi="false" name="text"/>
+              <dync:children/>
+            </dync:attribute>
+          </form:attributes>
+        </form:control>
+        <form:child xsi:type="form:Field" id="button" name="确认" customize="true">
+          <form:control type="widget/button">
+            <form:attributes source="widget/button">
+              <dync:attribute default="btn-primary" group="HTML设置" id="style" name="样式" value="btn-success">
+                <dync:render colSpan="1" height="0" multi="false" name="select">
+                  <dync:item name="默认" value="btn-default"/>
+                  <dync:item name="主要" value="btn-primary"/>
+                  <dync:item name="成功" value="btn-success"/>
+                  <dync:item name="信息" value="btn-info"/>
+                  <dync:item name="警告" value="btn-warning"/>
+                  <dync:item name="危险" value="btn-danger"/>
+                  <dync:item name="链接" value="btn-link"/>
+                  <dync:item name="通用" value="btn-white no-border"/>
+                </dync:render>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="" group="事件设置" id="click" name="点击事件" value="button_click($event)">
+                <dync:render colSpan="1" height="0" multi="false" name="event">
+                  <dync:item name="params" value="$event"/>
+                </dync:render>
+                <dync:children/>
+              </dync:attribute>
+            </form:attributes>
+          </form:control>
+          <form:validation/>
+        </form:child>
+        <form:child xsi:type="form:Field" id="buttonClose" name="重置" customize="true">
+          <form:control type="widget/button">
+            <form:attributes source="widget/button">
+              <dync:attribute default="" group="事件设置" id="click" name="点击事件" value="buttonClose_click($event)">
+                <dync:render colSpan="1" height="0" multi="false" name="event">
+                  <dync:item name="params" value="$event"/>
+                </dync:render>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="btn-primary" group="HTML设置" id="style" name="样式" value="btn-warning">
+                <dync:render colSpan="1" height="0" multi="false" name="select">
+                  <dync:item name="默认" value="btn-default"/>
+                  <dync:item name="主要" value="btn-primary"/>
+                  <dync:item name="成功" value="btn-success"/>
+                  <dync:item name="信息" value="btn-info"/>
+                  <dync:item name="警告" value="btn-warning"/>
+                  <dync:item name="危险" value="btn-danger"/>
+                  <dync:item name="链接" value="btn-link"/>
+                  <dync:item name="通用" value="btn-white no-border"/>
+                </dync:render>
+                <dync:children/>
+              </dync:attribute>
+            </form:attributes>
+          </form:control>
+          <form:validation/>
+        </form:child>
+      </form:child>
+    </form:child>
+  </form:child>
+  <form:datasources>
+    <form:datasource xsi:type="form:Inputs"/>
+    <form:datasource xsi:type="form:LogicDataSource" id="items" name="项目" logic="rule:com.unlcn.ils.tps.s_items" sn="s_items"/>
+    <form:datasource xsi:type="form:LogicDataSource" id="types" name="types" logic="rule:com.unlcn.ils.tps.s_types" sn="s_types"/>
+    <form:datasource xsi:type="form:LogicDataSource" id="itemsid" name="项目编号" logic="rule:com.unlcn.ils.tps.s_itemsid" sn="s_itemsid"/>
+    <form:datasource xsi:type="form:EntityDataSource" id="e_crm_complaint_type" name="客服标准" entity="entity:com.unlcn.ils.tps.e_crm_complaint_type"/>
+  </form:datasources>
+  <form:scripts>getiIndex:function(){
+	var ipos=0;
+	var l=$model.itemsid.result.length;
+	for(;ipos&lt;l;ipos++){
+		if($params.checkitem==$model.itemsid.result[ipos]){
+			break;
+		}	
+	}
+	return ipos;
+},
+
+page_onload:function(){
+	for(var i=0;i&lt;$model.items.result.length;i++){
+		$view.checkitem.addOptions($model.items.result[i]);
+	}
+},
+
+itemLineid_change:function(){
+	var pos=functions.getiIndex();
+	$view.checktype.setOptions({});
+	for(var i=0;i&lt;$model.types.result[pos].contents.length;i++){
+		$view.checktype.addOptions($model.types.result[pos].contents[i]);
+	}
+	$view.checktype.setDefaultValue();
+},
+
+button_click:function($event){
+	if($params.checktype==undefined){
+		Messenger.post({message:&quot;关联类型未选择!&quot;,type:&quot;error&quot;,hideAfter:2,showCloseButton:true});	
+		return;			
+	}
+	Messenger.post({message:&quot;正在提交&quot;,type:&quot;info&quot;,hideAfter:2,showCloseButton:true});	
+	$model.e_crm_complaint_type.lineid=$params.info.Lineid;
+	$model.e_crm_complaint_type.realateLineid=$params.checktype;
+	$model.e_crm_complaint_type.realateFlag=1;
+    $model.e_crm_complaint_type.$save(function(){
+        Messenger.post({message:&quot;关联成功&quot;,type:&quot;success&quot;,hideAfter:2,showCloseButton:true});	
+        Modal.instance.close();
+    });	
+},
+
+buttonClose_click:function($event){
+	//Modal.instance.dismiss();
+	$view.mainForm.clean();
+}</form:scripts>
+  <form:htmls></form:htmls>
+</form:Form>

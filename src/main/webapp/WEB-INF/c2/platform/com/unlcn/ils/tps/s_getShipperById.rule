@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="s_getShipperById" log="false" className="com.unlcn.ils.tps.services.ShipperService" method="getShipperById">
+  <instanceCreator>
+    <params/>
+  </instanceCreator>
+  <name>根据分供方id得到分供方信息</name>
+  <inputs>
+    <input collection="false" desc="" id="shippperid" required="true" type="String"/>
+  </inputs>
+  <outputs>
+    <output autoValue="Result" desc="" id="result" name="方法返回值" type="java.util.Map"/>
+  </outputs>
+  <params>
+    <param autoValue="Input.shippperid" name="shippperid" signature="QString;" type="String"/>
+  </params>
+  <return signature="QMap&lt;QString;QString;>;" type="java.util.Map"/>
+</CustomRule>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="s_addSubstract" log="false" className="com.unlcn.ils.tps.services.SubstractService" method="addSubstract">
+  <instanceCreator>
+    <params/>
+  </instanceCreator>
+  <name>生成减免单</name>
+  <inputs>
+    <input collection="false" desc="" id="lineid" required="true" type="String"/>
+    <input collection="false" desc="" id="e_substract" required="true" type="com.unlcn.ils.tps.E_substract"/>
+  </inputs>
+  <outputs>
+    <output autoValue="Result" desc="" id="result" name="方法返回值" type="boolean"/>
+  </outputs>
+  <params>
+    <param autoValue="Input.lineid" name="lineid" signature="QString;" type="String"/>
+    <param autoValue="Input.e_substract" name="e_substract" signature="QE_substract;" type="com.unlcn.ils.tps.E_substract"/>
+  </params>
+  <return signature="Z" type="boolean"/>
+</CustomRule>

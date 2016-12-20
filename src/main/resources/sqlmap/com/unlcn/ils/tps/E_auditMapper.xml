@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><mapper namespace="com.unlcn.ils.tps.E_auditMapper">	
+
+<!-- ElementID:column_sql,Generated=true -->
+<sql id="column_sql">
+		  tps_audit.lineid ,
+		  tps_audit.audit_user ,
+		  tps_audit.audit_time ,
+		  tps_audit.audit_memo ,
+		  tps_audit.join_id ,
+		  tps_audit.audit_flag ,
+		  tps_audit.audit_tool ,
+		  tps_audit.join_flag ,
+		  tps_audit.begin_date ,
+		  tps_audit.end_date ,
+		  tps_audit.create_time ,
+		  tps_audit.create_user ,
+		  tps_audit.active ,
+		  tps_audit.active_user ,
+		  tps_audit.active_time ,
+		  tps_audit.active_memo 
+</sql>
+
+<!-- ElementID:whereClause_sql,Generated=true -->
+<sql id="whereClause_sql">
+	    <if test="lineid != null">and tps_audit.lineid = #{lineid}</if>
+	    <if test="auditUser != null">and tps_audit.audit_user = #{auditUser}</if>
+	    <if test="auditTime != null">and tps_audit.audit_time = #{auditTime}</if>
+	    <if test="auditMemo != null">and tps_audit.audit_memo = #{auditMemo}</if>
+	    <if test="joinId != null">and tps_audit.join_id = #{joinId}</if>
+	    <if test="auditFlag != null">and tps_audit.audit_flag = #{auditFlag}</if>
+	    <if test="auditTool != null">and tps_audit.audit_tool = #{auditTool}</if>
+	    <if test="joinFlag != null">and tps_audit.join_flag = #{joinFlag}</if>
+	    <if test="beginDate != null">and tps_audit.begin_date = #{beginDate}</if>
+	    <if test="endDate != null">and tps_audit.end_date = #{endDate}</if>
+	    <if test="createTime != null">and tps_audit.create_time = #{createTime}</if>
+	    <if test="createUser != null">and tps_audit.create_user = #{createUser}</if>
+	    <if test="active != null">and tps_audit.active = #{active}</if>
+	    <if test="activeUser != null">and tps_audit.active_user = #{activeUser}</if>
+	    <if test="activeTime != null">and tps_audit.active_time = #{activeTime}</if>
+	    <if test="activeMemo != null">and tps_audit.active_memo = #{activeMemo}</if>
+</sql>
+
+
+<!-- ElementID:E_auditResult,Generated=true -->
+<resultMap id="E_auditResult" type="com.unlcn.ils.tps.E_audit">
+	<id property="lineid" column="lineid"/>
+	<result property="auditUser" column="audit_user"/>
+	<result property="auditTime" column="audit_time"/>
+	<result property="auditMemo" column="audit_memo"/>
+	<result property="joinId" column="join_id"/>
+	<result property="auditFlag" column="audit_flag"/>
+	<result property="auditTool" column="audit_tool"/>
+	<result property="joinFlag" column="join_flag"/>
+	<result property="beginDate" column="begin_date"/>
+	<result property="endDate" column="end_date"/>
+	<result property="createTime" column="create_time"/>
+	<result property="createUser" column="create_user"/>
+	<result property="active" column="active"/>
+	<result property="activeUser" column="active_user"/>
+	<result property="activeTime" column="active_time"/>
+	<result property="activeMemo" column="active_memo"/>
+</resultMap>
+
+
+<!-- ElementName:cache,Generated=true -->
+<cache type="C2_Default_Dao_Cache"/>
+
+<!-- ElementID:count,Generated=true -->
+<select id="count" parameterType="com.unlcn.ils.tps.E_audit" resultType="int">
+	select count(*) from tps_audit 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+<!-- ElementID:update,Generated=true -->
+<update id="update" parameterType="com.unlcn.ils.tps.E_audit">
+	update tps_audit
+<set>
+	<if test="auditUser != null">audit_user=#{auditUser,jdbcType=VARCHAR},</if>
+	<if test="auditTime != null">audit_time=#{auditTime,jdbcType=TIMESTAMP},</if>
+	<if test="auditMemo != null">audit_memo=#{auditMemo,jdbcType=VARCHAR},</if>
+	<if test="joinId != null">join_id=#{joinId,jdbcType=VARCHAR},</if>
+	<if test="auditFlag != null">audit_flag=#{auditFlag,jdbcType=NUMERIC},</if>
+	<if test="auditTool != null">audit_tool=#{auditTool,jdbcType=NUMERIC},</if>
+	<if test="joinFlag != null">join_flag=#{joinFlag,jdbcType=NUMERIC},</if>
+	<if test="beginDate != null">begin_date=#{beginDate,jdbcType=DATE},</if>
+	<if test="endDate != null">end_date=#{endDate,jdbcType=DATE},</if>
+	<if test="createTime != null">create_time=#{createTime,jdbcType=TIMESTAMP},</if>
+	<if test="createUser != null">create_user=#{createUser,jdbcType=VARCHAR},</if>
+	<if test="active != null">active=#{active,jdbcType=NUMERIC},</if>
+	<if test="activeUser != null">active_user=#{activeUser,jdbcType=VARCHAR},</if>
+	<if test="activeTime != null">active_time=#{activeTime,jdbcType=TIMESTAMP},</if>
+	<if test="activeMemo != null">active_memo=#{activeMemo,jdbcType=VARCHAR}</if>
+</set>
+<where>
+	<choose>
+        <when test="lineid != null">and lineid = #{lineid}</when>
+        <otherwise>and lineid = </otherwise>
+    </choose>
+</where>
+</update>
+
+<!-- ElementID:updateNull,Generated=true -->
+<update id="updateNull" parameterType="map">
+	update tps_audit
+	<set>
+		<trim suffixOverrides=",">
+		    <if test="auditUser==null">audit_user = null,</if>
+		    <if test="auditTime==null">audit_time = null,</if>
+		    <if test="auditMemo==null">audit_memo = null,</if>
+		    <if test="joinId==null">join_id = null,</if>
+		    <if test="auditFlag==null">audit_flag = null,</if>
+		    <if test="auditTool==null">audit_tool = null,</if>
+		    <if test="joinFlag==null">join_flag = null,</if>
+		    <if test="beginDate==null">begin_date = null,</if>
+		    <if test="endDate==null">end_date = null,</if>
+		    <if test="createTime==null">create_time = null,</if>
+		    <if test="createUser==null">create_user = null,</if>
+		    <if test="active==null">active = null,</if>
+		    <if test="activeUser==null">active_user = null,</if>
+		    <if test="activeTime==null">active_time = null,</if>
+		    <if test="activeMemo==null">active_memo = null,</if>
+		</trim>
+	</set>
+	<where>
+		<choose>
+			<when test="lineid != null">and lineid = #{lineid}</when>
+			<otherwise>and lineid = </otherwise>
+		</choose>
+	</where>
+</update>
+
+<!-- ElementID:delete,Generated=true -->
+<delete id="delete" parameterType="com.unlcn.ils.tps.E_audit">
+    delete from tps_audit where 1=1 and lineid = #{lineid}
+</delete>
+
+<!-- ElementID:select,Generated=true -->
+<select id="select" parameterType="com.unlcn.ils.tps.E_audit" resultMap="E_auditResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_audit 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:deleteBatch,Generated=true -->
+<delete id="deleteBatch" parameterType="List">
+	delete from tps_audit where lineid in
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<foreach collection="list" item="entity" separator=",">
+	#{entity.lineid}
+</foreach>
+</trim>
+</delete>
+
+<!-- ElementID:selectAll,Generated=true -->
+<select id="selectAll" resultMap="E_auditResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_audit 
+</select>
+
+<!-- ElementID:selectByID,Generated=true -->
+<select id="selectByID" parameterType="java.lang.String" resultMap="E_auditResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_audit 
+		 where tps_audit.lineid = #{lineid,jdbcType=VARCHAR}
+</select>
+
+<!-- ElementID:selectByPage,Generated=true -->
+<select id="selectByPage" parameterType="com.unlcn.ils.tps.E_audit" resultMap="E_auditResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_audit 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:selectMany,Generated=true -->
+<select id="selectMany" parameterType="list" resultMap="E_auditResult">
+select 
+	<include refid="column_sql"/> 
+	from tps_audit 
+	where tps_audit.lineid in (
+		select distinct lineid from tps_audit inner join
+<foreach collection="list" item="entity" separator="inner join">
+		(select 
+			distinct lineid
+			from tps_audit 
+			<where>
+	        <if test="entity.lineid != null">and tps_audit.lineid = #{entity.lineid}</if>
+	        <if test="entity.auditUser != null">and tps_audit.audit_user = #{entity.auditUser}</if>
+	        <if test="entity.auditTime != null">and tps_audit.audit_time = #{entity.auditTime}</if>
+	        <if test="entity.auditMemo != null">and tps_audit.audit_memo = #{entity.auditMemo}</if>
+	        <if test="entity.joinId != null">and tps_audit.join_id = #{entity.joinId}</if>
+	        <if test="entity.auditFlag != null">and tps_audit.audit_flag = #{entity.auditFlag}</if>
+	        <if test="entity.auditTool != null">and tps_audit.audit_tool = #{entity.auditTool}</if>
+	        <if test="entity.joinFlag != null">and tps_audit.join_flag = #{entity.joinFlag}</if>
+	        <if test="entity.beginDate != null">and tps_audit.begin_date = #{entity.beginDate}</if>
+	        <if test="entity.endDate != null">and tps_audit.end_date = #{entity.endDate}</if>
+	        <if test="entity.createTime != null">and tps_audit.create_time = #{entity.createTime}</if>
+	        <if test="entity.createUser != null">and tps_audit.create_user = #{entity.createUser}</if>
+	        <if test="entity.active != null">and tps_audit.active = #{entity.active}</if>
+	        <if test="entity.activeUser != null">and tps_audit.active_user = #{entity.activeUser}</if>
+	        <if test="entity.activeTime != null">and tps_audit.active_time = #{entity.activeTime}</if>
+	        <if test="entity.activeMemo != null">and tps_audit.active_memo = #{entity.activeMemo}</if>
+			</where>
+		) ${entity.tableAlias} using (lineid)
+</foreach>
+)
+</select>
+
+<!-- ElementID:insert,Generated=true -->
+<insert id="insert" parameterType="com.unlcn.ils.tps.E_audit">
+	insert into tps_audit(
+	         <if test="lineid != null">lineid</if>
+	         <if test="auditUser != null">,audit_user</if>
+	         <if test="auditTime != null">,audit_time</if>
+	         <if test="auditMemo != null">,audit_memo</if>
+	         <if test="joinId != null">,join_id</if>
+	         <if test="auditFlag != null">,audit_flag</if>
+	         <if test="auditTool != null">,audit_tool</if>
+	         <if test="joinFlag != null">,join_flag</if>
+	         <if test="beginDate != null">,begin_date</if>
+	         <if test="endDate != null">,end_date</if>
+	         <if test="createTime != null">,create_time</if>
+	         <if test="createUser != null">,create_user</if>
+	         <if test="active != null">,active</if>
+	         <if test="activeUser != null">,active_user</if>
+	         <if test="activeTime != null">,active_time</if>
+	         <if test="activeMemo != null">,active_memo</if>
+	 	 	 )
+	 values (
+	         <if test="lineid != null">#{lineid,jdbcType=VARCHAR}</if>
+	         <if test="auditUser != null">,#{auditUser,jdbcType=VARCHAR}</if>
+	         <if test="auditTime != null">,#{auditTime,jdbcType=TIMESTAMP}</if>
+	         <if test="auditMemo != null">,#{auditMemo,jdbcType=VARCHAR}</if>
+	         <if test="joinId != null">,#{joinId,jdbcType=VARCHAR}</if>
+	         <if test="auditFlag != null">,#{auditFlag,jdbcType=NUMERIC}</if>
+	         <if test="auditTool != null">,#{auditTool,jdbcType=NUMERIC}</if>
+	         <if test="joinFlag != null">,#{joinFlag,jdbcType=NUMERIC}</if>
+	         <if test="beginDate != null">,#{beginDate,jdbcType=DATE}</if>
+	         <if test="endDate != null">,#{endDate,jdbcType=DATE}</if>
+	         <if test="createTime != null">,#{createTime,jdbcType=TIMESTAMP}</if>
+	         <if test="createUser != null">,#{createUser,jdbcType=VARCHAR}</if>
+	         <if test="active != null">,#{active,jdbcType=NUMERIC}</if>
+	         <if test="activeUser != null">,#{activeUser,jdbcType=VARCHAR}</if>
+	         <if test="activeTime != null">,#{activeTime,jdbcType=TIMESTAMP}</if>
+	         <if test="activeMemo != null">,#{activeMemo,jdbcType=VARCHAR}</if>
+	 	 	 )
+</insert>
+
+<!-- ElementID:insertBatch,Generated=true -->
+<insert id="insertBatch" parameterType="list">
+	insert into tps_audit (lineid,audit_user,audit_time,audit_memo,join_id,audit_flag,audit_tool,join_flag,begin_date,end_date,create_time,create_user,active,active_user,active_time,active_memo) 
+<foreach collection="list" item="entity" index="index" separator="union all">
+		select 
+		#{entity.lineid,jdbcType = VARCHAR},
+				#{entity.auditUser,jdbcType = VARCHAR},
+				#{entity.auditTime,jdbcType = TIMESTAMP},
+				#{entity.auditMemo,jdbcType = VARCHAR},
+				#{entity.joinId,jdbcType = VARCHAR},
+				#{entity.auditFlag,jdbcType = NUMERIC},
+				#{entity.auditTool,jdbcType = NUMERIC},
+				#{entity.joinFlag,jdbcType = NUMERIC},
+				#{entity.beginDate,jdbcType = DATE},
+				#{entity.endDate,jdbcType = DATE},
+				#{entity.createTime,jdbcType = TIMESTAMP},
+				#{entity.createUser,jdbcType = VARCHAR},
+				#{entity.active,jdbcType = NUMERIC},
+				#{entity.activeUser,jdbcType = VARCHAR},
+				#{entity.activeTime,jdbcType = TIMESTAMP},
+				#{entity.activeMemo,jdbcType = VARCHAR}
+		from dual
+</foreach>
+</insert>
+<select id="selectByCondition" parameterType="com.unlcn.ils.tps.E_audit" resultMap="E_auditResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_audit 
+	    <where>
+	    	<if test="joinFlag!=null">and tps_audit.join_flag = #{joinFlag}</if>
+	    	<if test="joinId!=null">and tps_audit.join_id = #{joinId}</if>
+	    </where>
+</select>
+</mapper>

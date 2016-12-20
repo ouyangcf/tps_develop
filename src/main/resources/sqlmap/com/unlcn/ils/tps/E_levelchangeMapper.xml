@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><mapper namespace="com.unlcn.ils.tps.E_levelchangeMapper">	
+
+<!-- ElementID:column_sql,Generated=true -->
+<sql id="column_sql">
+		  tps_levelchange.lineid ,
+		  tps_levelchange.leveltable_lineid ,
+		  tps_levelchange.shipper_lineid ,
+		  tps_levelchange.rout_lineid ,
+		  tps_levelchange.prelevelid ,
+		  tps_levelchange.prelevelname ,
+		  tps_levelchange.afterlevelid ,
+		  tps_levelchange.afterlevelname ,
+		  tps_levelchange.resonchange_lineid ,
+		  tps_levelchange.resonchange_name ,
+		  tps_levelchange.change_otherreson ,
+		  tps_levelchange.strart_date ,
+		  tps_levelchange.end_date ,
+		  tps_levelchange.approve_username ,
+		  tps_levelchange.approve_memo ,
+		  tps_levelchange.approve_time ,
+		  tps_levelchange.approve_status ,
+		  tps_levelchange.create_username ,
+		  tps_levelchange.create_time ,
+		  tps_levelchange.active ,
+		  tps_levelchange.active_user ,
+		  tps_levelchange.active_time ,
+		  tps_levelchange.active_memo 
+</sql>
+
+<!-- ElementID:whereClause_sql,Generated=true -->
+<sql id="whereClause_sql">
+	    <if test="lineid != null">and tps_levelchange.lineid = #{lineid}</if>
+	    <if test="leveltableLineid != null">and tps_levelchange.leveltable_lineid = #{leveltableLineid}</if>
+	    <if test="shipperLineid != null">and tps_levelchange.shipper_lineid = #{shipperLineid}</if>
+	    <if test="routLineid != null">and tps_levelchange.rout_lineid = #{routLineid}</if>
+	    <if test="prelevelid != null">and tps_levelchange.prelevelid = #{prelevelid}</if>
+	    <if test="prelevelname != null">and tps_levelchange.prelevelname = #{prelevelname}</if>
+	    <if test="afterlevelid != null">and tps_levelchange.afterlevelid = #{afterlevelid}</if>
+	    <if test="afterlevelname != null">and tps_levelchange.afterlevelname = #{afterlevelname}</if>
+	    <if test="resonchangeLineid != null">and tps_levelchange.resonchange_lineid = #{resonchangeLineid}</if>
+	    <if test="resonchangeName != null">and tps_levelchange.resonchange_name = #{resonchangeName}</if>
+	    <if test="changeOtherreson != null">and tps_levelchange.change_otherreson = #{changeOtherreson}</if>
+	    <if test="strartDate != null">and tps_levelchange.strart_date = #{strartDate}</if>
+	    <if test="endDate != null">and tps_levelchange.end_date = #{endDate}</if>
+	    <if test="approveUsername != null">and tps_levelchange.approve_username = #{approveUsername}</if>
+	    <if test="approveMemo != null">and tps_levelchange.approve_memo = #{approveMemo}</if>
+	    <if test="approveTime != null">and tps_levelchange.approve_time = #{approveTime}</if>
+	    <if test="approveStatus != null">and tps_levelchange.approve_status = #{approveStatus}</if>
+	    <if test="createUsername != null">and tps_levelchange.create_username = #{createUsername}</if>
+	    <if test="createTime != null">and tps_levelchange.create_time = #{createTime}</if>
+	    <if test="active != null">and tps_levelchange.active = #{active}</if>
+	    <if test="activeUser != null">and tps_levelchange.active_user = #{activeUser}</if>
+	    <if test="activeTime != null">and tps_levelchange.active_time = #{activeTime}</if>
+	    <if test="activeMemo != null">and tps_levelchange.active_memo = #{activeMemo}</if>
+</sql>
+
+
+
+
+
+
+
+
+<!-- ElementID:E_levelchangeResult,Generated=true -->
+<resultMap id="E_levelchangeResult" type="com.unlcn.ils.tps.E_levelchange">
+	<id property="lineid" column="lineid"/>
+	<result property="leveltableLineid" column="leveltable_lineid"/>
+	<result property="shipperLineid" column="shipper_lineid"/>
+	<result property="routLineid" column="rout_lineid"/>
+	<result property="prelevelid" column="prelevelid"/>
+	<result property="prelevelname" column="prelevelname"/>
+	<result property="afterlevelid" column="afterlevelid"/>
+	<result property="afterlevelname" column="afterlevelname"/>
+	<result property="resonchangeLineid" column="resonchange_lineid"/>
+	<result property="resonchangeName" column="resonchange_name"/>
+	<result property="changeOtherreson" column="change_otherreson"/>
+	<result property="strartDate" column="strart_date"/>
+	<result property="endDate" column="end_date"/>
+	<result property="approveUsername" column="approve_username"/>
+	<result property="approveMemo" column="approve_memo"/>
+	<result property="approveTime" column="approve_time"/>
+	<result property="approveStatus" column="approve_status"/>
+	<result property="createUsername" column="create_username"/>
+	<result property="createTime" column="create_time"/>
+	<result property="active" column="active"/>
+	<result property="activeUser" column="active_user"/>
+	<result property="activeTime" column="active_time"/>
+	<result property="activeMemo" column="active_memo"/>
+</resultMap>
+
+
+<!-- ElementName:cache,Generated=true -->
+<cache type="C2_Default_Dao_Cache"/>
+
+<!-- ElementID:count,Generated=true -->
+<select id="count" parameterType="com.unlcn.ils.tps.E_levelchange" resultType="int">
+	select count(*) from tps_levelchange 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+<!-- ElementID:update,Generated=true -->
+<update id="update" parameterType="com.unlcn.ils.tps.E_levelchange">
+	update tps_levelchange
+<set>
+	<if test="leveltableLineid != null">leveltable_lineid=#{leveltableLineid,jdbcType=VARCHAR},</if>
+	<if test="shipperLineid != null">shipper_lineid=#{shipperLineid,jdbcType=VARCHAR},</if>
+	<if test="routLineid != null">rout_lineid=#{routLineid,jdbcType=VARCHAR},</if>
+	<if test="prelevelid != null">prelevelid=#{prelevelid,jdbcType=NUMERIC},</if>
+	<if test="prelevelname != null">prelevelname=#{prelevelname,jdbcType=VARCHAR},</if>
+	<if test="afterlevelid != null">afterlevelid=#{afterlevelid,jdbcType=NUMERIC},</if>
+	<if test="afterlevelname != null">afterlevelname=#{afterlevelname,jdbcType=VARCHAR},</if>
+	<if test="resonchangeLineid != null">resonchange_lineid=#{resonchangeLineid,jdbcType=NUMERIC},</if>
+	<if test="resonchangeName != null">resonchange_name=#{resonchangeName,jdbcType=VARCHAR},</if>
+	<if test="changeOtherreson != null">change_otherreson=#{changeOtherreson,jdbcType=VARCHAR},</if>
+	<if test="strartDate != null">strart_date=#{strartDate,jdbcType=TIMESTAMP},</if>
+	<if test="endDate != null">end_date=#{endDate,jdbcType=TIMESTAMP},</if>
+	<if test="approveUsername != null">approve_username=#{approveUsername,jdbcType=VARCHAR},</if>
+	<if test="approveMemo != null">approve_memo=#{approveMemo,jdbcType=VARCHAR},</if>
+	<if test="approveTime != null">approve_time=#{approveTime,jdbcType=TIMESTAMP},</if>
+	<if test="approveStatus != null">approve_status=#{approveStatus,jdbcType=NUMERIC},</if>
+	<if test="createUsername != null">create_username=#{createUsername,jdbcType=VARCHAR},</if>
+	<if test="createTime != null">create_time=#{createTime,jdbcType=TIMESTAMP},</if>
+	<if test="active != null">active=#{active,jdbcType=NUMERIC},</if>
+	<if test="activeUser != null">active_user=#{activeUser,jdbcType=VARCHAR},</if>
+	<if test="activeTime != null">active_time=#{activeTime,jdbcType=TIMESTAMP},</if>
+	<if test="activeMemo != null">active_memo=#{activeMemo,jdbcType=VARCHAR}</if>
+</set>
+<where>
+	<choose>
+        <when test="lineid != null">and lineid = #{lineid}</when>
+        <otherwise>and lineid = </otherwise>
+    </choose>
+</where>
+</update>
+
+<!-- ElementID:updateNull,Generated=true -->
+<update id="updateNull" parameterType="map">
+	update tps_levelchange
+	<set>
+		<trim suffixOverrides=",">
+		    <if test="leveltableLineid==null">leveltable_lineid = null,</if>
+		    <if test="shipperLineid==null">shipper_lineid = null,</if>
+		    <if test="routLineid==null">rout_lineid = null,</if>
+		    <if test="prelevelid==null">prelevelid = null,</if>
+		    <if test="prelevelname==null">prelevelname = null,</if>
+		    <if test="afterlevelid==null">afterlevelid = null,</if>
+		    <if test="afterlevelname==null">afterlevelname = null,</if>
+		    <if test="resonchangeLineid==null">resonchange_lineid = null,</if>
+		    <if test="resonchangeName==null">resonchange_name = null,</if>
+		    <if test="changeOtherreson==null">change_otherreson = null,</if>
+		    <if test="strartDate==null">strart_date = null,</if>
+		    <if test="endDate==null">end_date = null,</if>
+		    <if test="approveUsername==null">approve_username = null,</if>
+		    <if test="approveMemo==null">approve_memo = null,</if>
+		    <if test="approveTime==null">approve_time = null,</if>
+		    <if test="approveStatus==null">approve_status = null,</if>
+		    <if test="createUsername==null">create_username = null,</if>
+		    <if test="createTime==null">create_time = null,</if>
+		    <if test="active==null">active = null,</if>
+		    <if test="activeUser==null">active_user = null,</if>
+		    <if test="activeTime==null">active_time = null,</if>
+		    <if test="activeMemo==null">active_memo = null,</if>
+		</trim>
+	</set>
+	<where>
+		<choose>
+			<when test="lineid != null">and lineid = #{lineid}</when>
+			<otherwise>and lineid = </otherwise>
+		</choose>
+	</where>
+</update>
+
+<!-- ElementID:delete,Generated=true -->
+<delete id="delete" parameterType="com.unlcn.ils.tps.E_levelchange">
+    delete from tps_levelchange where 1=1 and lineid = #{lineid}
+</delete>
+
+<!-- ElementID:select,Generated=true -->
+<select id="select" parameterType="com.unlcn.ils.tps.E_levelchange" resultMap="E_levelchangeResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_levelchange 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:deleteBatch,Generated=true -->
+<delete id="deleteBatch" parameterType="List">
+	delete from tps_levelchange where lineid in
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<foreach collection="list" item="entity" separator=",">
+	#{entity.lineid}
+</foreach>
+</trim>
+</delete>
+
+<!-- ElementID:selectAll,Generated=true -->
+<select id="selectAll" resultMap="E_levelchangeResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_levelchange 
+</select>
+
+<!-- ElementID:selectByID,Generated=true -->
+<select id="selectByID" parameterType="java.lang.String" resultMap="E_levelchangeResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_levelchange 
+		 where tps_levelchange.lineid = #{lineid,jdbcType=VARCHAR}
+</select>
+
+<!-- ElementID:selectByPage,Generated=true -->
+<select id="selectByPage" parameterType="com.unlcn.ils.tps.E_levelchange" resultMap="E_levelchangeResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_levelchange 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:selectMany,Generated=true -->
+<select id="selectMany" parameterType="list" resultMap="E_levelchangeResult">
+select 
+	<include refid="column_sql"/> 
+	from tps_levelchange 
+	where tps_levelchange.lineid in (
+		select distinct lineid from tps_levelchange inner join
+<foreach collection="list" item="entity" separator="inner join">
+		(select 
+			distinct lineid
+			from tps_levelchange 
+			<where>
+	        <if test="entity.lineid != null">and tps_levelchange.lineid = #{entity.lineid}</if>
+	        <if test="entity.leveltableLineid != null">and tps_levelchange.leveltable_lineid = #{entity.leveltableLineid}</if>
+	        <if test="entity.shipperLineid != null">and tps_levelchange.shipper_lineid = #{entity.shipperLineid}</if>
+	        <if test="entity.routLineid != null">and tps_levelchange.rout_lineid = #{entity.routLineid}</if>
+	        <if test="entity.prelevelid != null">and tps_levelchange.prelevelid = #{entity.prelevelid}</if>
+	        <if test="entity.prelevelname != null">and tps_levelchange.prelevelname = #{entity.prelevelname}</if>
+	        <if test="entity.afterlevelid != null">and tps_levelchange.afterlevelid = #{entity.afterlevelid}</if>
+	        <if test="entity.afterlevelname != null">and tps_levelchange.afterlevelname = #{entity.afterlevelname}</if>
+	        <if test="entity.resonchangeLineid != null">and tps_levelchange.resonchange_lineid = #{entity.resonchangeLineid}</if>
+	        <if test="entity.resonchangeName != null">and tps_levelchange.resonchange_name = #{entity.resonchangeName}</if>
+	        <if test="entity.changeOtherreson != null">and tps_levelchange.change_otherreson = #{entity.changeOtherreson}</if>
+	        <if test="entity.strartDate != null">and tps_levelchange.strart_date = #{entity.strartDate}</if>
+	        <if test="entity.endDate != null">and tps_levelchange.end_date = #{entity.endDate}</if>
+	        <if test="entity.approveUsername != null">and tps_levelchange.approve_username = #{entity.approveUsername}</if>
+	        <if test="entity.approveMemo != null">and tps_levelchange.approve_memo = #{entity.approveMemo}</if>
+	        <if test="entity.approveTime != null">and tps_levelchange.approve_time = #{entity.approveTime}</if>
+	        <if test="entity.approveStatus != null">and tps_levelchange.approve_status = #{entity.approveStatus}</if>
+	        <if test="entity.createUsername != null">and tps_levelchange.create_username = #{entity.createUsername}</if>
+	        <if test="entity.createTime != null">and tps_levelchange.create_time = #{entity.createTime}</if>
+	        <if test="entity.active != null">and tps_levelchange.active = #{entity.active}</if>
+	        <if test="entity.activeUser != null">and tps_levelchange.active_user = #{entity.activeUser}</if>
+	        <if test="entity.activeTime != null">and tps_levelchange.active_time = #{entity.activeTime}</if>
+	        <if test="entity.activeMemo != null">and tps_levelchange.active_memo = #{entity.activeMemo}</if>
+			</where>
+		) ${entity.tableAlias} using (lineid)
+</foreach>
+)
+</select>
+
+<!-- ElementID:insert,Generated=true -->
+<insert id="insert" parameterType="com.unlcn.ils.tps.E_levelchange">
+	insert into tps_levelchange(
+	         <if test="lineid != null">lineid</if>
+	         <if test="leveltableLineid != null">,leveltable_lineid</if>
+	         <if test="shipperLineid != null">,shipper_lineid</if>
+	         <if test="routLineid != null">,rout_lineid</if>
+	         <if test="prelevelid != null">,prelevelid</if>
+	         <if test="prelevelname != null">,prelevelname</if>
+	         <if test="afterlevelid != null">,afterlevelid</if>
+	         <if test="afterlevelname != null">,afterlevelname</if>
+	         <if test="resonchangeLineid != null">,resonchange_lineid</if>
+	         <if test="resonchangeName != null">,resonchange_name</if>
+	         <if test="changeOtherreson != null">,change_otherreson</if>
+	         <if test="strartDate != null">,strart_date</if>
+	         <if test="endDate != null">,end_date</if>
+	         <if test="approveUsername != null">,approve_username</if>
+	         <if test="approveMemo != null">,approve_memo</if>
+	         <if test="approveTime != null">,approve_time</if>
+	         <if test="approveStatus != null">,approve_status</if>
+	         <if test="createUsername != null">,create_username</if>
+	         <if test="createTime != null">,create_time</if>
+	         <if test="active != null">,active</if>
+	         <if test="activeUser != null">,active_user</if>
+	         <if test="activeTime != null">,active_time</if>
+	         <if test="activeMemo != null">,active_memo</if>
+	 	 	 )
+	 values (
+	         <if test="lineid != null">#{lineid,jdbcType=VARCHAR}</if>
+	         <if test="leveltableLineid != null">,#{leveltableLineid,jdbcType=VARCHAR}</if>
+	         <if test="shipperLineid != null">,#{shipperLineid,jdbcType=VARCHAR}</if>
+	         <if test="routLineid != null">,#{routLineid,jdbcType=VARCHAR}</if>
+	         <if test="prelevelid != null">,#{prelevelid,jdbcType=NUMERIC}</if>
+	         <if test="prelevelname != null">,#{prelevelname,jdbcType=VARCHAR}</if>
+	         <if test="afterlevelid != null">,#{afterlevelid,jdbcType=NUMERIC}</if>
+	         <if test="afterlevelname != null">,#{afterlevelname,jdbcType=VARCHAR}</if>
+	         <if test="resonchangeLineid != null">,#{resonchangeLineid,jdbcType=NUMERIC}</if>
+	         <if test="resonchangeName != null">,#{resonchangeName,jdbcType=VARCHAR}</if>
+	         <if test="changeOtherreson != null">,#{changeOtherreson,jdbcType=VARCHAR}</if>
+	         <if test="strartDate != null">,#{strartDate,jdbcType=TIMESTAMP}</if>
+	         <if test="endDate != null">,#{endDate,jdbcType=TIMESTAMP}</if>
+	         <if test="approveUsername != null">,#{approveUsername,jdbcType=VARCHAR}</if>
+	         <if test="approveMemo != null">,#{approveMemo,jdbcType=VARCHAR}</if>
+	         <if test="approveTime != null">,#{approveTime,jdbcType=TIMESTAMP}</if>
+	         <if test="approveStatus != null">,#{approveStatus,jdbcType=NUMERIC}</if>
+	         <if test="createUsername != null">,#{createUsername,jdbcType=VARCHAR}</if>
+	         <if test="createTime != null">,#{createTime,jdbcType=TIMESTAMP}</if>
+	         <if test="active != null">,#{active,jdbcType=NUMERIC}</if>
+	         <if test="activeUser != null">,#{activeUser,jdbcType=VARCHAR}</if>
+	         <if test="activeTime != null">,#{activeTime,jdbcType=TIMESTAMP}</if>
+	         <if test="activeMemo != null">,#{activeMemo,jdbcType=VARCHAR}</if>
+	 	 	 )
+</insert>
+
+<!-- ElementID:insertBatch,Generated=true -->
+<insert id="insertBatch" parameterType="list">
+	insert into tps_levelchange (lineid,leveltable_lineid,shipper_lineid,rout_lineid,prelevelid,prelevelname,afterlevelid,afterlevelname,resonchange_lineid,resonchange_name,change_otherreson,strart_date,end_date,approve_username,approve_memo,approve_time,approve_status,create_username,create_time,active,active_user,active_time,active_memo) 
+<foreach collection="list" item="entity" index="index" separator="union all">
+		select 
+		#{entity.lineid,jdbcType = VARCHAR},
+				#{entity.leveltableLineid,jdbcType = VARCHAR},
+				#{entity.shipperLineid,jdbcType = VARCHAR},
+				#{entity.routLineid,jdbcType = VARCHAR},
+				#{entity.prelevelid,jdbcType = NUMERIC},
+				#{entity.prelevelname,jdbcType = VARCHAR},
+				#{entity.afterlevelid,jdbcType = NUMERIC},
+				#{entity.afterlevelname,jdbcType = VARCHAR},
+				#{entity.resonchangeLineid,jdbcType = NUMERIC},
+				#{entity.resonchangeName,jdbcType = VARCHAR},
+				#{entity.changeOtherreson,jdbcType = VARCHAR},
+				#{entity.strartDate,jdbcType = TIMESTAMP},
+				#{entity.endDate,jdbcType = TIMESTAMP},
+				#{entity.approveUsername,jdbcType = VARCHAR},
+				#{entity.approveMemo,jdbcType = VARCHAR},
+				#{entity.approveTime,jdbcType = TIMESTAMP},
+				#{entity.approveStatus,jdbcType = NUMERIC},
+				#{entity.createUsername,jdbcType = VARCHAR},
+				#{entity.createTime,jdbcType = TIMESTAMP},
+				#{entity.active,jdbcType = NUMERIC},
+				#{entity.activeUser,jdbcType = VARCHAR},
+				#{entity.activeTime,jdbcType = TIMESTAMP},
+				#{entity.activeMemo,jdbcType = VARCHAR}
+		from dual
+</foreach>
+</insert>
+
+
+
+
+
+
+
+
+
+
+
+<select id="getMaxId" resultMap="E_levelchangeResult">
+	SELECT * FROM tps_levelchange where lineid=(SELECT MAX(lineid) FROM tps_levelchange)
+</select>
+<select id="selectByLevelTable_LineID" parameterType="java.lang.Integer" resultMap="E_levelchangeResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_levelchange 
+		 where tps_levelchange.leveltable_lineid = #{leveltable_lineid}
+</select>
+<select id="selectByApproveStatus" parameterType="java.lang.Integer" resultMap="E_levelchangeResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_levelchange 
+		 where tps_levelchange.approve_status = #{approveStatus}
+</select>
+<select id="selectByShipperLineID" parameterType="java.lang.Integer" resultMap="E_levelchangeResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_levelchange 
+		 where tps_levelchange.shipper_lineid = #{shipper_lineid}
+</select>
+<select id="selectByRout_LineID" parameterType="java.lang.Integer" resultMap="E_levelchangeResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_levelchange 
+		 where tps_levelchange.rout_lineid = #{rout_lineid}
+</select>
+<select id="selectByCreateTime" parameterType="java.sql.Timestamp" resultMap="E_levelchangeResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_levelchange 
+		 where tps_levelchange.create_time &gt;= #{create_time}
+</select>
+<select id="selectByCreateTime1" parameterType="java.sql.Timestamp" resultMap="E_levelchangeResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_levelchange 
+		 where tps_levelchange.create_time &lt;= #{create_time}
+</select>
+<select id="selectByCondition" parameterType="com.unlcn.ils.tps.E_levelchange" resultMap="E_levelchangeResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_levelchange 
+		 where tps_levelchange.create_time &gt;= #{createTime}
+		 and tps_levelchange.create_time &lt;= #{activeTime}
+		 and tps_levelchange.shipper_lineid=#{shipperLineid}
+		 and tps_levelchange.rout_lineid=#{routLineid}
+</select>
+</mapper>

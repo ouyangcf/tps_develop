@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="s_addItem" log="false" className="com.unlcn.ils.tps.services.ItemService" method="newItem">
+  <instanceCreator>
+    <params/>
+  </instanceCreator>
+  <name>项目字典添加</name>
+  <inputs>
+    <input collection="false" desc="" id="e_item" required="true" type="com.unlcn.ils.tps.E_item"/>
+  </inputs>
+  <outputs>
+    <output autoValue="Result" desc="" id="result" name="方法返回值" type="boolean"/>
+  </outputs>
+  <params>
+    <param autoValue="Input.e_item" name="e_item" signature="QE_item;" type="com.unlcn.ils.tps.E_item"/>
+  </params>
+  <return signature="Z" type="boolean"/>
+</CustomRule>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="s_posessCheckRule" log="false" className="com.unlcn.ils.tps.services.CheckRuleService" method="possess">
+  <instanceCreator>
+    <params/>
+  </instanceCreator>
+  <name>处理考核类型</name>
+  <inputs>
+    <input collection="false" desc="" id="data" required="true" type="com.unlcn.ils.tps.E_checkrule"/>
+  </inputs>
+  <outputs>
+    <output autoValue="Result" desc="" id="result" name="方法返回值" type="com.unlcn.ils.tps.E_checkrule"/>
+  </outputs>
+  <params>
+    <param autoValue="Input.data" name="data" signature="QE_checkrule;" type="com.unlcn.ils.tps.E_checkrule"/>
+  </params>
+  <return signature="QE_checkrule;" type="com.unlcn.ils.tps.E_checkrule"/>
+</CustomRule>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="s_checkMethod" log="false" className="com.unlcn.ils.tps.services.CheckMethodService" method="checkMethod">
+  <instanceCreator>
+    <params/>
+  </instanceCreator>
+  <name>新增计算方法前操作</name>
+  <inputs>
+    <input collection="false" desc="" id="data" required="true" type="com.unlcn.ils.tps.E_method"/>
+  </inputs>
+  <outputs>
+    <output autoValue="Result" desc="" id="result" name="方法返回值" type="com.unlcn.ils.tps.E_method"/>
+  </outputs>
+  <params>
+    <param autoValue="Input.data" name="data" signature="QE_method;" type="com.unlcn.ils.tps.E_method"/>
+  </params>
+  <return signature="QE_method;" type="com.unlcn.ils.tps.E_method"/>
+</CustomRule>

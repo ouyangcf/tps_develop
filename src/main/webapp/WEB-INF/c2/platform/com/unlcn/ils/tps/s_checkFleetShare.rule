@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="s_checkFleetShare" service="false" log="false" className="com.unlcn.ils.tps.services.FleetShareService" method="checkData">
+  <instanceCreator>
+    <params/>
+  </instanceCreator>
+  <name>检查及处理份额数据</name>
+  <inputs>
+    <input collection="false" desc="" id="data" required="true" type="com.unlcn.ils.tps.E_fleetshare"/>
+  </inputs>
+  <outputs>
+    <output autoValue="Result" desc="" id="result" name="方法返回值" type="com.unlcn.ils.tps.E_fleetshare"/>
+  </outputs>
+  <params>
+    <param autoValue="Input.data" name="data" signature="QE_fleetshare;" type="com.unlcn.ils.tps.E_fleetshare"/>
+  </params>
+  <return signature="QE_fleetshare;" type="com.unlcn.ils.tps.E_fleetshare"/>
+</CustomRule>

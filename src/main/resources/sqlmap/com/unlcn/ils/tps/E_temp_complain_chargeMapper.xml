@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><mapper namespace="com.unlcn.ils.tps.E_temp_complain_chargeMapper">	
+
+<!-- ElementID:column_sql,Generated=true -->
+<sql id="column_sql">
+		  td_temp_complain_charge.tempid ,
+		  td_temp_complain_charge.id ,
+		  td_temp_complain_charge.complainid ,
+		  td_temp_complain_charge.customerorder ,
+		  td_temp_complain_charge.category ,
+		  td_temp_complain_charge.categoryid ,
+		  td_temp_complain_charge.categoryname ,
+		  td_temp_complain_charge.chargertype ,
+		  td_temp_complain_charge.chargerid ,
+		  td_temp_complain_charge.chargername ,
+		  td_temp_complain_charge.percent ,
+		  td_temp_complain_charge.memo ,
+		  td_temp_complain_charge.chargetime ,
+		  td_temp_complain_charge.createuser ,
+		  td_temp_complain_charge.createtime 
+</sql>
+
+<!-- ElementID:whereClause_sql,Generated=true -->
+<sql id="whereClause_sql">
+	    <if test="tempid != null">and td_temp_complain_charge.tempid = #{tempid}</if>
+	    <if test="id != null">and td_temp_complain_charge.id = #{id}</if>
+	    <if test="complainid != null">and td_temp_complain_charge.complainid = #{complainid}</if>
+	    <if test="customerorder != null">and td_temp_complain_charge.customerorder = #{customerorder}</if>
+	    <if test="category != null">and td_temp_complain_charge.category = #{category}</if>
+	    <if test="categoryid != null">and td_temp_complain_charge.categoryid = #{categoryid}</if>
+	    <if test="categoryname != null">and td_temp_complain_charge.categoryname = #{categoryname}</if>
+	    <if test="chargertype != null">and td_temp_complain_charge.chargertype = #{chargertype}</if>
+	    <if test="chargerid != null">and td_temp_complain_charge.chargerid = #{chargerid}</if>
+	    <if test="chargername != null">and td_temp_complain_charge.chargername = #{chargername}</if>
+	    <if test="percent != null">and td_temp_complain_charge.percent = #{percent}</if>
+	    <if test="memo != null">and td_temp_complain_charge.memo = #{memo}</if>
+	    <if test="chargetime != null">and td_temp_complain_charge.chargetime = #{chargetime}</if>
+	    <if test="createuser != null">and td_temp_complain_charge.createuser = #{createuser}</if>
+	    <if test="createtime != null">and td_temp_complain_charge.createtime = #{createtime}</if>
+</sql>
+
+
+<!-- ElementID:E_temp_complain_chargeResult,Generated=true -->
+<resultMap id="E_temp_complain_chargeResult" type="com.unlcn.ils.tps.E_temp_complain_charge">
+	<id property="tempid" column="tempid"/>
+	<result property="id" column="id"/>
+	<result property="complainid" column="complainid"/>
+	<result property="customerorder" column="customerorder"/>
+	<result property="category" column="category"/>
+	<result property="categoryid" column="categoryid"/>
+	<result property="categoryname" column="categoryname"/>
+	<result property="chargertype" column="chargertype"/>
+	<result property="chargerid" column="chargerid"/>
+	<result property="chargername" column="chargername"/>
+	<result property="percent" column="percent"/>
+	<result property="memo" column="memo"/>
+	<result property="chargetime" column="chargetime"/>
+	<result property="createuser" column="createuser"/>
+	<result property="createtime" column="createtime"/>
+</resultMap>
+
+
+<!-- ElementName:cache,Generated=true -->
+<cache type="C2_Default_Dao_Cache"/>
+
+<!-- ElementID:count,Generated=true -->
+<select id="count" parameterType="com.unlcn.ils.tps.E_temp_complain_charge" resultType="int">
+	select count(*) from td_temp_complain_charge 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+<!-- ElementID:update,Generated=true -->
+<update id="update" parameterType="com.unlcn.ils.tps.E_temp_complain_charge">
+	update td_temp_complain_charge
+<set>
+	<if test="id != null">id=#{id,jdbcType=VARCHAR},</if>
+	<if test="complainid != null">complainid=#{complainid,jdbcType=VARCHAR},</if>
+	<if test="customerorder != null">customerorder=#{customerorder,jdbcType=VARCHAR},</if>
+	<if test="category != null">category=#{category,jdbcType=VARCHAR},</if>
+	<if test="categoryid != null">categoryid=#{categoryid,jdbcType=VARCHAR},</if>
+	<if test="categoryname != null">categoryname=#{categoryname,jdbcType=VARCHAR},</if>
+	<if test="chargertype != null">chargertype=#{chargertype,jdbcType=VARCHAR},</if>
+	<if test="chargerid != null">chargerid=#{chargerid,jdbcType=VARCHAR},</if>
+	<if test="chargername != null">chargername=#{chargername,jdbcType=VARCHAR},</if>
+	<if test="percent != null">percent=#{percent,jdbcType=VARCHAR},</if>
+	<if test="memo != null">memo=#{memo,jdbcType=VARCHAR},</if>
+	<if test="chargetime != null">chargetime=#{chargetime,jdbcType=TIMESTAMP},</if>
+	<if test="createuser != null">createuser=#{createuser,jdbcType=VARCHAR},</if>
+	<if test="createtime != null">createtime=#{createtime,jdbcType=TIMESTAMP}</if>
+</set>
+<where>
+	<choose>
+        <when test="tempid != null">and tempid = #{tempid}</when>
+        <otherwise>and tempid = </otherwise>
+    </choose>
+</where>
+</update>
+
+<!-- ElementID:updateNull,Generated=true -->
+<update id="updateNull" parameterType="map">
+	update td_temp_complain_charge
+	<set>
+		<trim suffixOverrides=",">
+		    <if test="id==null">id = null,</if>
+		    <if test="complainid==null">complainid = null,</if>
+		    <if test="customerorder==null">customerorder = null,</if>
+		    <if test="category==null">category = null,</if>
+		    <if test="categoryid==null">categoryid = null,</if>
+		    <if test="categoryname==null">categoryname = null,</if>
+		    <if test="chargertype==null">chargertype = null,</if>
+		    <if test="chargerid==null">chargerid = null,</if>
+		    <if test="chargername==null">chargername = null,</if>
+		    <if test="percent==null">percent = null,</if>
+		    <if test="memo==null">memo = null,</if>
+		    <if test="chargetime==null">chargetime = null,</if>
+		    <if test="createuser==null">createuser = null,</if>
+		    <if test="createtime==null">createtime = null,</if>
+		</trim>
+	</set>
+	<where>
+		<choose>
+			<when test="tempid != null">and tempid = #{tempid}</when>
+			<otherwise>and tempid = </otherwise>
+		</choose>
+	</where>
+</update>
+
+<!-- ElementID:delete,Generated=true -->
+<delete id="delete" parameterType="com.unlcn.ils.tps.E_temp_complain_charge">
+    delete from td_temp_complain_charge where 1=1 and tempid = #{tempid}
+</delete>
+
+<!-- ElementID:select,Generated=true -->
+<select id="select" parameterType="com.unlcn.ils.tps.E_temp_complain_charge" resultMap="E_temp_complain_chargeResult">
+	select 
+		<include refid="column_sql"/>
+	    from td_temp_complain_charge 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:deleteBatch,Generated=true -->
+<delete id="deleteBatch" parameterType="List">
+	delete from td_temp_complain_charge where tempid in
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<foreach collection="list" item="entity" separator=",">
+	#{entity.tempid}
+</foreach>
+</trim>
+</delete>
+
+<!-- ElementID:selectAll,Generated=true -->
+<select id="selectAll" resultMap="E_temp_complain_chargeResult">
+	select 
+		<include refid="column_sql"/>
+	    from td_temp_complain_charge 
+</select>
+
+<!-- ElementID:selectByID,Generated=true -->
+<select id="selectByID" parameterType="java.lang.Integer" resultMap="E_temp_complain_chargeResult">
+	select 
+		<include refid="column_sql"/>
+	    from td_temp_complain_charge 
+		 where td_temp_complain_charge.tempid = #{tempid,jdbcType=NUMERIC}
+</select>
+
+<!-- ElementID:selectByPage,Generated=true -->
+<select id="selectByPage" parameterType="com.unlcn.ils.tps.E_temp_complain_charge" resultMap="E_temp_complain_chargeResult">
+	select 
+		<include refid="column_sql"/>
+	    from td_temp_complain_charge 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:selectMany,Generated=true -->
+<select id="selectMany" parameterType="list" resultMap="E_temp_complain_chargeResult">
+select 
+	<include refid="column_sql"/> 
+	from td_temp_complain_charge 
+	where td_temp_complain_charge.tempid in (
+		select distinct tempid from td_temp_complain_charge inner join
+<foreach collection="list" item="entity" separator="inner join">
+		(select 
+			distinct tempid
+			from td_temp_complain_charge 
+			<where>
+	        <if test="entity.tempid != null">and td_temp_complain_charge.tempid = #{entity.tempid}</if>
+	        <if test="entity.id != null">and td_temp_complain_charge.id = #{entity.id}</if>
+	        <if test="entity.complainid != null">and td_temp_complain_charge.complainid = #{entity.complainid}</if>
+	        <if test="entity.customerorder != null">and td_temp_complain_charge.customerorder = #{entity.customerorder}</if>
+	        <if test="entity.category != null">and td_temp_complain_charge.category = #{entity.category}</if>
+	        <if test="entity.categoryid != null">and td_temp_complain_charge.categoryid = #{entity.categoryid}</if>
+	        <if test="entity.categoryname != null">and td_temp_complain_charge.categoryname = #{entity.categoryname}</if>
+	        <if test="entity.chargertype != null">and td_temp_complain_charge.chargertype = #{entity.chargertype}</if>
+	        <if test="entity.chargerid != null">and td_temp_complain_charge.chargerid = #{entity.chargerid}</if>
+	        <if test="entity.chargername != null">and td_temp_complain_charge.chargername = #{entity.chargername}</if>
+	        <if test="entity.percent != null">and td_temp_complain_charge.percent = #{entity.percent}</if>
+	        <if test="entity.memo != null">and td_temp_complain_charge.memo = #{entity.memo}</if>
+	        <if test="entity.chargetime != null">and td_temp_complain_charge.chargetime = #{entity.chargetime}</if>
+	        <if test="entity.createuser != null">and td_temp_complain_charge.createuser = #{entity.createuser}</if>
+	        <if test="entity.createtime != null">and td_temp_complain_charge.createtime = #{entity.createtime}</if>
+			</where>
+		) ${entity.tableAlias} using (tempid)
+</foreach>
+)
+</select>
+
+<!-- ElementID:insert,Generated=true -->
+<insert id="insert" parameterType="com.unlcn.ils.tps.E_temp_complain_charge" useGeneratedKeys="true">
+	<selectKey keyProperty="tempid" resultType="java.lang.Integer" order="AFTER">
+        select LAST_INSERT_ID()
+    </selectKey>
+insert into td_temp_complain_charge(
+		<trim prefixOverrides=",">
+		    <if test="id != null">id</if>
+		    <if test="complainid != null">,complainid</if>
+		    <if test="customerorder != null">,customerorder</if>
+		    <if test="category != null">,category</if>
+		    <if test="categoryid != null">,categoryid</if>
+		    <if test="categoryname != null">,categoryname</if>
+		    <if test="chargertype != null">,chargertype</if>
+		    <if test="chargerid != null">,chargerid</if>
+		    <if test="chargername != null">,chargername</if>
+		    <if test="percent != null">,percent</if>
+		    <if test="memo != null">,memo</if>
+		    <if test="chargetime != null">,chargetime</if>
+		    <if test="createuser != null">,createuser</if>
+		    <if test="createtime != null">,createtime</if>
+		</trim>
+	 )
+	 values (
+		<trim prefixOverrides=",">
+		    <if test="id != null">#{id,jdbcType=VARCHAR}</if>
+		    <if test="complainid != null">,#{complainid,jdbcType=VARCHAR}</if>
+		    <if test="customerorder != null">,#{customerorder,jdbcType=VARCHAR}</if>
+		    <if test="category != null">,#{category,jdbcType=VARCHAR}</if>
+		    <if test="categoryid != null">,#{categoryid,jdbcType=VARCHAR}</if>
+		    <if test="categoryname != null">,#{categoryname,jdbcType=VARCHAR}</if>
+		    <if test="chargertype != null">,#{chargertype,jdbcType=VARCHAR}</if>
+		    <if test="chargerid != null">,#{chargerid,jdbcType=VARCHAR}</if>
+		    <if test="chargername != null">,#{chargername,jdbcType=VARCHAR}</if>
+		    <if test="percent != null">,#{percent,jdbcType=VARCHAR}</if>
+		    <if test="memo != null">,#{memo,jdbcType=VARCHAR}</if>
+		    <if test="chargetime != null">,#{chargetime,jdbcType=TIMESTAMP}</if>
+		    <if test="createuser != null">,#{createuser,jdbcType=VARCHAR}</if>
+		    <if test="createtime != null">,#{createtime,jdbcType=TIMESTAMP}</if>
+        </trim>
+	 )
+</insert>
+
+<!-- ElementID:insertBatch,Generated=true -->
+<insert id="insertBatch" parameterType="list" useGeneratedKeys="true">
+	insert into td_temp_complain_charge (id,complainid,customerorder,category,categoryid,categoryname,chargertype,chargerid,chargername,percent,memo,chargetime,createuser,createtime)
+			values 
+			<foreach collection="list" item="entity" index="index" separator=",">
+				(
+		         #{entity.id,jdbcType = VARCHAR},
+		         #{entity.complainid,jdbcType = VARCHAR},
+		         #{entity.customerorder,jdbcType = VARCHAR},
+		         #{entity.category,jdbcType = VARCHAR},
+		         #{entity.categoryid,jdbcType = VARCHAR},
+		         #{entity.categoryname,jdbcType = VARCHAR},
+		         #{entity.chargertype,jdbcType = VARCHAR},
+		         #{entity.chargerid,jdbcType = VARCHAR},
+		         #{entity.chargername,jdbcType = VARCHAR},
+		         #{entity.percent,jdbcType = VARCHAR},
+		         #{entity.memo,jdbcType = VARCHAR},
+		         #{entity.chargetime,jdbcType = TIMESTAMP},
+		         #{entity.createuser,jdbcType = VARCHAR},
+		         #{entity.createtime,jdbcType = TIMESTAMP}
+				)
+</foreach>
+</insert>
+<delete id="deleteAll">
+	delete from td_temp_complain_charge
+</delete>
+</mapper>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="s_activeReason" log="false" className="com.unlcn.ils.tps.services.LevelService" method="activeReason">
+  <instanceCreator>
+    <params/>
+  </instanceCreator>
+  <name>禁用原因字典</name>
+  <inputs>
+    <input collection="false" desc="" id="idList" required="true" type="java.util.List"/>
+    <input collection="false" desc="" id="data" required="true"/>
+  </inputs>
+  <outputs>
+    <output autoValue="Result" desc="" id="result" name="方法返回值" type="boolean"/>
+  </outputs>
+  <params>
+    <param autoValue="Input.idList" name="idList" signature="QList&lt;QInteger;>;" type="java.util.List"/>
+    <param autoValue="Input.data" name="data" signature="QString;" type="String"/>
+  </params>
+  <return signature="Z" type="boolean"/>
+</CustomRule>

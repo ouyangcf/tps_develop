@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><mapper namespace="com.unlcn.ils.tps.E_shipperMapper">	
+
+<!-- ElementID:column_sql,Generated=true -->
+<sql id="column_sql">
+		  td_shipper.id ,
+		  td_shipper.customer_id ,
+		  td_shipper.code ,
+		  td_shipper.reg_address ,
+		  td_shipper.capital ,
+		  td_shipper.level ,
+		  td_shipper.has_permit ,
+		  td_shipper.name ,
+		  td_shipper.short_name ,
+		  td_shipper.tax_no ,
+		  td_shipper.business_type ,
+		  td_shipper.car_number ,
+		  td_shipper.linkman ,
+		  td_shipper.owner ,
+		  td_shipper.phone ,
+		  td_shipper.tel ,
+		  td_shipper.cert_status ,
+		  td_shipper.cert_valid_time ,
+		  td_shipper.has_inovice ,
+		  td_shipper.desc ,
+		  td_shipper.create_user ,
+		  td_shipper.create_time ,
+		  td_shipper.update_user ,
+		  td_shipper.update_time 
+</sql>
+
+<!-- ElementID:whereClause_sql,Generated=true -->
+<sql id="whereClause_sql">
+	    <if test="id != null">and td_shipper.id = #{id}</if>
+	    <if test="customerId != null">and td_shipper.customer_id = #{customerId}</if>
+	    <if test="code != null">and td_shipper.code = #{code}</if>
+	    <if test="regAddress != null">and td_shipper.reg_address = #{regAddress}</if>
+	    <if test="capital != null">and td_shipper.capital = #{capital}</if>
+	    <if test="level != null">and td_shipper.level = #{level}</if>
+	    <if test="hasPermit != null">and td_shipper.has_permit = #{hasPermit}</if>
+	    <if test="name != null">and td_shipper.name = #{name}</if>
+	    <if test="shortName != null">and td_shipper.short_name = #{shortName}</if>
+	    <if test="taxNo != null">and td_shipper.tax_no = #{taxNo}</if>
+	    <if test="businessType != null">and td_shipper.business_type = #{businessType}</if>
+	    <if test="carNumber != null">and td_shipper.car_number = #{carNumber}</if>
+	    <if test="linkman != null">and td_shipper.linkman = #{linkman}</if>
+	    <if test="owner != null">and td_shipper.owner = #{owner}</if>
+	    <if test="phone != null">and td_shipper.phone = #{phone}</if>
+	    <if test="tel != null">and td_shipper.tel = #{tel}</if>
+	    <if test="certStatus != null">and td_shipper.cert_status = #{certStatus}</if>
+	    <if test="certValidTime != null">and td_shipper.cert_valid_time = #{certValidTime}</if>
+	    <if test="hasInovice != null">and td_shipper.has_inovice = #{hasInovice}</if>
+	    <if test="desc != null">and td_shipper.desc = #{desc}</if>
+	    <if test="createUser != null">and td_shipper.create_user = #{createUser}</if>
+	    <if test="createTime != null">and td_shipper.create_time = #{createTime}</if>
+	    <if test="updateUser != null">and td_shipper.update_user = #{updateUser}</if>
+	    <if test="updateTime != null">and td_shipper.update_time = #{updateTime}</if>
+</sql>
+
+
+<!-- ElementID:E_shipperResult,Generated=true -->
+<resultMap id="E_shipperResult" type="com.unlcn.ils.tps.E_shipper">
+	<id property="id" column="id"/>
+	<result property="customerId" column="customer_id"/>
+	<result property="code" column="code"/>
+	<result property="regAddress" column="reg_address"/>
+	<result property="capital" column="capital"/>
+	<result property="level" column="level"/>
+	<result property="hasPermit" column="has_permit"/>
+	<result property="name" column="name"/>
+	<result property="shortName" column="short_name"/>
+	<result property="taxNo" column="tax_no"/>
+	<result property="businessType" column="business_type"/>
+	<result property="carNumber" column="car_number"/>
+	<result property="linkman" column="linkman"/>
+	<result property="owner" column="owner"/>
+	<result property="phone" column="phone"/>
+	<result property="tel" column="tel"/>
+	<result property="certStatus" column="cert_status"/>
+	<result property="certValidTime" column="cert_valid_time"/>
+	<result property="hasInovice" column="has_inovice"/>
+	<result property="desc" column="desc"/>
+	<result property="createUser" column="create_user"/>
+	<result property="createTime" column="create_time"/>
+	<result property="updateUser" column="update_user"/>
+	<result property="updateTime" column="update_time"/>
+</resultMap>
+
+
+<!-- ElementName:cache,Generated=true -->
+<cache type="C2_Default_Dao_Cache"/>
+
+<!-- ElementID:count,Generated=true -->
+<select id="count" parameterType="com.unlcn.ils.tps.E_shipper" resultType="int">
+	select count(*) from td_shipper 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+<!-- ElementID:update,Generated=true -->
+<update id="update" parameterType="com.unlcn.ils.tps.E_shipper">
+	update td_shipper
+<set>
+	<if test="customerId != null">customer_id=#{customerId,jdbcType=VARCHAR},</if>
+	<if test="code != null">code=#{code,jdbcType=VARCHAR},</if>
+	<if test="regAddress != null">reg_address=#{regAddress,jdbcType=VARCHAR},</if>
+	<if test="capital != null">capital=#{capital,jdbcType=NUMERIC},</if>
+	<if test="level != null">level=#{level,jdbcType=VARCHAR},</if>
+	<if test="hasPermit != null">has_permit=#{hasPermit,jdbcType=VARCHAR},</if>
+	<if test="name != null">name=#{name,jdbcType=VARCHAR},</if>
+	<if test="shortName != null">short_name=#{shortName,jdbcType=VARCHAR},</if>
+	<if test="taxNo != null">tax_no=#{taxNo,jdbcType=VARCHAR},</if>
+	<if test="businessType != null">business_type=#{businessType,jdbcType=VARCHAR},</if>
+	<if test="carNumber != null">car_number=#{carNumber,jdbcType=NUMERIC},</if>
+	<if test="linkman != null">linkman=#{linkman,jdbcType=VARCHAR},</if>
+	<if test="owner != null">owner=#{owner,jdbcType=VARCHAR},</if>
+	<if test="phone != null">phone=#{phone,jdbcType=VARCHAR},</if>
+	<if test="tel != null">tel=#{tel,jdbcType=VARCHAR},</if>
+	<if test="certStatus != null">cert_status=#{certStatus,jdbcType=VARCHAR},</if>
+	<if test="certValidTime != null">cert_valid_time=#{certValidTime,jdbcType=TIMESTAMP},</if>
+	<if test="hasInovice != null">has_inovice=#{hasInovice,jdbcType=VARCHAR},</if>
+	<if test="desc != null">desc=#{desc,jdbcType=VARCHAR},</if>
+	<if test="createUser != null">create_user=#{createUser,jdbcType=VARCHAR},</if>
+	<if test="createTime != null">create_time=#{createTime,jdbcType=TIMESTAMP},</if>
+	<if test="updateUser != null">update_user=#{updateUser,jdbcType=VARCHAR},</if>
+	<if test="updateTime != null">update_time=#{updateTime,jdbcType=TIMESTAMP}</if>
+</set>
+<where>
+	<choose>
+        <when test="id != null">and id = #{id}</when>
+        <otherwise>and id = </otherwise>
+    </choose>
+</where>
+</update>
+
+<!-- ElementID:updateNull,Generated=true -->
+<update id="updateNull" parameterType="map">
+	update td_shipper
+	<set>
+		<trim suffixOverrides=",">
+		    <if test="customerId==null">customer_id = null,</if>
+		    <if test="code==null">code = null,</if>
+		    <if test="regAddress==null">reg_address = null,</if>
+		    <if test="capital==null">capital = null,</if>
+		    <if test="level==null">level = null,</if>
+		    <if test="hasPermit==null">has_permit = null,</if>
+		    <if test="name==null">name = null,</if>
+		    <if test="shortName==null">short_name = null,</if>
+		    <if test="taxNo==null">tax_no = null,</if>
+		    <if test="businessType==null">business_type = null,</if>
+		    <if test="carNumber==null">car_number = null,</if>
+		    <if test="linkman==null">linkman = null,</if>
+		    <if test="owner==null">owner = null,</if>
+		    <if test="phone==null">phone = null,</if>
+		    <if test="tel==null">tel = null,</if>
+		    <if test="certStatus==null">cert_status = null,</if>
+		    <if test="certValidTime==null">cert_valid_time = null,</if>
+		    <if test="hasInovice==null">has_inovice = null,</if>
+		    <if test="desc==null">desc = null,</if>
+		    <if test="createUser==null">create_user = null,</if>
+		    <if test="createTime==null">create_time = null,</if>
+		    <if test="updateUser==null">update_user = null,</if>
+		    <if test="updateTime==null">update_time = null,</if>
+		</trim>
+	</set>
+	<where>
+		<choose>
+			<when test="id != null">and id = #{id}</when>
+			<otherwise>and id = </otherwise>
+		</choose>
+	</where>
+</update>
+
+<!-- ElementID:delete,Generated=true -->
+<delete id="delete" parameterType="com.unlcn.ils.tps.E_shipper">
+    delete from td_shipper where 1=1 and id = #{id}
+</delete>
+
+<!-- ElementID:select,Generated=true -->
+<select id="select" parameterType="com.unlcn.ils.tps.E_shipper" resultMap="E_shipperResult">
+	select 
+		<include refid="column_sql"/>
+	    from td_shipper 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:deleteBatch,Generated=true -->
+<delete id="deleteBatch" parameterType="List">
+	delete from td_shipper where id in
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<foreach collection="list" item="entity" separator=",">
+	#{entity.id}
+</foreach>
+</trim>
+</delete>
+
+<!-- ElementID:selectAll,Generated=true -->
+<select id="selectAll" resultMap="E_shipperResult">
+	select 
+		<include refid="column_sql"/>
+	    from td_shipper 
+</select>
+
+<!-- ElementID:selectByID,Generated=true -->
+<select id="selectByID" parameterType="java.lang.String" resultMap="E_shipperResult">
+	select 
+		<include refid="column_sql"/>
+	    from td_shipper 
+		 where td_shipper.id = #{id,jdbcType=VARCHAR}
+</select>
+
+<!-- ElementID:selectByPage,Generated=true -->
+<select id="selectByPage" parameterType="com.unlcn.ils.tps.E_shipper" resultMap="E_shipperResult">
+	select 
+		<include refid="column_sql"/>
+	    from td_shipper 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:selectMany,Generated=true -->
+<select id="selectMany" parameterType="list" resultMap="E_shipperResult">
+select 
+	<include refid="column_sql"/> 
+	from td_shipper 
+	where td_shipper.id in (
+		select distinct id from td_shipper inner join
+<foreach collection="list" item="entity" separator="inner join">
+		(select 
+			distinct id
+			from td_shipper 
+			<where>
+	        <if test="entity.id != null">and td_shipper.id = #{entity.id}</if>
+	        <if test="entity.customerId != null">and td_shipper.customer_id = #{entity.customerId}</if>
+	        <if test="entity.code != null">and td_shipper.code = #{entity.code}</if>
+	        <if test="entity.regAddress != null">and td_shipper.reg_address = #{entity.regAddress}</if>
+	        <if test="entity.capital != null">and td_shipper.capital = #{entity.capital}</if>
+	        <if test="entity.level != null">and td_shipper.level = #{entity.level}</if>
+	        <if test="entity.hasPermit != null">and td_shipper.has_permit = #{entity.hasPermit}</if>
+	        <if test="entity.name != null">and td_shipper.name = #{entity.name}</if>
+	        <if test="entity.shortName != null">and td_shipper.short_name = #{entity.shortName}</if>
+	        <if test="entity.taxNo != null">and td_shipper.tax_no = #{entity.taxNo}</if>
+	        <if test="entity.businessType != null">and td_shipper.business_type = #{entity.businessType}</if>
+	        <if test="entity.carNumber != null">and td_shipper.car_number = #{entity.carNumber}</if>
+	        <if test="entity.linkman != null">and td_shipper.linkman = #{entity.linkman}</if>
+	        <if test="entity.owner != null">and td_shipper.owner = #{entity.owner}</if>
+	        <if test="entity.phone != null">and td_shipper.phone = #{entity.phone}</if>
+	        <if test="entity.tel != null">and td_shipper.tel = #{entity.tel}</if>
+	        <if test="entity.certStatus != null">and td_shipper.cert_status = #{entity.certStatus}</if>
+	        <if test="entity.certValidTime != null">and td_shipper.cert_valid_time = #{entity.certValidTime}</if>
+	        <if test="entity.hasInovice != null">and td_shipper.has_inovice = #{entity.hasInovice}</if>
+	        <if test="entity.desc != null">and td_shipper.desc = #{entity.desc}</if>
+	        <if test="entity.createUser != null">and td_shipper.create_user = #{entity.createUser}</if>
+	        <if test="entity.createTime != null">and td_shipper.create_time = #{entity.createTime}</if>
+	        <if test="entity.updateUser != null">and td_shipper.update_user = #{entity.updateUser}</if>
+	        <if test="entity.updateTime != null">and td_shipper.update_time = #{entity.updateTime}</if>
+			</where>
+		) ${entity.tableAlias} using (id)
+</foreach>
+)
+</select>
+
+<!-- ElementID:insert,Generated=true -->
+<insert id="insert" parameterType="com.unlcn.ils.tps.E_shipper">
+	insert into td_shipper(
+	         <if test="id != null">id</if>
+	         <if test="customerId != null">,customer_id</if>
+	         <if test="code != null">,code</if>
+	         <if test="regAddress != null">,reg_address</if>
+	         <if test="capital != null">,capital</if>
+	         <if test="level != null">,level</if>
+	         <if test="hasPermit != null">,has_permit</if>
+	         <if test="name != null">,name</if>
+	         <if test="shortName != null">,short_name</if>
+	         <if test="taxNo != null">,tax_no</if>
+	         <if test="businessType != null">,business_type</if>
+	         <if test="carNumber != null">,car_number</if>
+	         <if test="linkman != null">,linkman</if>
+	         <if test="owner != null">,owner</if>
+	         <if test="phone != null">,phone</if>
+	         <if test="tel != null">,tel</if>
+	         <if test="certStatus != null">,cert_status</if>
+	         <if test="certValidTime != null">,cert_valid_time</if>
+	         <if test="hasInovice != null">,has_inovice</if>
+	         <if test="desc != null">,desc</if>
+	         <if test="createUser != null">,create_user</if>
+	         <if test="createTime != null">,create_time</if>
+	         <if test="updateUser != null">,update_user</if>
+	         <if test="updateTime != null">,update_time</if>
+	 	 	 )
+	 values (
+	         <if test="id != null">#{id,jdbcType=VARCHAR}</if>
+	         <if test="customerId != null">,#{customerId,jdbcType=VARCHAR}</if>
+	         <if test="code != null">,#{code,jdbcType=VARCHAR}</if>
+	         <if test="regAddress != null">,#{regAddress,jdbcType=VARCHAR}</if>
+	         <if test="capital != null">,#{capital,jdbcType=NUMERIC}</if>
+	         <if test="level != null">,#{level,jdbcType=VARCHAR}</if>
+	         <if test="hasPermit != null">,#{hasPermit,jdbcType=VARCHAR}</if>
+	         <if test="name != null">,#{name,jdbcType=VARCHAR}</if>
+	         <if test="shortName != null">,#{shortName,jdbcType=VARCHAR}</if>
+	         <if test="taxNo != null">,#{taxNo,jdbcType=VARCHAR}</if>
+	         <if test="businessType != null">,#{businessType,jdbcType=VARCHAR}</if>
+	         <if test="carNumber != null">,#{carNumber,jdbcType=NUMERIC}</if>
+	         <if test="linkman != null">,#{linkman,jdbcType=VARCHAR}</if>
+	         <if test="owner != null">,#{owner,jdbcType=VARCHAR}</if>
+	         <if test="phone != null">,#{phone,jdbcType=VARCHAR}</if>
+	         <if test="tel != null">,#{tel,jdbcType=VARCHAR}</if>
+	         <if test="certStatus != null">,#{certStatus,jdbcType=VARCHAR}</if>
+	         <if test="certValidTime != null">,#{certValidTime,jdbcType=TIMESTAMP}</if>
+	         <if test="hasInovice != null">,#{hasInovice,jdbcType=VARCHAR}</if>
+	         <if test="desc != null">,#{desc,jdbcType=VARCHAR}</if>
+	         <if test="createUser != null">,#{createUser,jdbcType=VARCHAR}</if>
+	         <if test="createTime != null">,#{createTime,jdbcType=TIMESTAMP}</if>
+	         <if test="updateUser != null">,#{updateUser,jdbcType=VARCHAR}</if>
+	         <if test="updateTime != null">,#{updateTime,jdbcType=TIMESTAMP}</if>
+	 	 	 )
+</insert>
+
+<!-- ElementID:insertBatch,Generated=true -->
+<insert id="insertBatch" parameterType="list">
+	insert into td_shipper (id,customer_id,code,reg_address,capital,level,has_permit,name,short_name,tax_no,business_type,car_number,linkman,owner,phone,tel,cert_status,cert_valid_time,has_inovice,desc,create_user,create_time,update_user,update_time) 
+<foreach collection="list" item="entity" index="index" separator="union all">
+		select 
+		#{entity.id,jdbcType = VARCHAR},
+				#{entity.customerId,jdbcType = VARCHAR},
+				#{entity.code,jdbcType = VARCHAR},
+				#{entity.regAddress,jdbcType = VARCHAR},
+				#{entity.capital,jdbcType = NUMERIC},
+				#{entity.level,jdbcType = VARCHAR},
+				#{entity.hasPermit,jdbcType = VARCHAR},
+				#{entity.name,jdbcType = VARCHAR},
+				#{entity.shortName,jdbcType = VARCHAR},
+				#{entity.taxNo,jdbcType = VARCHAR},
+				#{entity.businessType,jdbcType = VARCHAR},
+				#{entity.carNumber,jdbcType = NUMERIC},
+				#{entity.linkman,jdbcType = VARCHAR},
+				#{entity.owner,jdbcType = VARCHAR},
+				#{entity.phone,jdbcType = VARCHAR},
+				#{entity.tel,jdbcType = VARCHAR},
+				#{entity.certStatus,jdbcType = VARCHAR},
+				#{entity.certValidTime,jdbcType = TIMESTAMP},
+				#{entity.hasInovice,jdbcType = VARCHAR},
+				#{entity.desc,jdbcType = VARCHAR},
+				#{entity.createUser,jdbcType = VARCHAR},
+				#{entity.createTime,jdbcType = TIMESTAMP},
+				#{entity.updateUser,jdbcType = VARCHAR},
+				#{entity.updateTime,jdbcType = TIMESTAMP}
+		from dual
+</foreach>
+</insert>
+<select id="getMaxId" resultMap="E_shipperResult">
+	SELECT * FROM td_shipper ORDER BY create_time DESC;
+</select>
+</mapper>

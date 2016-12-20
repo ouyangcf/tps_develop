@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><mapper namespace="com.unlcn.ils.tps.E_join_fileMapper">	
+
+<!-- ElementID:column_sql,Generated=true -->
+<sql id="column_sql">
+		  tps_join_file.lineid ,
+		  tps_join_file.create_time ,
+		  tps_join_file.create_user ,
+		  tps_join_file.active ,
+		  tps_join_file.active_user ,
+		  tps_join_file.active_time ,
+		  tps_join_file.active_memo ,
+		  tps_join_file.file_name ,
+		  tps_join_file.file_memo ,
+		  tps_join_file.file_path ,
+		  tps_join_file.file_ext ,
+		  tps_join_file.flag ,
+		  tps_join_file.source_id 
+</sql>
+
+<!-- ElementID:whereClause_sql,Generated=true -->
+<sql id="whereClause_sql">
+	    <if test="lineid != null">and tps_join_file.lineid = #{lineid}</if>
+	    <if test="createTime != null">and tps_join_file.create_time = #{createTime}</if>
+	    <if test="createUser != null">and tps_join_file.create_user = #{createUser}</if>
+	    <if test="active != null">and tps_join_file.active = #{active}</if>
+	    <if test="activeUser != null">and tps_join_file.active_user = #{activeUser}</if>
+	    <if test="activeTime != null">and tps_join_file.active_time = #{activeTime}</if>
+	    <if test="activeMemo != null">and tps_join_file.active_memo = #{activeMemo}</if>
+	    <if test="fileName != null">and tps_join_file.file_name = #{fileName}</if>
+	    <if test="fileMemo != null">and tps_join_file.file_memo = #{fileMemo}</if>
+	    <if test="filePath != null">and tps_join_file.file_path = #{filePath}</if>
+	    <if test="fileExt != null">and tps_join_file.file_ext = #{fileExt}</if>
+	    <if test="flag != null">and tps_join_file.flag = #{flag}</if>
+	    <if test="sourceId != null">and tps_join_file.source_id = #{sourceId}</if>
+</sql>
+
+
+<!-- ElementID:E_join_fileResult,Generated=true -->
+<resultMap id="E_join_fileResult" type="com.unlcn.ils.tps.E_join_file">
+	<id property="lineid" column="lineid"/>
+	<result property="createTime" column="create_time"/>
+	<result property="createUser" column="create_user"/>
+	<result property="active" column="active"/>
+	<result property="activeUser" column="active_user"/>
+	<result property="activeTime" column="active_time"/>
+	<result property="activeMemo" column="active_memo"/>
+	<result property="fileName" column="file_name"/>
+	<result property="fileMemo" column="file_memo"/>
+	<result property="filePath" column="file_path"/>
+	<result property="fileExt" column="file_ext"/>
+	<result property="flag" column="flag"/>
+	<result property="sourceId" column="source_id"/>
+</resultMap>
+
+
+<!-- ElementName:cache,Generated=true -->
+<cache type="C2_Default_Dao_Cache"/>
+
+<!-- ElementID:count,Generated=true -->
+<select id="count" parameterType="com.unlcn.ils.tps.E_join_file" resultType="int">
+	select count(*) from tps_join_file 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+<!-- ElementID:update,Generated=true -->
+<update id="update" parameterType="com.unlcn.ils.tps.E_join_file">
+	update tps_join_file
+<set>
+	<if test="createTime != null">create_time=#{createTime,jdbcType=TIMESTAMP},</if>
+	<if test="createUser != null">create_user=#{createUser,jdbcType=VARCHAR},</if>
+	<if test="active != null">active=#{active,jdbcType=NUMERIC},</if>
+	<if test="activeUser != null">active_user=#{activeUser,jdbcType=VARCHAR},</if>
+	<if test="activeTime != null">active_time=#{activeTime,jdbcType=TIMESTAMP},</if>
+	<if test="activeMemo != null">active_memo=#{activeMemo,jdbcType=VARCHAR},</if>
+	<if test="fileName != null">file_name=#{fileName,jdbcType=VARCHAR},</if>
+	<if test="fileMemo != null">file_memo=#{fileMemo,jdbcType=VARCHAR},</if>
+	<if test="filePath != null">file_path=#{filePath,jdbcType=VARCHAR},</if>
+	<if test="fileExt != null">file_ext=#{fileExt,jdbcType=VARCHAR},</if>
+	<if test="flag != null">flag=#{flag,jdbcType=NUMERIC},</if>
+	<if test="sourceId != null">source_id=#{sourceId,jdbcType=VARCHAR}</if>
+</set>
+<where>
+	<choose>
+        <when test="lineid != null">and lineid = #{lineid}</when>
+        <otherwise>and lineid = </otherwise>
+    </choose>
+</where>
+</update>
+
+<!-- ElementID:updateNull,Generated=true -->
+<update id="updateNull" parameterType="map">
+	update tps_join_file
+	<set>
+		<trim suffixOverrides=",">
+		    <if test="createTime==null">create_time = null,</if>
+		    <if test="createUser==null">create_user = null,</if>
+		    <if test="active==null">active = null,</if>
+		    <if test="activeUser==null">active_user = null,</if>
+		    <if test="activeTime==null">active_time = null,</if>
+		    <if test="activeMemo==null">active_memo = null,</if>
+		    <if test="fileName==null">file_name = null,</if>
+		    <if test="fileMemo==null">file_memo = null,</if>
+		    <if test="filePath==null">file_path = null,</if>
+		    <if test="fileExt==null">file_ext = null,</if>
+		    <if test="flag==null">flag = null,</if>
+		    <if test="sourceId==null">source_id = null,</if>
+		</trim>
+	</set>
+	<where>
+		<choose>
+			<when test="lineid != null">and lineid = #{lineid}</when>
+			<otherwise>and lineid = </otherwise>
+		</choose>
+	</where>
+</update>
+
+<!-- ElementID:delete,Generated=true -->
+<delete id="delete" parameterType="com.unlcn.ils.tps.E_join_file">
+    delete from tps_join_file where 1=1 and lineid = #{lineid}
+</delete>
+
+<!-- ElementID:select,Generated=true -->
+<select id="select" parameterType="com.unlcn.ils.tps.E_join_file" resultMap="E_join_fileResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_join_file 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:deleteBatch,Generated=true -->
+<delete id="deleteBatch" parameterType="List">
+	delete from tps_join_file where lineid in
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<foreach collection="list" item="entity" separator=",">
+	#{entity.lineid}
+</foreach>
+</trim>
+</delete>
+
+<!-- ElementID:selectAll,Generated=true -->
+<select id="selectAll" resultMap="E_join_fileResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_join_file 
+</select>
+
+<!-- ElementID:selectByID,Generated=true -->
+<select id="selectByID" parameterType="java.lang.String" resultMap="E_join_fileResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_join_file 
+		 where tps_join_file.lineid = #{lineid,jdbcType=VARCHAR}
+</select>
+
+<!-- ElementID:selectByPage,Generated=true -->
+<select id="selectByPage" parameterType="com.unlcn.ils.tps.E_join_file" resultMap="E_join_fileResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_join_file 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:selectMany,Generated=true -->
+<select id="selectMany" parameterType="list" resultMap="E_join_fileResult">
+select 
+	<include refid="column_sql"/> 
+	from tps_join_file 
+	where tps_join_file.lineid in (
+		select distinct lineid from tps_join_file inner join
+<foreach collection="list" item="entity" separator="inner join">
+		(select 
+			distinct lineid
+			from tps_join_file 
+			<where>
+	        <if test="entity.lineid != null">and tps_join_file.lineid = #{entity.lineid}</if>
+	        <if test="entity.createTime != null">and tps_join_file.create_time = #{entity.createTime}</if>
+	        <if test="entity.createUser != null">and tps_join_file.create_user = #{entity.createUser}</if>
+	        <if test="entity.active != null">and tps_join_file.active = #{entity.active}</if>
+	        <if test="entity.activeUser != null">and tps_join_file.active_user = #{entity.activeUser}</if>
+	        <if test="entity.activeTime != null">and tps_join_file.active_time = #{entity.activeTime}</if>
+	        <if test="entity.activeMemo != null">and tps_join_file.active_memo = #{entity.activeMemo}</if>
+	        <if test="entity.fileName != null">and tps_join_file.file_name = #{entity.fileName}</if>
+	        <if test="entity.fileMemo != null">and tps_join_file.file_memo = #{entity.fileMemo}</if>
+	        <if test="entity.filePath != null">and tps_join_file.file_path = #{entity.filePath}</if>
+	        <if test="entity.fileExt != null">and tps_join_file.file_ext = #{entity.fileExt}</if>
+	        <if test="entity.flag != null">and tps_join_file.flag = #{entity.flag}</if>
+	        <if test="entity.sourceId != null">and tps_join_file.source_id = #{entity.sourceId}</if>
+			</where>
+		) ${entity.tableAlias} using (lineid)
+</foreach>
+)
+</select>
+
+<!-- ElementID:insert,Generated=true -->
+<insert id="insert" parameterType="com.unlcn.ils.tps.E_join_file">
+	insert into tps_join_file(
+	         <if test="lineid != null">lineid</if>
+	         <if test="createTime != null">,create_time</if>
+	         <if test="createUser != null">,create_user</if>
+	         <if test="active != null">,active</if>
+	         <if test="activeUser != null">,active_user</if>
+	         <if test="activeTime != null">,active_time</if>
+	         <if test="activeMemo != null">,active_memo</if>
+	         <if test="fileName != null">,file_name</if>
+	         <if test="fileMemo != null">,file_memo</if>
+	         <if test="filePath != null">,file_path</if>
+	         <if test="fileExt != null">,file_ext</if>
+	         <if test="flag != null">,flag</if>
+	         <if test="sourceId != null">,source_id</if>
+	 	 	 )
+	 values (
+	         <if test="lineid != null">#{lineid,jdbcType=VARCHAR}</if>
+	         <if test="createTime != null">,#{createTime,jdbcType=TIMESTAMP}</if>
+	         <if test="createUser != null">,#{createUser,jdbcType=VARCHAR}</if>
+	         <if test="active != null">,#{active,jdbcType=NUMERIC}</if>
+	         <if test="activeUser != null">,#{activeUser,jdbcType=VARCHAR}</if>
+	         <if test="activeTime != null">,#{activeTime,jdbcType=TIMESTAMP}</if>
+	         <if test="activeMemo != null">,#{activeMemo,jdbcType=VARCHAR}</if>
+	         <if test="fileName != null">,#{fileName,jdbcType=VARCHAR}</if>
+	         <if test="fileMemo != null">,#{fileMemo,jdbcType=VARCHAR}</if>
+	         <if test="filePath != null">,#{filePath,jdbcType=VARCHAR}</if>
+	         <if test="fileExt != null">,#{fileExt,jdbcType=VARCHAR}</if>
+	         <if test="flag != null">,#{flag,jdbcType=NUMERIC}</if>
+	         <if test="sourceId != null">,#{sourceId,jdbcType=VARCHAR}</if>
+	 	 	 )
+</insert>
+
+<!-- ElementID:insertBatch,Generated=true -->
+<insert id="insertBatch" parameterType="list">
+	insert into tps_join_file (lineid,create_time,create_user,active,active_user,active_time,active_memo,file_name,file_memo,file_path,file_ext,flag,source_id) 
+<foreach collection="list" item="entity" index="index" separator="union all">
+		select 
+		#{entity.lineid,jdbcType = VARCHAR},
+				#{entity.createTime,jdbcType = TIMESTAMP},
+				#{entity.createUser,jdbcType = VARCHAR},
+				#{entity.active,jdbcType = NUMERIC},
+				#{entity.activeUser,jdbcType = VARCHAR},
+				#{entity.activeTime,jdbcType = TIMESTAMP},
+				#{entity.activeMemo,jdbcType = VARCHAR},
+				#{entity.fileName,jdbcType = VARCHAR},
+				#{entity.fileMemo,jdbcType = VARCHAR},
+				#{entity.filePath,jdbcType = VARCHAR},
+				#{entity.fileExt,jdbcType = VARCHAR},
+				#{entity.flag,jdbcType = NUMERIC},
+				#{entity.sourceId,jdbcType = VARCHAR}
+		from dual
+</foreach>
+</insert>
+</mapper>

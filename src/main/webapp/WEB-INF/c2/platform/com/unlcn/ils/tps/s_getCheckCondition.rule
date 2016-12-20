@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="s_getCheckCondition" log="false" className="com.unlcn.ils.tps.services.LevelService" method="getCheckCondition">
+  <name></name>
+  <inputs>
+    <input collection="false" desc="" id="startCityID" required="false" type="java.lang.Integer"/>
+    <input collection="false" desc="" id="destProvinceId" required="false" type="java.lang.Integer"/>
+  </inputs>
+  <outputs>
+    <output autoValue="Result" desc="" id="result" name="方法返回值" type="java.util.List"/>
+  </outputs>
+  <params>
+    <param autoValue="Input.startCityID" name="startCityID" signature="QInteger;" type="java.lang.Integer"/>
+    <param autoValue="Input.destProvinceId" name="destProvinceId" signature="QInteger;" type="java.lang.Integer"/>
+  </params>
+  <return signature="QList&lt;QList&lt;QInteger;>;>;" type="java.util.List"/>
+</CustomRule>

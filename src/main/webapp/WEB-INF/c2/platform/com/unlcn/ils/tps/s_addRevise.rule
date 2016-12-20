@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="s_addRevise" log="false" className="com.unlcn.ils.tps.services.ReviseService" method="addRevise">
+  <instanceCreator>
+    <params/>
+  </instanceCreator>
+  <name>生成整改单</name>
+  <inputs>
+    <input collection="false" desc="" id="lineid" required="true" type="String"/>
+    <input collection="false" desc="" id="e_revise" required="true" type="com.unlcn.ils.tps.E_revise"/>
+  </inputs>
+  <outputs>
+    <output autoValue="Result" desc="" id="result" name="方法返回值" type="boolean"/>
+  </outputs>
+  <params>
+    <param autoValue="Input.lineid" name="lineid" signature="QString;" type="String"/>
+    <param autoValue="Input.e_revise" name="e_revise" signature="QE_revise;" type="com.unlcn.ils.tps.E_revise"/>
+  </params>
+  <return signature="Z" type="boolean"/>
+</CustomRule>

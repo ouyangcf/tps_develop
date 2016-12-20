@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="s_getQutoationDetail" log="false" className="com.unlcn.ils.tps.services.QutoationService" method="getElements">
+  <name>得到报价明细记录</name>
+  <inputs>
+    <input collection="false" desc="" id="context" required="true" type="com.chinacreator.c2.web.ds.ArrayContext"/>
+  </inputs>
+  <outputs>
+    <output autoValue="Result" desc="" id="result" name="方法返回值" type="com.chinacreator.c2.dao.mybatis.enhance.Page"/>
+  </outputs>
+  <params>
+    <param autoValue="Input.context" name="context" signature="QArrayContext;" type="com.chinacreator.c2.web.ds.ArrayContext"/>
+  </params>
+  <return signature="QPage&lt;*>;" type="com.chinacreator.c2.dao.mybatis.enhance.Page"/>
+</CustomRule>

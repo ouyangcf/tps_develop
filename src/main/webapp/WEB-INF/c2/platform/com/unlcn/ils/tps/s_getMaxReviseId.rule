@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="s_getMaxReviseId" log="false" className="com.unlcn.ils.tps.services.ReviseService" method="getMaxId">
+  <instanceCreator>
+    <params/>
+  </instanceCreator>
+  <name>获取最新的整改单Id</name>
+  <inputs/>
+  <outputs>
+    <output autoValue="Result" desc="" id="result" name="方法返回值" type="String"/>
+  </outputs>
+  <params/>
+  <return signature="QString;" type="String"/>
+</CustomRule>

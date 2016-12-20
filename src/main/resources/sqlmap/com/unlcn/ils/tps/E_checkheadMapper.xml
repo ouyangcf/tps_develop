@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><mapper namespace="com.unlcn.ils.tps.E_checkheadMapper">	
+
+<!-- ElementID:column_sql,Generated=true -->
+<sql id="column_sql">
+		  tps_check_head.lineid ,
+		  tps_check_head.shipper_lineid ,
+		  tps_check_head.shipper_name ,
+		  tps_check_head.countmonth ,
+		  tps_check_head.fact_submoney ,
+		  tps_check_head.argue_status ,
+		  tps_check_head.standard_value ,
+		  tps_check_head.standard_subvalue ,
+		  tps_check_head.argue_time ,
+		  tps_check_head.standard_submoney ,
+		  tps_check_head.check_money ,
+		  tps_check_head.sub_money ,
+		  tps_check_head.deduct_money ,
+		  tps_check_head.fronzen_money ,
+		  tps_check_head.collect_status ,
+		  tps_check_head.check_status ,
+		  tps_check_head.create_username ,
+		  tps_check_head.create_time ,
+		  tps_check_head.active ,
+		  tps_check_head.active_user ,
+		  tps_check_head.active_time ,
+		  tps_check_head.active_memo 
+</sql>
+
+<!-- ElementID:whereClause_sql,Generated=true -->
+<sql id="whereClause_sql">
+	    <if test="lineid != null">and tps_check_head.lineid = #{lineid}</if>
+	    <if test="shipperLineid != null">and tps_check_head.shipper_lineid = #{shipperLineid}</if>
+	    <if test="shipperName != null">and tps_check_head.shipper_name = #{shipperName}</if>
+	    <if test="countmonth != null">and tps_check_head.countmonth = #{countmonth}</if>
+	    <if test="factSubmoney != null">and tps_check_head.fact_submoney = #{factSubmoney}</if>
+	    <if test="argueStatus != null">and tps_check_head.argue_status = #{argueStatus}</if>
+	    <if test="standardValue != null">and tps_check_head.standard_value = #{standardValue}</if>
+	    <if test="standardSubvalue != null">and tps_check_head.standard_subvalue = #{standardSubvalue}</if>
+	    <if test="argueTime != null">and tps_check_head.argue_time = #{argueTime}</if>
+	    <if test="standardSubmoney != null">and tps_check_head.standard_submoney = #{standardSubmoney}</if>
+	    <if test="checkMoney != null">and tps_check_head.check_money = #{checkMoney}</if>
+	    <if test="subMoney != null">and tps_check_head.sub_money = #{subMoney}</if>
+	    <if test="deductMoney != null">and tps_check_head.deduct_money = #{deductMoney}</if>
+	    <if test="fronzenMoney != null">and tps_check_head.fronzen_money = #{fronzenMoney}</if>
+	    <if test="collectStatus != null">and tps_check_head.collect_status = #{collectStatus}</if>
+	    <if test="checkStatus != null">and tps_check_head.check_status = #{checkStatus}</if>
+	    <if test="createUsername != null">and tps_check_head.create_username = #{createUsername}</if>
+	    <if test="createTime != null">and tps_check_head.create_time = #{createTime}</if>
+	    <if test="active != null">and tps_check_head.active = #{active}</if>
+	    <if test="activeUser != null">and tps_check_head.active_user = #{activeUser}</if>
+	    <if test="activeTime != null">and tps_check_head.active_time = #{activeTime}</if>
+	    <if test="activeMemo != null">and tps_check_head.active_memo = #{activeMemo}</if>
+</sql>
+
+
+<!-- ElementID:E_checkheadResult,Generated=true -->
+<resultMap id="E_checkheadResult" type="com.unlcn.ils.tps.E_checkhead">
+	<id property="lineid" column="lineid"/>
+	<result property="shipperLineid" column="shipper_lineid"/>
+	<result property="shipperName" column="shipper_name"/>
+	<result property="countmonth" column="countmonth"/>
+	<result property="factSubmoney" column="fact_submoney"/>
+	<result property="argueStatus" column="argue_status"/>
+	<result property="standardValue" column="standard_value"/>
+	<result property="standardSubvalue" column="standard_subvalue"/>
+	<result property="argueTime" column="argue_time"/>
+	<result property="standardSubmoney" column="standard_submoney"/>
+	<result property="checkMoney" column="check_money"/>
+	<result property="subMoney" column="sub_money"/>
+	<result property="deductMoney" column="deduct_money"/>
+	<result property="fronzenMoney" column="fronzen_money"/>
+	<result property="collectStatus" column="collect_status"/>
+	<result property="checkStatus" column="check_status"/>
+	<result property="createUsername" column="create_username"/>
+	<result property="createTime" column="create_time"/>
+	<result property="active" column="active"/>
+	<result property="activeUser" column="active_user"/>
+	<result property="activeTime" column="active_time"/>
+	<result property="activeMemo" column="active_memo"/>
+</resultMap>
+
+
+<!-- ElementName:cache,Generated=true -->
+<cache type="C2_Default_Dao_Cache"/>
+
+<!-- ElementID:count,Generated=true -->
+<select id="count" parameterType="com.unlcn.ils.tps.E_checkhead" resultType="int">
+	select count(*) from tps_check_head 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+<!-- ElementID:update,Generated=true -->
+<update id="update" parameterType="com.unlcn.ils.tps.E_checkhead">
+	update tps_check_head
+<set>
+	<if test="shipperLineid != null">shipper_lineid=#{shipperLineid,jdbcType=VARCHAR},</if>
+	<if test="shipperName != null">shipper_name=#{shipperName,jdbcType=VARCHAR},</if>
+	<if test="countmonth != null">countmonth=#{countmonth,jdbcType=VARCHAR},</if>
+	<if test="factSubmoney != null">fact_submoney=#{factSubmoney,jdbcType=NUMERIC},</if>
+	<if test="argueStatus != null">argue_status=#{argueStatus,jdbcType=NUMERIC},</if>
+	<if test="standardValue != null">standard_value=#{standardValue,jdbcType=NUMERIC},</if>
+	<if test="standardSubvalue != null">standard_subvalue=#{standardSubvalue,jdbcType=NUMERIC},</if>
+	<if test="argueTime != null">argue_time=#{argueTime,jdbcType=TIMESTAMP},</if>
+	<if test="standardSubmoney != null">standard_submoney=#{standardSubmoney,jdbcType=NUMERIC},</if>
+	<if test="checkMoney != null">check_money=#{checkMoney,jdbcType=NUMERIC},</if>
+	<if test="subMoney != null">sub_money=#{subMoney,jdbcType=NUMERIC},</if>
+	<if test="deductMoney != null">deduct_money=#{deductMoney,jdbcType=NUMERIC},</if>
+	<if test="fronzenMoney != null">fronzen_money=#{fronzenMoney,jdbcType=NUMERIC},</if>
+	<if test="collectStatus != null">collect_status=#{collectStatus,jdbcType=NUMERIC},</if>
+	<if test="checkStatus != null">check_status=#{checkStatus,jdbcType=NUMERIC},</if>
+	<if test="createUsername != null">create_username=#{createUsername,jdbcType=VARCHAR},</if>
+	<if test="createTime != null">create_time=#{createTime,jdbcType=TIMESTAMP},</if>
+	<if test="active != null">active=#{active,jdbcType=NUMERIC},</if>
+	<if test="activeUser != null">active_user=#{activeUser,jdbcType=VARCHAR},</if>
+	<if test="activeTime != null">active_time=#{activeTime,jdbcType=TIMESTAMP},</if>
+	<if test="activeMemo != null">active_memo=#{activeMemo,jdbcType=VARCHAR}</if>
+</set>
+<where>
+	<choose>
+        <when test="lineid != null">and lineid = #{lineid}</when>
+        <otherwise>and lineid = </otherwise>
+    </choose>
+</where>
+</update>
+
+<!-- ElementID:updateNull,Generated=true -->
+<update id="updateNull" parameterType="map">
+	update tps_check_head
+	<set>
+		<trim suffixOverrides=",">
+		    <if test="shipperLineid==null">shipper_lineid = null,</if>
+		    <if test="shipperName==null">shipper_name = null,</if>
+		    <if test="countmonth==null">countmonth = null,</if>
+		    <if test="factSubmoney==null">fact_submoney = null,</if>
+		    <if test="argueStatus==null">argue_status = null,</if>
+		    <if test="standardValue==null">standard_value = null,</if>
+		    <if test="standardSubvalue==null">standard_subvalue = null,</if>
+		    <if test="argueTime==null">argue_time = null,</if>
+		    <if test="standardSubmoney==null">standard_submoney = null,</if>
+		    <if test="checkMoney==null">check_money = null,</if>
+		    <if test="subMoney==null">sub_money = null,</if>
+		    <if test="deductMoney==null">deduct_money = null,</if>
+		    <if test="fronzenMoney==null">fronzen_money = null,</if>
+		    <if test="collectStatus==null">collect_status = null,</if>
+		    <if test="checkStatus==null">check_status = null,</if>
+		    <if test="createUsername==null">create_username = null,</if>
+		    <if test="createTime==null">create_time = null,</if>
+		    <if test="active==null">active = null,</if>
+		    <if test="activeUser==null">active_user = null,</if>
+		    <if test="activeTime==null">active_time = null,</if>
+		    <if test="activeMemo==null">active_memo = null,</if>
+		</trim>
+	</set>
+	<where>
+		<choose>
+			<when test="lineid != null">and lineid = #{lineid}</when>
+			<otherwise>and lineid = </otherwise>
+		</choose>
+	</where>
+</update>
+
+<!-- ElementID:delete,Generated=true -->
+<delete id="delete" parameterType="com.unlcn.ils.tps.E_checkhead">
+    delete from tps_check_head where 1=1 and lineid = #{lineid}
+</delete>
+
+<!-- ElementID:select,Generated=true -->
+<select id="select" parameterType="com.unlcn.ils.tps.E_checkhead" resultMap="E_checkheadResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_check_head 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:deleteBatch,Generated=true -->
+<delete id="deleteBatch" parameterType="List">
+	delete from tps_check_head where lineid in
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<foreach collection="list" item="entity" separator=",">
+	#{entity.lineid}
+</foreach>
+</trim>
+</delete>
+
+<!-- ElementID:selectAll,Generated=true -->
+<select id="selectAll" resultMap="E_checkheadResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_check_head 
+</select>
+
+<!-- ElementID:selectByID,Generated=true -->
+<select id="selectByID" parameterType="java.lang.String" resultMap="E_checkheadResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_check_head 
+		 where tps_check_head.lineid = #{lineid,jdbcType=VARCHAR}
+</select>
+
+<!-- ElementID:selectByPage,Generated=true -->
+<select id="selectByPage" parameterType="com.unlcn.ils.tps.E_checkhead" resultMap="E_checkheadResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_check_head 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:selectMany,Generated=true -->
+<select id="selectMany" parameterType="list" resultMap="E_checkheadResult">
+select 
+	<include refid="column_sql"/> 
+	from tps_check_head 
+	where tps_check_head.lineid in (
+		select distinct lineid from tps_check_head inner join
+<foreach collection="list" item="entity" separator="inner join">
+		(select 
+			distinct lineid
+			from tps_check_head 
+			<where>
+	        <if test="entity.lineid != null">and tps_check_head.lineid = #{entity.lineid}</if>
+	        <if test="entity.shipperLineid != null">and tps_check_head.shipper_lineid = #{entity.shipperLineid}</if>
+	        <if test="entity.shipperName != null">and tps_check_head.shipper_name = #{entity.shipperName}</if>
+	        <if test="entity.countmonth != null">and tps_check_head.countmonth = #{entity.countmonth}</if>
+	        <if test="entity.factSubmoney != null">and tps_check_head.fact_submoney = #{entity.factSubmoney}</if>
+	        <if test="entity.argueStatus != null">and tps_check_head.argue_status = #{entity.argueStatus}</if>
+	        <if test="entity.standardValue != null">and tps_check_head.standard_value = #{entity.standardValue}</if>
+	        <if test="entity.standardSubvalue != null">and tps_check_head.standard_subvalue = #{entity.standardSubvalue}</if>
+	        <if test="entity.argueTime != null">and tps_check_head.argue_time = #{entity.argueTime}</if>
+	        <if test="entity.standardSubmoney != null">and tps_check_head.standard_submoney = #{entity.standardSubmoney}</if>
+	        <if test="entity.checkMoney != null">and tps_check_head.check_money = #{entity.checkMoney}</if>
+	        <if test="entity.subMoney != null">and tps_check_head.sub_money = #{entity.subMoney}</if>
+	        <if test="entity.deductMoney != null">and tps_check_head.deduct_money = #{entity.deductMoney}</if>
+	        <if test="entity.fronzenMoney != null">and tps_check_head.fronzen_money = #{entity.fronzenMoney}</if>
+	        <if test="entity.collectStatus != null">and tps_check_head.collect_status = #{entity.collectStatus}</if>
+	        <if test="entity.checkStatus != null">and tps_check_head.check_status = #{entity.checkStatus}</if>
+	        <if test="entity.createUsername != null">and tps_check_head.create_username = #{entity.createUsername}</if>
+	        <if test="entity.createTime != null">and tps_check_head.create_time = #{entity.createTime}</if>
+	        <if test="entity.active != null">and tps_check_head.active = #{entity.active}</if>
+	        <if test="entity.activeUser != null">and tps_check_head.active_user = #{entity.activeUser}</if>
+	        <if test="entity.activeTime != null">and tps_check_head.active_time = #{entity.activeTime}</if>
+	        <if test="entity.activeMemo != null">and tps_check_head.active_memo = #{entity.activeMemo}</if>
+			</where>
+		) ${entity.tableAlias} using (lineid)
+</foreach>
+)
+</select>
+
+<!-- ElementID:insert,Generated=true -->
+<insert id="insert" parameterType="com.unlcn.ils.tps.E_checkhead">
+	insert into tps_check_head(
+	         <if test="lineid != null">lineid</if>
+	         <if test="shipperLineid != null">,shipper_lineid</if>
+	         <if test="shipperName != null">,shipper_name</if>
+	         <if test="countmonth != null">,countmonth</if>
+	         <if test="factSubmoney != null">,fact_submoney</if>
+	         <if test="argueStatus != null">,argue_status</if>
+	         <if test="standardValue != null">,standard_value</if>
+	         <if test="standardSubvalue != null">,standard_subvalue</if>
+	         <if test="argueTime != null">,argue_time</if>
+	         <if test="standardSubmoney != null">,standard_submoney</if>
+	         <if test="checkMoney != null">,check_money</if>
+	         <if test="subMoney != null">,sub_money</if>
+	         <if test="deductMoney != null">,deduct_money</if>
+	         <if test="fronzenMoney != null">,fronzen_money</if>
+	         <if test="collectStatus != null">,collect_status</if>
+	         <if test="checkStatus != null">,check_status</if>
+	         <if test="createUsername != null">,create_username</if>
+	         <if test="createTime != null">,create_time</if>
+	         <if test="active != null">,active</if>
+	         <if test="activeUser != null">,active_user</if>
+	         <if test="activeTime != null">,active_time</if>
+	         <if test="activeMemo != null">,active_memo</if>
+	 	 	 )
+	 values (
+	         <if test="lineid != null">#{lineid,jdbcType=VARCHAR}</if>
+	         <if test="shipperLineid != null">,#{shipperLineid,jdbcType=VARCHAR}</if>
+	         <if test="shipperName != null">,#{shipperName,jdbcType=VARCHAR}</if>
+	         <if test="countmonth != null">,#{countmonth,jdbcType=VARCHAR}</if>
+	         <if test="factSubmoney != null">,#{factSubmoney,jdbcType=NUMERIC}</if>
+	         <if test="argueStatus != null">,#{argueStatus,jdbcType=NUMERIC}</if>
+	         <if test="standardValue != null">,#{standardValue,jdbcType=NUMERIC}</if>
+	         <if test="standardSubvalue != null">,#{standardSubvalue,jdbcType=NUMERIC}</if>
+	         <if test="argueTime != null">,#{argueTime,jdbcType=TIMESTAMP}</if>
+	         <if test="standardSubmoney != null">,#{standardSubmoney,jdbcType=NUMERIC}</if>
+	         <if test="checkMoney != null">,#{checkMoney,jdbcType=NUMERIC}</if>
+	         <if test="subMoney != null">,#{subMoney,jdbcType=NUMERIC}</if>
+	         <if test="deductMoney != null">,#{deductMoney,jdbcType=NUMERIC}</if>
+	         <if test="fronzenMoney != null">,#{fronzenMoney,jdbcType=NUMERIC}</if>
+	         <if test="collectStatus != null">,#{collectStatus,jdbcType=NUMERIC}</if>
+	         <if test="checkStatus != null">,#{checkStatus,jdbcType=NUMERIC}</if>
+	         <if test="createUsername != null">,#{createUsername,jdbcType=VARCHAR}</if>
+	         <if test="createTime != null">,#{createTime,jdbcType=TIMESTAMP}</if>
+	         <if test="active != null">,#{active,jdbcType=NUMERIC}</if>
+	         <if test="activeUser != null">,#{activeUser,jdbcType=VARCHAR}</if>
+	         <if test="activeTime != null">,#{activeTime,jdbcType=TIMESTAMP}</if>
+	         <if test="activeMemo != null">,#{activeMemo,jdbcType=VARCHAR}</if>
+	 	 	 )
+</insert>
+
+<!-- ElementID:insertBatch,Generated=true -->
+<insert id="insertBatch" parameterType="list">
+	insert into tps_check_head (lineid,shipper_lineid,shipper_name,countmonth,fact_submoney,argue_status,standard_value,standard_subvalue,argue_time,standard_submoney,check_money,sub_money,deduct_money,fronzen_money,collect_status,check_status,create_username,create_time,active,active_user,active_time,active_memo) 
+<foreach collection="list" item="entity" index="index" separator="union all">
+		select 
+		#{entity.lineid,jdbcType = VARCHAR},
+				#{entity.shipperLineid,jdbcType = VARCHAR},
+				#{entity.shipperName,jdbcType = VARCHAR},
+				#{entity.countmonth,jdbcType = VARCHAR},
+				#{entity.factSubmoney,jdbcType = NUMERIC},
+				#{entity.argueStatus,jdbcType = NUMERIC},
+				#{entity.standardValue,jdbcType = NUMERIC},
+				#{entity.standardSubvalue,jdbcType = NUMERIC},
+				#{entity.argueTime,jdbcType = TIMESTAMP},
+				#{entity.standardSubmoney,jdbcType = NUMERIC},
+				#{entity.checkMoney,jdbcType = NUMERIC},
+				#{entity.subMoney,jdbcType = NUMERIC},
+				#{entity.deductMoney,jdbcType = NUMERIC},
+				#{entity.fronzenMoney,jdbcType = NUMERIC},
+				#{entity.collectStatus,jdbcType = NUMERIC},
+				#{entity.checkStatus,jdbcType = NUMERIC},
+				#{entity.createUsername,jdbcType = VARCHAR},
+				#{entity.createTime,jdbcType = TIMESTAMP},
+				#{entity.active,jdbcType = NUMERIC},
+				#{entity.activeUser,jdbcType = VARCHAR},
+				#{entity.activeTime,jdbcType = TIMESTAMP},
+				#{entity.activeMemo,jdbcType = VARCHAR}
+		from dual
+</foreach>
+</insert>
+<select id="getMaxId" resultMap="E_checkheadResult">
+	SELECT * FROM tps_check_head ORDER BY Create_Time DESC;
+</select>
+<select id="selectByShipperLineid" parameterType="java.lang.String" resultMap="E_checkheadResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_check_head 
+		 where tps_check_head.shipper_lineid = #{shipper_lineid}
+</select>
+<select id="selectByCondition" parameterType="com.unlcn.ils.tps.E_checkhead" resultMap="E_checkheadResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_check_head 
+		 where tps_check_head.create_time &gt;= #{createTime}
+		 and tps_check_head.create_time &lt;= #{activeTime}
+		 and tps_check_head.shipper_lineid=#{shipperLineid}
+</select>
+<sql id="custom_whereClause_sql">
+	    <if test="shipperLineid != null">and tps_check_head.shipper_lineid = #{shipperLineid}</if>
+	    <if test="createTime != null">and tps_check_head.create_time &gt;= #{createTime}</if>
+	    <if test="activeTime != null">and tps_check_head.create_time &lt;= #{activeTime}</if>
+</sql>
+<select id="custom_select" parameterType="com.unlcn.ils.tps.E_checkhead" resultMap="E_checkheadResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_check_head 
+		 <where>
+			<include refid="custom_whereClause_sql"/>
+		</where>
+</select>
+</mapper>

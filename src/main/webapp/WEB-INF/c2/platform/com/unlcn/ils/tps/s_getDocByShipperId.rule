@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="s_getDocByShipperId" log="false" className="com.unlcn.ils.tps.services.CheckDocumentService" method="getByShipper">
+  <instanceCreator>
+    <params/>
+  </instanceCreator>
+  <name>根据分供方编号获取记录单主键</name>
+  <inputs>
+    <input collection="false" desc="" id="ShipperId" required="true" type="String"/>
+  </inputs>
+  <outputs>
+    <output autoValue="Result" desc="" id="result" name="方法返回值" type="java.util.List"/>
+  </outputs>
+  <params>
+    <param autoValue="Input.ShipperId" name="ShipperId" signature="QString;" type="String"/>
+  </params>
+  <return signature="QList&lt;QString;>;" type="java.util.List"/>
+</CustomRule>

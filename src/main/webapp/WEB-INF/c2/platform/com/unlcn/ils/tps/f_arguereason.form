@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form:Form xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dync="http://www.chinacreator.com/platform/mvc/ui/dync" xmlns:form="http://www.chinacreator.com/platform/mvc/form" name="申诉理由弹出框" sn="arguereason" type="form">
+  <form:control type="page/modal">
+    <form:attributes source="page/modal">
+      <dync:attribute default="" group="事件" id="onload" name="页面加载完成" value="page_onload()">
+        <dync:render colSpan="2" height="0" multi="false" name="event">
+          <dync:item name="param" value=""/>
+        </dync:render>
+        <dync:children/>
+      </dync:attribute>
+    </form:attributes>
+  </form:control>
+  <form:child xsi:type="form:Group" id="widgetbox" name="申诉">
+    <form:control type="container/widgetbox">
+      <form:attributes source="container/widgetbox"/>
+    </form:control>
+    <form:child xsi:type="form:Group" id="widgexbox_toolbar" name="widgexbox_toolbar">
+      <form:control type="container/toolbar_widget">
+        <form:attributes source="container/toolbar_widget"/>
+      </form:control>
+    </form:child>
+    <form:child xsi:type="form:Group" id="div2" name="简单容器(DIV)">
+      <form:control type="container/div">
+        <form:attributes source="container/div">
+          <dync:attribute default="" group="高级自定义" id="cssClass" name="自定义class" value="condition_div">
+            <dync:render colSpan="2" height="0" multi="false" name="text"/>
+            <dync:children/>
+          </dync:attribute>
+        </form:attributes>
+      </form:control>
+      <form:child xsi:type="form:Group" id="newGroupId" name="新分组">
+        <form:control type="container/div">
+          <form:attributes source="container/div">
+            <dync:attribute default="false" group="HTML配置" id="pure" name="简单div" value="false">
+              <dync:render/>
+              <dync:children/>
+            </dync:attribute>
+            <dync:attribute default="12" group="HTML配置" id="span" name="占位数" value="12">
+              <dync:render/>
+              <dync:children/>
+            </dync:attribute>
+            <dync:attribute default="0" group="HTML配置" id="offset" name="偏移" value="0">
+              <dync:render/>
+              <dync:children/>
+            </dync:attribute>
+            <dync:attribute default="" group="HTML配置" id="collapse" name="隐藏" value="">
+              <dync:render/>
+              <dync:children/>
+            </dync:attribute>
+            <dync:attribute default="false" group="HTML配置" id="defaultCollapse" name="隐藏默认值" value="false">
+              <dync:render/>
+              <dync:children/>
+            </dync:attribute>
+            <dync:attribute default="false" group="HTML配置" id="autoHeight" name="自动高度" value="false">
+              <dync:render/>
+              <dync:children/>
+            </dync:attribute>
+            <dync:attribute default="false" group="HTML配置" id="nopadding" name="无内边距" value="false">
+              <dync:render/>
+              <dync:children/>
+            </dync:attribute>
+            <dync:attribute default="" group="高级自定义" id="html" name="自定义HTML" value="">
+              <dync:render/>
+              <dync:children/>
+            </dync:attribute>
+            <dync:attribute default="" group="高级自定义" id="cssClass" name="自定义class" value="condition_box">
+              <dync:render/>
+              <dync:children/>
+            </dync:attribute>
+            <dync:attribute default="" group="高级自定义" id="style" name="自定义style" value="">
+              <dync:render/>
+              <dync:children/>
+            </dync:attribute>
+          </form:attributes>
+        </form:control>
+        <form:child xsi:type="form:Field" binding="$model.e_argue.argueReson" id="argueReson" name="申诉理由">
+          <form:control type="widget/textarea">
+            <form:attributes source="widget/textarea">
+              <dync:attribute default="false" group="数据校验" id="required" name="必填项" value="true">
+                <dync:render colSpan="1" height="0" multi="false" name="checkboxAndExpr"/>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="12" group="HTML设置" id="span" name="占位数" value="11">
+                <dync:render colSpan="1" height="0" multi="false" name="text"/>
+                <dync:children/>
+              </dync:attribute>
+            </form:attributes>
+          </form:control>
+        </form:child>
+      </form:child>
+      <form:child xsi:type="form:Group" id="div5" name="简单容器(DIV)">
+        <form:control type="container/div">
+          <form:attributes source="container/div">
+            <dync:attribute default="" group="高级自定义" id="cssClass" name="自定义class" value="search_div">
+              <dync:render colSpan="2" height="0" multi="false" name="text"/>
+              <dync:children/>
+            </dync:attribute>
+          </form:attributes>
+        </form:control>
+        <form:child xsi:type="form:Field" id="button" name="提交" customize="true">
+          <form:control type="widget/button">
+            <form:attributes source="widget/button">
+              <dync:attribute default="" group="事件设置" id="click" name="点击事件" value="button_click($event)">
+                <dync:render colSpan="1" height="0" multi="false" name="event">
+                  <dync:item name="params" value="$event"/>
+                </dync:render>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="btn-primary" group="HTML设置" id="style" name="样式" value="btn-success">
+                <dync:render colSpan="1" height="0" multi="false" name="select">
+                  <dync:item name="默认" value="btn-default"/>
+                  <dync:item name="主要" value="btn-primary"/>
+                  <dync:item name="成功" value="btn-success"/>
+                  <dync:item name="信息" value="btn-info"/>
+                  <dync:item name="警告" value="btn-warning"/>
+                  <dync:item name="危险" value="btn-danger"/>
+                  <dync:item name="链接" value="btn-link"/>
+                  <dync:item name="通用" value="btn-white no-border"/>
+                </dync:render>
+                <dync:children/>
+              </dync:attribute>
+            </form:attributes>
+          </form:control>
+          <form:validation/>
+        </form:child>
+        <form:child xsi:type="form:Field" id="buttonClose" name="重置" customize="true">
+          <form:control type="widget/button">
+            <form:attributes source="widget/button">
+              <dync:attribute default="btn-primary" group="HTML设置" id="style" name="样式" value="btn-warning">
+                <dync:render colSpan="1" height="0" multi="false" name="select">
+                  <dync:item name="默认" value="btn-default"/>
+                  <dync:item name="主要" value="btn-primary"/>
+                  <dync:item name="成功" value="btn-success"/>
+                  <dync:item name="信息" value="btn-info"/>
+                  <dync:item name="警告" value="btn-warning"/>
+                  <dync:item name="危险" value="btn-danger"/>
+                  <dync:item name="链接" value="btn-link"/>
+                  <dync:item name="通用" value="btn-white no-border"/>
+                </dync:render>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="" group="事件设置" id="click" name="点击事件" value="buttonClose_click($event)">
+                <dync:render colSpan="1" height="0" multi="false" name="event">
+                  <dync:item name="params" value="$event"/>
+                </dync:render>
+                <dync:children/>
+              </dync:attribute>
+            </form:attributes>
+          </form:control>
+          <form:validation/>
+        </form:child>
+      </form:child>
+    </form:child>
+  </form:child>
+  <form:datasources>
+    <form:datasource xsi:type="form:Inputs"/>
+    <form:datasource xsi:type="form:EntityDataSource" id="e_argue" name="单实体数据源_申诉单" entity="entity:com.unlcn.ils.tps.e_argue"/>
+  </form:datasources>
+  <form:scripts>
+
+page_onload:function(){
+/*	$model.e_argue.checkdetailLineid=$params.info.lineid;
+	$model.e_argue.checkheadLineid=$params.info.checkheadLineid;*/
+},
+
+button_click:function($event){
+	if($model.e_argue.argueReson==undefined||$model.e_argue.argueReson.length==0){
+		Messenger.post({message:&quot;请填写申诉理由!&quot;,type:&quot;error&quot;,hideAfter:2,showCloseButton:true});	
+		return;
+	}
+	Messenger.post({message:&quot;正在提交申诉，请稍后&quot;,type:&quot;info&quot;,hideAfter:1,showCloseButton:true});	
+/*	$model.e_argue.checkheadLineid=$params.info.checkHeadLineid;
+	$model.e_argue.checkdetailLineid=$params.info.lineid;
+    $model.e_argue.$save(function(){
+        Modal.instance.close();
+        Messenger.post({type:'success',message:'新增成功'});
+    }); */
+    $http.post(&quot;ws/s_possessArgueData&quot;,{&quot;data&quot;:$model.e_argue,&quot;idList&quot;:$params.info})
+    	.success(function(data){
+    		Messenger.post({type:'success',message:'新增成功'});
+    		if($params.info.length==1){
+		        $http.post(&quot;ws/s_getMaxArgueId&quot;,{})
+		        	.success(function(data){
+				        Modal.openConfirm({message:&quot;添加附件?&quot;},function($params){
+				        	Modal.open(&quot;f/Argue_attached_dlg&quot;,{&quot;info&quot;:data.result},function($params){
+								Modal.instance.close();
+							});
+				        },function($params){
+				        	Modal.instance.close();		        	
+				        });        		
+		        	});	     		
+    		}
+    		else{
+    			Modal.openConfirm({message:&quot;多选申诉请在页面上逐一上传申诉材料!&quot;},function($params){
+    				Modal.instance.close();
+    			});   			
+    		}	
+    	});
+},
+
+buttonClose_click:function($event){
+	//Modal.instance.close();	
+	$view.mainForm.clean();
+}</form:scripts>
+  <form:htmls>
+&lt;script type=&quot;text/ng-template&quot; id=&quot;div13_html&quot;>
+*
+&lt;/script>
+&lt;script type=&quot;text/ng-template&quot; id=&quot;div1_html&quot;>
+为有效使用上传空间，只有提交后才有权选择上传附件！
+&lt;/script></form:htmls>
+</form:Form>

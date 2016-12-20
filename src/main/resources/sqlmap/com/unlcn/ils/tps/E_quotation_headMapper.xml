@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><mapper namespace="com.unlcn.ils.tps.E_quotation_headMapper">	
+
+<!-- ElementID:column_sql,Generated=true -->
+<sql id="column_sql">
+		  tps_quotation_head.lineid ,
+		  tps_quotation_head.shipper_id ,
+		  tps_quotation_head.quotation_no ,
+		  tps_quotation_head.invoiceway ,
+		  tps_quotation_head.urgent ,
+		  tps_quotation_head.begin_date ,
+		  tps_quotation_head.end_date ,
+		  tps_quotation_head.share_id ,
+		  tps_quotation_head.quotation_type ,
+		  tps_quotation_head.contract_id ,
+		  tps_quotation_head.standard_price_total ,
+		  tps_quotation_head.quotation_price_total ,
+		  tps_quotation_head.price_overflow ,
+		  tps_quotation_head.overflow_memo ,
+		  tps_quotation_head.other_charge_total ,
+		  tps_quotation_head.check_flag ,
+		  tps_quotation_head.quotation_flag ,
+		  tps_quotation_head.create_user ,
+		  tps_quotation_head.create_time ,
+		  tps_quotation_head.active ,
+		  tps_quotation_head.active_user ,
+		  tps_quotation_head.active_time ,
+		  tps_quotation_head.active_memo ,
+		  tps_quotation_head.print_count ,
+		  tps_quotation_head.transway_name ,
+		  tps_quotation_head.estimate ,
+		  tps_quotation_head.isapply ,
+		  tps_quotation_head.apply_date ,
+		  tps_quotation_head.audit_user ,
+		  tps_quotation_head.flowid ,
+		  tps_pay_period_T1.lineid T1_lineid ,
+		  tps_pay_period_T1.pay_period_name T1_pay_period_name ,
+		  tps_pay_period_T1.create_time T1_create_time ,
+		  tps_pay_period_T1.create_user T1_create_user ,
+		  tps_pay_period_T1.active T1_active ,
+		  tps_pay_period_T1.active_user T1_active_user ,
+		  tps_pay_period_T1.active_time T1_active_time ,
+		  tps_pay_period_T1.active_memo T1_active_memo ,
+		  trans_way_T2.lineid T2_lineid ,
+		  trans_way_T2.trans_name T2_trans_name ,
+		  trans_way_T2.create_time T2_create_time ,
+		  trans_way_T2.create_user T2_create_user ,
+		  trans_way_T2.active T2_active ,
+		  trans_way_T2.active_user T2_active_user ,
+		  trans_way_T2.active_time T2_active_time ,
+		  trans_way_T2.active_memo T2_active_memo 
+</sql>
+
+<!-- ElementID:whereClause_sql,Generated=true -->
+<sql id="whereClause_sql">
+	    <if test="lineid != null">and tps_quotation_head.lineid = #{lineid}</if>
+	    <if test="shipperId != null">and tps_quotation_head.shipper_id = #{shipperId}</if>
+	    <if test="quotationNo != null">and tps_quotation_head.quotation_no = #{quotationNo}</if>
+	    <if test="invoiceway != null">and tps_quotation_head.invoiceway = #{invoiceway}</if>
+	    <if test="urgent != null">and tps_quotation_head.urgent = #{urgent}</if>
+	    <if test="beginDate != null">and tps_quotation_head.begin_date = #{beginDate}</if>
+	    <if test="endDate != null">and tps_quotation_head.end_date = #{endDate}</if>
+	    <if test="shareId != null">and tps_quotation_head.share_id = #{shareId}</if>
+	    <if test="quotationType != null">and tps_quotation_head.quotation_type = #{quotationType}</if>
+	    <if test="contractId != null">and tps_quotation_head.contract_id = #{contractId}</if>
+	    <if test="standardPriceTotal != null">and tps_quotation_head.standard_price_total = #{standardPriceTotal}</if>
+	    <if test="quotationPriceTotal != null">and tps_quotation_head.quotation_price_total = #{quotationPriceTotal}</if>
+	    <if test="priceOverflow != null">and tps_quotation_head.price_overflow = #{priceOverflow}</if>
+	    <if test="overflowMemo != null">and tps_quotation_head.overflow_memo = #{overflowMemo}</if>
+	    <if test="otherChargeTotal != null">and tps_quotation_head.other_charge_total = #{otherChargeTotal}</if>
+	    <if test="checkFlag != null">and tps_quotation_head.check_flag = #{checkFlag}</if>
+	    <if test="quotationFlag != null">and tps_quotation_head.quotation_flag = #{quotationFlag}</if>
+	    <if test="createUser != null">and tps_quotation_head.create_user = #{createUser}</if>
+	    <if test="createTime != null">and tps_quotation_head.create_time = #{createTime}</if>
+	    <if test="active != null">and tps_quotation_head.active = #{active}</if>
+	    <if test="activeUser != null">and tps_quotation_head.active_user = #{activeUser}</if>
+	    <if test="activeTime != null">and tps_quotation_head.active_time = #{activeTime}</if>
+	    <if test="activeMemo != null">and tps_quotation_head.active_memo = #{activeMemo}</if>
+	    <if test="printCount != null">and tps_quotation_head.print_count = #{printCount}</if>
+	    <if test="transwayName != null">and tps_quotation_head.transway_name = #{transwayName}</if>
+	    <if test="estimate != null">and tps_quotation_head.estimate = #{estimate}</if>
+	    <if test="isapply != null">and tps_quotation_head.isapply = #{isapply}</if>
+	    <if test="applyDate != null">and tps_quotation_head.apply_date = #{applyDate}</if>
+	    <if test="auditUser != null">and tps_quotation_head.audit_user = #{auditUser}</if>
+	    <if test="flowid != null">and tps_quotation_head.flowid = #{flowid}</if>
+		<if test="payPeriod != null and payPeriod.lineid !=null">and tps_quotation_head.pay_period = #{payPeriod.lineid}</if>
+		<if test="transwayId != null and transwayId.lineid !=null">and tps_quotation_head.transway_id = #{transwayId.lineid}</if>
+</sql>
+
+
+<!-- ElementID:E_quotation_headResult,Generated=true -->
+<resultMap id="E_quotation_headResult" type="com.unlcn.ils.tps.E_quotation_head">
+	<id property="lineid" column="lineid"/>
+	<result property="shipperId" column="shipper_id"/>
+	<result property="quotationNo" column="quotation_no"/>
+	<result property="invoiceway" column="invoiceway"/>
+	<result property="urgent" column="urgent"/>
+	<result property="beginDate" column="begin_date"/>
+	<result property="endDate" column="end_date"/>
+	<result property="shareId" column="share_id"/>
+	<result property="quotationType" column="quotation_type"/>
+	<result property="contractId" column="contract_id"/>
+	<result property="standardPriceTotal" column="standard_price_total"/>
+	<result property="quotationPriceTotal" column="quotation_price_total"/>
+	<result property="priceOverflow" column="price_overflow"/>
+	<result property="overflowMemo" column="overflow_memo"/>
+	<result property="otherChargeTotal" column="other_charge_total"/>
+	<result property="checkFlag" column="check_flag"/>
+	<result property="quotationFlag" column="quotation_flag"/>
+	<result property="createUser" column="create_user"/>
+	<result property="createTime" column="create_time"/>
+	<result property="active" column="active"/>
+	<result property="activeUser" column="active_user"/>
+	<result property="activeTime" column="active_time"/>
+	<result property="activeMemo" column="active_memo"/>
+	<result property="printCount" column="print_count"/>
+	<result property="transwayName" column="transway_name"/>
+	<result property="estimate" column="estimate"/>
+	<result property="isapply" column="isapply"/>
+	<result property="applyDate" column="apply_date"/>
+	<result property="auditUser" column="audit_user"/>
+	<result property="flowid" column="flowid"/>
+	<association property="payPeriod" column="T1_lineid" javaType="com.unlcn.ils.tps.E_pay_period" resultMap="E_pay_periodResult" columnPrefix="T1_"/>	
+	<association property="transwayId" column="T2_lineid" javaType="com.unlcn.ils.tps.E_transway" resultMap="E_transwayResult" columnPrefix="T2_"/>	
+</resultMap>
+
+
+<!-- ElementName:cache,Generated=true -->
+<cache type="C2_Default_Dao_Cache"/>
+
+<!-- ElementID:count,Generated=true -->
+<select id="count" parameterType="com.unlcn.ils.tps.E_quotation_head" resultType="int">
+	select count(*) from tps_quotation_head 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+<!-- ElementID:update,Generated=true -->
+<update id="update" parameterType="com.unlcn.ils.tps.E_quotation_head">
+	update tps_quotation_head
+<set>
+	<if test="shipperId != null">shipper_id=#{shipperId,jdbcType=VARCHAR},</if>
+	<if test="quotationNo != null">quotation_no=#{quotationNo,jdbcType=VARCHAR},</if>
+	<if test="invoiceway != null">invoiceway=#{invoiceway,jdbcType=NUMERIC},</if>
+	<if test="urgent != null">urgent=#{urgent,jdbcType=NUMERIC},</if>
+	<if test="beginDate != null">begin_date=#{beginDate,jdbcType=TIMESTAMP},</if>
+	<if test="endDate != null">end_date=#{endDate,jdbcType=TIMESTAMP},</if>
+	<if test="shareId != null">share_id=#{shareId,jdbcType=NUMERIC},</if>
+	<if test="quotationType != null">quotation_type=#{quotationType,jdbcType=NUMERIC},</if>
+	<if test="contractId != null">contract_id=#{contractId,jdbcType=NUMERIC},</if>
+	<if test="standardPriceTotal != null">standard_price_total=#{standardPriceTotal,jdbcType=NUMERIC},</if>
+	<if test="quotationPriceTotal != null">quotation_price_total=#{quotationPriceTotal,jdbcType=NUMERIC},</if>
+	<if test="priceOverflow != null">price_overflow=#{priceOverflow,jdbcType=NUMERIC},</if>
+	<if test="overflowMemo != null">overflow_memo=#{overflowMemo,jdbcType=VARCHAR},</if>
+	<if test="otherChargeTotal != null">other_charge_total=#{otherChargeTotal,jdbcType=NUMERIC},</if>
+	<if test="checkFlag != null">check_flag=#{checkFlag,jdbcType=NUMERIC},</if>
+	<if test="quotationFlag != null">quotation_flag=#{quotationFlag,jdbcType=NUMERIC},</if>
+	<if test="createUser != null">create_user=#{createUser,jdbcType=VARCHAR},</if>
+	<if test="createTime != null">create_time=#{createTime,jdbcType=TIMESTAMP},</if>
+	<if test="active != null">active=#{active,jdbcType=NUMERIC},</if>
+	<if test="activeUser != null">active_user=#{activeUser,jdbcType=VARCHAR},</if>
+	<if test="activeTime != null">active_time=#{activeTime,jdbcType=TIMESTAMP},</if>
+	<if test="activeMemo != null">active_memo=#{activeMemo,jdbcType=VARCHAR},</if>
+	<if test="printCount != null">print_count=#{printCount,jdbcType=NUMERIC},</if>
+	<if test="transwayName != null">transway_name=#{transwayName,jdbcType=VARCHAR},</if>
+	<if test="estimate != null">estimate=#{estimate,jdbcType=NUMERIC},</if>
+	<if test="isapply != null">isapply=#{isapply,jdbcType=NUMERIC},</if>
+	<if test="applyDate != null">apply_date=#{applyDate,jdbcType=TIMESTAMP},</if>
+	<if test="auditUser != null">audit_user=#{auditUser,jdbcType=VARCHAR},</if>
+	<if test="flowid != null">flowid=#{flowid,jdbcType=NUMERIC},</if>
+	<if test="payPeriod != null and payPeriod.lineid !=null">pay_period=#{payPeriod.lineid,jdbcType=NUMERIC},</if>
+	<if test="transwayId != null and transwayId.lineid !=null">transway_id=#{transwayId.lineid,jdbcType=NUMERIC}</if>
+</set>
+<where>
+	<choose>
+        <when test="lineid != null">and lineid = #{lineid}</when>
+        <otherwise>and lineid = </otherwise>
+    </choose>
+</where>
+</update>
+
+<!-- ElementID:updateNull,Generated=true -->
+<update id="updateNull" parameterType="map">
+	update tps_quotation_head
+	<set>
+		<trim suffixOverrides=",">
+		    <if test="shipperId==null">shipper_id = null,</if>
+		    <if test="quotationNo==null">quotation_no = null,</if>
+		    <if test="invoiceway==null">invoiceway = null,</if>
+		    <if test="urgent==null">urgent = null,</if>
+		    <if test="beginDate==null">begin_date = null,</if>
+		    <if test="endDate==null">end_date = null,</if>
+		    <if test="shareId==null">share_id = null,</if>
+		    <if test="quotationType==null">quotation_type = null,</if>
+		    <if test="contractId==null">contract_id = null,</if>
+		    <if test="standardPriceTotal==null">standard_price_total = null,</if>
+		    <if test="quotationPriceTotal==null">quotation_price_total = null,</if>
+		    <if test="priceOverflow==null">price_overflow = null,</if>
+		    <if test="overflowMemo==null">overflow_memo = null,</if>
+		    <if test="otherChargeTotal==null">other_charge_total = null,</if>
+		    <if test="checkFlag==null">check_flag = null,</if>
+		    <if test="quotationFlag==null">quotation_flag = null,</if>
+		    <if test="createUser==null">create_user = null,</if>
+		    <if test="createTime==null">create_time = null,</if>
+		    <if test="active==null">active = null,</if>
+		    <if test="activeUser==null">active_user = null,</if>
+		    <if test="activeTime==null">active_time = null,</if>
+		    <if test="activeMemo==null">active_memo = null,</if>
+		    <if test="printCount==null">print_count = null,</if>
+		    <if test="transwayName==null">transway_name = null,</if>
+		    <if test="estimate==null">estimate = null,</if>
+		    <if test="isapply==null">isapply = null,</if>
+		    <if test="applyDate==null">apply_date = null,</if>
+		    <if test="auditUser==null">audit_user = null,</if>
+		    <if test="flowid==null">flowid = null,</if>
+		    <if test="payPeriod==null">pay_period = null,</if>
+		    <if test="transwayId==null">transway_id = null,</if>
+		</trim>
+	</set>
+	<where>
+		<choose>
+			<when test="lineid != null">and lineid = #{lineid}</when>
+			<otherwise>and lineid = </otherwise>
+		</choose>
+	</where>
+</update>
+
+<!--Generated=false-->
+<update id="deleteBatchLogic" parameterType="List">
+			update tps_quotation_head 
+				set tps_quotation_head.active = 0,
+				tps_quotation_head.active_user=#{activeuser},tps_quotation_head.active_memo=#{activememo}
+			where tps_quotation_head.quotation_type=#{quotationtype} and tps_quotation_head.lineid in 
+		<foreach collection="listlineid" item="data" index="index" open="(" separator="," close=")">
+				<if test="data != null">
+					#{data}
+				</if>
+		</foreach>
+</update>
+
+<!--Generated=false-->
+<!-- 提交审核 -->
+<update id="submitApply" parameterType="List">
+			update tps_quotation_head 
+				set tps_quotation_head.isapply= 1,tps_quotation_head.check_flag=0
+			where tps_quotation_head.isapply=0 and tps_quotation_head.quotation_type=#{quotationtype} 
+				and tps_quotation_head.lineid in 
+		<foreach collection="listlineid" item="data" index="index" open="(" separator="," close=")">
+				<if test="data != null">
+					#{data}
+				</if>
+		</foreach>
+</update>
+<!-- ElementID:delete,Generated=true -->
+<delete id="delete" parameterType="com.unlcn.ils.tps.E_quotation_head">
+    delete from tps_quotation_head where 1=1 and lineid = #{lineid}
+</delete>
+
+<!-- ElementID:select,Generated=true -->
+<select id="select" parameterType="com.unlcn.ils.tps.E_quotation_head" resultMap="E_quotation_headResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_quotation_head 
+		<include refid="one2one_sql"/>
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:deleteBatch,Generated=true -->
+<delete id="deleteBatch" parameterType="List">
+	delete from tps_quotation_head where lineid in
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<foreach collection="list" item="entity" separator=",">
+	#{entity.lineid}
+</foreach>
+</trim>
+</delete>
+
+<!-- ElementID:selectAll,Generated=true -->
+<select id="selectAll" resultMap="E_quotation_headResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_quotation_head 
+		<include refid="one2one_sql"/>
+</select>
+
+<!-- ElementID:selectByID,Generated=true -->
+<select id="selectByID" parameterType="java.lang.String" resultMap="E_quotation_headResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_quotation_head 
+		<include refid="one2one_sql"/>
+		 where tps_quotation_head.lineid = #{lineid,jdbcType=VARCHAR}
+</select>
+
+<!-- ElementID:selectByPage,Generated=true -->
+<select id="selectByPage" parameterType="com.unlcn.ils.tps.E_quotation_head" resultMap="E_quotation_headResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_quotation_head 
+		<include refid="one2one_sql"/>
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:selectMany,Generated=true -->
+<select id="selectMany" parameterType="list" resultMap="E_quotation_headResult">
+select 
+	<include refid="column_sql"/> 
+	from tps_quotation_head 
+	<include refid="one2one_sql"/>
+	where tps_quotation_head.lineid in (
+		select distinct lineid from tps_quotation_head inner join
+<foreach collection="list" item="entity" separator="inner join">
+		(select 
+			distinct lineid
+			from tps_quotation_head 
+			<where>
+	        <if test="entity.lineid != null">and tps_quotation_head.lineid = #{entity.lineid}</if>
+	        <if test="entity.shipperId != null">and tps_quotation_head.shipper_id = #{entity.shipperId}</if>
+	        <if test="entity.quotationNo != null">and tps_quotation_head.quotation_no = #{entity.quotationNo}</if>
+	        <if test="entity.invoiceway != null">and tps_quotation_head.invoiceway = #{entity.invoiceway}</if>
+	        <if test="entity.urgent != null">and tps_quotation_head.urgent = #{entity.urgent}</if>
+	        <if test="entity.beginDate != null">and tps_quotation_head.begin_date = #{entity.beginDate}</if>
+	        <if test="entity.endDate != null">and tps_quotation_head.end_date = #{entity.endDate}</if>
+	        <if test="entity.shareId != null">and tps_quotation_head.share_id = #{entity.shareId}</if>
+	        <if test="entity.quotationType != null">and tps_quotation_head.quotation_type = #{entity.quotationType}</if>
+	        <if test="entity.contractId != null">and tps_quotation_head.contract_id = #{entity.contractId}</if>
+	        <if test="entity.standardPriceTotal != null">and tps_quotation_head.standard_price_total = #{entity.standardPriceTotal}</if>
+	        <if test="entity.quotationPriceTotal != null">and tps_quotation_head.quotation_price_total = #{entity.quotationPriceTotal}</if>
+	        <if test="entity.priceOverflow != null">and tps_quotation_head.price_overflow = #{entity.priceOverflow}</if>
+	        <if test="entity.overflowMemo != null">and tps_quotation_head.overflow_memo = #{entity.overflowMemo}</if>
+	        <if test="entity.otherChargeTotal != null">and tps_quotation_head.other_charge_total = #{entity.otherChargeTotal}</if>
+	        <if test="entity.checkFlag != null">and tps_quotation_head.check_flag = #{entity.checkFlag}</if>
+	        <if test="entity.quotationFlag != null">and tps_quotation_head.quotation_flag = #{entity.quotationFlag}</if>
+	        <if test="entity.createUser != null">and tps_quotation_head.create_user = #{entity.createUser}</if>
+	        <if test="entity.createTime != null">and tps_quotation_head.create_time = #{entity.createTime}</if>
+	        <if test="entity.active != null">and tps_quotation_head.active = #{entity.active}</if>
+	        <if test="entity.activeUser != null">and tps_quotation_head.active_user = #{entity.activeUser}</if>
+	        <if test="entity.activeTime != null">and tps_quotation_head.active_time = #{entity.activeTime}</if>
+	        <if test="entity.activeMemo != null">and tps_quotation_head.active_memo = #{entity.activeMemo}</if>
+	        <if test="entity.printCount != null">and tps_quotation_head.print_count = #{entity.printCount}</if>
+	        <if test="entity.transwayName != null">and tps_quotation_head.transway_name = #{entity.transwayName}</if>
+	        <if test="entity.estimate != null">and tps_quotation_head.estimate = #{entity.estimate}</if>
+	        <if test="entity.isapply != null">and tps_quotation_head.isapply = #{entity.isapply}</if>
+	        <if test="entity.applyDate != null">and tps_quotation_head.apply_date = #{entity.applyDate}</if>
+	        <if test="entity.auditUser != null">and tps_quotation_head.audit_user = #{entity.auditUser}</if>
+	        <if test="entity.flowid != null">and tps_quotation_head.flowid = #{entity.flowid}</if>
+			</where>
+		) ${entity.tableAlias} using (lineid)
+</foreach>
+)
+</select>
+
+<!-- ElementID:insert,Generated=true -->
+<insert id="insert" parameterType="com.unlcn.ils.tps.E_quotation_head">
+	insert into tps_quotation_head(
+	         <if test="lineid != null">lineid</if>
+	         <if test="shipperId != null">,shipper_id</if>
+	         <if test="quotationNo != null">,quotation_no</if>
+	         <if test="invoiceway != null">,invoiceway</if>
+	         <if test="urgent != null">,urgent</if>
+	         <if test="beginDate != null">,begin_date</if>
+	         <if test="endDate != null">,end_date</if>
+	         <if test="shareId != null">,share_id</if>
+	         <if test="quotationType != null">,quotation_type</if>
+	         <if test="contractId != null">,contract_id</if>
+	         <if test="standardPriceTotal != null">,standard_price_total</if>
+	         <if test="quotationPriceTotal != null">,quotation_price_total</if>
+	         <if test="priceOverflow != null">,price_overflow</if>
+	         <if test="overflowMemo != null">,overflow_memo</if>
+	         <if test="otherChargeTotal != null">,other_charge_total</if>
+	         <if test="checkFlag != null">,check_flag</if>
+	         <if test="quotationFlag != null">,quotation_flag</if>
+	         <if test="createUser != null">,create_user</if>
+	         <if test="createTime != null">,create_time</if>
+	         <if test="active != null">,active</if>
+	         <if test="activeUser != null">,active_user</if>
+	         <if test="activeTime != null">,active_time</if>
+	         <if test="activeMemo != null">,active_memo</if>
+	         <if test="printCount != null">,print_count</if>
+	         <if test="transwayName != null">,transway_name</if>
+	         <if test="estimate != null">,estimate</if>
+	         <if test="isapply != null">,isapply</if>
+	         <if test="applyDate != null">,apply_date</if>
+	         <if test="auditUser != null">,audit_user</if>
+	         <if test="flowid != null">,flowid</if>
+	 	 	 <if test="payPeriod != null and payPeriod.lineid !=null">,pay_period</if>
+	 	 <if test="transwayId != null and transwayId.lineid !=null">,transway_id</if>
+	 	 )
+	 values (
+	         <if test="lineid != null">#{lineid,jdbcType=VARCHAR}</if>
+	         <if test="shipperId != null">,#{shipperId,jdbcType=VARCHAR}</if>
+	         <if test="quotationNo != null">,#{quotationNo,jdbcType=VARCHAR}</if>
+	         <if test="invoiceway != null">,#{invoiceway,jdbcType=NUMERIC}</if>
+	         <if test="urgent != null">,#{urgent,jdbcType=NUMERIC}</if>
+	         <if test="beginDate != null">,#{beginDate,jdbcType=TIMESTAMP}</if>
+	         <if test="endDate != null">,#{endDate,jdbcType=TIMESTAMP}</if>
+	         <if test="shareId != null">,#{shareId,jdbcType=NUMERIC}</if>
+	         <if test="quotationType != null">,#{quotationType,jdbcType=NUMERIC}</if>
+	         <if test="contractId != null">,#{contractId,jdbcType=NUMERIC}</if>
+	         <if test="standardPriceTotal != null">,#{standardPriceTotal,jdbcType=NUMERIC}</if>
+	         <if test="quotationPriceTotal != null">,#{quotationPriceTotal,jdbcType=NUMERIC}</if>
+	         <if test="priceOverflow != null">,#{priceOverflow,jdbcType=NUMERIC}</if>
+	         <if test="overflowMemo != null">,#{overflowMemo,jdbcType=VARCHAR}</if>
+	         <if test="otherChargeTotal != null">,#{otherChargeTotal,jdbcType=NUMERIC}</if>
+	         <if test="checkFlag != null">,#{checkFlag,jdbcType=NUMERIC}</if>
+	         <if test="quotationFlag != null">,#{quotationFlag,jdbcType=NUMERIC}</if>
+	         <if test="createUser != null">,#{createUser,jdbcType=VARCHAR}</if>
+	         <if test="createTime != null">,#{createTime,jdbcType=TIMESTAMP}</if>
+	         <if test="active != null">,#{active,jdbcType=NUMERIC}</if>
+	         <if test="activeUser != null">,#{activeUser,jdbcType=VARCHAR}</if>
+	         <if test="activeTime != null">,#{activeTime,jdbcType=TIMESTAMP}</if>
+	         <if test="activeMemo != null">,#{activeMemo,jdbcType=VARCHAR}</if>
+	         <if test="printCount != null">,#{printCount,jdbcType=NUMERIC}</if>
+	         <if test="transwayName != null">,#{transwayName,jdbcType=VARCHAR}</if>
+	         <if test="estimate != null">,#{estimate,jdbcType=NUMERIC}</if>
+	         <if test="isapply != null">,#{isapply,jdbcType=NUMERIC}</if>
+	         <if test="applyDate != null">,#{applyDate,jdbcType=TIMESTAMP}</if>
+	         <if test="auditUser != null">,#{auditUser,jdbcType=VARCHAR}</if>
+	         <if test="flowid != null">,#{flowid,jdbcType=NUMERIC}</if>
+	 	 	 <if test="payPeriod != null and payPeriod.lineid !=null">,#{payPeriod.lineid,jdbcType=NUMERIC}</if>
+	 	 <if test="transwayId != null and transwayId.lineid !=null">,#{transwayId.lineid,jdbcType=NUMERIC}</if>
+	 	 )
+</insert>
+
+<!-- ElementID:insertBatch,Generated=true -->
+<insert id="insertBatch" parameterType="list">
+	insert into tps_quotation_head (lineid,shipper_id,quotation_no,invoiceway,urgent,begin_date,end_date,share_id,quotation_type,contract_id,standard_price_total,quotation_price_total,price_overflow,overflow_memo,other_charge_total,check_flag,quotation_flag,create_user,create_time,active,active_user,active_time,active_memo,print_count,transway_name,estimate,isapply,apply_date,audit_user,flowid,pay_period,transway_id) 
+<foreach collection="list" item="entity" index="index" separator="union all">
+		select 
+		#{entity.lineid,jdbcType = VARCHAR},
+				#{entity.shipperId,jdbcType = VARCHAR},
+				#{entity.quotationNo,jdbcType = VARCHAR},
+				#{entity.invoiceway,jdbcType = NUMERIC},
+				#{entity.urgent,jdbcType = NUMERIC},
+				#{entity.beginDate,jdbcType = TIMESTAMP},
+				#{entity.endDate,jdbcType = TIMESTAMP},
+				#{entity.shareId,jdbcType = NUMERIC},
+				#{entity.quotationType,jdbcType = NUMERIC},
+				#{entity.contractId,jdbcType = NUMERIC},
+				#{entity.standardPriceTotal,jdbcType = NUMERIC},
+				#{entity.quotationPriceTotal,jdbcType = NUMERIC},
+				#{entity.priceOverflow,jdbcType = NUMERIC},
+				#{entity.overflowMemo,jdbcType = VARCHAR},
+				#{entity.otherChargeTotal,jdbcType = NUMERIC},
+				#{entity.checkFlag,jdbcType = NUMERIC},
+				#{entity.quotationFlag,jdbcType = NUMERIC},
+				#{entity.createUser,jdbcType = VARCHAR},
+				#{entity.createTime,jdbcType = TIMESTAMP},
+				#{entity.active,jdbcType = NUMERIC},
+				#{entity.activeUser,jdbcType = VARCHAR},
+				#{entity.activeTime,jdbcType = TIMESTAMP},
+				#{entity.activeMemo,jdbcType = VARCHAR},
+				#{entity.printCount,jdbcType = NUMERIC},
+				#{entity.transwayName,jdbcType = VARCHAR},
+				#{entity.estimate,jdbcType = NUMERIC},
+				#{entity.isapply,jdbcType = NUMERIC},
+				#{entity.applyDate,jdbcType = TIMESTAMP},
+				#{entity.auditUser,jdbcType = VARCHAR},
+				#{entity.flowid,jdbcType = NUMERIC},
+						 #{entity.payPeriod.lineid,jdbcType=NUMERIC},				 #{entity.transwayId.lineid,jdbcType=NUMERIC}
+		from dual
+</foreach>
+</insert>
+<!--Generated=true-->
+
+<!--Generated=true-->
+
+<!--Generated=true-->
+
+<!--Generated=true-->
+<sql id="one2one_sql">
+	     left outer join tps_pay_period tps_pay_period_T1 on tps_quotation_head.pay_period=tps_pay_period_T1.lineid
+	     left outer join trans_way trans_way_T2 on tps_quotation_head.transway_id=trans_way_T2.lineid
+</sql>
+<!--Generated=true-->
+<resultMap id="E_pay_periodResult" type="com.unlcn.ils.tps.E_pay_period">
+	<id property="lineid" column="lineid"/>
+	<result property="payPeriodName" column="pay_period_name"/>
+	<result property="createTime" column="create_time"/>
+	<result property="createUser" column="create_user"/>
+	<result property="active" column="active"/>
+	<result property="activeUser" column="active_user"/>
+	<result property="activeTime" column="active_time"/>
+	<result property="activeMemo" column="active_memo"/>
+</resultMap>
+<!--Generated=true-->
+<resultMap id="E_transwayResult" type="com.unlcn.ils.tps.E_transway">
+	<id property="lineid" column="lineid"/>
+	<result property="transName" column="trans_name"/>
+	<result property="createTime" column="create_time"/>
+	<result property="createUser" column="create_user"/>
+	<result property="active" column="active"/>
+	<result property="activeUser" column="active_user"/>
+	<result property="activeTime" column="active_time"/>
+	<result property="activeMemo" column="active_memo"/>
+</resultMap>
+</mapper>

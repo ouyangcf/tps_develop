@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><mapper namespace="com.unlcn.ils.tps.E_linkmanMapper">	
+
+<!-- ElementID:column_sql,Generated=true -->
+<sql id="column_sql">
+		  td_linkman.id ,
+		  td_linkman.customer_id ,
+		  td_linkman.service_type ,
+		  td_linkman.department ,
+		  td_linkman.job ,
+		  td_linkman.name ,
+		  td_linkman.phone ,
+		  td_linkman.tel ,
+		  td_linkman.email ,
+		  td_linkman.qq ,
+		  td_linkman.oper_user ,
+		  td_linkman.oper_time ,
+		  td_linkman.flag 
+</sql>
+
+<!-- ElementID:whereClause_sql,Generated=true -->
+<sql id="whereClause_sql">
+	    <if test="id != null">and td_linkman.id = #{id}</if>
+	    <if test="customerId != null">and td_linkman.customer_id = #{customerId}</if>
+	    <if test="serviceType != null">and td_linkman.service_type = #{serviceType}</if>
+	    <if test="department != null">and td_linkman.department = #{department}</if>
+	    <if test="job != null">and td_linkman.job = #{job}</if>
+	    <if test="name != null">and td_linkman.name = #{name}</if>
+	    <if test="phone != null">and td_linkman.phone = #{phone}</if>
+	    <if test="tel != null">and td_linkman.tel = #{tel}</if>
+	    <if test="email != null">and td_linkman.email = #{email}</if>
+	    <if test="qq != null">and td_linkman.qq = #{qq}</if>
+	    <if test="operUser != null">and td_linkman.oper_user = #{operUser}</if>
+	    <if test="operTime != null">and td_linkman.oper_time = #{operTime}</if>
+	    <if test="flag != null">and td_linkman.flag = #{flag}</if>
+</sql>
+
+
+<!-- ElementID:E_linkmanResult,Generated=true -->
+<resultMap id="E_linkmanResult" type="com.unlcn.ils.tps.E_linkman">
+	<id property="id" column="id"/>
+	<result property="customerId" column="customer_id"/>
+	<result property="serviceType" column="service_type"/>
+	<result property="department" column="department"/>
+	<result property="job" column="job"/>
+	<result property="name" column="name"/>
+	<result property="phone" column="phone"/>
+	<result property="tel" column="tel"/>
+	<result property="email" column="email"/>
+	<result property="qq" column="qq"/>
+	<result property="operUser" column="oper_user"/>
+	<result property="operTime" column="oper_time"/>
+	<result property="flag" column="flag"/>
+</resultMap>
+
+
+<!-- ElementName:cache,Generated=true -->
+<cache type="C2_Default_Dao_Cache"/>
+
+<!-- ElementID:count,Generated=true -->
+<select id="count" parameterType="com.unlcn.ils.tps.E_linkman" resultType="int">
+	select count(*) from td_linkman 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+<!-- ElementID:update,Generated=true -->
+<update id="update" parameterType="com.unlcn.ils.tps.E_linkman">
+	update td_linkman
+<set>
+	<if test="customerId != null">customer_id=#{customerId,jdbcType=VARCHAR},</if>
+	<if test="serviceType != null">service_type=#{serviceType,jdbcType=VARCHAR},</if>
+	<if test="department != null">department=#{department,jdbcType=VARCHAR},</if>
+	<if test="job != null">job=#{job,jdbcType=VARCHAR},</if>
+	<if test="name != null">name=#{name,jdbcType=VARCHAR},</if>
+	<if test="phone != null">phone=#{phone,jdbcType=VARCHAR},</if>
+	<if test="tel != null">tel=#{tel,jdbcType=VARCHAR},</if>
+	<if test="email != null">email=#{email,jdbcType=VARCHAR},</if>
+	<if test="qq != null">qq=#{qq,jdbcType=VARCHAR},</if>
+	<if test="operUser != null">oper_user=#{operUser,jdbcType=VARCHAR},</if>
+	<if test="operTime != null">oper_time=#{operTime,jdbcType=TIMESTAMP},</if>
+	<if test="flag != null">flag=#{flag,jdbcType=NUMERIC}</if>
+</set>
+<where>
+	<choose>
+        <when test="id != null">and id = #{id}</when>
+        <otherwise>and id = </otherwise>
+    </choose>
+</where>
+</update>
+
+<!-- ElementID:updateNull,Generated=true -->
+<update id="updateNull" parameterType="map">
+	update td_linkman
+	<set>
+		<trim suffixOverrides=",">
+		    <if test="customerId==null">customer_id = null,</if>
+		    <if test="serviceType==null">service_type = null,</if>
+		    <if test="department==null">department = null,</if>
+		    <if test="job==null">job = null,</if>
+		    <if test="name==null">name = null,</if>
+		    <if test="phone==null">phone = null,</if>
+		    <if test="tel==null">tel = null,</if>
+		    <if test="email==null">email = null,</if>
+		    <if test="qq==null">qq = null,</if>
+		    <if test="operUser==null">oper_user = null,</if>
+		    <if test="operTime==null">oper_time = null,</if>
+		    <if test="flag==null">flag = null,</if>
+		</trim>
+	</set>
+	<where>
+		<choose>
+			<when test="id != null">and id = #{id}</when>
+			<otherwise>and id = </otherwise>
+		</choose>
+	</where>
+</update>
+
+<!-- ElementID:delete,Generated=true -->
+<delete id="delete" parameterType="com.unlcn.ils.tps.E_linkman">
+    delete from td_linkman where 1=1 and id = #{id}
+</delete>
+
+<!-- ElementID:select,Generated=true -->
+<select id="select" parameterType="com.unlcn.ils.tps.E_linkman" resultMap="E_linkmanResult">
+	select 
+		<include refid="column_sql"/>
+	    from td_linkman 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:deleteBatch,Generated=true -->
+<delete id="deleteBatch" parameterType="List">
+	delete from td_linkman where id in
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<foreach collection="list" item="entity" separator=",">
+	#{entity.id}
+</foreach>
+</trim>
+</delete>
+
+<!-- ElementID:selectAll,Generated=true -->
+<select id="selectAll" resultMap="E_linkmanResult">
+	select 
+		<include refid="column_sql"/>
+	    from td_linkman 
+</select>
+
+<!-- ElementID:selectByID,Generated=true -->
+<select id="selectByID" parameterType="java.lang.String" resultMap="E_linkmanResult">
+	select 
+		<include refid="column_sql"/>
+	    from td_linkman 
+		 where td_linkman.id = #{id,jdbcType=VARCHAR}
+</select>
+
+<!-- ElementID:selectByPage,Generated=true -->
+<select id="selectByPage" parameterType="com.unlcn.ils.tps.E_linkman" resultMap="E_linkmanResult">
+	select 
+		<include refid="column_sql"/>
+	    from td_linkman 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:selectMany,Generated=true -->
+<select id="selectMany" parameterType="list" resultMap="E_linkmanResult">
+select 
+	<include refid="column_sql"/> 
+	from td_linkman 
+	where td_linkman.id in (
+		select distinct id from td_linkman inner join
+<foreach collection="list" item="entity" separator="inner join">
+		(select 
+			distinct id
+			from td_linkman 
+			<where>
+	        <if test="entity.id != null">and td_linkman.id = #{entity.id}</if>
+	        <if test="entity.customerId != null">and td_linkman.customer_id = #{entity.customerId}</if>
+	        <if test="entity.serviceType != null">and td_linkman.service_type = #{entity.serviceType}</if>
+	        <if test="entity.department != null">and td_linkman.department = #{entity.department}</if>
+	        <if test="entity.job != null">and td_linkman.job = #{entity.job}</if>
+	        <if test="entity.name != null">and td_linkman.name = #{entity.name}</if>
+	        <if test="entity.phone != null">and td_linkman.phone = #{entity.phone}</if>
+	        <if test="entity.tel != null">and td_linkman.tel = #{entity.tel}</if>
+	        <if test="entity.email != null">and td_linkman.email = #{entity.email}</if>
+	        <if test="entity.qq != null">and td_linkman.qq = #{entity.qq}</if>
+	        <if test="entity.operUser != null">and td_linkman.oper_user = #{entity.operUser}</if>
+	        <if test="entity.operTime != null">and td_linkman.oper_time = #{entity.operTime}</if>
+	        <if test="entity.flag != null">and td_linkman.flag = #{entity.flag}</if>
+			</where>
+		) ${entity.tableAlias} using (id)
+</foreach>
+)
+</select>
+
+<!-- ElementID:insert,Generated=true -->
+<insert id="insert" parameterType="com.unlcn.ils.tps.E_linkman">
+	insert into td_linkman(
+	         <if test="id != null">id</if>
+	         <if test="customerId != null">,customer_id</if>
+	         <if test="serviceType != null">,service_type</if>
+	         <if test="department != null">,department</if>
+	         <if test="job != null">,job</if>
+	         <if test="name != null">,name</if>
+	         <if test="phone != null">,phone</if>
+	         <if test="tel != null">,tel</if>
+	         <if test="email != null">,email</if>
+	         <if test="qq != null">,qq</if>
+	         <if test="operUser != null">,oper_user</if>
+	         <if test="operTime != null">,oper_time</if>
+	         <if test="flag != null">,flag</if>
+	 	 	 )
+	 values (
+	         <if test="id != null">#{id,jdbcType=VARCHAR}</if>
+	         <if test="customerId != null">,#{customerId,jdbcType=VARCHAR}</if>
+	         <if test="serviceType != null">,#{serviceType,jdbcType=VARCHAR}</if>
+	         <if test="department != null">,#{department,jdbcType=VARCHAR}</if>
+	         <if test="job != null">,#{job,jdbcType=VARCHAR}</if>
+	         <if test="name != null">,#{name,jdbcType=VARCHAR}</if>
+	         <if test="phone != null">,#{phone,jdbcType=VARCHAR}</if>
+	         <if test="tel != null">,#{tel,jdbcType=VARCHAR}</if>
+	         <if test="email != null">,#{email,jdbcType=VARCHAR}</if>
+	         <if test="qq != null">,#{qq,jdbcType=VARCHAR}</if>
+	         <if test="operUser != null">,#{operUser,jdbcType=VARCHAR}</if>
+	         <if test="operTime != null">,#{operTime,jdbcType=TIMESTAMP}</if>
+	         <if test="flag != null">,#{flag,jdbcType=NUMERIC}</if>
+	 	 	 )
+</insert>
+
+<!-- ElementID:insertBatch,Generated=true -->
+<insert id="insertBatch" parameterType="list">
+	insert into td_linkman (id,customer_id,service_type,department,job,name,phone,tel,email,qq,oper_user,oper_time,flag) 
+<foreach collection="list" item="entity" index="index" separator="union all">
+		select 
+		#{entity.id,jdbcType = VARCHAR},
+				#{entity.customerId,jdbcType = VARCHAR},
+				#{entity.serviceType,jdbcType = VARCHAR},
+				#{entity.department,jdbcType = VARCHAR},
+				#{entity.job,jdbcType = VARCHAR},
+				#{entity.name,jdbcType = VARCHAR},
+				#{entity.phone,jdbcType = VARCHAR},
+				#{entity.tel,jdbcType = VARCHAR},
+				#{entity.email,jdbcType = VARCHAR},
+				#{entity.qq,jdbcType = VARCHAR},
+				#{entity.operUser,jdbcType = VARCHAR},
+				#{entity.operTime,jdbcType = TIMESTAMP},
+				#{entity.flag,jdbcType = NUMERIC}
+		from dual
+</foreach>
+</insert>
+</mapper>

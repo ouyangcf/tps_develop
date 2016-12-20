@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><mapper namespace="com.unlcn.ils.tps.E_substractMapper">	
+
+<!-- ElementID:column_sql,Generated=true -->
+<sql id="column_sql">
+		  tps_subtract.lineid ,
+		  tps_subtract.sub_from ,
+		  tps_subtract.sub_fromid ,
+		  tps_subtract.checkhead_lineid ,
+		  tps_subtract.sub_money ,
+		  tps_subtract.sub_reson ,
+		  tps_subtract.create_time ,
+		  tps_subtract.create_user ,
+		  tps_subtract.active ,
+		  tps_subtract.active_user ,
+		  tps_subtract.active_time ,
+		  tps_subtract.active_memo 
+</sql>
+
+<!-- ElementID:whereClause_sql,Generated=true -->
+<sql id="whereClause_sql">
+	    <if test="lineid != null">and tps_subtract.lineid = #{lineid}</if>
+	    <if test="subFrom != null">and tps_subtract.sub_from = #{subFrom}</if>
+	    <if test="subFromid != null">and tps_subtract.sub_fromid = #{subFromid}</if>
+	    <if test="checkheadLineid != null">and tps_subtract.checkhead_lineid = #{checkheadLineid}</if>
+	    <if test="subMoney != null">and tps_subtract.sub_money = #{subMoney}</if>
+	    <if test="subReson != null">and tps_subtract.sub_reson = #{subReson}</if>
+	    <if test="createTime != null">and tps_subtract.create_time = #{createTime}</if>
+	    <if test="createUser != null">and tps_subtract.create_user = #{createUser}</if>
+	    <if test="active != null">and tps_subtract.active = #{active}</if>
+	    <if test="activeUser != null">and tps_subtract.active_user = #{activeUser}</if>
+	    <if test="activeTime != null">and tps_subtract.active_time = #{activeTime}</if>
+	    <if test="activeMemo != null">and tps_subtract.active_memo = #{activeMemo}</if>
+</sql>
+
+
+<!-- ElementID:E_substractResult,Generated=true -->
+<resultMap id="E_substractResult" type="com.unlcn.ils.tps.E_substract">
+	<id property="lineid" column="lineid"/>
+	<result property="subFrom" column="sub_from"/>
+	<result property="subFromid" column="sub_fromid"/>
+	<result property="checkheadLineid" column="checkhead_lineid"/>
+	<result property="subMoney" column="sub_money"/>
+	<result property="subReson" column="sub_reson"/>
+	<result property="createTime" column="create_time"/>
+	<result property="createUser" column="create_user"/>
+	<result property="active" column="active"/>
+	<result property="activeUser" column="active_user"/>
+	<result property="activeTime" column="active_time"/>
+	<result property="activeMemo" column="active_memo"/>
+</resultMap>
+
+
+<!-- ElementName:cache,Generated=true -->
+<cache type="C2_Default_Dao_Cache"/>
+
+<!-- ElementID:count,Generated=true -->
+<select id="count" parameterType="com.unlcn.ils.tps.E_substract" resultType="int">
+	select count(*) from tps_subtract 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+<!-- ElementID:update,Generated=true -->
+<update id="update" parameterType="com.unlcn.ils.tps.E_substract">
+	update tps_subtract
+<set>
+	<if test="subFrom != null">sub_from=#{subFrom,jdbcType=NUMERIC},</if>
+	<if test="subFromid != null">sub_fromid=#{subFromid,jdbcType=VARCHAR},</if>
+	<if test="checkheadLineid != null">checkhead_lineid=#{checkheadLineid,jdbcType=VARCHAR},</if>
+	<if test="subMoney != null">sub_money=#{subMoney,jdbcType=NUMERIC},</if>
+	<if test="subReson != null">sub_reson=#{subReson,jdbcType=VARCHAR},</if>
+	<if test="createTime != null">create_time=#{createTime,jdbcType=TIMESTAMP},</if>
+	<if test="createUser != null">create_user=#{createUser,jdbcType=VARCHAR},</if>
+	<if test="active != null">active=#{active,jdbcType=NUMERIC},</if>
+	<if test="activeUser != null">active_user=#{activeUser,jdbcType=VARCHAR},</if>
+	<if test="activeTime != null">active_time=#{activeTime,jdbcType=TIMESTAMP},</if>
+	<if test="activeMemo != null">active_memo=#{activeMemo,jdbcType=VARCHAR}</if>
+</set>
+<where>
+	<choose>
+        <when test="lineid != null">and lineid = #{lineid}</when>
+        <otherwise>and lineid = </otherwise>
+    </choose>
+</where>
+</update>
+
+<!-- ElementID:updateNull,Generated=true -->
+<update id="updateNull" parameterType="map">
+	update tps_subtract
+	<set>
+		<trim suffixOverrides=",">
+		    <if test="subFrom==null">sub_from = null,</if>
+		    <if test="subFromid==null">sub_fromid = null,</if>
+		    <if test="checkheadLineid==null">checkhead_lineid = null,</if>
+		    <if test="subMoney==null">sub_money = null,</if>
+		    <if test="subReson==null">sub_reson = null,</if>
+		    <if test="createTime==null">create_time = null,</if>
+		    <if test="createUser==null">create_user = null,</if>
+		    <if test="active==null">active = null,</if>
+		    <if test="activeUser==null">active_user = null,</if>
+		    <if test="activeTime==null">active_time = null,</if>
+		    <if test="activeMemo==null">active_memo = null,</if>
+		</trim>
+	</set>
+	<where>
+		<choose>
+			<when test="lineid != null">and lineid = #{lineid}</when>
+			<otherwise>and lineid = </otherwise>
+		</choose>
+	</where>
+</update>
+
+<!-- ElementID:delete,Generated=true -->
+<delete id="delete" parameterType="com.unlcn.ils.tps.E_substract">
+    delete from tps_subtract where 1=1 and lineid = #{lineid}
+</delete>
+
+<!-- ElementID:select,Generated=true -->
+<select id="select" parameterType="com.unlcn.ils.tps.E_substract" resultMap="E_substractResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_subtract 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:deleteBatch,Generated=true -->
+<delete id="deleteBatch" parameterType="List">
+	delete from tps_subtract where lineid in
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<foreach collection="list" item="entity" separator=",">
+	#{entity.lineid}
+</foreach>
+</trim>
+</delete>
+
+<!-- ElementID:selectAll,Generated=true -->
+<select id="selectAll" resultMap="E_substractResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_subtract 
+</select>
+
+<!-- ElementID:selectByID,Generated=true -->
+<select id="selectByID" parameterType="java.lang.String" resultMap="E_substractResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_subtract 
+		 where tps_subtract.lineid = #{lineid,jdbcType=VARCHAR}
+</select>
+
+<!-- ElementID:selectByPage,Generated=true -->
+<select id="selectByPage" parameterType="com.unlcn.ils.tps.E_substract" resultMap="E_substractResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_subtract 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:selectMany,Generated=true -->
+<select id="selectMany" parameterType="list" resultMap="E_substractResult">
+select 
+	<include refid="column_sql"/> 
+	from tps_subtract 
+	where tps_subtract.lineid in (
+		select distinct lineid from tps_subtract inner join
+<foreach collection="list" item="entity" separator="inner join">
+		(select 
+			distinct lineid
+			from tps_subtract 
+			<where>
+	        <if test="entity.lineid != null">and tps_subtract.lineid = #{entity.lineid}</if>
+	        <if test="entity.subFrom != null">and tps_subtract.sub_from = #{entity.subFrom}</if>
+	        <if test="entity.subFromid != null">and tps_subtract.sub_fromid = #{entity.subFromid}</if>
+	        <if test="entity.checkheadLineid != null">and tps_subtract.checkhead_lineid = #{entity.checkheadLineid}</if>
+	        <if test="entity.subMoney != null">and tps_subtract.sub_money = #{entity.subMoney}</if>
+	        <if test="entity.subReson != null">and tps_subtract.sub_reson = #{entity.subReson}</if>
+	        <if test="entity.createTime != null">and tps_subtract.create_time = #{entity.createTime}</if>
+	        <if test="entity.createUser != null">and tps_subtract.create_user = #{entity.createUser}</if>
+	        <if test="entity.active != null">and tps_subtract.active = #{entity.active}</if>
+	        <if test="entity.activeUser != null">and tps_subtract.active_user = #{entity.activeUser}</if>
+	        <if test="entity.activeTime != null">and tps_subtract.active_time = #{entity.activeTime}</if>
+	        <if test="entity.activeMemo != null">and tps_subtract.active_memo = #{entity.activeMemo}</if>
+			</where>
+		) ${entity.tableAlias} using (lineid)
+</foreach>
+)
+</select>
+
+<!-- ElementID:insert,Generated=true -->
+<insert id="insert" parameterType="com.unlcn.ils.tps.E_substract">
+	insert into tps_subtract(
+	         <if test="lineid != null">lineid</if>
+	         <if test="subFrom != null">,sub_from</if>
+	         <if test="subFromid != null">,sub_fromid</if>
+	         <if test="checkheadLineid != null">,checkhead_lineid</if>
+	         <if test="subMoney != null">,sub_money</if>
+	         <if test="subReson != null">,sub_reson</if>
+	         <if test="createTime != null">,create_time</if>
+	         <if test="createUser != null">,create_user</if>
+	         <if test="active != null">,active</if>
+	         <if test="activeUser != null">,active_user</if>
+	         <if test="activeTime != null">,active_time</if>
+	         <if test="activeMemo != null">,active_memo</if>
+	 	 	 )
+	 values (
+	         <if test="lineid != null">#{lineid,jdbcType=VARCHAR}</if>
+	         <if test="subFrom != null">,#{subFrom,jdbcType=NUMERIC}</if>
+	         <if test="subFromid != null">,#{subFromid,jdbcType=VARCHAR}</if>
+	         <if test="checkheadLineid != null">,#{checkheadLineid,jdbcType=VARCHAR}</if>
+	         <if test="subMoney != null">,#{subMoney,jdbcType=NUMERIC}</if>
+	         <if test="subReson != null">,#{subReson,jdbcType=VARCHAR}</if>
+	         <if test="createTime != null">,#{createTime,jdbcType=TIMESTAMP}</if>
+	         <if test="createUser != null">,#{createUser,jdbcType=VARCHAR}</if>
+	         <if test="active != null">,#{active,jdbcType=NUMERIC}</if>
+	         <if test="activeUser != null">,#{activeUser,jdbcType=VARCHAR}</if>
+	         <if test="activeTime != null">,#{activeTime,jdbcType=TIMESTAMP}</if>
+	         <if test="activeMemo != null">,#{activeMemo,jdbcType=VARCHAR}</if>
+	 	 	 )
+</insert>
+
+<!-- ElementID:insertBatch,Generated=true -->
+<insert id="insertBatch" parameterType="list">
+	insert into tps_subtract (lineid,sub_from,sub_fromid,checkhead_lineid,sub_money,sub_reson,create_time,create_user,active,active_user,active_time,active_memo) 
+<foreach collection="list" item="entity" index="index" separator="union all">
+		select 
+		#{entity.lineid,jdbcType = VARCHAR},
+				#{entity.subFrom,jdbcType = NUMERIC},
+				#{entity.subFromid,jdbcType = VARCHAR},
+				#{entity.checkheadLineid,jdbcType = VARCHAR},
+				#{entity.subMoney,jdbcType = NUMERIC},
+				#{entity.subReson,jdbcType = VARCHAR},
+				#{entity.createTime,jdbcType = TIMESTAMP},
+				#{entity.createUser,jdbcType = VARCHAR},
+				#{entity.active,jdbcType = NUMERIC},
+				#{entity.activeUser,jdbcType = VARCHAR},
+				#{entity.activeTime,jdbcType = TIMESTAMP},
+				#{entity.activeMemo,jdbcType = VARCHAR}
+		from dual
+</foreach>
+</insert>
+<select id="getMaxId" resultMap="E_substractResult">
+	SELECT * FROM tps_subtract ORDER BY create_time DESC;
+</select>
+<select id="selectByCheckHeadLineid" parameterType="java.lang.String" resultMap="E_substractResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_subtract 
+		 where tps_subtract.checkhead_lineid = #{checkhead_lineid}
+</select>
+<select id="selectByArgueLineid" parameterType="java.lang.String" resultMap="E_substractResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_subtract 
+		 where tps_subtract.sub_fromid = #{sub_fromid}
+</select>
+<select id="selectByReviseLineid" parameterType="java.lang.String" resultMap="E_substractResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_subtract 
+		 where tps_subtract.sub_fromid = #{sub_fromid}
+</select>
+</mapper>

@@ -1,0 +1,128 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<ErrorMessages xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/error">
+  <errorMsgs desc="" errorNum="101">
+    <log></log>
+    <message></message>
+  </errorMsgs>
+  <errorMsgs desc="" errorNum="102">
+    <log></log>
+    <message></message>
+  </errorMsgs>
+  <errorMsgs desc="未知错误" errorNum="unkown">
+    <message>系统发生未知错误，请联系系统管理员</message>
+  </errorMsgs>
+  <errorMsgs errorNum="103">
+    <message></message>
+  </errorMsgs>
+  <errorMsgs errorNum="100"/>
+  
+  <!-- 表单操作 -->
+  <errorMsgs desc="" errorNum="1000">
+    <message>表单编号为空</message>
+    </errorMsgs>
+  <errorMsgs desc="" errorNum="1001">
+    <message>表单不存在</message>
+  </errorMsgs>
+  <errorMsgs desc="" errorNum="1099">
+    <message>表单权限验证失败</message>
+  </errorMsgs>
+  
+   <!-- 实体操作 -->
+  <errorMsgs desc="" errorNum="1100">
+    <message>实体编号为空</message>
+  </errorMsgs>
+  <errorMsgs desc="" errorNum="1101">
+    <message>实体不存在</message>
+  </errorMsgs>
+  <errorMsgs desc="" errorNum="1102">
+    <message>实体操作编号为空</message>
+  </errorMsgs>
+  
+  <errorMsgs desc="" errorNum="1104">
+    <message>返回实体数据为空</message>
+  <errorMsgs desc="" errorNum="1103">
+    <message>实体没有定义该操作</message>
+  </errorMsgs></errorMsgs>
+  <errorMsgs desc="" errorNum="1105">
+    <message>返回实体数据无效</message>
+  </errorMsgs>
+  
+  <!-- 服务操作 -->
+  <errorMsgs desc="" errorNum="1200">
+    <message>服务编号为空</message>
+  </errorMsgs>
+  <errorMsgs desc="" errorNum="1201">
+    <message>服务不存在</message>
+  </errorMsgs>
+  <errorMsgs desc="" errorNum="1202">
+    <message>服务没有定义该操作</message>
+  </errorMsgs>
+  <errorMsgs desc="" errorNum="1203">
+    <message>输入参数为空</message>
+  </errorMsgs>
+  <errorMsgs desc="" errorNum="1204">
+    <message>输入参数类型配置不正确</message>
+  </errorMsgs>
+  <errorMsgs desc="" errorNum="1205">
+    <message>服务执行类不存在</message>
+  </errorMsgs>
+  <errorMsgs desc="" errorNum="1206">
+    <message>服务执行类对应方法不存在</message>
+  </errorMsgs>
+  <errorMsgs desc="" errorNum="1207">
+    <message>服务执行类对应方法无法访问</message>
+  </errorMsgs>
+  <errorMsgs desc="" errorNum="1208">
+    <message>服务返回值为空</message>
+  </errorMsgs>
+  <errorMsgs desc="" errorNum="1209">
+    <message>服务返回值无效</message>
+  </errorMsgs>
+  <errorMsgs desc="" errorNum="1299">
+    <message>服务权限验证失败</message>
+  </errorMsgs>
+  
+  <!-- 持久层操作 -->
+  <errorMsgs desc="" errorNum="1300">
+    <message>数据库字段存储重复，主键唯一值冲突</message>
+  </errorMsgs>
+  <errorMsgs desc="" errorNum="1301">
+    <message>无效的SQL语句</message>
+  </errorMsgs>
+  <errorMsgs desc="" errorNum="1302">
+    <message>无效的表名</message>
+  </errorMsgs>
+  <errorMsgs desc="" errorNum="1303">
+    <message>无效的标识符</message>
+  </errorMsgs>
+  <errorMsgs desc="" errorNum="1304">
+    <message>缺少分段</message>
+  </errorMsgs>
+  <errorMsgs desc="" errorNum="1305">
+    <message>缺少表达式</message>
+  </errorMsgs>
+  <errorMsgs desc="" errorNum="1306">
+    <message>表或者视图不存在</message>
+  </errorMsgs>
+  <errorMsgs desc="" errorNum="1307">
+    <message>不能将空值插入</message>
+  </errorMsgs>
+  <errorMsgs desc="" errorNum="1308">
+    <message>无效数字：（一般可能是企图将字符串类型的值填入数字型而造成）</message>
+  </errorMsgs>
+  <errorMsgs desc="" errorNum="1309">
+    <message>违反完整约束条件- 试图插入包含与现有主键不匹配的外键的行 </message>
+  </errorMsgs>
+  <errorMsgs desc="" errorNum="1310">
+    <message>违反完整约束条件- 已找到子记录</message>
+  </errorMsgs>
+  <errorMsgs desc="" errorNum="1311">
+    <message>无效列名</message>
+  </errorMsgs>
+  <errorMsgs desc="" errorNum="1312">
+    <message>无效的列序号</message>
+  </errorMsgs>
+   
+</ErrorMessages>
+

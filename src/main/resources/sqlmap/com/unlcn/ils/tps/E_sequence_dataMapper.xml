@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><mapper namespace="com.unlcn.ils.tps.E_sequence_dataMapper">	
+
+<!-- ElementID:column_sql,Generated=true -->
+<sql id="column_sql">
+		  sequence_data.sequence_name ,
+		  sequence_data.sequence_desc ,
+		  sequence_data.sequence_increment ,
+		  sequence_data.sequence_min_value ,
+		  sequence_data.sequence_max_value ,
+		  sequence_data.sequence_cur_value ,
+		  sequence_data.sequence_cycle ,
+		  sequence_data.sequence_prefix 
+</sql>
+
+<!-- ElementID:whereClause_sql,Generated=true -->
+<sql id="whereClause_sql">
+	    <if test="sequenceName != null">and sequence_data.sequence_name = #{sequenceName}</if>
+	    <if test="sequenceDesc != null">and sequence_data.sequence_desc = #{sequenceDesc}</if>
+	    <if test="sequenceIncrement != null">and sequence_data.sequence_increment = #{sequenceIncrement}</if>
+	    <if test="sequenceMinValue != null">and sequence_data.sequence_min_value = #{sequenceMinValue}</if>
+	    <if test="sequenceMaxValue != null">and sequence_data.sequence_max_value = #{sequenceMaxValue}</if>
+	    <if test="sequenceCurValue != null">and sequence_data.sequence_cur_value = #{sequenceCurValue}</if>
+	    <if test="sequenceCycle != null">and sequence_data.sequence_cycle = #{sequenceCycle}</if>
+	    <if test="sequencePrefix != null">and sequence_data.sequence_prefix = #{sequencePrefix}</if>
+</sql>
+
+
+<!-- ElementID:E_sequence_dataResult,Generated=true -->
+<resultMap id="E_sequence_dataResult" type="com.unlcn.ils.tps.E_sequence_data">
+	<id property="sequenceName" column="sequence_name"/>
+	<result property="sequenceDesc" column="sequence_desc"/>
+	<result property="sequenceIncrement" column="sequence_increment"/>
+	<result property="sequenceMinValue" column="sequence_min_value"/>
+	<result property="sequenceMaxValue" column="sequence_max_value"/>
+	<result property="sequenceCurValue" column="sequence_cur_value"/>
+	<result property="sequenceCycle" column="sequence_cycle"/>
+	<result property="sequencePrefix" column="sequence_prefix"/>
+</resultMap>
+
+
+<!-- ElementName:cache,Generated=true -->
+<cache type="C2_Default_Dao_Cache"/>
+
+<!-- ElementID:insert,Generated=true -->
+<insert id="insert" parameterType="com.unlcn.ils.tps.E_sequence_data">
+	insert into sequence_data(
+	         <if test="sequenceName != null">sequence_name</if>
+	         <if test="sequenceDesc != null">,sequence_desc</if>
+	         <if test="sequenceIncrement != null">,sequence_increment</if>
+	         <if test="sequenceMinValue != null">,sequence_min_value</if>
+	         <if test="sequenceMaxValue != null">,sequence_max_value</if>
+	         <if test="sequenceCurValue != null">,sequence_cur_value</if>
+	         <if test="sequenceCycle != null">,sequence_cycle</if>
+	         <if test="sequencePrefix != null">,sequence_prefix</if>
+	 	 	 )
+	 values (
+	         <if test="sequenceName != null">#{sequenceName,jdbcType=VARCHAR}</if>
+	         <if test="sequenceDesc != null">,#{sequenceDesc,jdbcType=VARCHAR}</if>
+	         <if test="sequenceIncrement != null">,#{sequenceIncrement,jdbcType=NUMERIC}</if>
+	         <if test="sequenceMinValue != null">,#{sequenceMinValue,jdbcType=NUMERIC}</if>
+	         <if test="sequenceMaxValue != null">,#{sequenceMaxValue,jdbcType=NUMERIC}</if>
+	         <if test="sequenceCurValue != null">,#{sequenceCurValue,jdbcType=NUMERIC}</if>
+	         <if test="sequenceCycle != null">,#{sequenceCycle,jdbcType=NUMERIC}</if>
+	         <if test="sequencePrefix != null">,#{sequencePrefix,jdbcType=VARCHAR}</if>
+	 	 	 )
+</insert>
+
+<!-- ElementID:count,Generated=true -->
+<select id="count" parameterType="com.unlcn.ils.tps.E_sequence_data" resultType="int">
+	select count(*) from sequence_data 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+<!-- ElementID:update,Generated=true -->
+<update id="update" parameterType="com.unlcn.ils.tps.E_sequence_data">
+	update sequence_data
+<set>
+	<if test="sequenceDesc != null">sequence_desc=#{sequenceDesc,jdbcType=VARCHAR},</if>
+	<if test="sequenceIncrement != null">sequence_increment=#{sequenceIncrement,jdbcType=NUMERIC},</if>
+	<if test="sequenceMinValue != null">sequence_min_value=#{sequenceMinValue,jdbcType=NUMERIC},</if>
+	<if test="sequenceMaxValue != null">sequence_max_value=#{sequenceMaxValue,jdbcType=NUMERIC},</if>
+	<if test="sequenceCurValue != null">sequence_cur_value=#{sequenceCurValue,jdbcType=NUMERIC},</if>
+	<if test="sequenceCycle != null">sequence_cycle=#{sequenceCycle,jdbcType=NUMERIC},</if>
+	<if test="sequencePrefix != null">sequence_prefix=#{sequencePrefix,jdbcType=VARCHAR}</if>
+</set>
+<where>
+	<choose>
+        <when test="sequenceName != null">and sequence_name = #{sequenceName}</when>
+        <otherwise>and sequence_name = </otherwise>
+    </choose>
+</where>
+</update>
+
+<!-- ElementID:updateNull,Generated=true -->
+<update id="updateNull" parameterType="map">
+	update sequence_data
+	<set>
+		<trim suffixOverrides=",">
+		    <if test="sequenceDesc==null">sequence_desc = null,</if>
+		    <if test="sequenceIncrement==null">sequence_increment = null,</if>
+		    <if test="sequenceMinValue==null">sequence_min_value = null,</if>
+		    <if test="sequenceMaxValue==null">sequence_max_value = null,</if>
+		    <if test="sequenceCurValue==null">sequence_cur_value = null,</if>
+		    <if test="sequenceCycle==null">sequence_cycle = null,</if>
+		    <if test="sequencePrefix==null">sequence_prefix = null,</if>
+		</trim>
+	</set>
+	<where>
+		<choose>
+			<when test="sequenceName != null">and sequence_name = #{sequenceName}</when>
+			<otherwise>and sequence_name = </otherwise>
+		</choose>
+	</where>
+</update>
+
+<!-- ElementID:delete,Generated=true -->
+<delete id="delete" parameterType="com.unlcn.ils.tps.E_sequence_data">
+    delete from sequence_data where 1=1 and sequence_name = #{sequenceName}
+</delete>
+
+<!-- ElementID:select,Generated=true -->
+<select id="select" parameterType="com.unlcn.ils.tps.E_sequence_data" resultMap="E_sequence_dataResult">
+	select 
+		<include refid="column_sql"/>
+	    from sequence_data 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:insertBatch,Generated=true -->
+<insert id="insertBatch" parameterType="list">
+	insert into sequence_data (sequence_name,sequence_desc,sequence_increment,sequence_min_value,sequence_max_value,sequence_cur_value,sequence_cycle,sequence_prefix) 
+<foreach collection="list" item="entity" index="index" separator="union all">
+		select 
+		#{entity.sequenceName,jdbcType = VARCHAR},
+				#{entity.sequenceDesc,jdbcType = VARCHAR},
+				#{entity.sequenceIncrement,jdbcType = NUMERIC},
+				#{entity.sequenceMinValue,jdbcType = NUMERIC},
+				#{entity.sequenceMaxValue,jdbcType = NUMERIC},
+				#{entity.sequenceCurValue,jdbcType = NUMERIC},
+				#{entity.sequenceCycle,jdbcType = NUMERIC},
+				#{entity.sequencePrefix,jdbcType = VARCHAR}
+		from dual
+</foreach>
+</insert>
+
+<!-- ElementID:deleteBatch,Generated=true -->
+<delete id="deleteBatch" parameterType="List">
+	delete from sequence_data where sequence_name in
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<foreach collection="list" item="entity" separator=",">
+	#{entity.sequenceName}
+</foreach>
+</trim>
+</delete>
+
+<!-- ElementID:selectAll,Generated=true -->
+<select id="selectAll" resultMap="E_sequence_dataResult">
+	select 
+		<include refid="column_sql"/>
+	    from sequence_data 
+</select>
+
+<!-- ElementID:selectByID,Generated=true -->
+<select id="selectByID" parameterType="java.lang.String" resultMap="E_sequence_dataResult">
+	select 
+		<include refid="column_sql"/>
+	    from sequence_data 
+		 where sequence_data.sequence_name = #{sequenceName,jdbcType=VARCHAR}
+</select>
+
+<!-- ElementID:selectByPage,Generated=true -->
+<select id="selectByPage" parameterType="com.unlcn.ils.tps.E_sequence_data" resultMap="E_sequence_dataResult">
+	select 
+		<include refid="column_sql"/>
+	    from sequence_data 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:selectMany,Generated=true -->
+<select id="selectMany" parameterType="list" resultMap="E_sequence_dataResult">
+select 
+	<include refid="column_sql"/> 
+	from sequence_data 
+	where sequence_data.sequence_name in (
+		select distinct sequence_name from sequence_data inner join
+<foreach collection="list" item="entity" separator="inner join">
+		(select 
+			distinct sequence_name
+			from sequence_data 
+			<where>
+	        <if test="entity.sequenceName != null">and sequence_data.sequence_name = #{entity.sequenceName}</if>
+	        <if test="entity.sequenceDesc != null">and sequence_data.sequence_desc = #{entity.sequenceDesc}</if>
+	        <if test="entity.sequenceIncrement != null">and sequence_data.sequence_increment = #{entity.sequenceIncrement}</if>
+	        <if test="entity.sequenceMinValue != null">and sequence_data.sequence_min_value = #{entity.sequenceMinValue}</if>
+	        <if test="entity.sequenceMaxValue != null">and sequence_data.sequence_max_value = #{entity.sequenceMaxValue}</if>
+	        <if test="entity.sequenceCurValue != null">and sequence_data.sequence_cur_value = #{entity.sequenceCurValue}</if>
+	        <if test="entity.sequenceCycle != null">and sequence_data.sequence_cycle = #{entity.sequenceCycle}</if>
+	        <if test="entity.sequencePrefix != null">and sequence_data.sequence_prefix = #{entity.sequencePrefix}</if>
+			</where>
+		) ${entity.tableAlias} using (sequence_name)
+</foreach>
+)
+</select>
+<select id="getCurVal" parameterType="java.lang.String" resultMap="E_sequence_dataResult">
+	SELECT * FROM sequence_data	WHERE sequence_data.sequence_name = #{sequence_name}
+</select>
+</mapper>

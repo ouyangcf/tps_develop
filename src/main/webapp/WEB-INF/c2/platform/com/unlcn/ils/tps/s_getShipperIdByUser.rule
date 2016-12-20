@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="s_getShipperIdByUser" log="false" className="com.unlcn.ils.tps.ininterface.CrmInformationInterface" method="getShipperIdByUser">
+  <name>根据当前登录账号获取分供方id</name>
+  <inputs/>
+  <outputs>
+    <output autoValue="Result" desc="@Description:根据当前登录用户获取分供方id" id="result" name="方法返回值" type="String"/>
+  </outputs>
+  <params/>
+  <return signature="QString;" type="String"/>
+</CustomRule>

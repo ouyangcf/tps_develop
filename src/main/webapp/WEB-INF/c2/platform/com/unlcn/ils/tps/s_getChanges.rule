@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="s_getChanges" log="false" className="com.unlcn.ils.tps.services.ImplementsTestService" method="getChanges">
+  <instanceCreator>
+    <params/>
+  </instanceCreator>
+  <name>接口4</name>
+  <inputs/>
+  <outputs>
+    <output autoValue="Result" desc="" id="result" name="方法返回值" type="java.util.Map"/>
+  </outputs>
+  <params/>
+  <return signature="QMap;" type="java.util.Map"/>
+</CustomRule>

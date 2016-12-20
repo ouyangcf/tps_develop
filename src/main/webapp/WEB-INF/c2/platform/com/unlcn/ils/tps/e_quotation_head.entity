@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity:Entity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.chinacreator.com/platform/mvc/rule" xmlns:cdata="http://www.chinacreator.com/platform/mvc/cdata" xmlns:docket="http://www.chinacreator.com/platform/mvc/docket" xmlns:entity="http://www.chinacreator.com/platform/mvc/entity" xmlns:form="http://www.chinacreator.com/platform/mvc/form" sn="quotation_head">
+  <docket:name>报价主表</docket:name>
+  <docket:createType>来自数据库</docket:createType>
+  <docket:primaryKey>
+    <docket:pkAttribute attribute="lineid" type="UUID"/>
+  </docket:primaryKey>
+  <docket:attributes>
+    <docket:attribute code="lineid" length="32" name="序号" nullable="false" type="string32" default="">
+      <docket:valueRange xsi:type="cdata:AllValueRange"/>
+    </docket:attribute>
+    <docket:attribute code="shipper_id" length="32" name="分供方id" nullable="true" type="string32" default="">
+      <docket:valueRange xsi:type="cdata:AllValueRange"/>
+    </docket:attribute>
+    <docket:attribute code="quotation_no" length="30" name="报价单编号" nullable="true" type="string32" default="">
+      <docket:valueRange xsi:type="cdata:AllValueRange"/>
+    </docket:attribute>
+    <docket:attribute code="invoiceway" length="0" name="开票方式" nullable="true" type="int" default="">
+      <docket:valueRange xsi:type="cdata:AllValueRange"/>
+    </docket:attribute>
+    <docket:attribute code="pay_period" length="0" name="支付帐期" nullable="true" precision="" type="int" default="">
+      <docket:valueRange xsi:type="cdata:BDValueRange" displayExpr="data.e_pay_period.lineid" id="entity:com.unlcn.ils.tps.e_pay_period"/>
+    </docket:attribute>
+    <docket:attribute code="urgent" length="0" name="紧急程度" nullable="true" type="int" default="">
+      <docket:valueRange xsi:type="cdata:AllValueRange"/>
+    </docket:attribute>
+    <docket:attribute code="begin_date" length="0" name="有效日期" nullable="true" type="timestamp" default="">
+      <docket:valueRange xsi:type="cdata:AllValueRange"/>
+    </docket:attribute>
+    <docket:attribute code="end_date" length="0" name="失效日期" nullable="true" type="timestamp" default="">
+      <docket:valueRange xsi:type="cdata:AllValueRange"/>
+    </docket:attribute>
+    <docket:attribute code="share_id" length="0" name="份额id" nullable="true" type="int" default="">
+      <docket:valueRange xsi:type="cdata:AllValueRange"/>
+    </docket:attribute>
+    <docket:attribute code="quotation_type" length="0" name="报价单类型" nullable="true" type="int" default="">
+      <docket:valueRange xsi:type="cdata:AllValueRange"/>
+    </docket:attribute>
+    <docket:attribute code="contract_id" length="0" name="关联合同id" nullable="true" type="int" default="">
+      <docket:valueRange xsi:type="cdata:AllValueRange"/>
+    </docket:attribute>
+    <docket:attribute code="standard_price_total" length="10" name="标准价汇总" nullable="true" type="bigdecimal" default="">
+      <docket:valueRange xsi:type="cdata:AllValueRange"/>
+    </docket:attribute>
+    <docket:attribute code="quotation_price_total" length="10" name="报价单汇总" nullable="true" type="bigdecimal" default="">
+      <docket:valueRange xsi:type="cdata:AllValueRange"/>
+    </docket:attribute>
+    <docket:attribute code="price_overflow" length="10" name="溢价比例" nullable="true" type="bigdecimal" default="">
+      <docket:valueRange xsi:type="cdata:AllValueRange"/>
+    </docket:attribute>
+    <docket:attribute code="overflow_memo" length="300" name="溢价说明" nullable="true" type="string512" default="">
+      <docket:valueRange xsi:type="cdata:AllValueRange"/>
+    </docket:attribute>
+    <docket:attribute code="other_charge_total" length="10" name="其它费用汇总" nullable="true" type="bigdecimal" default="">
+      <docket:valueRange xsi:type="cdata:AllValueRange"/>
+    </docket:attribute>
+    <docket:attribute code="check_flag" length="0" name="审核状态" nullable="true" type="int" default="">
+      <docket:valueRange xsi:type="cdata:AllValueRange"/>
+    </docket:attribute>
+    <docket:attribute code="quotation_flag" length="0" name="报价方式(按总价/按单台)" nullable="true" type="int" default="">
+      <docket:valueRange xsi:type="cdata:AllValueRange"/>
+    </docket:attribute>
+    <docket:attribute code="create_user" length="30" name="创建人" nullable="true" type="string32" default="">
+      <docket:valueRange xsi:type="cdata:AllValueRange"/>
+    </docket:attribute>
+    <docket:attribute code="create_time" length="0" name="创建时间" nullable="true" type="timestamp" default="">
+      <docket:valueRange xsi:type="cdata:AllValueRange"/>
+    </docket:attribute>
+    <docket:attribute code="active" length="0" name="取消标志" nullable="true" type="tinyint" default="">
+      <docket:valueRange xsi:type="cdata:AllValueRange"/>
+    </docket:attribute>
+    <docket:attribute code="active_user" length="30" name="取消操作员" nullable="true" type="string32" default="">
+      <docket:valueRange xsi:type="cdata:AllValueRange"/>
+    </docket:attribute>
+    <docket:attribute code="active_time" length="0" name="取消操作时间" nullable="true" type="timestamp" default="">
+      <docket:valueRange xsi:type="cdata:AllValueRange"/>
+    </docket:attribute>
+    <docket:attribute code="active_memo" length="200" name="取消说明" nullable="true" type="string256" default="">
+      <docket:valueRange xsi:type="cdata:AllValueRange"/>
+    </docket:attribute>
+    <docket:attribute code="print_count" length="0" name="打印次数" nullable="true" type="int" default="">
+      <docket:valueRange xsi:type="cdata:AllValueRange"/>
+    </docket:attribute>
+    <docket:attribute code="transway_id" length="0" name="运输方式id" nullable="true" precision="" type="int">
+      <docket:valueRange xsi:type="cdata:BDValueRange" displayExpr="data.e_transway.lineid" id="entity:com.unlcn.ils.tps.e_transway"/>
+    </docket:attribute>
+    <docket:attribute code="transway_name" length="128" name="运输方式名称" nullable="true" type="string128">
+      <docket:valueRange xsi:type="cdata:AllValueRange"/>
+    </docket:attribute>
+    <docket:attribute code="estimate" length="10" name="暂估价" nullable="true" type="int">
+      <docket:valueRange xsi:type="cdata:AllValueRange"/>
+    </docket:attribute>
+    <docket:attribute code="isapply" length="10" name="已提交申请" type="int">
+      <docket:valueRange xsi:type="cdata:AllValueRange"/>
+    </docket:attribute>
+    <docket:attribute code="apply_date" length="0" name="提交申请时间" type="timestamp">
+      <docket:valueRange xsi:type="cdata:AllValueRange"/>
+    </docket:attribute>
+    <docket:attribute code="audit_user" length="32" name="当前审核人" type="string32">
+      <docket:valueRange xsi:type="cdata:AllValueRange"/>
+    </docket:attribute>
+    <docket:attribute code="flowid" length="10" name="当前审核结点" nullable="true" type="int" default="">
+      <docket:valueRange xsi:type="cdata:AllValueRange"/>
+    </docket:attribute>
+  </docket:attributes>
+  <docket:subDokcets/>
+  <docket:events>
+    <docket:event id="get" name="单记录查询">
+      <docket:logic>
+        <node xsi:type="RuleRef" id="get" name="单记录查询" ruleId="rule:c2.dao.selectOne">
+          <inputs>
+            <input autoFrom="data" code="entity"/>
+          </inputs>
+        </node>
+      </docket:logic>
+      <docket:ui name="单记录查询" type="none">
+        <form:scripts>btn_add_click:function($event){
+    $model.entity.$save(function(){
+        Modal.instance.close();
+        Messenger.post({type:'success',message:'新增成功'});
+    });
+},
+btn_edit_click:function($event){
+   Modal.instance.close();
+}
+</form:scripts>
+        <form:htmls></form:htmls>
+      </docket:ui>
+    </docket:event>
+  </docket:events>
+  <docket:table ds="ilsdb" table="tps_quotation_head"/>
+  <entity:datas/>
+  <entity:views/>
+</entity:Entity>

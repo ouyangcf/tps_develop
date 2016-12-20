@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><mapper namespace="com.unlcn.ils.tps.E_quotation_audit_setMapper">	
+
+<!-- ElementID:column_sql,Generated=true -->
+<sql id="column_sql">
+		  tps_quotation_audit_set.lineid ,
+		  tps_quotation_audit_set.type ,
+		  tps_quotation_audit_set.flowid ,
+		  tps_quotation_audit_set.overflow_down ,
+		  tps_quotation_audit_set.overflow_up ,
+		  tps_quotation_audit_set.audit_user ,
+		  tps_quotation_audit_set.assignuser ,
+		  tps_quotation_audit_set.audit_rule ,
+		  tps_quotation_audit_set.create_user ,
+		  tps_quotation_audit_set.create_time ,
+		  tps_quotation_audit_set.active ,
+		  tps_quotation_audit_set.active_user ,
+		  tps_quotation_audit_set.active_time ,
+		  tps_quotation_audit_set.active_memo 
+</sql>
+
+<!-- ElementID:whereClause_sql,Generated=true -->
+<sql id="whereClause_sql">
+	    <if test="lineid != null">and tps_quotation_audit_set.lineid = #{lineid}</if>
+	    <if test="type != null">and tps_quotation_audit_set.type = #{type}</if>
+	    <if test="flowid != null">and tps_quotation_audit_set.flowid = #{flowid}</if>
+	    <if test="overflowDown != null">and tps_quotation_audit_set.overflow_down = #{overflowDown}</if>
+	    <if test="overflowUp != null">and tps_quotation_audit_set.overflow_up = #{overflowUp}</if>
+	    <if test="auditUser != null">and tps_quotation_audit_set.audit_user = #{auditUser}</if>
+	    <if test="assignuser != null">and tps_quotation_audit_set.assignuser = #{assignuser}</if>
+	    <if test="auditRule != null">and tps_quotation_audit_set.audit_rule = #{auditRule}</if>
+	    <if test="createUser != null">and tps_quotation_audit_set.create_user = #{createUser}</if>
+	    <if test="createTime != null">and tps_quotation_audit_set.create_time = #{createTime}</if>
+	    <if test="active != null">and tps_quotation_audit_set.active = #{active}</if>
+	    <if test="activeUser != null">and tps_quotation_audit_set.active_user = #{activeUser}</if>
+	    <if test="activeTime != null">and tps_quotation_audit_set.active_time = #{activeTime}</if>
+	    <if test="activeMemo != null">and tps_quotation_audit_set.active_memo = #{activeMemo}</if>
+</sql>
+
+
+<!-- ElementID:E_quotation_audit_setResult,Generated=true -->
+<resultMap id="E_quotation_audit_setResult" type="com.unlcn.ils.tps.E_quotation_audit_set">
+	<id property="lineid" column="lineid"/>
+	<result property="type" column="type"/>
+	<result property="flowid" column="flowid"/>
+	<result property="overflowDown" column="overflow_down"/>
+	<result property="overflowUp" column="overflow_up"/>
+	<result property="auditUser" column="audit_user"/>
+	<result property="assignuser" column="assignuser"/>
+	<result property="auditRule" column="audit_rule"/>
+	<result property="createUser" column="create_user"/>
+	<result property="createTime" column="create_time"/>
+	<result property="active" column="active"/>
+	<result property="activeUser" column="active_user"/>
+	<result property="activeTime" column="active_time"/>
+	<result property="activeMemo" column="active_memo"/>
+</resultMap>
+
+
+<!-- ElementName:cache,Generated=true -->
+<cache type="C2_Default_Dao_Cache"/>
+
+<!-- ElementID:count,Generated=true -->
+<select id="count" parameterType="com.unlcn.ils.tps.E_quotation_audit_set" resultType="int">
+	select count(*) from tps_quotation_audit_set 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+<!-- ElementID:update,Generated=true -->
+<update id="update" parameterType="com.unlcn.ils.tps.E_quotation_audit_set">
+	update tps_quotation_audit_set
+<set>
+	<if test="type != null">type=#{type,jdbcType=NUMERIC},</if>
+	<if test="flowid != null">flowid=#{flowid,jdbcType=NUMERIC},</if>
+	<if test="overflowDown != null">overflow_down=#{overflowDown,jdbcType=NUMERIC},</if>
+	<if test="overflowUp != null">overflow_up=#{overflowUp,jdbcType=NUMERIC},</if>
+	<if test="auditUser != null">audit_user=#{auditUser,jdbcType=VARCHAR},</if>
+	<if test="assignuser != null">assignuser=#{assignuser,jdbcType=NUMERIC},</if>
+	<if test="auditRule != null">audit_rule=#{auditRule,jdbcType=NUMERIC},</if>
+	<if test="createUser != null">create_user=#{createUser,jdbcType=VARCHAR},</if>
+	<if test="createTime != null">create_time=#{createTime,jdbcType=TIMESTAMP},</if>
+	<if test="active != null">active=#{active,jdbcType=NUMERIC},</if>
+	<if test="activeUser != null">active_user=#{activeUser,jdbcType=VARCHAR},</if>
+	<if test="activeTime != null">active_time=#{activeTime,jdbcType=TIMESTAMP},</if>
+	<if test="activeMemo != null">active_memo=#{activeMemo,jdbcType=VARCHAR}</if>
+</set>
+<where>
+	<choose>
+        <when test="lineid != null">and lineid = #{lineid}</when>
+        <otherwise>and lineid = </otherwise>
+    </choose>
+</where>
+</update>
+
+<!-- ElementID:updateNull,Generated=true -->
+<update id="updateNull" parameterType="map">
+	update tps_quotation_audit_set
+	<set>
+		<trim suffixOverrides=",">
+		    <if test="type==null">type = null,</if>
+		    <if test="flowid==null">flowid = null,</if>
+		    <if test="overflowDown==null">overflow_down = null,</if>
+		    <if test="overflowUp==null">overflow_up = null,</if>
+		    <if test="auditUser==null">audit_user = null,</if>
+		    <if test="assignuser==null">assignuser = null,</if>
+		    <if test="auditRule==null">audit_rule = null,</if>
+		    <if test="createUser==null">create_user = null,</if>
+		    <if test="createTime==null">create_time = null,</if>
+		    <if test="active==null">active = null,</if>
+		    <if test="activeUser==null">active_user = null,</if>
+		    <if test="activeTime==null">active_time = null,</if>
+		    <if test="activeMemo==null">active_memo = null,</if>
+		</trim>
+	</set>
+	<where>
+		<choose>
+			<when test="lineid != null">and lineid = #{lineid}</when>
+			<otherwise>and lineid = </otherwise>
+		</choose>
+	</where>
+</update>
+
+<!-- ElementID:delete,Generated=true -->
+<delete id="delete" parameterType="com.unlcn.ils.tps.E_quotation_audit_set">
+    delete from tps_quotation_audit_set where 1=1 and lineid = #{lineid}
+</delete>
+
+<!-- ElementID:select,Generated=true -->
+<select id="select" parameterType="com.unlcn.ils.tps.E_quotation_audit_set" resultMap="E_quotation_audit_setResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_quotation_audit_set 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:deleteBatch,Generated=true -->
+<delete id="deleteBatch" parameterType="List">
+	delete from tps_quotation_audit_set where lineid in
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<foreach collection="list" item="entity" separator=",">
+	#{entity.lineid}
+</foreach>
+</trim>
+</delete>
+
+<!-- ElementID:selectAll,Generated=true -->
+<select id="selectAll" resultMap="E_quotation_audit_setResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_quotation_audit_set 
+</select>
+
+<!-- ElementID:selectByID,Generated=true -->
+<select id="selectByID" parameterType="java.lang.Integer" resultMap="E_quotation_audit_setResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_quotation_audit_set 
+		 where tps_quotation_audit_set.lineid = #{lineid,jdbcType=NUMERIC}
+</select>
+
+<!-- ElementID:selectByPage,Generated=true -->
+<select id="selectByPage" parameterType="com.unlcn.ils.tps.E_quotation_audit_set" resultMap="E_quotation_audit_setResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_quotation_audit_set 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:selectMany,Generated=true -->
+<select id="selectMany" parameterType="list" resultMap="E_quotation_audit_setResult">
+select 
+	<include refid="column_sql"/> 
+	from tps_quotation_audit_set 
+	where tps_quotation_audit_set.lineid in (
+		select distinct lineid from tps_quotation_audit_set inner join
+<foreach collection="list" item="entity" separator="inner join">
+		(select 
+			distinct lineid
+			from tps_quotation_audit_set 
+			<where>
+	        <if test="entity.lineid != null">and tps_quotation_audit_set.lineid = #{entity.lineid}</if>
+	        <if test="entity.type != null">and tps_quotation_audit_set.type = #{entity.type}</if>
+	        <if test="entity.flowid != null">and tps_quotation_audit_set.flowid = #{entity.flowid}</if>
+	        <if test="entity.overflowDown != null">and tps_quotation_audit_set.overflow_down = #{entity.overflowDown}</if>
+	        <if test="entity.overflowUp != null">and tps_quotation_audit_set.overflow_up = #{entity.overflowUp}</if>
+	        <if test="entity.auditUser != null">and tps_quotation_audit_set.audit_user = #{entity.auditUser}</if>
+	        <if test="entity.assignuser != null">and tps_quotation_audit_set.assignuser = #{entity.assignuser}</if>
+	        <if test="entity.auditRule != null">and tps_quotation_audit_set.audit_rule = #{entity.auditRule}</if>
+	        <if test="entity.createUser != null">and tps_quotation_audit_set.create_user = #{entity.createUser}</if>
+	        <if test="entity.createTime != null">and tps_quotation_audit_set.create_time = #{entity.createTime}</if>
+	        <if test="entity.active != null">and tps_quotation_audit_set.active = #{entity.active}</if>
+	        <if test="entity.activeUser != null">and tps_quotation_audit_set.active_user = #{entity.activeUser}</if>
+	        <if test="entity.activeTime != null">and tps_quotation_audit_set.active_time = #{entity.activeTime}</if>
+	        <if test="entity.activeMemo != null">and tps_quotation_audit_set.active_memo = #{entity.activeMemo}</if>
+			</where>
+		) ${entity.tableAlias} using (lineid)
+</foreach>
+)
+</select>
+
+<!-- ElementID:insert,Generated=true -->
+<insert id="insert" parameterType="com.unlcn.ils.tps.E_quotation_audit_set" useGeneratedKeys="true">
+	<selectKey keyProperty="lineid" resultType="java.lang.Integer" order="AFTER">
+        select LAST_INSERT_ID()
+    </selectKey>
+insert into tps_quotation_audit_set(
+		<trim prefixOverrides=",">
+		    <if test="type != null">type</if>
+		    <if test="flowid != null">,flowid</if>
+		    <if test="overflowDown != null">,overflow_down</if>
+		    <if test="overflowUp != null">,overflow_up</if>
+		    <if test="auditUser != null">,audit_user</if>
+		    <if test="assignuser != null">,assignuser</if>
+		    <if test="auditRule != null">,audit_rule</if>
+		    <if test="createUser != null">,create_user</if>
+		    <if test="createTime != null">,create_time</if>
+		    <if test="active != null">,active</if>
+		    <if test="activeUser != null">,active_user</if>
+		    <if test="activeTime != null">,active_time</if>
+		    <if test="activeMemo != null">,active_memo</if>
+		</trim>
+	 )
+	 values (
+		<trim prefixOverrides=",">
+		    <if test="type != null">#{type,jdbcType=NUMERIC}</if>
+		    <if test="flowid != null">,#{flowid,jdbcType=NUMERIC}</if>
+		    <if test="overflowDown != null">,#{overflowDown,jdbcType=NUMERIC}</if>
+		    <if test="overflowUp != null">,#{overflowUp,jdbcType=NUMERIC}</if>
+		    <if test="auditUser != null">,#{auditUser,jdbcType=VARCHAR}</if>
+		    <if test="assignuser != null">,#{assignuser,jdbcType=NUMERIC}</if>
+		    <if test="auditRule != null">,#{auditRule,jdbcType=NUMERIC}</if>
+		    <if test="createUser != null">,#{createUser,jdbcType=VARCHAR}</if>
+		    <if test="createTime != null">,#{createTime,jdbcType=TIMESTAMP}</if>
+		    <if test="active != null">,#{active,jdbcType=NUMERIC}</if>
+		    <if test="activeUser != null">,#{activeUser,jdbcType=VARCHAR}</if>
+		    <if test="activeTime != null">,#{activeTime,jdbcType=TIMESTAMP}</if>
+		    <if test="activeMemo != null">,#{activeMemo,jdbcType=VARCHAR}</if>
+        </trim>
+	 )
+</insert>
+
+<!-- ElementID:insertBatch,Generated=true -->
+<insert id="insertBatch" parameterType="list" useGeneratedKeys="true">
+	insert into tps_quotation_audit_set (type,flowid,overflow_down,overflow_up,audit_user,assignuser,audit_rule,create_user,create_time,active,active_user,active_time,active_memo)
+			values 
+			<foreach collection="list" item="entity" index="index" separator=",">
+				(
+		         #{entity.type,jdbcType = NUMERIC},
+		         #{entity.flowid,jdbcType = NUMERIC},
+		         #{entity.overflowDown,jdbcType = NUMERIC},
+		         #{entity.overflowUp,jdbcType = NUMERIC},
+		         #{entity.auditUser,jdbcType = VARCHAR},
+		         #{entity.assignuser,jdbcType = NUMERIC},
+		         #{entity.auditRule,jdbcType = NUMERIC},
+		         #{entity.createUser,jdbcType = VARCHAR},
+		         #{entity.createTime,jdbcType = TIMESTAMP},
+		         #{entity.active,jdbcType = NUMERIC},
+		         #{entity.activeUser,jdbcType = VARCHAR},
+		         #{entity.activeTime,jdbcType = TIMESTAMP},
+		         #{entity.activeMemo,jdbcType = VARCHAR}
+				)
+</foreach>
+</insert>
+
+<!-- ElementID:selectsAuditSet,Generated=false -->
+<!-- 得到当前审核用户id -->
+<select id="selectsAuditSet" parameterType="map" resultType="map">
+
+	SELECT a1.flowid,a1.audit_user FROM (
+SELECT 
+  flowid,
+  audit_user AS audit_user 
+FROM
+  tps_quotation_audit_set 
+WHERE tps_quotation_audit_set.TYPE = #{type}
+  AND flowid &gt;#{flowid}
+  AND flowid &lt;=
+  (SELECT 
+    MAX(flowid) 
+  FROM
+    tps_quotation_audit_set 
+  WHERE #{price} &gt; tps_quotation_audit_set.overflow_down 
+    AND #{price} &lt;= tps_quotation_audit_set.overflow_up 
+    AND tps_quotation_audit_set.type = #{type})  ORDER BY flowid
+    ) a1 LIMIT 0,1
+    	
+		
+</select>
+
+
+</mapper>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="s_getParams" log="false" className="com.unlcn.ils.tps.ininterface.SqlInterface" method="getParams">
+  <name>获取参数</name>
+  <inputs>
+    <input collection="false" desc="" id="param_name" required="true" type="String"/>
+  </inputs>
+  <outputs>
+    <output autoValue="Result" desc="" id="result" name="方法返回值" type="String"/>
+  </outputs>
+  <params>
+    <param autoValue="Input.param_name" name="param_name" signature="QString;" type="String"/>
+  </params>
+  <return signature="QString;" type="String"/>
+</CustomRule>

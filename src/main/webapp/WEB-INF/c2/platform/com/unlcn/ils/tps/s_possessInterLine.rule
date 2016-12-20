@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="s_possessInterLine" log="false" className="com.unlcn.ils.tps.services.JoinInterLine" method="possessInterLine">
+  <name>处理意向线路</name>
+  <inputs>
+    <input collection="false" desc="" id="data" required="true" type="com.unlcn.ils.tps.E_join_intentline"/>
+  </inputs>
+  <outputs>
+    <output autoValue="Result" desc="" id="result" name="方法返回值" type="com.unlcn.ils.tps.E_join_intentline"/>
+  </outputs>
+  <params>
+    <param autoValue="Input.data" name="data" signature="QE_join_intentline;" type="com.unlcn.ils.tps.E_join_intentline"/>
+  </params>
+  <return signature="QE_join_intentline;" type="com.unlcn.ils.tps.E_join_intentline"/>
+</CustomRule>

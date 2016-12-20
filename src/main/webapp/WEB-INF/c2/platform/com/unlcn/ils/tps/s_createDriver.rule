@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="s_createDriver" log="false" className="com.unlcn.ils.tps.services.JoinDriverService" method="createDriver">
+  <instanceCreator>
+    <params/>
+  </instanceCreator>
+  <name>新建司机</name>
+  <inputs>
+    <input collection="false" desc="" id="data" required="true" type="com.unlcn.ils.tps.E_join_driver"/>
+    <input collection="false" desc="" id="startCity" required="true" type="[LString;"/>
+    <input collection="false" desc="" id="endCity" required="true" type="[LString;"/>
+    <input collection="false" desc="" id="price" required="true" type="[LString;"/>
+    <input collection="false" desc="" id="qty" required="true" type="[LString;"/>
+    <input collection="false" desc="@param" id="linkmanList" required="true" type="java.util.List"/>
+    <input collection="false" desc="@param" id="accountList" required="true" type="java.util.List"/>
+    <input collection="false" desc="@param" id="urlString" required="true" type="String"/>
+    <input collection="false" desc="@param" id="nameString" required="true" type="String"/>
+  </inputs>
+  <outputs>
+    <output autoValue="Result" desc="" id="result" name="方法返回值" type="boolean"/>
+  </outputs>
+  <params>
+    <param autoValue="Input.data" name="data" signature="QE_join_driver;" type="com.unlcn.ils.tps.E_join_driver"/>
+    <param autoValue="Input.startCity" name="startCity" signature="[QString;" type="[LString;"/>
+    <param autoValue="Input.endCity" name="endCity" signature="[QString;" type="[LString;"/>
+    <param autoValue="Input.price" name="price" signature="[QString;" type="[LString;"/>
+    <param autoValue="Input.qty" name="qty" signature="[QString;" type="[LString;"/>
+    <param autoValue="Input.linkmanList" name="linkmanList" signature="QList&lt;QE_linkman;>;" type="java.util.List"/>
+    <param autoValue="Input.accountList" name="accountList" signature="QList&lt;QE_account;>;" type="java.util.List"/>
+    <param autoValue="Input.urlString" name="urlString" signature="QString;" type="String"/>
+    <param autoValue="Input.nameString" name="nameString" signature="QString;" type="String"/>
+  </params>
+  <return signature="Z" type="boolean"/>
+</CustomRule>

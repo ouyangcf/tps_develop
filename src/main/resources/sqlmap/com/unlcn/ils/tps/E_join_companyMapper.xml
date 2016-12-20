@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><mapper namespace="com.unlcn.ils.tps.E_join_companyMapper">	
+
+<!-- ElementID:column_sql,Generated=true -->
+<sql id="column_sql">
+		  tps_join_company.lineid ,
+		  tps_join_company.company_name ,
+		  tps_join_company.province_id ,
+		  tps_join_company.province ,
+		  tps_join_company.city_id ,
+		  tps_join_company.city ,
+		  tps_join_company.legal_user ,
+		  tps_join_company.main_contract ,
+		  tps_join_company.tax_no ,
+		  tps_join_company.capital ,
+		  tps_join_company.car_number ,
+		  tps_join_company.assets ,
+		  tps_join_company.id_number ,
+		  tps_join_company.contract ,
+		  tps_join_company.mobileno ,
+		  tps_join_company.check_flag ,
+		  tps_join_company.create_time ,
+		  tps_join_company.create_user ,
+		  tps_join_company.active ,
+		  tps_join_company.active_user ,
+		  tps_join_company.active_time ,
+		  tps_join_company.active_memo ,
+		  tps_join_company.shipper_id ,
+		  tps_join_company.road_licence ,
+		  tps_join_company.contract_name 
+</sql>
+
+<!-- ElementID:whereClause_sql,Generated=true -->
+<sql id="whereClause_sql">
+	    <if test="lineid != null">and tps_join_company.lineid = #{lineid}</if>
+	    <if test="companyName != null">and tps_join_company.company_name = #{companyName}</if>
+	    <if test="provinceId != null">and tps_join_company.province_id = #{provinceId}</if>
+	    <if test="province != null">and tps_join_company.province = #{province}</if>
+	    <if test="cityId != null">and tps_join_company.city_id = #{cityId}</if>
+	    <if test="city != null">and tps_join_company.city = #{city}</if>
+	    <if test="legalUser != null">and tps_join_company.legal_user = #{legalUser}</if>
+	    <if test="mainContract != null">and tps_join_company.main_contract = #{mainContract}</if>
+	    <if test="taxNo != null">and tps_join_company.tax_no = #{taxNo}</if>
+	    <if test="capital != null">and tps_join_company.capital = #{capital}</if>
+	    <if test="carNumber != null">and tps_join_company.car_number = #{carNumber}</if>
+	    <if test="assets != null">and tps_join_company.assets = #{assets}</if>
+	    <if test="idNumber != null">and tps_join_company.id_number = #{idNumber}</if>
+	    <if test="contract != null">and tps_join_company.contract = #{contract}</if>
+	    <if test="mobileno != null">and tps_join_company.mobileno = #{mobileno}</if>
+	    <if test="checkFlag != null">and tps_join_company.check_flag = #{checkFlag}</if>
+	    <if test="createTime != null">and tps_join_company.create_time = #{createTime}</if>
+	    <if test="createUser != null">and tps_join_company.create_user = #{createUser}</if>
+	    <if test="active != null">and tps_join_company.active = #{active}</if>
+	    <if test="activeUser != null">and tps_join_company.active_user = #{activeUser}</if>
+	    <if test="activeTime != null">and tps_join_company.active_time = #{activeTime}</if>
+	    <if test="activeMemo != null">and tps_join_company.active_memo = #{activeMemo}</if>
+	    <if test="shipperId != null">and tps_join_company.shipper_id = #{shipperId}</if>
+	    <if test="roadLicence != null">and tps_join_company.road_licence = #{roadLicence}</if>
+	    <if test="contractName != null">and tps_join_company.contract_name = #{contractName}</if>
+</sql>
+
+
+<!-- ElementID:E_join_companyResult,Generated=true -->
+<resultMap id="E_join_companyResult" type="com.unlcn.ils.tps.E_join_company">
+	<id property="lineid" column="lineid"/>
+	<result property="companyName" column="company_name"/>
+	<result property="provinceId" column="province_id"/>
+	<result property="province" column="province"/>
+	<result property="cityId" column="city_id"/>
+	<result property="city" column="city"/>
+	<result property="legalUser" column="legal_user"/>
+	<result property="mainContract" column="main_contract"/>
+	<result property="taxNo" column="tax_no"/>
+	<result property="capital" column="capital"/>
+	<result property="carNumber" column="car_number"/>
+	<result property="assets" column="assets"/>
+	<result property="idNumber" column="id_number"/>
+	<result property="contract" column="contract"/>
+	<result property="mobileno" column="mobileno"/>
+	<result property="checkFlag" column="check_flag"/>
+	<result property="createTime" column="create_time"/>
+	<result property="createUser" column="create_user"/>
+	<result property="active" column="active"/>
+	<result property="activeUser" column="active_user"/>
+	<result property="activeTime" column="active_time"/>
+	<result property="activeMemo" column="active_memo"/>
+	<result property="shipperId" column="shipper_id"/>
+	<result property="roadLicence" column="road_licence"/>
+	<result property="contractName" column="contract_name"/>
+</resultMap>
+
+
+<!-- ElementName:cache,Generated=true -->
+<cache type="C2_Default_Dao_Cache"/>
+
+<!-- ElementID:count,Generated=true -->
+<select id="count" parameterType="com.unlcn.ils.tps.E_join_company" resultType="int">
+	select count(*) from tps_join_company 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+<!-- ElementID:update,Generated=true -->
+<update id="update" parameterType="com.unlcn.ils.tps.E_join_company">
+	update tps_join_company
+<set>
+	<if test="companyName != null">company_name=#{companyName,jdbcType=VARCHAR},</if>
+	<if test="provinceId != null">province_id=#{provinceId,jdbcType=NUMERIC},</if>
+	<if test="province != null">province=#{province,jdbcType=VARCHAR},</if>
+	<if test="cityId != null">city_id=#{cityId,jdbcType=NUMERIC},</if>
+	<if test="city != null">city=#{city,jdbcType=VARCHAR},</if>
+	<if test="legalUser != null">legal_user=#{legalUser,jdbcType=VARCHAR},</if>
+	<if test="mainContract != null">main_contract=#{mainContract,jdbcType=VARCHAR},</if>
+	<if test="taxNo != null">tax_no=#{taxNo,jdbcType=VARCHAR},</if>
+	<if test="capital != null">capital=#{capital,jdbcType=NUMERIC},</if>
+	<if test="carNumber != null">car_number=#{carNumber,jdbcType=NUMERIC},</if>
+	<if test="assets != null">assets=#{assets,jdbcType=VARCHAR},</if>
+	<if test="idNumber != null">id_number=#{idNumber,jdbcType=VARCHAR},</if>
+	<if test="contract != null">contract=#{contract,jdbcType=VARCHAR},</if>
+	<if test="mobileno != null">mobileno=#{mobileno,jdbcType=VARCHAR},</if>
+	<if test="checkFlag != null">check_flag=#{checkFlag,jdbcType=NUMERIC},</if>
+	<if test="createTime != null">create_time=#{createTime,jdbcType=TIMESTAMP},</if>
+	<if test="createUser != null">create_user=#{createUser,jdbcType=VARCHAR},</if>
+	<if test="active != null">active=#{active,jdbcType=NUMERIC},</if>
+	<if test="activeUser != null">active_user=#{activeUser,jdbcType=VARCHAR},</if>
+	<if test="activeTime != null">active_time=#{activeTime,jdbcType=TIMESTAMP},</if>
+	<if test="activeMemo != null">active_memo=#{activeMemo,jdbcType=VARCHAR},</if>
+	<if test="shipperId != null">shipper_id=#{shipperId,jdbcType=VARCHAR},</if>
+	<if test="roadLicence != null">road_licence=#{roadLicence,jdbcType=VARCHAR},</if>
+	<if test="contractName != null">contract_name=#{contractName,jdbcType=VARCHAR}</if>
+</set>
+<where>
+	<choose>
+        <when test="lineid != null">and lineid = #{lineid}</when>
+        <otherwise>and lineid = </otherwise>
+    </choose>
+</where>
+</update>
+
+<!-- ElementID:updateNull,Generated=true -->
+<update id="updateNull" parameterType="map">
+	update tps_join_company
+	<set>
+		<trim suffixOverrides=",">
+		    <if test="companyName==null">company_name = null,</if>
+		    <if test="provinceId==null">province_id = null,</if>
+		    <if test="province==null">province = null,</if>
+		    <if test="cityId==null">city_id = null,</if>
+		    <if test="city==null">city = null,</if>
+		    <if test="legalUser==null">legal_user = null,</if>
+		    <if test="mainContract==null">main_contract = null,</if>
+		    <if test="taxNo==null">tax_no = null,</if>
+		    <if test="capital==null">capital = null,</if>
+		    <if test="carNumber==null">car_number = null,</if>
+		    <if test="assets==null">assets = null,</if>
+		    <if test="idNumber==null">id_number = null,</if>
+		    <if test="contract==null">contract = null,</if>
+		    <if test="mobileno==null">mobileno = null,</if>
+		    <if test="checkFlag==null">check_flag = null,</if>
+		    <if test="createTime==null">create_time = null,</if>
+		    <if test="createUser==null">create_user = null,</if>
+		    <if test="active==null">active = null,</if>
+		    <if test="activeUser==null">active_user = null,</if>
+		    <if test="activeTime==null">active_time = null,</if>
+		    <if test="activeMemo==null">active_memo = null,</if>
+		    <if test="shipperId==null">shipper_id = null,</if>
+		    <if test="roadLicence==null">road_licence = null,</if>
+		    <if test="contractName==null">contract_name = null,</if>
+		</trim>
+	</set>
+	<where>
+		<choose>
+			<when test="lineid != null">and lineid = #{lineid}</when>
+			<otherwise>and lineid = </otherwise>
+		</choose>
+	</where>
+</update>
+
+<!-- ElementID:delete,Generated=true -->
+<delete id="delete" parameterType="com.unlcn.ils.tps.E_join_company">
+    delete from tps_join_company where 1=1 and lineid = #{lineid}
+</delete>
+
+<!-- ElementID:select,Generated=true -->
+<select id="select" parameterType="com.unlcn.ils.tps.E_join_company" resultMap="E_join_companyResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_join_company 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:deleteBatch,Generated=true -->
+<delete id="deleteBatch" parameterType="List">
+	delete from tps_join_company where lineid in
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<foreach collection="list" item="entity" separator=",">
+	#{entity.lineid}
+</foreach>
+</trim>
+</delete>
+
+<!-- ElementID:selectAll,Generated=true -->
+<select id="selectAll" resultMap="E_join_companyResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_join_company 
+</select>
+
+<!-- ElementID:selectByID,Generated=true -->
+<select id="selectByID" parameterType="java.lang.String" resultMap="E_join_companyResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_join_company 
+		 where tps_join_company.lineid = #{lineid,jdbcType=VARCHAR}
+</select>
+
+
+<!-- ElementID:selectByPage,Generated=true -->
+<select id="selectByPage" parameterType="com.unlcn.ils.tps.E_join_company" resultMap="E_join_companyResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_join_company 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:selectMany,Generated=true -->
+<select id="selectMany" parameterType="list" resultMap="E_join_companyResult">
+select 
+	<include refid="column_sql"/> 
+	from tps_join_company 
+	where tps_join_company.lineid in (
+		select distinct lineid from tps_join_company inner join
+<foreach collection="list" item="entity" separator="inner join">
+		(select 
+			distinct lineid
+			from tps_join_company 
+			<where>
+	        <if test="entity.lineid != null">and tps_join_company.lineid = #{entity.lineid}</if>
+	        <if test="entity.companyName != null">and tps_join_company.company_name = #{entity.companyName}</if>
+	        <if test="entity.provinceId != null">and tps_join_company.province_id = #{entity.provinceId}</if>
+	        <if test="entity.province != null">and tps_join_company.province = #{entity.province}</if>
+	        <if test="entity.cityId != null">and tps_join_company.city_id = #{entity.cityId}</if>
+	        <if test="entity.city != null">and tps_join_company.city = #{entity.city}</if>
+	        <if test="entity.legalUser != null">and tps_join_company.legal_user = #{entity.legalUser}</if>
+	        <if test="entity.mainContract != null">and tps_join_company.main_contract = #{entity.mainContract}</if>
+	        <if test="entity.taxNo != null">and tps_join_company.tax_no = #{entity.taxNo}</if>
+	        <if test="entity.capital != null">and tps_join_company.capital = #{entity.capital}</if>
+	        <if test="entity.carNumber != null">and tps_join_company.car_number = #{entity.carNumber}</if>
+	        <if test="entity.assets != null">and tps_join_company.assets = #{entity.assets}</if>
+	        <if test="entity.idNumber != null">and tps_join_company.id_number = #{entity.idNumber}</if>
+	        <if test="entity.contract != null">and tps_join_company.contract = #{entity.contract}</if>
+	        <if test="entity.mobileno != null">and tps_join_company.mobileno = #{entity.mobileno}</if>
+	        <if test="entity.checkFlag != null">and tps_join_company.check_flag = #{entity.checkFlag}</if>
+	        <if test="entity.createTime != null">and tps_join_company.create_time = #{entity.createTime}</if>
+	        <if test="entity.createUser != null">and tps_join_company.create_user = #{entity.createUser}</if>
+	        <if test="entity.active != null">and tps_join_company.active = #{entity.active}</if>
+	        <if test="entity.activeUser != null">and tps_join_company.active_user = #{entity.activeUser}</if>
+	        <if test="entity.activeTime != null">and tps_join_company.active_time = #{entity.activeTime}</if>
+	        <if test="entity.activeMemo != null">and tps_join_company.active_memo = #{entity.activeMemo}</if>
+	        <if test="entity.shipperId != null">and tps_join_company.shipper_id = #{entity.shipperId}</if>
+	        <if test="entity.roadLicence != null">and tps_join_company.road_licence = #{entity.roadLicence}</if>
+	        <if test="entity.contractName != null">and tps_join_company.contract_name = #{entity.contractName}</if>
+			</where>
+		) ${entity.tableAlias} using (lineid)
+</foreach>
+)
+</select>
+
+<!-- ElementID:insert,Generated=true -->
+<insert id="insert" parameterType="com.unlcn.ils.tps.E_join_company">
+	insert into tps_join_company(
+	         <if test="lineid != null">lineid</if>
+	         <if test="companyName != null">,company_name</if>
+	         <if test="provinceId != null">,province_id</if>
+	         <if test="province != null">,province</if>
+	         <if test="cityId != null">,city_id</if>
+	         <if test="city != null">,city</if>
+	         <if test="legalUser != null">,legal_user</if>
+	         <if test="mainContract != null">,main_contract</if>
+	         <if test="taxNo != null">,tax_no</if>
+	         <if test="capital != null">,capital</if>
+	         <if test="carNumber != null">,car_number</if>
+	         <if test="assets != null">,assets</if>
+	         <if test="idNumber != null">,id_number</if>
+	         <if test="contract != null">,contract</if>
+	         <if test="mobileno != null">,mobileno</if>
+	         <if test="checkFlag != null">,check_flag</if>
+	         <if test="createTime != null">,create_time</if>
+	         <if test="createUser != null">,create_user</if>
+	         <if test="active != null">,active</if>
+	         <if test="activeUser != null">,active_user</if>
+	         <if test="activeTime != null">,active_time</if>
+	         <if test="activeMemo != null">,active_memo</if>
+	         <if test="shipperId != null">,shipper_id</if>
+	         <if test="roadLicence != null">,road_licence</if>
+	         <if test="contractName != null">,contract_name</if>
+	 	 	 )
+	 values (
+	         <if test="lineid != null">#{lineid,jdbcType=VARCHAR}</if>
+	         <if test="companyName != null">,#{companyName,jdbcType=VARCHAR}</if>
+	         <if test="provinceId != null">,#{provinceId,jdbcType=NUMERIC}</if>
+	         <if test="province != null">,#{province,jdbcType=VARCHAR}</if>
+	         <if test="cityId != null">,#{cityId,jdbcType=NUMERIC}</if>
+	         <if test="city != null">,#{city,jdbcType=VARCHAR}</if>
+	         <if test="legalUser != null">,#{legalUser,jdbcType=VARCHAR}</if>
+	         <if test="mainContract != null">,#{mainContract,jdbcType=VARCHAR}</if>
+	         <if test="taxNo != null">,#{taxNo,jdbcType=VARCHAR}</if>
+	         <if test="capital != null">,#{capital,jdbcType=NUMERIC}</if>
+	         <if test="carNumber != null">,#{carNumber,jdbcType=NUMERIC}</if>
+	         <if test="assets != null">,#{assets,jdbcType=VARCHAR}</if>
+	         <if test="idNumber != null">,#{idNumber,jdbcType=VARCHAR}</if>
+	         <if test="contract != null">,#{contract,jdbcType=VARCHAR}</if>
+	         <if test="mobileno != null">,#{mobileno,jdbcType=VARCHAR}</if>
+	         <if test="checkFlag != null">,#{checkFlag,jdbcType=NUMERIC}</if>
+	         <if test="createTime != null">,#{createTime,jdbcType=TIMESTAMP}</if>
+	         <if test="createUser != null">,#{createUser,jdbcType=VARCHAR}</if>
+	         <if test="active != null">,#{active,jdbcType=NUMERIC}</if>
+	         <if test="activeUser != null">,#{activeUser,jdbcType=VARCHAR}</if>
+	         <if test="activeTime != null">,#{activeTime,jdbcType=TIMESTAMP}</if>
+	         <if test="activeMemo != null">,#{activeMemo,jdbcType=VARCHAR}</if>
+	         <if test="shipperId != null">,#{shipperId,jdbcType=VARCHAR}</if>
+	         <if test="roadLicence != null">,#{roadLicence,jdbcType=VARCHAR}</if>
+	         <if test="contractName != null">,#{contractName,jdbcType=VARCHAR}</if>
+	 	 	 )
+</insert>
+
+<!-- ElementID:insertBatch,Generated=true -->
+<insert id="insertBatch" parameterType="list">
+	insert into tps_join_company (lineid,company_name,province_id,province,city_id,city,legal_user,main_contract,tax_no,capital,car_number,assets,id_number,contract,mobileno,check_flag,create_time,create_user,active,active_user,active_time,active_memo,shipper_id,road_licence,contract_name) 
+<foreach collection="list" item="entity" index="index" separator="union all">
+		select 
+		#{entity.lineid,jdbcType = VARCHAR},
+				#{entity.companyName,jdbcType = VARCHAR},
+				#{entity.provinceId,jdbcType = NUMERIC},
+				#{entity.province,jdbcType = VARCHAR},
+				#{entity.cityId,jdbcType = NUMERIC},
+				#{entity.city,jdbcType = VARCHAR},
+				#{entity.legalUser,jdbcType = VARCHAR},
+				#{entity.mainContract,jdbcType = VARCHAR},
+				#{entity.taxNo,jdbcType = VARCHAR},
+				#{entity.capital,jdbcType = NUMERIC},
+				#{entity.carNumber,jdbcType = NUMERIC},
+				#{entity.assets,jdbcType = VARCHAR},
+				#{entity.idNumber,jdbcType = VARCHAR},
+				#{entity.contract,jdbcType = VARCHAR},
+				#{entity.mobileno,jdbcType = VARCHAR},
+				#{entity.checkFlag,jdbcType = NUMERIC},
+				#{entity.createTime,jdbcType = TIMESTAMP},
+				#{entity.createUser,jdbcType = VARCHAR},
+				#{entity.active,jdbcType = NUMERIC},
+				#{entity.activeUser,jdbcType = VARCHAR},
+				#{entity.activeTime,jdbcType = TIMESTAMP},
+				#{entity.activeMemo,jdbcType = VARCHAR},
+				#{entity.shipperId,jdbcType = VARCHAR},
+				#{entity.roadLicence,jdbcType = VARCHAR},
+				#{entity.contractName,jdbcType = VARCHAR}
+		from dual
+</foreach>
+</insert>
+<select id="getMaxId" resultMap="E_join_companyResult">
+	select * from tps_join_company ORDER BY create_time DESC;
+</select>
+<select id="selectByCityId" parameterType="java.lang.Integer" resultMap="E_join_companyResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_join_company 
+		 where tps_join_company.city_id = #{city_id}
+</select>
+<select id="selectByShipperID" parameterType="java.lang.String" resultMap="E_join_companyResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_join_company 
+		 where tps_join_company.shipper_id = #{shipper_id}
+</select>
+<select id="selectByCondition" parameterType="com.unlcn.ils.tps.E_join_company" resultMap="E_join_companyResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_join_company 
+	    <where>
+	    	<if test="companyName!=null">and tps_join_company.company_name like #{companyName}</if>
+	    	<if test="provinceId!=null">and tps_join_company.province_id = #{provinceId}</if>
+	    	<if test="cityId!=null">and tps_join_company.city_id = #{cityId}</if>
+	    </where>
+</select>
+</mapper>

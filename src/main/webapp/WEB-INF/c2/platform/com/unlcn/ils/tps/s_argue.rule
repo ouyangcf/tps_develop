@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="s_argue" log="false" className="com.unlcn.ils.tps.services.ArgueService" method="pocessArgue">
+  <instanceCreator>
+    <params/>
+  </instanceCreator>
+  <name>添加申诉单</name>
+  <inputs>
+    <input collection="false" desc="" id="data" required="true" type="com.unlcn.ils.tps.E_argue"/>
+    <input collection="false" desc="" id="checkheadlineid" required="true" type="String"/>
+    <input collection="false" desc="" id="checkdetaillineid" required="true" type="String"/>
+  </inputs>
+  <outputs>
+    <output autoValue="Result" desc="" id="result" name="方法返回值" type="com.unlcn.ils.tps.E_argue"/>
+  </outputs>
+  <params>
+    <param autoValue="Input.data" name="data" signature="QE_argue;" type="com.unlcn.ils.tps.E_argue"/>
+    <param autoValue="Input.checkheadlineid" name="checkheadlineid" signature="QString;" type="String"/>
+    <param autoValue="Input.checkdetaillineid" name="checkdetaillineid" signature="QString;" type="String"/>
+  </params>
+  <return signature="QE_argue;" type="com.unlcn.ils.tps.E_argue"/>
+</CustomRule>

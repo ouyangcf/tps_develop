@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><mapper namespace="com.unlcn.ils.tps.E_payment_methodMapper">	
+
+<!-- ElementID:column_sql,Generated=true -->
+<sql id="column_sql">
+		  tps_payment_method.lineid ,
+		  tps_payment_method.payment_no ,
+		  tps_payment_method.payment_name ,
+		  tps_payment_method.payment_type ,
+		  tps_payment_method.create_time ,
+		  tps_payment_method.create_user ,
+		  tps_payment_method.active ,
+		  tps_payment_method.active_user ,
+		  tps_payment_method.active_time ,
+		  tps_payment_method.active_memo 
+</sql>
+
+<!-- ElementID:whereClause_sql,Generated=true -->
+<sql id="whereClause_sql">
+	    <if test="lineid != null">and tps_payment_method.lineid = #{lineid}</if>
+	    <if test="paymentNo != null">and tps_payment_method.payment_no = #{paymentNo}</if>
+	    <if test="paymentName != null">and tps_payment_method.payment_name = #{paymentName}</if>
+	    <if test="paymentType != null">and tps_payment_method.payment_type = #{paymentType}</if>
+	    <if test="createTime != null">and tps_payment_method.create_time = #{createTime}</if>
+	    <if test="createUser != null">and tps_payment_method.create_user = #{createUser}</if>
+	    <if test="active != null">and tps_payment_method.active = #{active}</if>
+	    <if test="activeUser != null">and tps_payment_method.active_user = #{activeUser}</if>
+	    <if test="activeTime != null">and tps_payment_method.active_time = #{activeTime}</if>
+	    <if test="activeMemo != null">and tps_payment_method.active_memo = #{activeMemo}</if>
+</sql>
+
+
+<!-- ElementID:E_payment_methodResult,Generated=true -->
+<resultMap id="E_payment_methodResult" type="com.unlcn.ils.tps.E_payment_method">
+	<id property="lineid" column="lineid"/>
+	<result property="paymentNo" column="payment_no"/>
+	<result property="paymentName" column="payment_name"/>
+	<result property="paymentType" column="payment_type"/>
+	<result property="createTime" column="create_time"/>
+	<result property="createUser" column="create_user"/>
+	<result property="active" column="active"/>
+	<result property="activeUser" column="active_user"/>
+	<result property="activeTime" column="active_time"/>
+	<result property="activeMemo" column="active_memo"/>
+</resultMap>
+
+
+<!-- ElementName:cache,Generated=true -->
+<cache type="C2_Default_Dao_Cache"/>
+
+<!-- ElementID:count,Generated=true -->
+<select id="count" parameterType="com.unlcn.ils.tps.E_payment_method" resultType="int">
+	select count(*) from tps_payment_method 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+<!-- ElementID:update,Generated=true -->
+<update id="update" parameterType="com.unlcn.ils.tps.E_payment_method">
+	update tps_payment_method
+<set>
+	<if test="paymentNo != null">payment_no=#{paymentNo,jdbcType=VARCHAR},</if>
+	<if test="paymentName != null">payment_name=#{paymentName,jdbcType=VARCHAR},</if>
+	<if test="paymentType != null">payment_type=#{paymentType,jdbcType=NUMERIC},</if>
+	<if test="createTime != null">create_time=#{createTime,jdbcType=TIMESTAMP},</if>
+	<if test="createUser != null">create_user=#{createUser,jdbcType=VARCHAR},</if>
+	<if test="active != null">active=#{active,jdbcType=NUMERIC},</if>
+	<if test="activeUser != null">active_user=#{activeUser,jdbcType=VARCHAR},</if>
+	<if test="activeTime != null">active_time=#{activeTime,jdbcType=TIMESTAMP},</if>
+	<if test="activeMemo != null">active_memo=#{activeMemo,jdbcType=VARCHAR}</if>
+</set>
+<where>
+	<choose>
+        <when test="lineid != null">and lineid = #{lineid}</when>
+        <otherwise>and lineid = </otherwise>
+    </choose>
+</where>
+</update>
+
+<!-- ElementID:updateNull,Generated=true -->
+<update id="updateNull" parameterType="map">
+	update tps_payment_method
+	<set>
+		<trim suffixOverrides=",">
+		    <if test="paymentNo==null">payment_no = null,</if>
+		    <if test="paymentName==null">payment_name = null,</if>
+		    <if test="paymentType==null">payment_type = null,</if>
+		    <if test="createTime==null">create_time = null,</if>
+		    <if test="createUser==null">create_user = null,</if>
+		    <if test="active==null">active = null,</if>
+		    <if test="activeUser==null">active_user = null,</if>
+		    <if test="activeTime==null">active_time = null,</if>
+		    <if test="activeMemo==null">active_memo = null,</if>
+		</trim>
+	</set>
+	<where>
+		<choose>
+			<when test="lineid != null">and lineid = #{lineid}</when>
+			<otherwise>and lineid = </otherwise>
+		</choose>
+	</where>
+</update>
+
+<!-- ElementID:delete,Generated=true -->
+<delete id="delete" parameterType="com.unlcn.ils.tps.E_payment_method">
+    delete from tps_payment_method where 1=1 and lineid = #{lineid}
+</delete>
+
+<!-- ElementID:select,Generated=true -->
+<select id="select" parameterType="com.unlcn.ils.tps.E_payment_method" resultMap="E_payment_methodResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_payment_method 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:deleteBatch,Generated=true -->
+<delete id="deleteBatch" parameterType="List">
+	delete from tps_payment_method where lineid in
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<foreach collection="list" item="entity" separator=",">
+	#{entity.lineid}
+</foreach>
+</trim>
+</delete>
+
+<!-- ElementID:selectAll,Generated=true -->
+<select id="selectAll" resultMap="E_payment_methodResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_payment_method 
+</select>
+
+<!-- ElementID:selectByID,Generated=true -->
+<select id="selectByID" parameterType="java.lang.Integer" resultMap="E_payment_methodResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_payment_method 
+		 where tps_payment_method.lineid = #{lineid,jdbcType=NUMERIC}
+</select>
+
+<!-- ElementID:selectByPage,Generated=true -->
+<select id="selectByPage" parameterType="com.unlcn.ils.tps.E_payment_method" resultMap="E_payment_methodResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_payment_method 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:selectMany,Generated=true -->
+<select id="selectMany" parameterType="list" resultMap="E_payment_methodResult">
+select 
+	<include refid="column_sql"/> 
+	from tps_payment_method 
+	where tps_payment_method.lineid in (
+		select distinct lineid from tps_payment_method inner join
+<foreach collection="list" item="entity" separator="inner join">
+		(select 
+			distinct lineid
+			from tps_payment_method 
+			<where>
+	        <if test="entity.lineid != null">and tps_payment_method.lineid = #{entity.lineid}</if>
+	        <if test="entity.paymentNo != null">and tps_payment_method.payment_no = #{entity.paymentNo}</if>
+	        <if test="entity.paymentName != null">and tps_payment_method.payment_name = #{entity.paymentName}</if>
+	        <if test="entity.paymentType != null">and tps_payment_method.payment_type = #{entity.paymentType}</if>
+	        <if test="entity.createTime != null">and tps_payment_method.create_time = #{entity.createTime}</if>
+	        <if test="entity.createUser != null">and tps_payment_method.create_user = #{entity.createUser}</if>
+	        <if test="entity.active != null">and tps_payment_method.active = #{entity.active}</if>
+	        <if test="entity.activeUser != null">and tps_payment_method.active_user = #{entity.activeUser}</if>
+	        <if test="entity.activeTime != null">and tps_payment_method.active_time = #{entity.activeTime}</if>
+	        <if test="entity.activeMemo != null">and tps_payment_method.active_memo = #{entity.activeMemo}</if>
+			</where>
+		) ${entity.tableAlias} using (lineid)
+</foreach>
+)
+</select>
+
+<!-- ElementID:insert,Generated=true -->
+<insert id="insert" parameterType="com.unlcn.ils.tps.E_payment_method" useGeneratedKeys="true">
+	<selectKey keyProperty="lineid" resultType="java.lang.Integer" order="AFTER">
+        select LAST_INSERT_ID()
+    </selectKey>
+insert into tps_payment_method(
+		<trim prefixOverrides=",">
+		    <if test="paymentNo != null">payment_no</if>
+		    <if test="paymentName != null">,payment_name</if>
+		    <if test="paymentType != null">,payment_type</if>
+		    <if test="createTime != null">,create_time</if>
+		    <if test="createUser != null">,create_user</if>
+		    <if test="active != null">,active</if>
+		    <if test="activeUser != null">,active_user</if>
+		    <if test="activeTime != null">,active_time</if>
+		    <if test="activeMemo != null">,active_memo</if>
+		</trim>
+	 )
+	 values (
+		<trim prefixOverrides=",">
+		    <if test="paymentNo != null">#{paymentNo,jdbcType=VARCHAR}</if>
+		    <if test="paymentName != null">,#{paymentName,jdbcType=VARCHAR}</if>
+		    <if test="paymentType != null">,#{paymentType,jdbcType=NUMERIC}</if>
+		    <if test="createTime != null">,#{createTime,jdbcType=TIMESTAMP}</if>
+		    <if test="createUser != null">,#{createUser,jdbcType=VARCHAR}</if>
+		    <if test="active != null">,#{active,jdbcType=NUMERIC}</if>
+		    <if test="activeUser != null">,#{activeUser,jdbcType=VARCHAR}</if>
+		    <if test="activeTime != null">,#{activeTime,jdbcType=TIMESTAMP}</if>
+		    <if test="activeMemo != null">,#{activeMemo,jdbcType=VARCHAR}</if>
+        </trim>
+	 )
+</insert>
+
+<!-- ElementID:insertBatch,Generated=true -->
+<insert id="insertBatch" parameterType="list" useGeneratedKeys="true">
+	insert into tps_payment_method (payment_no,payment_name,payment_type,create_time,create_user,active,active_user,active_time,active_memo)
+			values 
+			<foreach collection="list" item="entity" index="index" separator=",">
+				(
+		         #{entity.paymentNo,jdbcType = VARCHAR},
+		         #{entity.paymentName,jdbcType = VARCHAR},
+		         #{entity.paymentType,jdbcType = NUMERIC},
+		         #{entity.createTime,jdbcType = TIMESTAMP},
+		         #{entity.createUser,jdbcType = VARCHAR},
+		         #{entity.active,jdbcType = NUMERIC},
+		         #{entity.activeUser,jdbcType = VARCHAR},
+		         #{entity.activeTime,jdbcType = TIMESTAMP},
+		         #{entity.activeMemo,jdbcType = VARCHAR}
+				)
+</foreach>
+</insert>
+</mapper>

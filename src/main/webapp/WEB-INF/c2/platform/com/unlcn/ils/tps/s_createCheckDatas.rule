@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="s_createCheckDatas" log="false" className="com.unlcn.ils.tps.services.CheckDataService" method="createCheckDatas">
+  <instanceCreator>
+    <params/>
+  </instanceCreator>
+  <name>导入考核汇总数据</name>
+  <inputs>
+    <input collection="false" desc="" id="shipper" required="false" type="String"/>
+    <input collection="false" desc="" id="check_configure" required="true" type="String"/>
+    <input collection="false" desc="" id="checkCycle" required="true" type="String"/>
+    <input collection="false" desc="" id="checkDate" required="false" type="String"/>
+    <input collection="false" desc="" id="checkDate1" required="false" type="String"/>
+    <input collection="false" desc="" id="checkDate2" required="false" type="String"/>
+    <input collection="false" desc="" id="checkDate3" required="false" type="String"/>
+  </inputs>
+  <outputs/>
+  <params>
+    <param autoValue="Input.shipper" name="shipper" signature="QString;" type="String"/>
+    <param autoValue="Input.check_configure" name="check_configure" signature="QString;" type="String"/>
+    <param autoValue="Input.checkCycle" name="checkCycle" signature="QString;" type="String"/>
+    <param autoValue="Input.checkDate" name="checkDate" signature="QString;" type="String"/>
+    <param autoValue="Input.checkDate1" name="checkDate1" signature="QString;" type="String"/>
+    <param autoValue="Input.checkDate2" name="checkDate2" signature="QString;" type="String"/>
+    <param autoValue="Input.checkDate3" name="checkDate3" signature="QString;" type="String"/>
+  </params>
+  <return signature="V" type="void"/>
+</CustomRule>

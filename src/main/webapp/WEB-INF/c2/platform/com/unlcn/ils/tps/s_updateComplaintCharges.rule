@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="s_updateComplaintCharges" log="false" className="com.unlcn.ils.tps.services.ComplainChargeService" method="updateComplaintCharges">
+  <name>按条件导入crm分供方异常明细</name>
+  <inputs>
+    <input collection="false" desc="" id="shipperId" required="true"/>
+    <input collection="false" desc="" id="startTime" required="true"/>
+    <input collection="false" desc="" id="endTime" required="true"/>
+  </inputs>
+  <outputs/>
+  <params>
+    <param autoValue="Input.shipperId" name="shipperId" signature="QString;" type="java.lang.String"/>
+    <param autoValue="Input.startTime" name="startTime" signature="QString;" type="java.lang.String"/>
+    <param autoValue="Input.endTime" name="endTime" signature="QString;" type="java.lang.String"/>
+  </params>
+  <return signature="V" type="void"/>
+</CustomRule>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="s_getPayPeriod" log="false" className="com.unlcn.ils.tps.services.PayPeriodService" method="getAllData">
+  <name>得到支付周期</name>
+  <inputs/>
+  <outputs>
+    <output autoValue="Result" desc="" id="result" name="方法返回值" type="java.util.List"/>
+  </outputs>
+  <params/>
+  <return signature="QList&lt;QE_pay_period;>;" type="java.util.List"/>
+</CustomRule>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="s_getQuotationData" log="false" className="com.unlcn.ils.tps.services.QutoationService" method="getQuotationData">
+  <name>得到报价单主表</name>
+  <inputs/>
+  <outputs>
+    <output autoValue="Result" desc="" id="result" name="方法返回值" type="com.unlcn.ils.tps.E_quotation_head"/>
+  </outputs>
+  <params/>
+  <return signature="QE_quotation_head;" type="com.unlcn.ils.tps.E_quotation_head"/>
+</CustomRule>

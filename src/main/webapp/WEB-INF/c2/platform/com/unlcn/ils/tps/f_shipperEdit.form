@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form:Form xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dync="http://www.chinacreator.com/platform/mvc/ui/dync" xmlns:form="http://www.chinacreator.com/platform/mvc/form" name="分供方数据修改" sn="shipperedit" type="form">
+  <form:control type="page/normal">
+    <form:attributes source="page/normal">
+      <dync:attribute default="" group="HTML" id="showHead" name="显示标题" value="true">
+        <dync:render colSpan="2" height="0" multi="false" name="checkbox"/>
+        <dync:children/>
+      </dync:attribute>
+      <dync:attribute default="" group="HTML" id="title" name="标题" value="分供方数据修改">
+        <dync:render colSpan="2" height="0" multi="false" name="text"/>
+        <dync:children/>
+      </dync:attribute>
+      <dync:attribute default="" group="事件" id="onload" name="页面加载完成" value="page_onload()">
+        <dync:render colSpan="2" height="0" multi="false" name="event">
+          <dync:item name="param" value=""/>
+        </dync:render>
+        <dync:children/>
+      </dync:attribute>
+    </form:attributes>
+  </form:control>
+  <form:child xsi:type="form:Group" id="div1" name="简单容器(DIV)">
+    <form:control type="container/div">
+      <form:attributes source="container/div"/>
+    </form:control>
+    <form:child xsi:type="form:Field" binding="$model.shipper.result.certValidTime" id="certValidTime" name="认证有效期">
+      <form:control type="widget/text">
+        <form:attributes source="widget/text"/>
+      </form:control>
+    </form:child>
+  </form:child>
+  <form:child xsi:type="form:Group" id="div" name="简单容器(DIV)">
+    <form:control type="container/div">
+      <form:attributes source="container/div"/>
+    </form:control>
+    <form:child xsi:type="form:Field" binding="$model.shipper.result.code" id="code" name="编号">
+      <form:control type="widget/text">
+        <form:attributes source="widget/text"/>
+      </form:control>
+    </form:child>
+    <form:child xsi:type="form:Field" binding="$model.shipper.result.name" id="name" name="名称">
+      <form:control type="widget/text">
+        <form:attributes source="widget/text"/>
+      </form:control>
+    </form:child>
+    <form:child xsi:type="form:Field" binding="$model.shipper.result.shortName" id="shortName" name="简称">
+      <form:control type="widget/text">
+        <form:attributes source="widget/text"/>
+      </form:control>
+    </form:child>
+    <form:child xsi:type="form:Field" binding="$model.shipper.result.regAddress" id="regAddress" name="注册地">
+      <form:control type="widget/text">
+        <form:attributes source="widget/text"/>
+      </form:control>
+    </form:child>
+    <form:child xsi:type="form:Field" binding="$model.shipper.result.capital" id="capital" name="注册资金">
+      <form:control type="widget/text">
+        <form:attributes source="widget/text"/>
+      </form:control>
+    </form:child>
+    <form:child xsi:type="form:Field" binding="$model.entity.level" id="level" name="等级">
+      <form:control type="widget/text">
+        <form:attributes source="widget/text"/>
+      </form:control>
+    </form:child>
+    <form:child xsi:type="form:Field" binding="$model.entity.hasPermit" id="hasPermit" name="是否有运输管理规定">
+      <form:control type="widget/text">
+        <form:attributes source="widget/text"/>
+      </form:control>
+    </form:child>
+    <form:child xsi:type="form:Field" binding="$model.shipper.result.taxNo" id="taxNo" name="税务登记号">
+      <form:control type="widget/text">
+        <form:attributes source="widget/text"/>
+      </form:control>
+    </form:child>
+    <form:child xsi:type="form:Field" binding="$model.shipper.result.businessType" id="businessType" name="业务类型">
+      <form:control type="widget/text">
+        <form:attributes source="widget/text"/>
+      </form:control>
+    </form:child>
+    <form:child xsi:type="form:Field" binding="$model.shipper.result.carNumber" id="carNumber" name="可用车辆数">
+      <form:control type="widget/text">
+        <form:attributes source="widget/text"/>
+      </form:control>
+    </form:child>
+    <form:child xsi:type="form:Field" binding="$model.shipper.result.linkman" id="linkman" name="负责人">
+      <form:control type="widget/text">
+        <form:attributes source="widget/text"/>
+      </form:control>
+    </form:child>
+    <form:child xsi:type="form:Field" binding="$model.shipper.result.owner" id="owner" name="法人">
+      <form:control type="widget/text">
+        <form:attributes source="widget/text"/>
+      </form:control>
+    </form:child>
+    <form:child xsi:type="form:Field" binding="$model.shipper.result.phone" id="phone" name="手机">
+      <form:control type="widget/text">
+        <form:attributes source="widget/text"/>
+      </form:control>
+    </form:child>
+    <form:child xsi:type="form:Field" binding="$model.shipper.result.tel" id="tel" name="电话">
+      <form:control type="widget/text">
+        <form:attributes source="widget/text"/>
+      </form:control>
+    </form:child>
+    <form:child xsi:type="form:Field" binding="$model.shipper.result.desc" id="desc" name="备注">
+      <form:control type="widget/text">
+        <form:attributes source="widget/text"/>
+      </form:control>
+    </form:child>
+    <form:child xsi:type="form:Field" binding="$model.shipper.result.createUser" id="createUser" name="添加人">
+      <form:control type="widget/text">
+        <form:attributes source="widget/text"/>
+      </form:control>
+    </form:child>
+    <form:child xsi:type="form:Field" binding="$model.shipper.result.createTime" id="createTime" name="添加时间">
+      <form:control type="widget/text">
+        <form:attributes source="widget/text"/>
+      </form:control>
+    </form:child>
+  </form:child>
+  <form:child xsi:type="form:Group" id="div2" name="简单容器(DIV)">
+    <form:control type="container/div">
+      <form:attributes source="container/div"/>
+    </form:control>
+    <form:child xsi:type="form:Group" id="toolbar" name="普通工具条">
+      <form:control type="container/toolbar">
+        <form:attributes source="container/toolbar">
+          <dync:attribute default="center" group="基本设置" id="position" name="按钮位置" value="pull-right">
+            <dync:render colSpan="2" height="0" multi="false" name="select">
+              <dync:item name="居中" value="center"/>
+              <dync:item name="左侧" value="pull-left"/>
+              <dync:item name="右侧" value="pull-right"/>
+            </dync:render>
+            <dync:children/>
+          </dync:attribute>
+        </form:attributes>
+      </form:control>
+      <form:child xsi:type="form:Field" id="btnsave" name="编辑保存" customize="true">
+        <form:control type="widget/button">
+          <form:attributes source="widget/button">
+            <dync:attribute default="" group="事件设置" id="click" name="点击事件" value="btnsave_click($event)">
+              <dync:render colSpan="1" height="0" multi="false" name="event">
+                <dync:item name="params" value="$event"/>
+              </dync:render>
+              <dync:children/>
+            </dync:attribute>
+          </form:attributes>
+        </form:control>
+        <form:validation/>
+      </form:child>
+      <form:child xsi:type="form:Field" id="button1" name="取消" customize="true">
+        <form:control type="widget/button">
+          <form:attributes source="widget/button"/>
+        </form:control>
+        <form:validation/>
+      </form:child>
+    </form:child>
+  </form:child>
+  <form:datasources>
+    <form:datasource xsi:type="form:Inputs"/>
+    <form:datasource xsi:type="form:LogicDataSource" id="shipper" name="分供方信息" logic="rule:com.unlcn.ils.tps.s_getShipperById" sn="s_getShipperById">
+      <form:param id="shippperid" name="新输入参数" value="$params.shipperid"/>
+    </form:datasource>
+  </form:datasources>
+  <form:scripts>
+
+page_onload:function(){
+	
+},
+
+btnsave_click:function($event){
+	//保存
+	 $http({
+        method: 'post',
+        url: 'ws/s_saveShipper',
+         headers: {
+            'Content-Type': 'application/json'},
+        data: {postdata:$model.shipper.result}
+    }).success(function(data,status,headers,config) {    
+    	Messenger.error('保存成功');
+		return;
+    }).error(function(data,status,headers,config) {
+       // 当响应以错误状态返回时调用 
+       Messenger.error('保存失败');
+		return;
+     });
+     
+}</form:scripts>
+</form:Form>

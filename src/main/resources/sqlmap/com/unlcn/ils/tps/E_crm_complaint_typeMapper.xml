@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><mapper namespace="com.unlcn.ils.tps.E_crm_complaint_typeMapper">	
+
+<!-- ElementID:column_sql,Generated=true -->
+<sql id="column_sql">
+		  tps_crm_complaint_type.lineid ,
+		  tps_crm_complaint_type.type_id ,
+		  tps_crm_complaint_type.type_category ,
+		  tps_crm_complaint_type.type_name ,
+		  tps_crm_complaint_type.type_desc ,
+		  tps_crm_complaint_type.parent_id ,
+		  tps_crm_complaint_type.type_status ,
+		  tps_crm_complaint_type.oper_user ,
+		  tps_crm_complaint_type.oper_time ,
+		  tps_crm_complaint_type.realate_flag ,
+		  tps_crm_complaint_type.realate_lineid ,
+		  tps_crm_complaint_type.create_username ,
+		  tps_crm_complaint_type.create_time ,
+		  tps_crm_complaint_type.active ,
+		  tps_crm_complaint_type.active_user ,
+		  tps_crm_complaint_type.active_time ,
+		  tps_crm_complaint_type.active_memo 
+</sql>
+
+<!-- ElementID:whereClause_sql,Generated=true -->
+<sql id="whereClause_sql">
+	    <if test="lineid != null">and tps_crm_complaint_type.lineid = #{lineid}</if>
+	    <if test="typeId != null">and tps_crm_complaint_type.type_id = #{typeId}</if>
+	    <if test="typeCategory != null">and tps_crm_complaint_type.type_category = #{typeCategory}</if>
+	    <if test="typeName != null">and tps_crm_complaint_type.type_name = #{typeName}</if>
+	    <if test="typeDesc != null">and tps_crm_complaint_type.type_desc = #{typeDesc}</if>
+	    <if test="parentId != null">and tps_crm_complaint_type.parent_id = #{parentId}</if>
+	    <if test="typeStatus != null">and tps_crm_complaint_type.type_status = #{typeStatus}</if>
+	    <if test="operUser != null">and tps_crm_complaint_type.oper_user = #{operUser}</if>
+	    <if test="operTime != null">and tps_crm_complaint_type.oper_time = #{operTime}</if>
+	    <if test="realateFlag != null">and tps_crm_complaint_type.realate_flag = #{realateFlag}</if>
+	    <if test="realateLineid != null">and tps_crm_complaint_type.realate_lineid = #{realateLineid}</if>
+	    <if test="createUsername != null">and tps_crm_complaint_type.create_username = #{createUsername}</if>
+	    <if test="createTime != null">and tps_crm_complaint_type.create_time = #{createTime}</if>
+	    <if test="active != null">and tps_crm_complaint_type.active = #{active}</if>
+	    <if test="activeUser != null">and tps_crm_complaint_type.active_user = #{activeUser}</if>
+	    <if test="activeTime != null">and tps_crm_complaint_type.active_time = #{activeTime}</if>
+	    <if test="activeMemo != null">and tps_crm_complaint_type.active_memo = #{activeMemo}</if>
+</sql>
+
+
+<!-- ElementID:E_crm_complaint_typeResult,Generated=true -->
+<resultMap id="E_crm_complaint_typeResult" type="com.unlcn.ils.tps.E_crm_complaint_type">
+	<id property="lineid" column="lineid"/>
+	<result property="typeId" column="type_id"/>
+	<result property="typeCategory" column="type_category"/>
+	<result property="typeName" column="type_name"/>
+	<result property="typeDesc" column="type_desc"/>
+	<result property="parentId" column="parent_id"/>
+	<result property="typeStatus" column="type_status"/>
+	<result property="operUser" column="oper_user"/>
+	<result property="operTime" column="oper_time"/>
+	<result property="realateFlag" column="realate_flag"/>
+	<result property="realateLineid" column="realate_lineid"/>
+	<result property="createUsername" column="create_username"/>
+	<result property="createTime" column="create_time"/>
+	<result property="active" column="active"/>
+	<result property="activeUser" column="active_user"/>
+	<result property="activeTime" column="active_time"/>
+	<result property="activeMemo" column="active_memo"/>
+</resultMap>
+
+
+<!-- ElementName:cache,Generated=true -->
+<cache type="C2_Default_Dao_Cache"/>
+
+<!-- ElementID:count,Generated=true -->
+<select id="count" parameterType="com.unlcn.ils.tps.E_crm_complaint_type" resultType="int">
+	select count(*) from tps_crm_complaint_type 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+<!-- ElementID:update,Generated=true -->
+<update id="update" parameterType="com.unlcn.ils.tps.E_crm_complaint_type">
+	update tps_crm_complaint_type
+<set>
+	<if test="typeId != null">type_id=#{typeId,jdbcType=VARCHAR},</if>
+	<if test="typeCategory != null">type_category=#{typeCategory,jdbcType=VARCHAR},</if>
+	<if test="typeName != null">type_name=#{typeName,jdbcType=VARCHAR},</if>
+	<if test="typeDesc != null">type_desc=#{typeDesc,jdbcType=VARCHAR},</if>
+	<if test="parentId != null">parent_id=#{parentId,jdbcType=VARCHAR},</if>
+	<if test="typeStatus != null">type_status=#{typeStatus,jdbcType=VARCHAR},</if>
+	<if test="operUser != null">oper_user=#{operUser,jdbcType=VARCHAR},</if>
+	<if test="operTime != null">oper_time=#{operTime,jdbcType=VARCHAR},</if>
+	<if test="realateFlag != null">realate_flag=#{realateFlag,jdbcType=NUMERIC},</if>
+	<if test="realateLineid != null">realate_lineid=#{realateLineid,jdbcType=NUMERIC},</if>
+	<if test="createUsername != null">create_username=#{createUsername,jdbcType=VARCHAR},</if>
+	<if test="createTime != null">create_time=#{createTime,jdbcType=TIMESTAMP},</if>
+	<if test="active != null">active=#{active,jdbcType=NUMERIC},</if>
+	<if test="activeUser != null">active_user=#{activeUser,jdbcType=VARCHAR},</if>
+	<if test="activeTime != null">active_time=#{activeTime,jdbcType=TIMESTAMP},</if>
+	<if test="activeMemo != null">active_memo=#{activeMemo,jdbcType=VARCHAR}</if>
+</set>
+<where>
+	<choose>
+        <when test="lineid != null">and lineid = #{lineid}</when>
+        <otherwise>and lineid = </otherwise>
+    </choose>
+</where>
+</update>
+
+<!-- ElementID:updateNull,Generated=true -->
+<update id="updateNull" parameterType="map">
+	update tps_crm_complaint_type
+	<set>
+		<trim suffixOverrides=",">
+		    <if test="typeId==null">type_id = null,</if>
+		    <if test="typeCategory==null">type_category = null,</if>
+		    <if test="typeName==null">type_name = null,</if>
+		    <if test="typeDesc==null">type_desc = null,</if>
+		    <if test="parentId==null">parent_id = null,</if>
+		    <if test="typeStatus==null">type_status = null,</if>
+		    <if test="operUser==null">oper_user = null,</if>
+		    <if test="operTime==null">oper_time = null,</if>
+		    <if test="realateFlag==null">realate_flag = null,</if>
+		    <if test="realateLineid==null">realate_lineid = null,</if>
+		    <if test="createUsername==null">create_username = null,</if>
+		    <if test="createTime==null">create_time = null,</if>
+		    <if test="active==null">active = null,</if>
+		    <if test="activeUser==null">active_user = null,</if>
+		    <if test="activeTime==null">active_time = null,</if>
+		    <if test="activeMemo==null">active_memo = null,</if>
+		</trim>
+	</set>
+	<where>
+		<choose>
+			<when test="lineid != null">and lineid = #{lineid}</when>
+			<otherwise>and lineid = </otherwise>
+		</choose>
+	</where>
+</update>
+
+<!-- ElementID:delete,Generated=true -->
+<delete id="delete" parameterType="com.unlcn.ils.tps.E_crm_complaint_type">
+    delete from tps_crm_complaint_type where 1=1 and lineid = #{lineid}
+</delete>
+
+<!-- ElementID:select,Generated=true -->
+<select id="select" parameterType="com.unlcn.ils.tps.E_crm_complaint_type" resultMap="E_crm_complaint_typeResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_crm_complaint_type 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:deleteBatch,Generated=true -->
+<delete id="deleteBatch" parameterType="List">
+	delete from tps_crm_complaint_type where lineid in
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<foreach collection="list" item="entity" separator=",">
+	#{entity.lineid}
+</foreach>
+</trim>
+</delete>
+
+<!-- ElementID:selectAll,Generated=true -->
+<select id="selectAll" resultMap="E_crm_complaint_typeResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_crm_complaint_type 
+</select>
+
+<!-- ElementID:selectByID,Generated=true -->
+<select id="selectByID" parameterType="java.lang.String" resultMap="E_crm_complaint_typeResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_crm_complaint_type 
+		 where tps_crm_complaint_type.lineid = #{lineid,jdbcType=VARCHAR}
+</select>
+
+<!-- ElementID:selectByPage,Generated=true -->
+<select id="selectByPage" parameterType="com.unlcn.ils.tps.E_crm_complaint_type" resultMap="E_crm_complaint_typeResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_crm_complaint_type 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:selectMany,Generated=true -->
+<select id="selectMany" parameterType="list" resultMap="E_crm_complaint_typeResult">
+select 
+	<include refid="column_sql"/> 
+	from tps_crm_complaint_type 
+	where tps_crm_complaint_type.lineid in (
+		select distinct lineid from tps_crm_complaint_type inner join
+<foreach collection="list" item="entity" separator="inner join">
+		(select 
+			distinct lineid
+			from tps_crm_complaint_type 
+			<where>
+	        <if test="entity.lineid != null">and tps_crm_complaint_type.lineid = #{entity.lineid}</if>
+	        <if test="entity.typeId != null">and tps_crm_complaint_type.type_id = #{entity.typeId}</if>
+	        <if test="entity.typeCategory != null">and tps_crm_complaint_type.type_category = #{entity.typeCategory}</if>
+	        <if test="entity.typeName != null">and tps_crm_complaint_type.type_name = #{entity.typeName}</if>
+	        <if test="entity.typeDesc != null">and tps_crm_complaint_type.type_desc = #{entity.typeDesc}</if>
+	        <if test="entity.parentId != null">and tps_crm_complaint_type.parent_id = #{entity.parentId}</if>
+	        <if test="entity.typeStatus != null">and tps_crm_complaint_type.type_status = #{entity.typeStatus}</if>
+	        <if test="entity.operUser != null">and tps_crm_complaint_type.oper_user = #{entity.operUser}</if>
+	        <if test="entity.operTime != null">and tps_crm_complaint_type.oper_time = #{entity.operTime}</if>
+	        <if test="entity.realateFlag != null">and tps_crm_complaint_type.realate_flag = #{entity.realateFlag}</if>
+	        <if test="entity.realateLineid != null">and tps_crm_complaint_type.realate_lineid = #{entity.realateLineid}</if>
+	        <if test="entity.createUsername != null">and tps_crm_complaint_type.create_username = #{entity.createUsername}</if>
+	        <if test="entity.createTime != null">and tps_crm_complaint_type.create_time = #{entity.createTime}</if>
+	        <if test="entity.active != null">and tps_crm_complaint_type.active = #{entity.active}</if>
+	        <if test="entity.activeUser != null">and tps_crm_complaint_type.active_user = #{entity.activeUser}</if>
+	        <if test="entity.activeTime != null">and tps_crm_complaint_type.active_time = #{entity.activeTime}</if>
+	        <if test="entity.activeMemo != null">and tps_crm_complaint_type.active_memo = #{entity.activeMemo}</if>
+			</where>
+		) ${entity.tableAlias} using (lineid)
+</foreach>
+)
+</select>
+
+<!-- ElementID:insert,Generated=true -->
+<insert id="insert" parameterType="com.unlcn.ils.tps.E_crm_complaint_type">
+	insert into tps_crm_complaint_type(
+	         <if test="lineid != null">lineid</if>
+	         <if test="typeId != null">,type_id</if>
+	         <if test="typeCategory != null">,type_category</if>
+	         <if test="typeName != null">,type_name</if>
+	         <if test="typeDesc != null">,type_desc</if>
+	         <if test="parentId != null">,parent_id</if>
+	         <if test="typeStatus != null">,type_status</if>
+	         <if test="operUser != null">,oper_user</if>
+	         <if test="operTime != null">,oper_time</if>
+	         <if test="realateFlag != null">,realate_flag</if>
+	         <if test="realateLineid != null">,realate_lineid</if>
+	         <if test="createUsername != null">,create_username</if>
+	         <if test="createTime != null">,create_time</if>
+	         <if test="active != null">,active</if>
+	         <if test="activeUser != null">,active_user</if>
+	         <if test="activeTime != null">,active_time</if>
+	         <if test="activeMemo != null">,active_memo</if>
+	 	 	 )
+	 values (
+	         <if test="lineid != null">#{lineid,jdbcType=VARCHAR}</if>
+	         <if test="typeId != null">,#{typeId,jdbcType=VARCHAR}</if>
+	         <if test="typeCategory != null">,#{typeCategory,jdbcType=VARCHAR}</if>
+	         <if test="typeName != null">,#{typeName,jdbcType=VARCHAR}</if>
+	         <if test="typeDesc != null">,#{typeDesc,jdbcType=VARCHAR}</if>
+	         <if test="parentId != null">,#{parentId,jdbcType=VARCHAR}</if>
+	         <if test="typeStatus != null">,#{typeStatus,jdbcType=VARCHAR}</if>
+	         <if test="operUser != null">,#{operUser,jdbcType=VARCHAR}</if>
+	         <if test="operTime != null">,#{operTime,jdbcType=VARCHAR}</if>
+	         <if test="realateFlag != null">,#{realateFlag,jdbcType=NUMERIC}</if>
+	         <if test="realateLineid != null">,#{realateLineid,jdbcType=NUMERIC}</if>
+	         <if test="createUsername != null">,#{createUsername,jdbcType=VARCHAR}</if>
+	         <if test="createTime != null">,#{createTime,jdbcType=TIMESTAMP}</if>
+	         <if test="active != null">,#{active,jdbcType=NUMERIC}</if>
+	         <if test="activeUser != null">,#{activeUser,jdbcType=VARCHAR}</if>
+	         <if test="activeTime != null">,#{activeTime,jdbcType=TIMESTAMP}</if>
+	         <if test="activeMemo != null">,#{activeMemo,jdbcType=VARCHAR}</if>
+	 	 	 )
+</insert>
+
+<!-- ElementID:insertBatch,Generated=true -->
+<insert id="insertBatch" parameterType="list">
+	insert into tps_crm_complaint_type (lineid,type_id,type_category,type_name,type_desc,parent_id,type_status,oper_user,oper_time,realate_flag,realate_lineid,create_username,create_time,active,active_user,active_time,active_memo) 
+<foreach collection="list" item="entity" index="index" separator="union all">
+		select 
+		#{entity.lineid,jdbcType = VARCHAR},
+				#{entity.typeId,jdbcType = VARCHAR},
+				#{entity.typeCategory,jdbcType = VARCHAR},
+				#{entity.typeName,jdbcType = VARCHAR},
+				#{entity.typeDesc,jdbcType = VARCHAR},
+				#{entity.parentId,jdbcType = VARCHAR},
+				#{entity.typeStatus,jdbcType = VARCHAR},
+				#{entity.operUser,jdbcType = VARCHAR},
+				#{entity.operTime,jdbcType = VARCHAR},
+				#{entity.realateFlag,jdbcType = NUMERIC},
+				#{entity.realateLineid,jdbcType = NUMERIC},
+				#{entity.createUsername,jdbcType = VARCHAR},
+				#{entity.createTime,jdbcType = TIMESTAMP},
+				#{entity.active,jdbcType = NUMERIC},
+				#{entity.activeUser,jdbcType = VARCHAR},
+				#{entity.activeTime,jdbcType = TIMESTAMP},
+				#{entity.activeMemo,jdbcType = VARCHAR}
+		from dual
+</foreach>
+</insert>
+<select id="selectByCrmId" parameterType="com.unlcn.ils.tps.E_crm_complaint_type" resultMap="E_crm_complaint_typeResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_crm_complaint_type 
+		 where tps_crm_complaint_type.type_id = #{typeId}
+		 and tps_crm_complaint_type.type_category = #{typeCategory}
+</select>
+</mapper>

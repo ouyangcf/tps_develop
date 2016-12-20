@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompoundRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="s_changeCheckRule" log="false">
+  <name>更新考核类型属性</name>
+  <inputs/>
+  <outputs/>
+  <logicUnit>
+    <node xsi:type="RuleRef" id="modify" name="更新" ruleId="rule:c2.dao.update">
+      <inputs>
+        <input autoFrom="data" code="entity"/>
+      </inputs>
+    </node>
+  </logicUnit>
+</CompoundRule>

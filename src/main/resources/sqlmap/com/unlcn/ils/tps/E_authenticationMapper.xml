@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><mapper namespace="com.unlcn.ils.tps.E_authenticationMapper">	
+
+<!-- ElementID:column_sql,Generated=true -->
+<sql id="column_sql">
+		  tps_authentication.lineid ,
+		  tps_authentication.shippper_id ,
+		  tps_authentication.authentication_user ,
+		  tps_authentication.authentication_time ,
+		  tps_authentication.authentication_memo ,
+		  tps_authentication.join_id ,
+		  tps_authentication.join_flag ,
+		  tps_authentication.authentication_flag ,
+		  tps_authentication.authentication_tool ,
+		  tps_authentication.begin_date ,
+		  tps_authentication.end_date ,
+		  tps_authentication.create_time ,
+		  tps_authentication.create_user ,
+		  tps_authentication.active ,
+		  tps_authentication.active_user ,
+		  tps_authentication.active_time ,
+		  tps_authentication.active_memo ,
+		  tps_authentication_type_T1.lineid T1_lineid ,
+		  tps_authentication_type_T1.linename T1_linename ,
+		  tps_authentication_type_T1.memo T1_memo 
+</sql>
+
+<!-- ElementID:whereClause_sql,Generated=true -->
+<sql id="whereClause_sql">
+	    <if test="lineid != null">and tps_authentication.lineid = #{lineid}</if>
+	    <if test="shippperId != null">and tps_authentication.shippper_id = #{shippperId}</if>
+	    <if test="authenticationUser != null">and tps_authentication.authentication_user = #{authenticationUser}</if>
+	    <if test="authenticationTime != null">and tps_authentication.authentication_time = #{authenticationTime}</if>
+	    <if test="authenticationMemo != null">and tps_authentication.authentication_memo = #{authenticationMemo}</if>
+	    <if test="joinId != null">and tps_authentication.join_id = #{joinId}</if>
+	    <if test="joinFlag != null">and tps_authentication.join_flag = #{joinFlag}</if>
+	    <if test="authenticationFlag != null">and tps_authentication.authentication_flag = #{authenticationFlag}</if>
+	    <if test="authenticationTool != null">and tps_authentication.authentication_tool = #{authenticationTool}</if>
+	    <if test="beginDate != null">and tps_authentication.begin_date = #{beginDate}</if>
+	    <if test="endDate != null">and tps_authentication.end_date = #{endDate}</if>
+	    <if test="createTime != null">and tps_authentication.create_time = #{createTime}</if>
+	    <if test="createUser != null">and tps_authentication.create_user = #{createUser}</if>
+	    <if test="active != null">and tps_authentication.active = #{active}</if>
+	    <if test="activeUser != null">and tps_authentication.active_user = #{activeUser}</if>
+	    <if test="activeTime != null">and tps_authentication.active_time = #{activeTime}</if>
+	    <if test="activeMemo != null">and tps_authentication.active_memo = #{activeMemo}</if>
+		<if test="authenticationReasonid != null and authenticationReasonid.lineid !=null">and tps_authentication.authentication_reasonid = #{authenticationReasonid.lineid}</if>
+</sql>
+
+
+
+
+
+
+
+
+<!-- ElementID:E_authenticationResult,Generated=true -->
+<resultMap id="E_authenticationResult" type="com.unlcn.ils.tps.E_authentication">
+	<id property="lineid" column="lineid"/>
+	<result property="shippperId" column="shippper_id"/>
+	<result property="authenticationUser" column="authentication_user"/>
+	<result property="authenticationTime" column="authentication_time"/>
+	<result property="authenticationMemo" column="authentication_memo"/>
+	<result property="joinId" column="join_id"/>
+	<result property="joinFlag" column="join_flag"/>
+	<result property="authenticationFlag" column="authentication_flag"/>
+	<result property="authenticationTool" column="authentication_tool"/>
+	<result property="beginDate" column="begin_date"/>
+	<result property="endDate" column="end_date"/>
+	<result property="createTime" column="create_time"/>
+	<result property="createUser" column="create_user"/>
+	<result property="active" column="active"/>
+	<result property="activeUser" column="active_user"/>
+	<result property="activeTime" column="active_time"/>
+	<result property="activeMemo" column="active_memo"/>
+	<association property="authenticationReasonid" column="T1_lineid" javaType="com.unlcn.ils.tps.E_authentication_type" resultMap="E_authentication_typeResult" columnPrefix="T1_"/>	
+</resultMap>
+
+
+<!-- ElementName:cache,Generated=true -->
+<cache type="C2_Default_Dao_Cache"/>
+
+<!-- ElementID:count,Generated=true -->
+<select id="count" parameterType="com.unlcn.ils.tps.E_authentication" resultType="int">
+	select count(*) from tps_authentication 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+<!-- ElementID:update,Generated=true -->
+<update id="update" parameterType="com.unlcn.ils.tps.E_authentication">
+	update tps_authentication
+<set>
+	<if test="shippperId != null">shippper_id=#{shippperId,jdbcType=VARCHAR},</if>
+	<if test="authenticationUser != null">authentication_user=#{authenticationUser,jdbcType=VARCHAR},</if>
+	<if test="authenticationTime != null">authentication_time=#{authenticationTime,jdbcType=TIMESTAMP},</if>
+	<if test="authenticationMemo != null">authentication_memo=#{authenticationMemo,jdbcType=VARCHAR},</if>
+	<if test="joinId != null">join_id=#{joinId,jdbcType=VARCHAR},</if>
+	<if test="joinFlag != null">join_flag=#{joinFlag,jdbcType=NUMERIC},</if>
+	<if test="authenticationFlag != null">authentication_flag=#{authenticationFlag,jdbcType=NUMERIC},</if>
+	<if test="authenticationTool != null">authentication_tool=#{authenticationTool,jdbcType=NUMERIC},</if>
+	<if test="beginDate != null">begin_date=#{beginDate,jdbcType=TIMESTAMP},</if>
+	<if test="endDate != null">end_date=#{endDate,jdbcType=TIMESTAMP},</if>
+	<if test="createTime != null">create_time=#{createTime,jdbcType=TIMESTAMP},</if>
+	<if test="createUser != null">create_user=#{createUser,jdbcType=VARCHAR},</if>
+	<if test="active != null">active=#{active,jdbcType=NUMERIC},</if>
+	<if test="activeUser != null">active_user=#{activeUser,jdbcType=VARCHAR},</if>
+	<if test="activeTime != null">active_time=#{activeTime,jdbcType=TIMESTAMP},</if>
+	<if test="activeMemo != null">active_memo=#{activeMemo,jdbcType=VARCHAR},</if>
+	<if test="authenticationReasonid != null and authenticationReasonid.lineid !=null">authentication_reasonid=#{authenticationReasonid.lineid,jdbcType=NUMERIC}</if>
+</set>
+<where>
+	<choose>
+        <when test="lineid != null">and lineid = #{lineid}</when>
+        <otherwise>and lineid = </otherwise>
+    </choose>
+</where>
+</update>
+
+<!-- ElementID:updateNull,Generated=true -->
+<update id="updateNull" parameterType="map">
+	update tps_authentication
+	<set>
+		<trim suffixOverrides=",">
+		    <if test="shippperId==null">shippper_id = null,</if>
+		    <if test="authenticationUser==null">authentication_user = null,</if>
+		    <if test="authenticationTime==null">authentication_time = null,</if>
+		    <if test="authenticationMemo==null">authentication_memo = null,</if>
+		    <if test="joinId==null">join_id = null,</if>
+		    <if test="joinFlag==null">join_flag = null,</if>
+		    <if test="authenticationFlag==null">authentication_flag = null,</if>
+		    <if test="authenticationTool==null">authentication_tool = null,</if>
+		    <if test="beginDate==null">begin_date = null,</if>
+		    <if test="endDate==null">end_date = null,</if>
+		    <if test="createTime==null">create_time = null,</if>
+		    <if test="createUser==null">create_user = null,</if>
+		    <if test="active==null">active = null,</if>
+		    <if test="activeUser==null">active_user = null,</if>
+		    <if test="activeTime==null">active_time = null,</if>
+		    <if test="activeMemo==null">active_memo = null,</if>
+		    <if test="authenticationReasonid==null">authentication_reasonid = null,</if>
+		</trim>
+	</set>
+	<where>
+		<choose>
+			<when test="lineid != null">and lineid = #{lineid}</when>
+			<otherwise>and lineid = </otherwise>
+		</choose>
+	</where>
+</update>
+
+<!-- ElementID:delete,Generated=true -->
+<delete id="delete" parameterType="com.unlcn.ils.tps.E_authentication">
+    delete from tps_authentication where 1=1 and lineid = #{lineid}
+</delete>
+
+<!-- ElementID:select,Generated=true -->
+<select id="select" parameterType="com.unlcn.ils.tps.E_authentication" resultMap="E_authenticationResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_authentication 
+		<include refid="one2one_sql"/>
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:deleteBatch,Generated=true -->
+<delete id="deleteBatch" parameterType="List">
+	delete from tps_authentication where lineid in
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<foreach collection="list" item="entity" separator=",">
+	#{entity.lineid}
+</foreach>
+</trim>
+</delete>
+
+<!-- ElementID:selectAll,Generated=true -->
+<select id="selectAll" resultMap="E_authenticationResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_authentication 
+		<include refid="one2one_sql"/>
+</select>
+
+<!-- ElementID:selectByID,Generated=true -->
+<select id="selectByID" parameterType="java.lang.String" resultMap="E_authenticationResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_authentication 
+		<include refid="one2one_sql"/>
+		 where tps_authentication.lineid = #{lineid,jdbcType=VARCHAR}
+</select>
+<select id="selectByShipperID" parameterType="java.lang.String" resultMap="E_authenticationResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_authentication 
+		<include refid="one2one_sql"/>
+		 where tps_authentication.shippper_id = #{shippperId}
+</select>
+<!-- ElementID:selectByPage,Generated=true -->
+<select id="selectByPage" parameterType="com.unlcn.ils.tps.E_authentication" resultMap="E_authenticationResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_authentication 
+		<include refid="one2one_sql"/>
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:selectMany,Generated=true -->
+<select id="selectMany" parameterType="list" resultMap="E_authenticationResult">
+select 
+	<include refid="column_sql"/> 
+	from tps_authentication 
+	<include refid="one2one_sql"/>
+	where tps_authentication.lineid in (
+		select distinct lineid from tps_authentication inner join
+<foreach collection="list" item="entity" separator="inner join">
+		(select 
+			distinct lineid
+			from tps_authentication 
+			<where>
+	        <if test="entity.lineid != null">and tps_authentication.lineid = #{entity.lineid}</if>
+	        <if test="entity.shippperId != null">and tps_authentication.shippper_id = #{entity.shippperId}</if>
+	        <if test="entity.authenticationUser != null">and tps_authentication.authentication_user = #{entity.authenticationUser}</if>
+	        <if test="entity.authenticationTime != null">and tps_authentication.authentication_time = #{entity.authenticationTime}</if>
+	        <if test="entity.authenticationMemo != null">and tps_authentication.authentication_memo = #{entity.authenticationMemo}</if>
+	        <if test="entity.joinId != null">and tps_authentication.join_id = #{entity.joinId}</if>
+	        <if test="entity.joinFlag != null">and tps_authentication.join_flag = #{entity.joinFlag}</if>
+	        <if test="entity.authenticationFlag != null">and tps_authentication.authentication_flag = #{entity.authenticationFlag}</if>
+	        <if test="entity.authenticationTool != null">and tps_authentication.authentication_tool = #{entity.authenticationTool}</if>
+	        <if test="entity.beginDate != null">and tps_authentication.begin_date = #{entity.beginDate}</if>
+	        <if test="entity.endDate != null">and tps_authentication.end_date = #{entity.endDate}</if>
+	        <if test="entity.createTime != null">and tps_authentication.create_time = #{entity.createTime}</if>
+	        <if test="entity.createUser != null">and tps_authentication.create_user = #{entity.createUser}</if>
+	        <if test="entity.active != null">and tps_authentication.active = #{entity.active}</if>
+	        <if test="entity.activeUser != null">and tps_authentication.active_user = #{entity.activeUser}</if>
+	        <if test="entity.activeTime != null">and tps_authentication.active_time = #{entity.activeTime}</if>
+	        <if test="entity.activeMemo != null">and tps_authentication.active_memo = #{entity.activeMemo}</if>
+			</where>
+		) ${entity.tableAlias} using (lineid)
+</foreach>
+)
+</select>
+
+<!-- ElementID:insert,Generated=true -->
+<insert id="insert" parameterType="com.unlcn.ils.tps.E_authentication">
+	insert into tps_authentication(
+	         <if test="lineid != null">lineid</if>
+	         <if test="shippperId != null">,shippper_id</if>
+	         <if test="authenticationUser != null">,authentication_user</if>
+	         <if test="authenticationTime != null">,authentication_time</if>
+	         <if test="authenticationMemo != null">,authentication_memo</if>
+	         <if test="joinId != null">,join_id</if>
+	         <if test="joinFlag != null">,join_flag</if>
+	         <if test="authenticationFlag != null">,authentication_flag</if>
+	         <if test="authenticationTool != null">,authentication_tool</if>
+	         <if test="beginDate != null">,begin_date</if>
+	         <if test="endDate != null">,end_date</if>
+	         <if test="createTime != null">,create_time</if>
+	         <if test="createUser != null">,create_user</if>
+	         <if test="active != null">,active</if>
+	         <if test="activeUser != null">,active_user</if>
+	         <if test="activeTime != null">,active_time</if>
+	         <if test="activeMemo != null">,active_memo</if>
+	 	 	 <if test="authenticationReasonid != null and authenticationReasonid.lineid !=null">,authentication_reasonid</if>
+	 	 )
+	 values (
+	         <if test="lineid != null">#{lineid,jdbcType=VARCHAR}</if>
+	         <if test="shippperId != null">,#{shippperId,jdbcType=VARCHAR}</if>
+	         <if test="authenticationUser != null">,#{authenticationUser,jdbcType=VARCHAR}</if>
+	         <if test="authenticationTime != null">,#{authenticationTime,jdbcType=TIMESTAMP}</if>
+	         <if test="authenticationMemo != null">,#{authenticationMemo,jdbcType=VARCHAR}</if>
+	         <if test="joinId != null">,#{joinId,jdbcType=VARCHAR}</if>
+	         <if test="joinFlag != null">,#{joinFlag,jdbcType=NUMERIC}</if>
+	         <if test="authenticationFlag != null">,#{authenticationFlag,jdbcType=NUMERIC}</if>
+	         <if test="authenticationTool != null">,#{authenticationTool,jdbcType=NUMERIC}</if>
+	         <if test="beginDate != null">,#{beginDate,jdbcType=TIMESTAMP}</if>
+	         <if test="endDate != null">,#{endDate,jdbcType=TIMESTAMP}</if>
+	         <if test="createTime != null">,#{createTime,jdbcType=TIMESTAMP}</if>
+	         <if test="createUser != null">,#{createUser,jdbcType=VARCHAR}</if>
+	         <if test="active != null">,#{active,jdbcType=NUMERIC}</if>
+	         <if test="activeUser != null">,#{activeUser,jdbcType=VARCHAR}</if>
+	         <if test="activeTime != null">,#{activeTime,jdbcType=TIMESTAMP}</if>
+	         <if test="activeMemo != null">,#{activeMemo,jdbcType=VARCHAR}</if>
+	 	 	 <if test="authenticationReasonid != null and authenticationReasonid.lineid !=null">,#{authenticationReasonid.lineid,jdbcType=NUMERIC}</if>
+	 	 )
+</insert>
+
+<!-- ElementID:insertBatch,Generated=true -->
+<insert id="insertBatch" parameterType="list">
+	insert into tps_authentication (lineid,shippper_id,authentication_user,authentication_time,authentication_memo,join_id,join_flag,authentication_flag,authentication_tool,begin_date,end_date,create_time,create_user,active,active_user,active_time,active_memo,authentication_reasonid) 
+<foreach collection="list" item="entity" index="index" separator="union all">
+		select 
+		#{entity.lineid,jdbcType = VARCHAR},
+				#{entity.shippperId,jdbcType = VARCHAR},
+				#{entity.authenticationUser,jdbcType = VARCHAR},
+				#{entity.authenticationTime,jdbcType = TIMESTAMP},
+				#{entity.authenticationMemo,jdbcType = VARCHAR},
+				#{entity.joinId,jdbcType = VARCHAR},
+				#{entity.joinFlag,jdbcType = NUMERIC},
+				#{entity.authenticationFlag,jdbcType = NUMERIC},
+				#{entity.authenticationTool,jdbcType = NUMERIC},
+				#{entity.beginDate,jdbcType = TIMESTAMP},
+				#{entity.endDate,jdbcType = TIMESTAMP},
+				#{entity.createTime,jdbcType = TIMESTAMP},
+				#{entity.createUser,jdbcType = VARCHAR},
+				#{entity.active,jdbcType = NUMERIC},
+				#{entity.activeUser,jdbcType = VARCHAR},
+				#{entity.activeTime,jdbcType = TIMESTAMP},
+				#{entity.activeMemo,jdbcType = VARCHAR},
+						 #{entity.authenticationReasonid.lineid,jdbcType=NUMERIC}
+		from dual
+</foreach>
+</insert>
+<!--Generated=true-->
+<sql id="one2one_sql">
+	     left outer join tps_authentication_type tps_authentication_type_T1 on tps_authentication.authentication_reasonid=tps_authentication_type_T1.lineid
+</sql>
+<!--Generated=true-->
+<resultMap id="E_authentication_typeResult" type="com.unlcn.ils.tps.E_authentication_type">
+	<id property="lineid" column="lineid"/>
+	<result property="linename" column="linename"/>
+	<result property="memo" column="memo"/>
+</resultMap>
+</mapper>

@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form:Form xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dync="http://www.chinacreator.com/platform/mvc/ui/dync" xmlns:form="http://www.chinacreator.com/platform/mvc/form" name="重新认证窗口" sn="reaudit_dlg" type="form">
+  <form:control type="page/modal">
+    <form:attributes source="page/modal"/>
+  </form:control>
+  <form:child xsi:type="form:Group" id="widgetbox" name="重新认证">
+    <form:control type="container/widgetbox">
+      <form:attributes source="container/widgetbox"/>
+    </form:control>
+    <form:child xsi:type="form:Group" id="widgexbox_toolbar" name="widgexbox_toolbar">
+      <form:control type="container/toolbar_widget">
+        <form:attributes source="container/toolbar_widget"/>
+      </form:control>
+    </form:child>
+    <form:child xsi:type="form:Group" id="div" name="简单容器(DIV)">
+      <form:control type="container/div">
+        <form:attributes source="container/div">
+          <dync:attribute default="" group="高级自定义" id="cssClass" name="自定义class" value="condition_div">
+            <dync:render colSpan="2" height="0" multi="false" name="text"/>
+            <dync:children/>
+          </dync:attribute>
+        </form:attributes>
+      </form:control>
+      <form:child xsi:type="form:Group" id="newGroupId" name="新分组">
+        <form:control type="container/div">
+          <form:attributes source="container/div">
+            <dync:attribute default="false" group="HTML配置" id="pure" name="简单div" value="false">
+              <dync:render/>
+              <dync:children/>
+            </dync:attribute>
+            <dync:attribute default="12" group="HTML配置" id="span" name="占位数" value="12">
+              <dync:render/>
+              <dync:children/>
+            </dync:attribute>
+            <dync:attribute default="0" group="HTML配置" id="offset" name="偏移" value="0">
+              <dync:render/>
+              <dync:children/>
+            </dync:attribute>
+            <dync:attribute default="" group="HTML配置" id="collapse" name="隐藏" value="">
+              <dync:render/>
+              <dync:children/>
+            </dync:attribute>
+            <dync:attribute default="false" group="HTML配置" id="defaultCollapse" name="隐藏默认值" value="false">
+              <dync:render/>
+              <dync:children/>
+            </dync:attribute>
+            <dync:attribute default="false" group="HTML配置" id="autoHeight" name="自动高度" value="false">
+              <dync:render/>
+              <dync:children/>
+            </dync:attribute>
+            <dync:attribute default="false" group="HTML配置" id="nopadding" name="无内边距" value="false">
+              <dync:render/>
+              <dync:children/>
+            </dync:attribute>
+            <dync:attribute default="" group="高级自定义" id="html" name="自定义HTML" value="">
+              <dync:render/>
+              <dync:children/>
+            </dync:attribute>
+            <dync:attribute default="" group="高级自定义" id="cssClass" name="自定义class" value="condition_box">
+              <dync:render/>
+              <dync:children/>
+            </dync:attribute>
+            <dync:attribute default="" group="高级自定义" id="style" name="自定义style" value="">
+              <dync:render/>
+              <dync:children/>
+            </dync:attribute>
+          </form:attributes>
+        </form:control>
+        <form:child xsi:type="form:Field" binding="$model.e_audit.beginDate" id="beginDate" name="开始日期">
+          <form:control type="widget/date_picker">
+            <form:attributes source="widget/date_picker">
+              <dync:attribute default="false" group="时间设置" id="ngRequired" name="必填" value="true">
+                <dync:render colSpan="1" height="0" multi="false" name="checkboxAndExpr"/>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="6" group="基本设置" id="span" name="控件宽度" value="5">
+                <dync:render colSpan="1" height="0" multi="false" name="text"/>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="" group="事件设置" id="onChange" name="状态改变" value="beginDate_onChange($event)">
+                <dync:render colSpan="2" height="0" multi="false" name="event">
+                  <dync:item name="params" value="$event"/>
+                </dync:render>
+                <dync:children/>
+              </dync:attribute>
+            </form:attributes>
+          </form:control>
+        </form:child>
+        <form:child xsi:type="form:Group" id="div2" name="简单容器(DIV)">
+          <form:control type="container/div">
+            <form:attributes source="container/div">
+              <dync:attribute default="12" group="HTML配置" id="span" name="占位数" value="1">
+                <dync:render colSpan="1" height="0" multi="false" name="text"/>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="" group="高级自定义" id="style" name="自定义style" value="margin-top: 4px;padding-left:0px;color:red;">
+                <dync:render colSpan="2" height="0" multi="false" name="text"/>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="" group="高级自定义" id="html" name="自定义HTML" value="div1_html">
+                <dync:render colSpan="2" height="0" multi="false" name="html"/>
+                <dync:children/>
+              </dync:attribute>
+            </form:attributes>
+          </form:control>
+        </form:child>
+        <form:child xsi:type="form:Field" binding="$model.e_audit.endDate" id="endDate" name="结束日期">
+          <form:control type="widget/date_picker">
+            <form:attributes source="widget/date_picker">
+              <dync:attribute default="false" group="时间设置" id="ngRequired" name="必填" value="true">
+                <dync:render colSpan="1" height="0" multi="false" name="checkboxAndExpr"/>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="6" group="基本设置" id="span" name="控件宽度" value="5">
+                <dync:render colSpan="1" height="0" multi="false" name="text"/>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="" group="事件设置" id="onChange" name="状态改变" value="endDate_onChange($event)">
+                <dync:render colSpan="2" height="0" multi="false" name="event">
+                  <dync:item name="params" value="$event"/>
+                </dync:render>
+                <dync:children/>
+              </dync:attribute>
+            </form:attributes>
+          </form:control>
+        </form:child>
+        <form:child xsi:type="form:Group" id="div1" name="简单容器(DIV)">
+          <form:control type="container/div">
+            <form:attributes source="container/div">
+              <dync:attribute default="12" group="HTML配置" id="span" name="占位数" value="1">
+                <dync:render colSpan="1" height="0" multi="false" name="text"/>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="" group="高级自定义" id="style" name="自定义style" value="margin-top: 4px;padding-left:0px;color:red;">
+                <dync:render colSpan="2" height="0" multi="false" name="text"/>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="" group="高级自定义" id="html" name="自定义HTML" value="div1_html">
+                <dync:render colSpan="2" height="0" multi="false" name="html"/>
+                <dync:children/>
+              </dync:attribute>
+            </form:attributes>
+          </form:control>
+        </form:child>
+      </form:child>
+      <form:child xsi:type="form:Group" id="div11" name="简单容器(DIV)">
+        <form:control type="container/div">
+          <form:attributes source="container/div">
+            <dync:attribute default="" group="高级自定义" id="cssClass" name="自定义class" value="search_div">
+              <dync:render colSpan="2" height="0" multi="false" name="text"/>
+              <dync:children/>
+            </dync:attribute>
+          </form:attributes>
+        </form:control>
+        <form:child xsi:type="form:Field" id="button3" name="确定" customize="true">
+          <form:control type="widget/button">
+            <form:attributes source="widget/button">
+              <dync:attribute default="" group="事件设置" id="click" name="点击事件" value="button_click($event)">
+                <dync:render colSpan="1" height="0" multi="false" name="event">
+                  <dync:item name="params" value="$event"/>
+                </dync:render>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="btn-primary" group="HTML设置" id="style" name="样式" value="btn-success">
+                <dync:render colSpan="1" height="0" multi="false" name="select">
+                  <dync:item name="默认" value="btn-default"/>
+                  <dync:item name="主要" value="btn-primary"/>
+                  <dync:item name="成功" value="btn-success"/>
+                  <dync:item name="信息" value="btn-info"/>
+                  <dync:item name="警告" value="btn-warning"/>
+                  <dync:item name="危险" value="btn-danger"/>
+                  <dync:item name="链接" value="btn-link"/>
+                  <dync:item name="通用" value="btn-white no-border"/>
+                </dync:render>
+                <dync:children/>
+              </dync:attribute>
+            </form:attributes>
+          </form:control>
+          <form:validation/>
+        </form:child>
+        <form:child xsi:type="form:Field" id="cancel" name="取消" customize="true">
+          <form:control type="widget/button">
+            <form:attributes source="widget/button">
+              <dync:attribute default="btn-primary" group="HTML设置" id="style" name="样式" value="btn-warning">
+                <dync:render colSpan="1" height="0" multi="false" name="select">
+                  <dync:item name="默认" value="btn-default"/>
+                  <dync:item name="主要" value="btn-primary"/>
+                  <dync:item name="成功" value="btn-success"/>
+                  <dync:item name="信息" value="btn-info"/>
+                  <dync:item name="警告" value="btn-warning"/>
+                  <dync:item name="危险" value="btn-danger"/>
+                  <dync:item name="链接" value="btn-link"/>
+                  <dync:item name="通用" value="btn-white no-border"/>
+                </dync:render>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="" group="事件设置" id="click" name="点击事件" value="cancel_click($event)">
+                <dync:render colSpan="1" height="0" multi="false" name="event">
+                  <dync:item name="params" value="$event"/>
+                </dync:render>
+                <dync:children/>
+              </dync:attribute>
+            </form:attributes>
+          </form:control>
+          <form:validation/>
+        </form:child>
+      </form:child>
+    </form:child>
+  </form:child>
+  <form:datasources>
+    <form:datasource xsi:type="form:Inputs"/>
+    <form:datasource xsi:type="form:EntityDataSource" id="e_audit" name="初审表" entity="entity:com.unlcn.ils.tps.e_audit"/>
+  </form:datasources>
+  <form:scripts>
+
+button_click:function($event){
+	if($model.e_audit.beginDate==undefined){
+		Messenger.post({message:&quot;有效开始日期未填写!&quot;,type:&quot;error&quot;,hideAfter:1,showCloseButton:true});
+		return;
+	}
+	if($model.e_audit.endDate==undefined){
+		Messenger.post({message:&quot;有效结束日期未填写!&quot;,type:&quot;error&quot;,hideAfter:1,showCloseButton:true});
+		return;
+	}
+	var endTime=$view.endDate.getValue();
+	var startTime=$view.beginDate.getValue();
+	var compare_reusult=functions.duibi(startTime,endTime);	
+	if(compare_reusult==false){
+		Messenger.post({message:&quot;开始时间大于结束时间!&quot;,type:&quot;error&quot;,hideAfter:1,showCloseButton:true});
+		return;	
+	}
+	var beigintimes=$($view.beginDate.getDom()).val();
+	var bg=$view.beginDate.getValue();
+	var cur=new Date();
+	var str_cur=functions.time2Str(cur);
+	var cmbg=functions.duibi(str_cur,beigintimes);	
+	if(cmbg==false){
+		Messenger.post({message:&quot;开始时间早于当前时间!&quot;,type:&quot;error&quot;,hideAfter:1,showCloseButton:true});
+		return;	
+	}	
+	var endDate=$($view.endDate.getDom()).val();
+	var cur=new Date();
+	var str_cur=functions.time2Str(cur);
+	var compare_reusult=functions.duibi(str_cur,endDate);	
+	if(compare_reusult==false){
+		Messenger.post({message:&quot;结束时间早于当前时间!&quot;,type:&quot;error&quot;,hideAfter:1,showCloseButton:true});
+		return;	
+	}		
+	$model.e_audit.lineid=$params.info.lineId;
+	Messenger.post({message:&quot;正在提交!&quot;,type:&quot;info&quot;,hideAfter:1,showCloseButton:true});
+	$http.post(&quot;ws/s_auditAgain&quot;,{&quot;data&quot;:$model.e_audit})
+		.success(function(data){
+			Messenger.post({message:&quot;提交完成&quot;,type:&quot;success&quot;,hideAfter:1,showCloseButton:true});
+			Modal.instance.close();		
+	});
+},
+
+endDate_onChange:function($event){
+	if($model.e_audit.endDate==undefined){
+		return;
+	}
+	var endDate=$($view.endDate.getDom()).val();
+	var endTime=$view.endDate.getValue();
+	//console.info('length='+$model.e_audit.endDate);
+	var cur=new Date();
+	var str_cur=functions.time2Str(cur);
+	var compare_reusult=functions.duibi(str_cur,endDate);	
+	if(compare_reusult==false){
+		Messenger.post({message:&quot;结束时间早于当前时间!&quot;,type:&quot;error&quot;,hideAfter:1,showCloseButton:true});
+		return;	
+	}
+	if($model.e_audit.beginDate==undefined){
+		return;
+	}
+	var endTime=$view.endDate.getValue();
+	var startTime=$view.beginDate.getValue();
+	var compare_reusult1=functions.duibi(startTime,endTime);	
+	if(compare_reusult1==false){
+		Messenger.post({message:&quot;开始时间大于结束时间!&quot;,type:&quot;error&quot;,hideAfter:1,showCloseButton:true});
+		return;	
+	}	
+},
+
+cancel_click:function($event){
+	Modal.instance.close();	
+},
+
+duibi:function(a,b){
+    var arr = a.split(&quot;-&quot;);
+    var starttime = new Date(arr[0], arr[1], arr[2]);
+    var starttimes = starttime.getTime();
+    var arrs = b.split(&quot;-&quot;);
+    var lktime = new Date(arrs[0], arrs[1], arrs[2]);
+    var lktimes = lktime.getTime();
+    if (starttimes >= lktimes) {
+        return false;
+    }
+    else
+        return true;
+
+},
+time2Str:function(mytime){
+	Date.prototype.format =function(format)
+    {
+        var o = {
+        &quot;M+&quot; : this.getMonth()+1, //month
+&quot;d+&quot; : this.getDate(),    //day
+&quot;q+&quot; : Math.floor((this.getMonth()+3)/3),  //quarter
+&quot;S&quot; : this.getMilliseconds() //millisecond
+        }
+        if(/(y+)/.test(format)) format=format.replace(RegExp.$1,
+        (this.getFullYear()+&quot;&quot;).substr(4- RegExp.$1.length));
+        for(var k in o)if(new RegExp(&quot;(&quot;+ k +&quot;)&quot;).test(format))
+        format = format.replace(RegExp.$1,
+        RegExp.$1.length==1? o[k] :
+        (&quot;00&quot;+ o[k]).substr((&quot;&quot;+ o[k]).length));
+        return format;
+    }
+	var mystrtime=mytime.format('yyyy-MM-dd');
+	return mystrtime;
+},
+
+beginDate_onChange:function($event){
+	var endDate=$($view.beginDate.getDom()).val();
+	var endTime=$view.beginDate.getValue();
+	var cur=new Date();
+	var str_cur=functions.time2Str(cur);
+	var compare_reusult=functions.duibi(str_cur,endDate);	
+	if(compare_reusult==false){
+		Messenger.post({message:&quot;开始时间早于当前时间!&quot;,type:&quot;error&quot;,hideAfter:1,showCloseButton:true});
+		return;	
+	}
+	if($model.e_audit.endDate==undefined){
+		return;
+	}
+	var endTime=$view.endDate.getValue();
+	var startTime=$view.beginDate.getValue();
+	var compare_reusult1=functions.duibi(startTime,endTime);	
+	if(compare_reusult1==false){
+		Messenger.post({message:&quot;开始时间大于结束时间!&quot;,type:&quot;error&quot;,hideAfter:1,showCloseButton:true});
+		return;	
+	}		
+}</form:scripts>
+  <form:htmls>
+&lt;script type=&quot;text/ng-template&quot; id=&quot;div1_html&quot;>
+*
+&lt;/script>
+</form:htmls>
+</form:Form>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="s_updatelinkman2Crm" log="false" className="com.unlcn.ils.tps.ininterface.LinkmanInterface" method="updateLinkman2Crm_dlg">
+  <instanceCreator>
+    <params/>
+  </instanceCreator>
+  <name>联系人更新编辑接口</name>
+  <inputs>
+    <input collection="false" desc="" id="listLinkmanList" required="true" type="java.util.List"/>
+    <input collection="false" desc="" id="csdmid" required="true" type="String"/>
+  </inputs>
+  <outputs>
+    <output autoValue="Result" desc="" id="result" name="方法返回值" type="boolean"/>
+  </outputs>
+  <params>
+    <param autoValue="Input.listLinkmanList" name="listLinkmanList" signature="QList&lt;QE_linkman;>;" type="java.util.List"/>
+    <param autoValue="Input.csdmid" name="csdmid" signature="QString;" type="String"/>
+  </params>
+  <return signature="Z" type="boolean"/>
+</CustomRule>

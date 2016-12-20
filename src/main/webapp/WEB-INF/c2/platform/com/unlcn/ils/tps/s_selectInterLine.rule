@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="s_selectInterLine" log="false" className="com.unlcn.ils.tps.services.JoinInterLine" method="selectInterLine">
+  <instanceCreator>
+    <params/>
+  </instanceCreator>
+  <name></name>
+  <inputs>
+    <input collection="false" desc="" id="shipperid" required="true" type="String"/>
+  </inputs>
+  <outputs>
+    <output autoValue="Result" desc="@Description:根据shipperid获取意向线路" id="result" name="方法返回值" type="java.util.List"/>
+  </outputs>
+  <params>
+    <param autoValue="Input.shipperid" name="shipperid" signature="QString;" type="String"/>
+  </params>
+  <return signature="QList&lt;QObject;>;" type="java.util.List"/>
+</CustomRule>

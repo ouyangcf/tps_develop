@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><mapper namespace="com.unlcn.ils.tps.E_checkDatasMapper">	
+
+<!-- ElementID:column_sql,Generated=true -->
+<sql id="column_sql">
+		  tps_check_datas.lineid ,
+		  tps_check_datas.shipper_id ,
+		  tps_check_datas.shipper_name ,
+		  tps_check_datas.subvalue ,
+		  tps_check_datas.check_month ,
+		  tps_check_datas.check_year ,
+		  tps_check_datas.check_cycle ,
+		  tps_check_datas.planned_completion_rate ,
+		  tps_check_datas.timely_delivery_rate ,
+		  tps_check_datas.report_rate ,
+		  tps_check_datas.departure_time_rate ,
+		  tps_check_datas.reply_rate ,
+		  tps_check_datas.gps ,
+		  tps_check_datas.operate_subvaule ,
+		  tps_check_datas.operate_submoney ,
+		  tps_check_datas.create_time ,
+		  tps_check_datas.create_user 
+</sql>
+
+<!-- ElementID:whereClause_sql,Generated=true -->
+<sql id="whereClause_sql">
+	    <if test="lineid != null">and tps_check_datas.lineid = #{lineid}</if>
+	    <if test="shipperId != null">and tps_check_datas.shipper_id = #{shipperId}</if>
+	    <if test="shipperName != null">and tps_check_datas.shipper_name = #{shipperName}</if>
+	    <if test="subvalue != null">and tps_check_datas.subvalue = #{subvalue}</if>
+	    <if test="checkMonth != null">and tps_check_datas.check_month = #{checkMonth}</if>
+	    <if test="checkYear != null">and tps_check_datas.check_year = #{checkYear}</if>
+	    <if test="checkCycle != null">and tps_check_datas.check_cycle = #{checkCycle}</if>
+	    <if test="plannedCompletionRate != null">and tps_check_datas.planned_completion_rate = #{plannedCompletionRate}</if>
+	    <if test="timelyDeliveryRate != null">and tps_check_datas.timely_delivery_rate = #{timelyDeliveryRate}</if>
+	    <if test="reportRate != null">and tps_check_datas.report_rate = #{reportRate}</if>
+	    <if test="departureTimeRate != null">and tps_check_datas.departure_time_rate = #{departureTimeRate}</if>
+	    <if test="replyRate != null">and tps_check_datas.reply_rate = #{replyRate}</if>
+	    <if test="gps != null">and tps_check_datas.gps = #{gps}</if>
+	    <if test="operateSubvaule != null">and tps_check_datas.operate_subvaule = #{operateSubvaule}</if>
+	    <if test="operateSubmoney != null">and tps_check_datas.operate_submoney = #{operateSubmoney}</if>
+	    <if test="createTime != null">and tps_check_datas.create_time = #{createTime}</if>
+	    <if test="createUser != null">and tps_check_datas.create_user = #{createUser}</if>
+</sql>
+
+
+<!-- ElementID:E_checkDatasResult,Generated=true -->
+<resultMap id="E_checkDatasResult" type="com.unlcn.ils.tps.E_checkDatas">
+	<id property="lineid" column="lineid"/>
+	<result property="shipperId" column="shipper_id"/>
+	<result property="shipperName" column="shipper_name"/>
+	<result property="subvalue" column="subvalue"/>
+	<result property="checkMonth" column="check_month"/>
+	<result property="checkYear" column="check_year"/>
+	<result property="checkCycle" column="check_cycle"/>
+	<result property="plannedCompletionRate" column="planned_completion_rate"/>
+	<result property="timelyDeliveryRate" column="timely_delivery_rate"/>
+	<result property="reportRate" column="report_rate"/>
+	<result property="departureTimeRate" column="departure_time_rate"/>
+	<result property="replyRate" column="reply_rate"/>
+	<result property="gps" column="gps"/>
+	<result property="operateSubvaule" column="operate_subvaule"/>
+	<result property="operateSubmoney" column="operate_submoney"/>
+	<result property="createTime" column="create_time"/>
+	<result property="createUser" column="create_user"/>
+</resultMap>
+
+
+<!-- ElementName:cache,Generated=true -->
+<cache type="C2_Default_Dao_Cache"/>
+
+<!-- ElementID:insert,Generated=true -->
+<insert id="insert" parameterType="com.unlcn.ils.tps.E_checkDatas">
+	insert into tps_check_datas(
+	         <if test="lineid != null">lineid</if>
+	         <if test="shipperId != null">,shipper_id</if>
+	         <if test="shipperName != null">,shipper_name</if>
+	         <if test="subvalue != null">,subvalue</if>
+	         <if test="checkMonth != null">,check_month</if>
+	         <if test="checkYear != null">,check_year</if>
+	         <if test="checkCycle != null">,check_cycle</if>
+	         <if test="plannedCompletionRate != null">,planned_completion_rate</if>
+	         <if test="timelyDeliveryRate != null">,timely_delivery_rate</if>
+	         <if test="reportRate != null">,report_rate</if>
+	         <if test="departureTimeRate != null">,departure_time_rate</if>
+	         <if test="replyRate != null">,reply_rate</if>
+	         <if test="gps != null">,gps</if>
+	         <if test="operateSubvaule != null">,operate_subvaule</if>
+	         <if test="operateSubmoney != null">,operate_submoney</if>
+	         <if test="createTime != null">,create_time</if>
+	         <if test="createUser != null">,create_user</if>
+	 	 	 )
+	 values (
+	         <if test="lineid != null">#{lineid,jdbcType=VARCHAR}</if>
+	         <if test="shipperId != null">,#{shipperId,jdbcType=VARCHAR}</if>
+	         <if test="shipperName != null">,#{shipperName,jdbcType=VARCHAR}</if>
+	         <if test="subvalue != null">,#{subvalue,jdbcType=NUMERIC}</if>
+	         <if test="checkMonth != null">,#{checkMonth,jdbcType=VARCHAR}</if>
+	         <if test="checkYear != null">,#{checkYear,jdbcType=NUMERIC}</if>
+	         <if test="checkCycle != null">,#{checkCycle,jdbcType=NUMERIC}</if>
+	         <if test="plannedCompletionRate != null">,#{plannedCompletionRate,jdbcType=NUMERIC}</if>
+	         <if test="timelyDeliveryRate != null">,#{timelyDeliveryRate,jdbcType=NUMERIC}</if>
+	         <if test="reportRate != null">,#{reportRate,jdbcType=NUMERIC}</if>
+	         <if test="departureTimeRate != null">,#{departureTimeRate,jdbcType=NUMERIC}</if>
+	         <if test="replyRate != null">,#{replyRate,jdbcType=NUMERIC}</if>
+	         <if test="gps != null">,#{gps,jdbcType=NUMERIC}</if>
+	         <if test="operateSubvaule != null">,#{operateSubvaule,jdbcType=NUMERIC}</if>
+	         <if test="operateSubmoney != null">,#{operateSubmoney,jdbcType=NUMERIC}</if>
+	         <if test="createTime != null">,#{createTime,jdbcType=TIMESTAMP}</if>
+	         <if test="createUser != null">,#{createUser,jdbcType=VARCHAR}</if>
+	 	 	 )
+</insert>
+
+<!-- ElementID:count,Generated=true -->
+<select id="count" parameterType="com.unlcn.ils.tps.E_checkDatas" resultType="int">
+	select count(*) from tps_check_datas 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+<!-- ElementID:update,Generated=true -->
+<update id="update" parameterType="com.unlcn.ils.tps.E_checkDatas">
+	update tps_check_datas
+<set>
+	<if test="shipperId != null">shipper_id=#{shipperId,jdbcType=VARCHAR},</if>
+	<if test="shipperName != null">shipper_name=#{shipperName,jdbcType=VARCHAR},</if>
+	<if test="subvalue != null">subvalue=#{subvalue,jdbcType=NUMERIC},</if>
+	<if test="checkMonth != null">check_month=#{checkMonth,jdbcType=VARCHAR},</if>
+	<if test="checkYear != null">check_year=#{checkYear,jdbcType=NUMERIC},</if>
+	<if test="checkCycle != null">check_cycle=#{checkCycle,jdbcType=NUMERIC},</if>
+	<if test="plannedCompletionRate != null">planned_completion_rate=#{plannedCompletionRate,jdbcType=NUMERIC},</if>
+	<if test="timelyDeliveryRate != null">timely_delivery_rate=#{timelyDeliveryRate,jdbcType=NUMERIC},</if>
+	<if test="reportRate != null">report_rate=#{reportRate,jdbcType=NUMERIC},</if>
+	<if test="departureTimeRate != null">departure_time_rate=#{departureTimeRate,jdbcType=NUMERIC},</if>
+	<if test="replyRate != null">reply_rate=#{replyRate,jdbcType=NUMERIC},</if>
+	<if test="gps != null">gps=#{gps,jdbcType=NUMERIC},</if>
+	<if test="operateSubvaule != null">operate_subvaule=#{operateSubvaule,jdbcType=NUMERIC},</if>
+	<if test="operateSubmoney != null">operate_submoney=#{operateSubmoney,jdbcType=NUMERIC},</if>
+	<if test="createTime != null">create_time=#{createTime,jdbcType=TIMESTAMP},</if>
+	<if test="createUser != null">create_user=#{createUser,jdbcType=VARCHAR}</if>
+</set>
+<where>
+	<choose>
+        <when test="lineid != null">and lineid = #{lineid}</when>
+        <otherwise>and lineid = </otherwise>
+    </choose>
+</where>
+</update>
+
+<!-- ElementID:updateNull,Generated=true -->
+<update id="updateNull" parameterType="map">
+	update tps_check_datas
+	<set>
+		<trim suffixOverrides=",">
+		    <if test="shipperId==null">shipper_id = null,</if>
+		    <if test="shipperName==null">shipper_name = null,</if>
+		    <if test="subvalue==null">subvalue = null,</if>
+		    <if test="checkMonth==null">check_month = null,</if>
+		    <if test="checkYear==null">check_year = null,</if>
+		    <if test="checkCycle==null">check_cycle = null,</if>
+		    <if test="plannedCompletionRate==null">planned_completion_rate = null,</if>
+		    <if test="timelyDeliveryRate==null">timely_delivery_rate = null,</if>
+		    <if test="reportRate==null">report_rate = null,</if>
+		    <if test="departureTimeRate==null">departure_time_rate = null,</if>
+		    <if test="replyRate==null">reply_rate = null,</if>
+		    <if test="gps==null">gps = null,</if>
+		    <if test="operateSubvaule==null">operate_subvaule = null,</if>
+		    <if test="operateSubmoney==null">operate_submoney = null,</if>
+		    <if test="createTime==null">create_time = null,</if>
+		    <if test="createUser==null">create_user = null,</if>
+		</trim>
+	</set>
+	<where>
+		<choose>
+			<when test="lineid != null">and lineid = #{lineid}</when>
+			<otherwise>and lineid = </otherwise>
+		</choose>
+	</where>
+</update>
+
+<!-- ElementID:delete,Generated=true -->
+<delete id="delete" parameterType="com.unlcn.ils.tps.E_checkDatas">
+    delete from tps_check_datas where 1=1 and lineid = #{lineid}
+</delete>
+
+<!-- ElementID:select,Generated=true -->
+<select id="select" parameterType="com.unlcn.ils.tps.E_checkDatas" resultMap="E_checkDatasResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_check_datas 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:insertBatch,Generated=true -->
+<insert id="insertBatch" parameterType="list">
+	insert into tps_check_datas (lineid,shipper_id,shipper_name,subvalue,check_month,check_year,check_cycle,planned_completion_rate,timely_delivery_rate,report_rate,departure_time_rate,reply_rate,gps,operate_subvaule,operate_submoney,create_time,create_user) 
+<foreach collection="list" item="entity" index="index" separator="union all">
+		select 
+		#{entity.lineid,jdbcType = VARCHAR},
+				#{entity.shipperId,jdbcType = VARCHAR},
+				#{entity.shipperName,jdbcType = VARCHAR},
+				#{entity.subvalue,jdbcType = NUMERIC},
+				#{entity.checkMonth,jdbcType = VARCHAR},
+				#{entity.checkYear,jdbcType = NUMERIC},
+				#{entity.checkCycle,jdbcType = NUMERIC},
+				#{entity.plannedCompletionRate,jdbcType = NUMERIC},
+				#{entity.timelyDeliveryRate,jdbcType = NUMERIC},
+				#{entity.reportRate,jdbcType = NUMERIC},
+				#{entity.departureTimeRate,jdbcType = NUMERIC},
+				#{entity.replyRate,jdbcType = NUMERIC},
+				#{entity.gps,jdbcType = NUMERIC},
+				#{entity.operateSubvaule,jdbcType = NUMERIC},
+				#{entity.operateSubmoney,jdbcType = NUMERIC},
+				#{entity.createTime,jdbcType = TIMESTAMP},
+				#{entity.createUser,jdbcType = VARCHAR}
+		from dual
+</foreach>
+</insert>
+
+<!-- ElementID:deleteBatch,Generated=true -->
+<delete id="deleteBatch" parameterType="List">
+	delete from tps_check_datas where lineid in
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<foreach collection="list" item="entity" separator=",">
+	#{entity.lineid}
+</foreach>
+</trim>
+</delete>
+
+<!-- ElementID:selectAll,Generated=true -->
+<select id="selectAll" resultMap="E_checkDatasResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_check_datas 
+</select>
+
+<!-- ElementID:selectByID,Generated=true -->
+<select id="selectByID" parameterType="java.lang.String" resultMap="E_checkDatasResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_check_datas 
+		 where tps_check_datas.lineid = #{lineid,jdbcType=VARCHAR}
+</select>
+
+<!-- ElementID:selectByPage,Generated=true -->
+<select id="selectByPage" parameterType="com.unlcn.ils.tps.E_checkDatas" resultMap="E_checkDatasResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_check_datas 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:selectMany,Generated=true -->
+<select id="selectMany" parameterType="list" resultMap="E_checkDatasResult">
+select 
+	<include refid="column_sql"/> 
+	from tps_check_datas 
+	where tps_check_datas.lineid in (
+		select distinct lineid from tps_check_datas inner join
+<foreach collection="list" item="entity" separator="inner join">
+		(select 
+			distinct lineid
+			from tps_check_datas 
+			<where>
+	        <if test="entity.lineid != null">and tps_check_datas.lineid = #{entity.lineid}</if>
+	        <if test="entity.shipperId != null">and tps_check_datas.shipper_id = #{entity.shipperId}</if>
+	        <if test="entity.shipperName != null">and tps_check_datas.shipper_name = #{entity.shipperName}</if>
+	        <if test="entity.subvalue != null">and tps_check_datas.subvalue = #{entity.subvalue}</if>
+	        <if test="entity.checkMonth != null">and tps_check_datas.check_month = #{entity.checkMonth}</if>
+	        <if test="entity.checkYear != null">and tps_check_datas.check_year = #{entity.checkYear}</if>
+	        <if test="entity.checkCycle != null">and tps_check_datas.check_cycle = #{entity.checkCycle}</if>
+	        <if test="entity.plannedCompletionRate != null">and tps_check_datas.planned_completion_rate = #{entity.plannedCompletionRate}</if>
+	        <if test="entity.timelyDeliveryRate != null">and tps_check_datas.timely_delivery_rate = #{entity.timelyDeliveryRate}</if>
+	        <if test="entity.reportRate != null">and tps_check_datas.report_rate = #{entity.reportRate}</if>
+	        <if test="entity.departureTimeRate != null">and tps_check_datas.departure_time_rate = #{entity.departureTimeRate}</if>
+	        <if test="entity.replyRate != null">and tps_check_datas.reply_rate = #{entity.replyRate}</if>
+	        <if test="entity.gps != null">and tps_check_datas.gps = #{entity.gps}</if>
+	        <if test="entity.operateSubvaule != null">and tps_check_datas.operate_subvaule = #{entity.operateSubvaule}</if>
+	        <if test="entity.operateSubmoney != null">and tps_check_datas.operate_submoney = #{entity.operateSubmoney}</if>
+	        <if test="entity.createTime != null">and tps_check_datas.create_time = #{entity.createTime}</if>
+	        <if test="entity.createUser != null">and tps_check_datas.create_user = #{entity.createUser}</if>
+			</where>
+		) ${entity.tableAlias} using (lineid)
+</foreach>
+)
+</select>
+</mapper>

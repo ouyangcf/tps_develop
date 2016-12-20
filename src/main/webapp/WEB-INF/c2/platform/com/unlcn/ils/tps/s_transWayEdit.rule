@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="s_transWayEdit" log="false" className="com.unlcn.ils.tps.services.TransWayMaintain" method="transwayEdit">
+  <name>运输方式字典编辑</name>
+  <inputs>
+    <input collection="false" desc="" id="idList" required="true" type="Integer"/>
+    <input collection="false" desc="" id="data" required="true" type="com.unlcn.ils.tps.E_transway"/>
+  </inputs>
+  <outputs>
+    <output autoValue="Result" desc="@Description:运输方式编辑" id="result" name="方法返回值" type="boolean"/>
+  </outputs>
+  <params>
+    <param autoValue="Input.idList" name="idList" signature="QInteger;" type="Integer"/>
+    <param autoValue="Input.data" name="data" signature="QE_transway;" type="com.unlcn.ils.tps.E_transway"/>
+  </params>
+  <return signature="Z" type="boolean"/>
+</CustomRule>

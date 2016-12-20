@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="s_updateComplaintTypes" log="false" className="com.unlcn.ils.tps.services.ComplaintTypesService" method="updateComplaintTypes">
+  <instanceCreator>
+    <params/>
+  </instanceCreator>
+  <name>更新客服标准</name>
+  <inputs/>
+  <outputs/>
+  <params/>
+  <return signature="V" type="void"/>
+</CustomRule>

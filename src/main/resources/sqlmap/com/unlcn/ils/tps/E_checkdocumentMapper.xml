@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><mapper namespace="com.unlcn.ils.tps.E_checkdocumentMapper">	
+
+<!-- ElementID:column_sql,Generated=true -->
+<sql id="column_sql">
+		  tps_check_document.lineid ,
+		  tps_check_document.shipper_lineid ,
+		  tps_check_document.shipper_name ,
+		  tps_check_document.item_lineid ,
+		  tps_check_document.item_name ,
+		  tps_check_document.item_other ,
+		  tps_check_document.operate_name ,
+		  tps_check_document.operate_other ,
+		  tps_check_document.start_date ,
+		  tps_check_document.check_number ,
+		  tps_check_document.check_money ,
+		  tps_check_document.check_money_standard ,
+		  tps_check_document.check_score ,
+		  tps_check_document.check_score_standard ,
+		  tps_check_document.operate_lineid ,
+		  tps_check_document.flag ,
+		  tps_check_document.check_memo ,
+		  tps_check_document.create_username ,
+		  tps_check_document.create_time ,
+		  tps_check_document.active ,
+		  tps_check_document.active_user ,
+		  tps_check_document.active_time ,
+		  tps_check_document.active_memo 
+</sql>
+
+<!-- ElementID:whereClause_sql,Generated=true -->
+<sql id="whereClause_sql">
+	    <if test="lineid != null">and tps_check_document.lineid = #{lineid}</if>
+	    <if test="shipperLineid != null">and tps_check_document.shipper_lineid = #{shipperLineid}</if>
+	    <if test="shipperName != null">and tps_check_document.shipper_name = #{shipperName}</if>
+	    <if test="itemLineid != null">and tps_check_document.item_lineid = #{itemLineid}</if>
+	    <if test="itemName != null">and tps_check_document.item_name = #{itemName}</if>
+	    <if test="itemOther != null">and tps_check_document.item_other = #{itemOther}</if>
+	    <if test="operateName != null">and tps_check_document.operate_name = #{operateName}</if>
+	    <if test="operateOther != null">and tps_check_document.operate_other = #{operateOther}</if>
+	    <if test="startDate != null">and tps_check_document.start_date = #{startDate}</if>
+	    <if test="checkNumber != null">and tps_check_document.check_number = #{checkNumber}</if>
+	    <if test="checkMoney != null">and tps_check_document.check_money = #{checkMoney}</if>
+	    <if test="checkMoneyStandard != null">and tps_check_document.check_money_standard = #{checkMoneyStandard}</if>
+	    <if test="checkScore != null">and tps_check_document.check_score = #{checkScore}</if>
+	    <if test="checkScoreStandard != null">and tps_check_document.check_score_standard = #{checkScoreStandard}</if>
+	    <if test="operateLineid != null">and tps_check_document.operate_lineid = #{operateLineid}</if>
+	    <if test="flag != null">and tps_check_document.flag = #{flag}</if>
+	    <if test="checkMemo != null">and tps_check_document.check_memo = #{checkMemo}</if>
+	    <if test="createUsername != null">and tps_check_document.create_username = #{createUsername}</if>
+	    <if test="createTime != null">and tps_check_document.create_time = #{createTime}</if>
+	    <if test="active != null">and tps_check_document.active = #{active}</if>
+	    <if test="activeUser != null">and tps_check_document.active_user = #{activeUser}</if>
+	    <if test="activeTime != null">and tps_check_document.active_time = #{activeTime}</if>
+	    <if test="activeMemo != null">and tps_check_document.active_memo = #{activeMemo}</if>
+</sql>
+<!-- ElementID:E_checkdocumentResult,Generated=true -->
+<resultMap id="E_checkdocumentResult" type="com.unlcn.ils.tps.E_checkdocument">
+	<id property="lineid" column="lineid"/>
+	<result property="shipperLineid" column="shipper_lineid"/>
+	<result property="shipperName" column="shipper_name"/>
+	<result property="itemLineid" column="item_lineid"/>
+	<result property="itemName" column="item_name"/>
+	<result property="itemOther" column="item_other"/>
+	<result property="operateName" column="operate_name"/>
+	<result property="operateOther" column="operate_other"/>
+	<result property="startDate" column="start_date"/>
+	<result property="checkNumber" column="check_number"/>
+	<result property="checkMoney" column="check_money"/>
+	<result property="checkMoneyStandard" column="check_money_standard"/>
+	<result property="checkScore" column="check_score"/>
+	<result property="checkScoreStandard" column="check_score_standard"/>
+	<result property="operateLineid" column="operate_lineid"/>
+	<result property="flag" column="flag"/>
+	<result property="checkMemo" column="check_memo"/>
+	<result property="createUsername" column="create_username"/>
+	<result property="createTime" column="create_time"/>
+	<result property="active" column="active"/>
+	<result property="activeUser" column="active_user"/>
+	<result property="activeTime" column="active_time"/>
+	<result property="activeMemo" column="active_memo"/>
+</resultMap>
+
+
+<!-- ElementName:cache,Generated=true -->
+<cache type="C2_Default_Dao_Cache"/>
+
+<!-- ElementID:count,Generated=true -->
+<select id="count" parameterType="com.unlcn.ils.tps.E_checkdocument" resultType="int">
+	select count(*) from tps_check_document 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+<!-- ElementID:update,Generated=true -->
+<update id="update" parameterType="com.unlcn.ils.tps.E_checkdocument">
+	update tps_check_document
+<set>
+	<if test="shipperLineid != null">shipper_lineid=#{shipperLineid,jdbcType=VARCHAR},</if>
+	<if test="shipperName != null">shipper_name=#{shipperName,jdbcType=VARCHAR},</if>
+	<if test="itemLineid != null">item_lineid=#{itemLineid,jdbcType=NUMERIC},</if>
+	<if test="itemName != null">item_name=#{itemName,jdbcType=VARCHAR},</if>
+	<if test="itemOther != null">item_other=#{itemOther,jdbcType=VARCHAR},</if>
+	<if test="operateName != null">operate_name=#{operateName,jdbcType=VARCHAR},</if>
+	<if test="operateOther != null">operate_other=#{operateOther,jdbcType=VARCHAR},</if>
+	<if test="startDate != null">start_date=#{startDate,jdbcType=TIMESTAMP},</if>
+	<if test="checkNumber != null">check_number=#{checkNumber,jdbcType=NUMERIC},</if>
+	<if test="checkMoney != null">check_money=#{checkMoney,jdbcType=NUMERIC},</if>
+	<if test="checkMoneyStandard != null">check_money_standard=#{checkMoneyStandard,jdbcType=NUMERIC},</if>
+	<if test="checkScore != null">check_score=#{checkScore,jdbcType=NUMERIC},</if>
+	<if test="checkScoreStandard != null">check_score_standard=#{checkScoreStandard,jdbcType=NUMERIC},</if>
+	<if test="operateLineid != null">operate_lineid=#{operateLineid,jdbcType=NUMERIC},</if>
+	<if test="flag != null">flag=#{flag,jdbcType=NUMERIC},</if>
+	<if test="checkMemo != null">check_memo=#{checkMemo,jdbcType=VARCHAR},</if>
+	<if test="createUsername != null">create_username=#{createUsername,jdbcType=VARCHAR},</if>
+	<if test="createTime != null">create_time=#{createTime,jdbcType=TIMESTAMP},</if>
+	<if test="active != null">active=#{active,jdbcType=NUMERIC},</if>
+	<if test="activeUser != null">active_user=#{activeUser,jdbcType=VARCHAR},</if>
+	<if test="activeTime != null">active_time=#{activeTime,jdbcType=TIMESTAMP},</if>
+	<if test="activeMemo != null">active_memo=#{activeMemo,jdbcType=VARCHAR}</if>
+</set>
+<where>
+	<choose>
+        <when test="lineid != null">and lineid = #{lineid}</when>
+        <otherwise>and lineid = </otherwise>
+    </choose>
+</where>
+</update>
+
+<!-- ElementID:updateNull,Generated=true -->
+<update id="updateNull" parameterType="map">
+	update tps_check_document
+	<set>
+		<trim suffixOverrides=",">
+		    <if test="shipperLineid==null">shipper_lineid = null,</if>
+		    <if test="shipperName==null">shipper_name = null,</if>
+		    <if test="itemLineid==null">item_lineid = null,</if>
+		    <if test="itemName==null">item_name = null,</if>
+		    <if test="itemOther==null">item_other = null,</if>
+		    <if test="operateName==null">operate_name = null,</if>
+		    <if test="operateOther==null">operate_other = null,</if>
+		    <if test="startDate==null">start_date = null,</if>
+		    <if test="checkNumber==null">check_number = null,</if>
+		    <if test="checkMoney==null">check_money = null,</if>
+		    <if test="checkMoneyStandard==null">check_money_standard = null,</if>
+		    <if test="checkScore==null">check_score = null,</if>
+		    <if test="checkScoreStandard==null">check_score_standard = null,</if>
+		    <if test="operateLineid==null">operate_lineid = null,</if>
+		    <if test="flag==null">flag = null,</if>
+		    <if test="checkMemo==null">check_memo = null,</if>
+		    <if test="createUsername==null">create_username = null,</if>
+		    <if test="createTime==null">create_time = null,</if>
+		    <if test="active==null">active = null,</if>
+		    <if test="activeUser==null">active_user = null,</if>
+		    <if test="activeTime==null">active_time = null,</if>
+		    <if test="activeMemo==null">active_memo = null,</if>
+		</trim>
+	</set>
+	<where>
+		<choose>
+			<when test="lineid != null">and lineid = #{lineid}</when>
+			<otherwise>and lineid = </otherwise>
+		</choose>
+	</where>
+</update>
+
+<!-- ElementID:delete,Generated=true -->
+<delete id="delete" parameterType="com.unlcn.ils.tps.E_checkdocument">
+    delete from tps_check_document where 1=1 and lineid = #{lineid}
+</delete>
+
+<!-- ElementID:select,Generated=true -->
+<select id="select" parameterType="com.unlcn.ils.tps.E_checkdocument" resultMap="E_checkdocumentResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_check_document 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:deleteBatch,Generated=true -->
+<delete id="deleteBatch" parameterType="List">
+	delete from tps_check_document where lineid in
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<foreach collection="list" item="entity" separator=",">
+	#{entity.lineid}
+</foreach>
+</trim>
+</delete>
+
+<!-- ElementID:selectAll,Generated=true -->
+<select id="selectAll" resultMap="E_checkdocumentResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_check_document 
+</select>
+
+<!-- ElementID:selectByID,Generated=true -->
+<select id="selectByID" parameterType="java.lang.String" resultMap="E_checkdocumentResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_check_document 
+		 where tps_check_document.lineid = #{lineid,jdbcType=VARCHAR}
+</select>
+
+
+<!-- ElementID:selectByPage,Generated=true -->
+<select id="selectByPage" parameterType="com.unlcn.ils.tps.E_checkdocument" resultMap="E_checkdocumentResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_check_document 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:selectMany,Generated=true -->
+<select id="selectMany" parameterType="list" resultMap="E_checkdocumentResult">
+select 
+	<include refid="column_sql"/> 
+	from tps_check_document 
+	where tps_check_document.lineid in (
+		select distinct lineid from tps_check_document inner join
+<foreach collection="list" item="entity" separator="inner join">
+		(select 
+			distinct lineid
+			from tps_check_document 
+			<where>
+	        <if test="entity.lineid != null">and tps_check_document.lineid = #{entity.lineid}</if>
+	        <if test="entity.shipperLineid != null">and tps_check_document.shipper_lineid = #{entity.shipperLineid}</if>
+	        <if test="entity.shipperName != null">and tps_check_document.shipper_name = #{entity.shipperName}</if>
+	        <if test="entity.itemLineid != null">and tps_check_document.item_lineid = #{entity.itemLineid}</if>
+	        <if test="entity.itemName != null">and tps_check_document.item_name = #{entity.itemName}</if>
+	        <if test="entity.itemOther != null">and tps_check_document.item_other = #{entity.itemOther}</if>
+	        <if test="entity.operateName != null">and tps_check_document.operate_name = #{entity.operateName}</if>
+	        <if test="entity.operateOther != null">and tps_check_document.operate_other = #{entity.operateOther}</if>
+	        <if test="entity.startDate != null">and tps_check_document.start_date = #{entity.startDate}</if>
+	        <if test="entity.checkNumber != null">and tps_check_document.check_number = #{entity.checkNumber}</if>
+	        <if test="entity.checkMoney != null">and tps_check_document.check_money = #{entity.checkMoney}</if>
+	        <if test="entity.checkMoneyStandard != null">and tps_check_document.check_money_standard = #{entity.checkMoneyStandard}</if>
+	        <if test="entity.checkScore != null">and tps_check_document.check_score = #{entity.checkScore}</if>
+	        <if test="entity.checkScoreStandard != null">and tps_check_document.check_score_standard = #{entity.checkScoreStandard}</if>
+	        <if test="entity.operateLineid != null">and tps_check_document.operate_lineid = #{entity.operateLineid}</if>
+	        <if test="entity.flag != null">and tps_check_document.flag = #{entity.flag}</if>
+	        <if test="entity.checkMemo != null">and tps_check_document.check_memo = #{entity.checkMemo}</if>
+	        <if test="entity.createUsername != null">and tps_check_document.create_username = #{entity.createUsername}</if>
+	        <if test="entity.createTime != null">and tps_check_document.create_time = #{entity.createTime}</if>
+	        <if test="entity.active != null">and tps_check_document.active = #{entity.active}</if>
+	        <if test="entity.activeUser != null">and tps_check_document.active_user = #{entity.activeUser}</if>
+	        <if test="entity.activeTime != null">and tps_check_document.active_time = #{entity.activeTime}</if>
+	        <if test="entity.activeMemo != null">and tps_check_document.active_memo = #{entity.activeMemo}</if>
+			</where>
+		) ${entity.tableAlias} using (lineid)
+</foreach>
+)
+</select>
+
+<!-- ElementID:insert,Generated=true -->
+<insert id="insert" parameterType="com.unlcn.ils.tps.E_checkdocument">
+	insert into tps_check_document(
+	         <if test="lineid != null">lineid</if>
+	         <if test="shipperLineid != null">,shipper_lineid</if>
+	         <if test="shipperName != null">,shipper_name</if>
+	         <if test="itemLineid != null">,item_lineid</if>
+	         <if test="itemName != null">,item_name</if>
+	         <if test="itemOther != null">,item_other</if>
+	         <if test="operateName != null">,operate_name</if>
+	         <if test="operateOther != null">,operate_other</if>
+	         <if test="startDate != null">,start_date</if>
+	         <if test="checkNumber != null">,check_number</if>
+	         <if test="checkMoney != null">,check_money</if>
+	         <if test="checkMoneyStandard != null">,check_money_standard</if>
+	         <if test="checkScore != null">,check_score</if>
+	         <if test="checkScoreStandard != null">,check_score_standard</if>
+	         <if test="operateLineid != null">,operate_lineid</if>
+	         <if test="flag != null">,flag</if>
+	         <if test="checkMemo != null">,check_memo</if>
+	         <if test="createUsername != null">,create_username</if>
+	         <if test="createTime != null">,create_time</if>
+	         <if test="active != null">,active</if>
+	         <if test="activeUser != null">,active_user</if>
+	         <if test="activeTime != null">,active_time</if>
+	         <if test="activeMemo != null">,active_memo</if>
+	 	 	 )
+	 values (
+	         <if test="lineid != null">#{lineid,jdbcType=VARCHAR}</if>
+	         <if test="shipperLineid != null">,#{shipperLineid,jdbcType=VARCHAR}</if>
+	         <if test="shipperName != null">,#{shipperName,jdbcType=VARCHAR}</if>
+	         <if test="itemLineid != null">,#{itemLineid,jdbcType=NUMERIC}</if>
+	         <if test="itemName != null">,#{itemName,jdbcType=VARCHAR}</if>
+	         <if test="itemOther != null">,#{itemOther,jdbcType=VARCHAR}</if>
+	         <if test="operateName != null">,#{operateName,jdbcType=VARCHAR}</if>
+	         <if test="operateOther != null">,#{operateOther,jdbcType=VARCHAR}</if>
+	         <if test="startDate != null">,#{startDate,jdbcType=TIMESTAMP}</if>
+	         <if test="checkNumber != null">,#{checkNumber,jdbcType=NUMERIC}</if>
+	         <if test="checkMoney != null">,#{checkMoney,jdbcType=NUMERIC}</if>
+	         <if test="checkMoneyStandard != null">,#{checkMoneyStandard,jdbcType=NUMERIC}</if>
+	         <if test="checkScore != null">,#{checkScore,jdbcType=NUMERIC}</if>
+	         <if test="checkScoreStandard != null">,#{checkScoreStandard,jdbcType=NUMERIC}</if>
+	         <if test="operateLineid != null">,#{operateLineid,jdbcType=NUMERIC}</if>
+	         <if test="flag != null">,#{flag,jdbcType=NUMERIC}</if>
+	         <if test="checkMemo != null">,#{checkMemo,jdbcType=VARCHAR}</if>
+	         <if test="createUsername != null">,#{createUsername,jdbcType=VARCHAR}</if>
+	         <if test="createTime != null">,#{createTime,jdbcType=TIMESTAMP}</if>
+	         <if test="active != null">,#{active,jdbcType=NUMERIC}</if>
+	         <if test="activeUser != null">,#{activeUser,jdbcType=VARCHAR}</if>
+	         <if test="activeTime != null">,#{activeTime,jdbcType=TIMESTAMP}</if>
+	         <if test="activeMemo != null">,#{activeMemo,jdbcType=VARCHAR}</if>
+	 	 	 )
+</insert>
+
+<!-- ElementID:insertBatch,Generated=true -->
+<insert id="insertBatch" parameterType="list">
+	insert into tps_check_document (lineid,shipper_lineid,shipper_name,item_lineid,item_name,item_other,operate_name,operate_other,start_date,check_number,check_money,check_money_standard,check_score,check_score_standard,operate_lineid,flag,check_memo,create_username,create_time,active,active_user,active_time,active_memo) 
+<foreach collection="list" item="entity" index="index" separator="union all">
+		select 
+		#{entity.lineid,jdbcType = VARCHAR},
+				#{entity.shipperLineid,jdbcType = VARCHAR},
+				#{entity.shipperName,jdbcType = VARCHAR},
+				#{entity.itemLineid,jdbcType = NUMERIC},
+				#{entity.itemName,jdbcType = VARCHAR},
+				#{entity.itemOther,jdbcType = VARCHAR},
+				#{entity.operateName,jdbcType = VARCHAR},
+				#{entity.operateOther,jdbcType = VARCHAR},
+				#{entity.startDate,jdbcType = TIMESTAMP},
+				#{entity.checkNumber,jdbcType = NUMERIC},
+				#{entity.checkMoney,jdbcType = NUMERIC},
+				#{entity.checkMoneyStandard,jdbcType = NUMERIC},
+				#{entity.checkScore,jdbcType = NUMERIC},
+				#{entity.checkScoreStandard,jdbcType = NUMERIC},
+				#{entity.operateLineid,jdbcType = NUMERIC},
+				#{entity.flag,jdbcType = NUMERIC},
+				#{entity.checkMemo,jdbcType = VARCHAR},
+				#{entity.createUsername,jdbcType = VARCHAR},
+				#{entity.createTime,jdbcType = TIMESTAMP},
+				#{entity.active,jdbcType = NUMERIC},
+				#{entity.activeUser,jdbcType = VARCHAR},
+				#{entity.activeTime,jdbcType = TIMESTAMP},
+				#{entity.activeMemo,jdbcType = VARCHAR}
+		from dual
+</foreach>
+</insert>
+<select id="selectByShipperLineid" parameterType="java.lang.String" resultMap="E_checkdocumentResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_check_document 
+		 where tps_check_document.shipper_lineid = #{shipper_lineid}
+</select>
+<select id="getMaxId" resultMap="E_checkdocumentResult">
+	SELECT * FROM tps_check_document ORDER BY Create_Time DESC;
+</select>
+<sql id="custom_whereClause_sql">
+	    <if test="shipperLineid != null">and tps_check_document.shipper_lineid = #{shipperLineid}</if>
+	    <if test="itemLineid != null">and tps_check_document.item_lineid = #{itemLineid}</if>
+	    <if test="operateLineid != null">and tps_check_document.operate_lineid = #{operateLineid}</if>
+	    <if test="createTime != null">and tps_check_document.create_time  &gt;= #{createTime}</if>
+	    <if test="activeTime != null">and tps_check_document.create_time &lt;= #{activeTime}</if>
+	    <if test="flag != null">and tps_check_document.flag = #{flag}</if>
+</sql>
+<select id="custom_select" parameterType="com.unlcn.ils.tps.E_checkdocument" resultMap="E_checkdocumentResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_check_document 
+		 <where>
+			<include refid="custom_whereClause_sql"/>
+		</where>
+</select>
+</mapper>

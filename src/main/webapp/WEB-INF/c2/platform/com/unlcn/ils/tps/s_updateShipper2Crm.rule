@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="s_updateShipper2Crm" log="false" className="com.unlcn.ils.tps.ininterface.CrmInformationInterface" method="updateShipper2Crm">
+  <instanceCreator>
+    <params/>
+  </instanceCreator>
+  <name>分供方资料更新</name>
+  <inputs>
+    <input collection="false" desc="" id="map" required="true" type="java.util.Map"/>
+    <input collection="false" desc="" id="con" required="true" type="java.util.Map"/>
+  </inputs>
+  <outputs>
+    <output autoValue="Result" desc="" id="result" name="方法返回值" type="com.unlcn.ils.crm.dto.Result"/>
+  </outputs>
+  <params>
+    <param autoValue="Input.map" name="map" signature="QMap;" type="java.util.Map"/>
+    <param autoValue="Input.con" name="con" signature="QMap;" type="java.util.Map"/>
+  </params>
+  <return signature="QResult;" type="com.unlcn.ils.crm.dto.Result"/>
+</CustomRule>

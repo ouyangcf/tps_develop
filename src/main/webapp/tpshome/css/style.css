@@ -1,0 +1,57 @@
+/*****ils首页样式****/
+
+* { padding: 0; margin: 0;}
+
+.work-table { width: 100%; padding-bottom: 35px; overflow: hidden;}
+.work-table .list { position: relative; float: left; width: 160px; height: 160px; margin-top: 35px; margin-left: 25px; color: #fff; text-decoration: none;}
+.work-table .list dl dt { display: table-cell; width: 160px; height: 124px; text-align: center; vertical-align: middle;}
+.work-table .list dl dt img { }
+.work-table .list dl dd { font-family: arial,'黑体'; padding: 0 10px; font-size: 24px; line-height: 36px;}
+.work-table .list .mark { display: none; position: absolute; top: -10px; left: -10px; width: 180px; height: 180px; opacity: 0.3; filter: alpha(opacity=30); background: #b9cbd6;}
+.work-table .list:hover .mark { display: block;}
+.work-table .list .num { position: absolute; top: -12px; right: -12px; width: 24px; height: 24px; font-size: 18px; color: #fff; line-height: 24px; text-align: center; border-radius: 50%; background: #ff0000;}
+
+
+
+/*****tps首页样式****/
+* { margin: 0; padding: 0;}
+body { background: #f4f8fb;}
+ul,li { list-style-type: none;}
+
+.crm-home { width: 100%; font-family: arial,'黑体';}
+.crm-home .banner { width: 100%;}
+.crm-home .banner img { display: block; width: 100%;}
+.crm-home .submenu { position: relative; height: 32px; padding: 10px 20px; border-bottom: 1px solid #e3eaf0; background: #fff;}
+.crm-home .submenu .column { float: left; height: 32px; margin-right: 50px;}
+.crm-home .submenu .column dt { float: left;}
+.crm-home .submenu .column dt img { display: block;}
+.crm-home .submenu .column dd { float: left; margin-left: 8px; font-size: 12px; color: #666; line-height: 32px;}
+.crm-home .submenu .more { cursor: pointer; float: right; width: 32px; height: 32px; background: url(../images/column_more.png) no-repeat center;}
+.crm-home .submenu .item { position: absolute; top: 52px; right: 20px; font-size: 12px; color: #666; line-height: 24px; background: #e7e7e7;}
+.crm-home .submenu .item li { cursor: pointer; padding: 0 10px;}
+.crm-home .submenu .item li span { display: inline-block; padding-left: 15px;}
+.crm-home .submenu .item li.check span { background: url(../images/icon_check.png) no-repeat left center;}
+.crm-home .area { padding: 0 20px;}
+.crm-home .area .floor { margin-top: 15px; overflow: hidden;}
+.crm-home .area .floor .list { float: left; width: 32%; height: 260px; border-radius: 8px; background: #fff;}
+.crm-home .area .attic .list:nth-child(2) { margin: 0 15px;}
+.crm-home .area .floor .list .base { padding: 0 10px;}
+.crm-home .area .floor .list .base h2 { font-weight: normal; font-size: 16px; color: #999; line-height: 30px; border-bottom: 1px solid #f4f8fb;}
+.crm-home .area .floor .list .content { margin-top: 10px;}
+.crm-home .area .floor .list .content img { display: block; margin: 0 auto;}
+.crm-home .area .floor .time { width: 72%;}
+.crm-home .area .floor .wait { width: 25%; margin-left: 15px;}
+.crm-home .area .floor .wait .text { max-height: 200px; margin-top: 10px; font-size: 12px; overflow: hidden;}
+.crm-home .area .floor .wait .text li { line-height: 20px;}
+.crm-home .area .floor .wait .text li a { position: relative; display: inline-block; padding-left: 10px; color: #666; text-decoration: none;}
+.crm-home .area .floor .wait .text li a:after { content: ""; position: absolute; top: 8px; left: 0; width: 4px; height: 4px; background: #e60012;}
+
+
+.link-box { position: fixed; top: 50%; right: 0; margin-top: -88px;}
+.link-box a { display: block;}
+.link-box a img { display: block;}
+
+.waitdiv{
+	width: 200px;
+}
+

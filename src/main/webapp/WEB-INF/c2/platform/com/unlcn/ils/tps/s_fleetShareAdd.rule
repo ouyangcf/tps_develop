@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="s_fleetShareAdd" log="false" className="com.unlcn.ils.tps.services.FleetShareService" method="AddData">
+  <name>新增份额</name>
+  <inputs>
+    <input collection="false" desc="" id="shipperId" required="true" type="java.util.List"/>
+    <input collection="false" desc="" id="startCityId" required="true" type="java.util.List"/>
+    <input collection="false" desc="" id="destProvinceId" required="true" type="java.util.List"/>
+    <input collection="false" desc="" id="scale" required="true" type="java.util.List"/>
+    <input collection="false" desc="" id="totalqty" required="true" type="java.util.List"/>
+    <input collection="false" desc="" id="beginDate" required="true" type="java.util.List"/>
+    <input collection="false" desc="" id="endDate" required="true" type="java.util.List"/>
+  </inputs>
+  <outputs>
+    <output autoValue="Result" desc="" id="result" name="方法返回值" type="boolean"/>
+  </outputs>
+  <params>
+    <param autoValue="Input.shipperId" name="shipperId" signature="QList&lt;QString;>;" type="java.util.List"/>
+    <param autoValue="Input.startCityId" name="startCityId" signature="QList&lt;QString;>;" type="java.util.List"/>
+    <param autoValue="Input.destProvinceId" name="destProvinceId" signature="QList&lt;QString;>;" type="java.util.List"/>
+    <param autoValue="Input.scale" name="scale" signature="QList&lt;QString;>;" type="java.util.List"/>
+    <param autoValue="Input.totalqty" name="totalqty" signature="QList&lt;QString;>;" type="java.util.List"/>
+    <param autoValue="Input.beginDate" name="beginDate" signature="QList&lt;QString;>;" type="java.util.List"/>
+    <param autoValue="Input.endDate" name="endDate" signature="QList&lt;QString;>;" type="java.util.List"/>
+  </params>
+  <return signature="Z" type="boolean"/>
+</CustomRule>

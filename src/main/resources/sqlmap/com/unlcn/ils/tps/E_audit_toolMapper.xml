@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><mapper namespace="com.unlcn.ils.tps.E_audit_toolMapper">	
+
+<!-- ElementID:column_sql,Generated=true -->
+<sql id="column_sql">
+		  tps_audit_tool.lineid ,
+		  tps_audit_tool.audit_tool_name ,
+		  tps_audit_tool.create_user ,
+		  tps_audit_tool.create_time ,
+		  tps_audit_tool.active ,
+		  tps_audit_tool.active_time ,
+		  tps_audit_tool.active_user 
+</sql>
+
+<!-- ElementID:whereClause_sql,Generated=true -->
+<sql id="whereClause_sql">
+	    <if test="lineid != null">and tps_audit_tool.lineid = #{lineid}</if>
+	    <if test="auditToolName != null">and tps_audit_tool.audit_tool_name = #{auditToolName}</if>
+	    <if test="createUser != null">and tps_audit_tool.create_user = #{createUser}</if>
+	    <if test="createTime != null">and tps_audit_tool.create_time = #{createTime}</if>
+	    <if test="active != null">and tps_audit_tool.active = #{active}</if>
+	    <if test="activeTime != null">and tps_audit_tool.active_time = #{activeTime}</if>
+	    <if test="activeUser != null">and tps_audit_tool.active_user = #{activeUser}</if>
+</sql>
+
+
+<!-- ElementID:E_audit_toolResult,Generated=true -->
+<resultMap id="E_audit_toolResult" type="com.unlcn.ils.tps.E_audit_tool">
+	<id property="lineid" column="lineid"/>
+	<result property="auditToolName" column="audit_tool_name"/>
+	<result property="createUser" column="create_user"/>
+	<result property="createTime" column="create_time"/>
+	<result property="active" column="active"/>
+	<result property="activeTime" column="active_time"/>
+	<result property="activeUser" column="active_user"/>
+</resultMap>
+
+
+<!-- ElementName:cache,Generated=true -->
+<cache type="C2_Default_Dao_Cache"/>
+
+<!-- ElementID:count,Generated=true -->
+<select id="count" parameterType="com.unlcn.ils.tps.E_audit_tool" resultType="int">
+	select count(*) from tps_audit_tool 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+<!-- ElementID:update,Generated=true -->
+<update id="update" parameterType="com.unlcn.ils.tps.E_audit_tool">
+	update tps_audit_tool
+<set>
+	<if test="auditToolName != null">audit_tool_name=#{auditToolName,jdbcType=VARCHAR},</if>
+	<if test="createUser != null">create_user=#{createUser,jdbcType=VARCHAR},</if>
+	<if test="createTime != null">create_time=#{createTime,jdbcType=TIMESTAMP},</if>
+	<if test="active != null">active=#{active,jdbcType=NUMERIC},</if>
+	<if test="activeTime != null">active_time=#{activeTime,jdbcType=TIMESTAMP},</if>
+	<if test="activeUser != null">active_user=#{activeUser,jdbcType=VARCHAR}</if>
+</set>
+<where>
+	<choose>
+        <when test="lineid != null">and lineid = #{lineid}</when>
+        <otherwise>and lineid = </otherwise>
+    </choose>
+</where>
+</update>
+
+<!-- ElementID:updateNull,Generated=true -->
+<update id="updateNull" parameterType="map">
+	update tps_audit_tool
+	<set>
+		<trim suffixOverrides=",">
+		    <if test="auditToolName==null">audit_tool_name = null,</if>
+		    <if test="createUser==null">create_user = null,</if>
+		    <if test="createTime==null">create_time = null,</if>
+		    <if test="active==null">active = null,</if>
+		    <if test="activeTime==null">active_time = null,</if>
+		    <if test="activeUser==null">active_user = null,</if>
+		</trim>
+	</set>
+	<where>
+		<choose>
+			<when test="lineid != null">and lineid = #{lineid}</when>
+			<otherwise>and lineid = </otherwise>
+		</choose>
+	</where>
+</update>
+
+<!-- ElementID:delete,Generated=true -->
+<delete id="delete" parameterType="com.unlcn.ils.tps.E_audit_tool">
+    delete from tps_audit_tool where 1=1 and lineid = #{lineid}
+</delete>
+
+<!-- ElementID:select,Generated=true -->
+<select id="select" parameterType="com.unlcn.ils.tps.E_audit_tool" resultMap="E_audit_toolResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_audit_tool 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:deleteBatch,Generated=true -->
+<delete id="deleteBatch" parameterType="List">
+	delete from tps_audit_tool where lineid in
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<foreach collection="list" item="entity" separator=",">
+	#{entity.lineid}
+</foreach>
+</trim>
+</delete>
+
+<!-- ElementID:selectAll,Generated=true -->
+<select id="selectAll" resultMap="E_audit_toolResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_audit_tool 
+</select>
+
+<!-- ElementID:selectByID,Generated=true -->
+<select id="selectByID" parameterType="java.lang.Integer" resultMap="E_audit_toolResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_audit_tool 
+		 where tps_audit_tool.lineid = #{lineid,jdbcType=NUMERIC}
+</select>
+
+<!-- ElementID:selectByPage,Generated=true -->
+<select id="selectByPage" parameterType="com.unlcn.ils.tps.E_audit_tool" resultMap="E_audit_toolResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_audit_tool 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:selectMany,Generated=true -->
+<select id="selectMany" parameterType="list" resultMap="E_audit_toolResult">
+select 
+	<include refid="column_sql"/> 
+	from tps_audit_tool 
+	where tps_audit_tool.lineid in (
+		select distinct lineid from tps_audit_tool inner join
+<foreach collection="list" item="entity" separator="inner join">
+		(select 
+			distinct lineid
+			from tps_audit_tool 
+			<where>
+	        <if test="entity.lineid != null">and tps_audit_tool.lineid = #{entity.lineid}</if>
+	        <if test="entity.auditToolName != null">and tps_audit_tool.audit_tool_name = #{entity.auditToolName}</if>
+	        <if test="entity.createUser != null">and tps_audit_tool.create_user = #{entity.createUser}</if>
+	        <if test="entity.createTime != null">and tps_audit_tool.create_time = #{entity.createTime}</if>
+	        <if test="entity.active != null">and tps_audit_tool.active = #{entity.active}</if>
+	        <if test="entity.activeTime != null">and tps_audit_tool.active_time = #{entity.activeTime}</if>
+	        <if test="entity.activeUser != null">and tps_audit_tool.active_user = #{entity.activeUser}</if>
+			</where>
+		) ${entity.tableAlias} using (lineid)
+</foreach>
+)
+</select>
+
+<!-- ElementID:insert,Generated=true -->
+<insert id="insert" parameterType="com.unlcn.ils.tps.E_audit_tool" useGeneratedKeys="true">
+	<selectKey keyProperty="lineid" resultType="java.lang.Integer" order="AFTER">
+        select LAST_INSERT_ID()
+    </selectKey>
+insert into tps_audit_tool(
+		<trim prefixOverrides=",">
+		    <if test="auditToolName != null">audit_tool_name</if>
+		    <if test="createUser != null">,create_user</if>
+		    <if test="createTime != null">,create_time</if>
+		    <if test="active != null">,active</if>
+		    <if test="activeTime != null">,active_time</if>
+		    <if test="activeUser != null">,active_user</if>
+		</trim>
+	 )
+	 values (
+		<trim prefixOverrides=",">
+		    <if test="auditToolName != null">#{auditToolName,jdbcType=VARCHAR}</if>
+		    <if test="createUser != null">,#{createUser,jdbcType=VARCHAR}</if>
+		    <if test="createTime != null">,#{createTime,jdbcType=TIMESTAMP}</if>
+		    <if test="active != null">,#{active,jdbcType=NUMERIC}</if>
+		    <if test="activeTime != null">,#{activeTime,jdbcType=TIMESTAMP}</if>
+		    <if test="activeUser != null">,#{activeUser,jdbcType=VARCHAR}</if>
+        </trim>
+	 )
+</insert>
+
+<!-- ElementID:insertBatch,Generated=true -->
+<insert id="insertBatch" parameterType="list" useGeneratedKeys="true">
+	insert into tps_audit_tool (audit_tool_name,create_user,create_time,active,active_time,active_user)
+			values 
+			<foreach collection="list" item="entity" index="index" separator=",">
+				(
+		         #{entity.auditToolName,jdbcType = VARCHAR},
+		         #{entity.createUser,jdbcType = VARCHAR},
+		         #{entity.createTime,jdbcType = TIMESTAMP},
+		         #{entity.active,jdbcType = NUMERIC},
+		         #{entity.activeTime,jdbcType = TIMESTAMP},
+		         #{entity.activeUser,jdbcType = VARCHAR}
+				)
+</foreach>
+</insert>
+</mapper>

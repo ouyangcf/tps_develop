@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><mapper namespace="com.unlcn.ils.tps.E_transrecordMapper">	
+
+<!-- ElementID:column_sql,Generated=true -->
+<sql id="column_sql">
+		  trans_record.lineid ,
+		  trans_record.id ,
+		  trans_record.startcity ,
+		  trans_record.endprovince ,
+		  trans_record.endcity ,
+		  trans_record.number ,
+		  trans_record.date 
+</sql>
+
+<!-- ElementID:whereClause_sql,Generated=true -->
+<sql id="whereClause_sql">
+	    <if test="lineid != null">and trans_record.lineid = #{lineid}</if>
+	    <if test="id != null">and trans_record.id = #{id}</if>
+	    <if test="startcity != null">and trans_record.startcity = #{startcity}</if>
+	    <if test="endprovince != null">and trans_record.endprovince = #{endprovince}</if>
+	    <if test="endcity != null">and trans_record.endcity = #{endcity}</if>
+	    <if test="number != null">and trans_record.number = #{number}</if>
+	    <if test="date != null">and trans_record.date = #{date}</if>
+</sql>
+
+
+<!-- ElementID:E_transrecordResult,Generated=true -->
+<resultMap id="E_transrecordResult" type="com.unlcn.ils.tps.E_transrecord">
+	<id property="lineid" column="lineid"/>
+	<result property="id" column="id"/>
+	<result property="startcity" column="startcity"/>
+	<result property="endprovince" column="endprovince"/>
+	<result property="endcity" column="endcity"/>
+	<result property="number" column="number"/>
+	<result property="date" column="date"/>
+</resultMap>
+
+
+<!-- ElementName:cache,Generated=true -->
+<cache type="C2_Default_Dao_Cache"/>
+
+<!-- ElementID:count,Generated=true -->
+<select id="count" parameterType="com.unlcn.ils.tps.E_transrecord" resultType="int">
+	select count(*) from trans_record 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+<!-- ElementID:update,Generated=true -->
+<update id="update" parameterType="com.unlcn.ils.tps.E_transrecord">
+	update trans_record
+<set>
+	<if test="id != null">id=#{id,jdbcType=VARCHAR},</if>
+	<if test="startcity != null">startcity=#{startcity,jdbcType=VARCHAR},</if>
+	<if test="endprovince != null">endprovince=#{endprovince,jdbcType=VARCHAR},</if>
+	<if test="endcity != null">endcity=#{endcity,jdbcType=VARCHAR},</if>
+	<if test="number != null">number=#{number,jdbcType=NUMERIC},</if>
+	<if test="date != null">date=#{date,jdbcType=DATE}</if>
+</set>
+<where>
+	<choose>
+        <when test="lineid != null">and lineid = #{lineid}</when>
+        <otherwise>and lineid = </otherwise>
+    </choose>
+</where>
+</update>
+
+<!-- ElementID:updateNull,Generated=true -->
+<update id="updateNull" parameterType="map">
+	update trans_record
+	<set>
+		<trim suffixOverrides=",">
+		    <if test="id==null">id = null,</if>
+		    <if test="startcity==null">startcity = null,</if>
+		    <if test="endprovince==null">endprovince = null,</if>
+		    <if test="endcity==null">endcity = null,</if>
+		    <if test="number==null">number = null,</if>
+		    <if test="date==null">date = null,</if>
+		</trim>
+	</set>
+	<where>
+		<choose>
+			<when test="lineid != null">and lineid = #{lineid}</when>
+			<otherwise>and lineid = </otherwise>
+		</choose>
+	</where>
+</update>
+
+<!-- ElementID:delete,Generated=true -->
+<delete id="delete" parameterType="com.unlcn.ils.tps.E_transrecord">
+    delete from trans_record where 1=1 and lineid = #{lineid}
+</delete>
+
+<!-- ElementID:select,Generated=true -->
+<select id="select" parameterType="com.unlcn.ils.tps.E_transrecord" resultMap="E_transrecordResult">
+	select 
+		<include refid="column_sql"/>
+	    from trans_record 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:deleteBatch,Generated=true -->
+<delete id="deleteBatch" parameterType="List">
+	delete from trans_record where lineid in
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<foreach collection="list" item="entity" separator=",">
+	#{entity.lineid}
+</foreach>
+</trim>
+</delete>
+
+<!-- ElementID:selectAll,Generated=true -->
+<select id="selectAll" resultMap="E_transrecordResult">
+	select 
+		<include refid="column_sql"/>
+	    from trans_record 
+</select>
+
+<!-- ElementID:selectByID,Generated=true -->
+<select id="selectByID" parameterType="java.lang.String" resultMap="E_transrecordResult">
+	select 
+		<include refid="column_sql"/>
+	    from trans_record 
+		 where trans_record.lineid = #{lineid,jdbcType=VARCHAR}
+</select>
+<select id="selectByIDs" parameterType="java.lang.Integer" resultMap="E_transrecordResult">
+	select 
+		<include refid="column_sql"/>
+	    from trans_record 
+		 where trans_record.id = #{id}
+</select>
+
+
+<!-- ElementID:selectByPage,Generated=true -->
+<select id="selectByPage" parameterType="com.unlcn.ils.tps.E_transrecord" resultMap="E_transrecordResult">
+	select 
+		<include refid="column_sql"/>
+	    from trans_record 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:selectMany,Generated=true -->
+<select id="selectMany" parameterType="list" resultMap="E_transrecordResult">
+select 
+	<include refid="column_sql"/> 
+	from trans_record 
+	where trans_record.lineid in (
+		select distinct lineid from trans_record inner join
+<foreach collection="list" item="entity" separator="inner join">
+		(select 
+			distinct lineid
+			from trans_record 
+			<where>
+	        <if test="entity.lineid != null">and trans_record.lineid = #{entity.lineid}</if>
+	        <if test="entity.id != null">and trans_record.id = #{entity.id}</if>
+	        <if test="entity.startcity != null">and trans_record.startcity = #{entity.startcity}</if>
+	        <if test="entity.endprovince != null">and trans_record.endprovince = #{entity.endprovince}</if>
+	        <if test="entity.endcity != null">and trans_record.endcity = #{entity.endcity}</if>
+	        <if test="entity.number != null">and trans_record.number = #{entity.number}</if>
+	        <if test="entity.date != null">and trans_record.date = #{entity.date}</if>
+			</where>
+		) ${entity.tableAlias} using (lineid)
+</foreach>
+)
+</select>
+
+<!-- ElementID:insert,Generated=true -->
+<insert id="insert" parameterType="com.unlcn.ils.tps.E_transrecord">
+	insert into trans_record(
+	         <if test="lineid != null">lineid</if>
+	         <if test="id != null">,id</if>
+	         <if test="startcity != null">,startcity</if>
+	         <if test="endprovince != null">,endprovince</if>
+	         <if test="endcity != null">,endcity</if>
+	         <if test="number != null">,number</if>
+	         <if test="date != null">,date</if>
+	 	 	 )
+	 values (
+	         <if test="lineid != null">#{lineid,jdbcType=VARCHAR}</if>
+	         <if test="id != null">,#{id,jdbcType=VARCHAR}</if>
+	         <if test="startcity != null">,#{startcity,jdbcType=VARCHAR}</if>
+	         <if test="endprovince != null">,#{endprovince,jdbcType=VARCHAR}</if>
+	         <if test="endcity != null">,#{endcity,jdbcType=VARCHAR}</if>
+	         <if test="number != null">,#{number,jdbcType=NUMERIC}</if>
+	         <if test="date != null">,#{date,jdbcType=DATE}</if>
+	 	 	 )
+</insert>
+
+<!-- ElementID:insertBatch,Generated=true -->
+<insert id="insertBatch" parameterType="list">
+	insert into trans_record (lineid,id,startcity,endprovince,endcity,number,date) 
+<foreach collection="list" item="entity" index="index" separator="union all">
+		select 
+		#{entity.lineid,jdbcType = VARCHAR},
+				#{entity.id,jdbcType = VARCHAR},
+				#{entity.startcity,jdbcType = VARCHAR},
+				#{entity.endprovince,jdbcType = VARCHAR},
+				#{entity.endcity,jdbcType = VARCHAR},
+				#{entity.number,jdbcType = NUMERIC},
+				#{entity.date,jdbcType = DATE}
+		from dual
+</foreach>
+</insert>
+</mapper>

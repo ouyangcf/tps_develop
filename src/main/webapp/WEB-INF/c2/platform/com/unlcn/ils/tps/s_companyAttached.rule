@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="s_companyAttached" log="false" className="com.unlcn.ils.tps.services.JoinCompanyService" method="companyAttached">
+  <instanceCreator>
+    <params/>
+  </instanceCreator>
+  <name>公司附件上传</name>
+  <inputs>
+    <input collection="false" desc="" id="mapList" required="true" type="java.util.Map"/>
+    <input collection="false" desc="" id="id" required="true" type="String"/>
+  </inputs>
+  <outputs>
+    <output autoValue="Result" desc="" id="result" name="方法返回值" type="boolean"/>
+  </outputs>
+  <params>
+    <param autoValue="Input.mapList" name="mapList" signature="QMap;" type="java.util.Map"/>
+    <param autoValue="Input.id" name="id" signature="QString;" type="String"/>
+  </params>
+  <return signature="Z" type="boolean"/>
+</CustomRule>

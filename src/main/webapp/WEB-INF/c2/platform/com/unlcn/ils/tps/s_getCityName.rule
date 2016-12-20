@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="s_getCityName" log="false" className="com.unlcn.ils.tps.services.CityService" method="getCityName">
+  <name>获取城市名称</name>
+  <inputs/>
+  <outputs>
+    <output autoValue="Result" desc="" id="result" name="方法返回值" type="java.util.List"/>
+  </outputs>
+  <params/>
+  <return signature="QList&lt;QString;>;" type="java.util.List"/>
+</CustomRule>

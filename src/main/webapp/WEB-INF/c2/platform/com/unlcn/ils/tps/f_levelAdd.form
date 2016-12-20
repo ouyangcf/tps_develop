@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form:Form xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dync="http://www.chinacreator.com/platform/mvc/ui/dync" xmlns:form="http://www.chinacreator.com/platform/mvc/form" name="级别字典" sn="levelAdd" type="form">
+  <form:control type="page/normal">
+    <form:attributes source="page/normal">
+      <dync:attribute default="" group="HTML" id="showHead" name="显示标题" value="">
+        <dync:render/>
+        <dync:children/>
+      </dync:attribute>
+      <dync:attribute default="" group="HTML" id="title" name="标题" value="">
+        <dync:render/>
+        <dync:children/>
+      </dync:attribute>
+      <dync:attribute default="" group="HTML" id="desc" name="描述" value="">
+        <dync:render/>
+        <dync:children/>
+      </dync:attribute>
+      <dync:attribute default="false" group="HTML" id="fixedHeight" name="自动高度" value="false">
+        <dync:render/>
+        <dync:children/>
+      </dync:attribute>
+      <dync:attribute default="false" group="HTML" id="compact" name="紧凑页面" value="false">
+        <dync:render/>
+        <dync:children/>
+      </dync:attribute>
+      <dync:attribute default="false" group="HTML" id="dirtyCheck" name="脏检查" value="false">
+        <dync:render/>
+        <dync:children/>
+      </dync:attribute>
+      <dync:attribute default="" group="注入配置" id="angularJsServices" name="注入服务" value="">
+        <dync:render/>
+        <dync:children/>
+      </dync:attribute>
+      <dync:attribute default="" group="事件" id="beforeDataSourceLoad" name="数据源加载前" value="">
+        <dync:render/>
+        <dync:children/>
+      </dync:attribute>
+      <dync:attribute default="" group="事件" id="afterDataSourceLoad" name="数据源加载后" value="">
+        <dync:render/>
+        <dync:children/>
+      </dync:attribute>
+      <dync:attribute default="" group="事件" id="onload" name="页面加载完成" value="">
+        <dync:render/>
+        <dync:children/>
+      </dync:attribute>
+    </form:attributes>
+  </form:control>
+  <form:child xsi:type="form:Group" id="div4" name="简单容器(DIV)">
+    <form:control type="container/div">
+      <form:attributes source="container/div"/>
+    </form:control>
+    <form:child xsi:type="form:Group" id="toolbarInnerWidget2" name="顶部工具条">
+      <form:control type="container/toolbar_inner_widget">
+        <form:attributes source="container/toolbar_inner_widget"/>
+      </form:control>
+      <form:child xsi:type="form:Field" id="add" name="新增" customize="true">
+        <form:control type="widget/button">
+          <form:attributes source="widget/button">
+            <dync:attribute default="" group="事件设置" id="click" name="点击事件" value="add_click($event)">
+              <dync:render colSpan="1" height="0" multi="false" name="event">
+                <dync:item name="params" value="$event"/>
+              </dync:render>
+              <dync:children/>
+            </dync:attribute>
+            <dync:attribute default="btn-primary" group="HTML设置" id="style" name="样式" value="btn-default">
+              <dync:render colSpan="1" height="0" multi="false" name="select">
+                <dync:item name="默认" value="btn-default"/>
+                <dync:item name="主要" value="btn-primary"/>
+                <dync:item name="成功" value="btn-success"/>
+                <dync:item name="信息" value="btn-info"/>
+                <dync:item name="警告" value="btn-warning"/>
+                <dync:item name="危险" value="btn-danger"/>
+                <dync:item name="链接" value="btn-link"/>
+                <dync:item name="通用" value="btn-white no-border"/>
+              </dync:render>
+              <dync:children/>
+            </dync:attribute>
+            <dync:attribute default="" group="HTML设置" id="icon" name="图标" value="fa-plus">
+              <dync:render colSpan="1" height="0" multi="false" name="selectIcon"/>
+              <dync:children/>
+            </dync:attribute>
+          </form:attributes>
+        </form:control>
+        <form:validation/>
+      </form:child>
+      <form:child xsi:type="form:Field" id="edit" name="编辑" customize="true">
+        <form:control type="widget/button">
+          <form:attributes source="widget/button">
+            <dync:attribute default="btn-primary" group="HTML设置" id="style" name="样式" value="btn-default">
+              <dync:render colSpan="1" height="0" multi="false" name="select">
+                <dync:item name="默认" value="btn-default"/>
+                <dync:item name="主要" value="btn-primary"/>
+                <dync:item name="成功" value="btn-success"/>
+                <dync:item name="信息" value="btn-info"/>
+                <dync:item name="警告" value="btn-warning"/>
+                <dync:item name="危险" value="btn-danger"/>
+                <dync:item name="链接" value="btn-link"/>
+                <dync:item name="通用" value="btn-white no-border"/>
+              </dync:render>
+              <dync:children/>
+            </dync:attribute>
+            <dync:attribute default="" group="HTML设置" id="icon" name="图标" value="fa-pencil">
+              <dync:render colSpan="1" height="0" multi="false" name="selectIcon"/>
+              <dync:children/>
+            </dync:attribute>
+            <dync:attribute default="" group="事件设置" id="click" name="点击事件" value="edit_click($event)">
+              <dync:render colSpan="1" height="0" multi="false" name="event">
+                <dync:item name="params" value="$event"/>
+              </dync:render>
+              <dync:children/>
+            </dync:attribute>
+          </form:attributes>
+        </form:control>
+        <form:validation/>
+      </form:child>
+      <form:child xsi:type="form:Field" id="delete" name="删除" customize="true">
+        <form:control type="widget/button">
+          <form:attributes source="widget/button">
+            <dync:attribute default="" group="事件设置" id="click" name="点击事件" value="delete_click($event)">
+              <dync:render colSpan="1" height="0" multi="false" name="event">
+                <dync:item name="params" value="$event"/>
+              </dync:render>
+              <dync:children/>
+            </dync:attribute>
+            <dync:attribute default="btn-primary" group="HTML设置" id="style" name="样式" value="btn-default">
+              <dync:render colSpan="1" height="0" multi="false" name="select">
+                <dync:item name="默认" value="btn-default"/>
+                <dync:item name="主要" value="btn-primary"/>
+                <dync:item name="成功" value="btn-success"/>
+                <dync:item name="信息" value="btn-info"/>
+                <dync:item name="警告" value="btn-warning"/>
+                <dync:item name="危险" value="btn-danger"/>
+                <dync:item name="链接" value="btn-link"/>
+                <dync:item name="通用" value="btn-white no-border"/>
+              </dync:render>
+              <dync:children/>
+            </dync:attribute>
+            <dync:attribute default="" group="HTML设置" id="icon" name="图标" value="fa-trash-o">
+              <dync:render colSpan="1" height="0" multi="false" name="selectIcon"/>
+              <dync:children/>
+            </dync:attribute>
+            <dync:attribute default="true" group="HTML设置" id="show" name="可见" value="false">
+              <dync:render colSpan="1" height="0" multi="false" name="checkboxAndExpr"/>
+              <dync:children/>
+            </dync:attribute>
+          </form:attributes>
+        </form:control>
+        <form:validation/>
+      </form:child>
+      <form:child xsi:type="form:Field" id="active" name="禁用" customize="true">
+        <form:control type="widget/button">
+          <form:attributes source="widget/button">
+            <dync:attribute default="" group="事件设置" id="click" name="点击事件" value="button2_click($event)">
+              <dync:render colSpan="1" height="0" multi="false" name="event">
+                <dync:item name="params" value="$event"/>
+              </dync:render>
+              <dync:children/>
+            </dync:attribute>
+            <dync:attribute default="btn-primary" group="HTML设置" id="style" name="样式" value="btn-default">
+              <dync:render colSpan="1" height="0" multi="false" name="select">
+                <dync:item name="默认" value="btn-default"/>
+                <dync:item name="主要" value="btn-primary"/>
+                <dync:item name="成功" value="btn-success"/>
+                <dync:item name="信息" value="btn-info"/>
+                <dync:item name="警告" value="btn-warning"/>
+                <dync:item name="危险" value="btn-danger"/>
+                <dync:item name="链接" value="btn-link"/>
+                <dync:item name="通用" value="btn-white no-border"/>
+              </dync:render>
+              <dync:children/>
+            </dync:attribute>
+            <dync:attribute default="" group="HTML设置" id="icon" name="图标" value="fa-anchor">
+              <dync:render colSpan="1" height="0" multi="false" name="selectIcon"/>
+              <dync:children/>
+            </dync:attribute>
+          </form:attributes>
+        </form:control>
+        <form:validation/>
+      </form:child>
+      <form:child xsi:type="form:Field" id="enable" name="启用" customize="true">
+        <form:control type="widget/button">
+          <form:attributes source="widget/button">
+            <dync:attribute default="" group="事件设置" id="click" name="点击事件" value="button3_click($event)">
+              <dync:render colSpan="1" height="0" multi="false" name="event">
+                <dync:item name="params" value="$event"/>
+              </dync:render>
+              <dync:children/>
+            </dync:attribute>
+            <dync:attribute default="btn-primary" group="HTML设置" id="style" name="样式" value="btn-default">
+              <dync:render colSpan="1" height="0" multi="false" name="select">
+                <dync:item name="默认" value="btn-default"/>
+                <dync:item name="主要" value="btn-primary"/>
+                <dync:item name="成功" value="btn-success"/>
+                <dync:item name="信息" value="btn-info"/>
+                <dync:item name="警告" value="btn-warning"/>
+                <dync:item name="危险" value="btn-danger"/>
+                <dync:item name="链接" value="btn-link"/>
+                <dync:item name="通用" value="btn-white no-border"/>
+              </dync:render>
+              <dync:children/>
+            </dync:attribute>
+            <dync:attribute default="" group="HTML设置" id="icon" name="图标" value="fa-check">
+              <dync:render colSpan="1" height="0" multi="false" name="selectIcon"/>
+              <dync:children/>
+            </dync:attribute>
+          </form:attributes>
+        </form:control>
+        <form:validation/>
+      </form:child>
+    </form:child>
+    <form:child xsi:type="form:Group" binding="$model.list" id="list" name="列表型数据源">
+      <form:control type="container/table_jqgrid">
+        <form:attributes source="container/table_jqgrid">
+          <dync:attribute default="" group="加载事件" id="beforeProcessing" name="处理前" value="list_beforeProcessing(data,status,xhr)">
+            <dync:render colSpan="1" height="0" multi="false" name="event">
+              <dync:item name="param" value="data,status,xhr"/>
+            </dync:render>
+            <dync:children/>
+          </dync:attribute>
+        </form:attributes>
+      </form:control>
+      <form:child xsi:type="form:Group" id="toolbar_table" name="toolbar_table">
+        <form:control type="container/toolbar_table">
+          <form:attributes source="container/toolbar_table"/>
+        </form:control>
+      </form:child>
+      <form:child xsi:type="form:Field" binding="lineid" id="lineid" name="序号">
+        <form:control type="widget/col_jqgrid">
+          <form:attributes source="widget/col_jqgrid">
+            <dync:attribute id="key" value="true">
+              <dync:render/>
+              <dync:children/>
+            </dync:attribute>
+            <dync:attribute id="hidden" value="true">
+              <dync:render/>
+              <dync:children/>
+            </dync:attribute>
+          </form:attributes>
+        </form:control>
+      </form:child>
+      <form:child xsi:type="form:Field" binding="levelName" id="levelName" name="级别字典名称">
+        <form:control type="widget/col_jqgrid">
+          <form:attributes source="widget/col_jqgrid"/>
+        </form:control>
+      </form:child>
+      <form:child xsi:type="form:Field" binding="active" id="active" name="禁用状态">
+        <form:control type="widget/col_jqgrid">
+          <form:attributes source="widget/col_jqgrid"/>
+        </form:control>
+      </form:child>
+      <form:child xsi:type="form:Field" binding="activeMemo" id="activeMemo" name="禁用说明">
+        <form:control type="widget/col_jqgrid">
+          <form:attributes source="widget/col_jqgrid"/>
+        </form:control>
+      </form:child>
+    </form:child>
+  </form:child>
+  <form:datasources>
+    <form:datasource xsi:type="form:Inputs"/>
+    <form:datasource xsi:type="form:PagingDataSource" id="list" name="列表型数据源" elementType="entity:com.unlcn.ils.tps.e_level" pageSize="10"/>
+  </form:datasources>
+  <form:scripts>
+
+add_click:function($event){
+	var data=$view.list.getTableData().contents;
+	Modal.open(&quot;f/levelAddWindow&quot;,{&quot;data&quot;:data},function($params){
+			$view.list.refresh();
+		});
+},
+delete_click:function($event){ 
+	var ob=$view.list.getSelectDatas();
+	var idList=new Array();
+	var pos=0;
+	if(ob.length==0)
+			{
+			Messenger.post({type:'error',message:'没有选中行'});
+				return false;
+			}
+	for(var i=0;i&lt;ob.length;i++)
+	{
+		idList[pos]=ob[i].lineid;
+		pos++;
+	}
+	Modal.openConfirm({message:&quot;确认删除？&quot;},function(){
+			$http.post(&quot;ws/s_deleteLevel&quot;,{&quot;idList&quot;:idList})
+				.success(function(data){
+					$view.list.refresh();
+					Messenger.post({message:&quot;删除成功&quot;,type:&quot;success&quot;,hideAfter:5,showCloseButton:true});
+				})
+				.error(function(data){
+					Messenger.post({message:&quot;删除失败&quot;,type:&quot;error&quot;,hideAfter:5,showCloseButton:true});
+				});		
+	})
+	
+	
+},
+
+list_beforeProcessing:function(data,status,xhr){
+	
+	var l=data.contents.length;
+					
+		 	 for(var i=0;i&lt;l;i++){   
+		 	         var obj=data.contents[i].active;
+		 	         
+		 	         switch(obj)
+		 	         {case 0:obj=&quot;禁用&quot;;
+		 	         break;
+					 case 1:obj=&quot;可用&quot;	;
+					 break;
+					 
+					 }
+					
+					 data.contents[i].active=obj;
+	         }
+
+},
+
+button2_click:function($event){
+	var ob=$view.list.getSelectDatas();
+	if(ob.length!=0){
+	var idList=new Array();
+	var levelList=new Array();
+	var pos=0;
+	for(var i=0;i&lt;ob.length;i++){
+		idList[pos]=ob[i].lineid;
+		pos++;
+		}
+		Modal.open(&quot;f/levelActive&quot;,{&quot;idList&quot;:idList},function($params){
+			$view.list.refresh();
+		});
+	}
+	else
+	{
+		Messenger.post({type:'error',message:'请选择一条数据'});
+		return;
+	}
+},
+
+
+button3_click:function($event){
+	var ob=$view.list.getSelectDatas();
+	if(ob.length!=0){
+	var idList=new Array();
+		var pos=0;
+		for(var i=0;i&lt;ob.length;i++){
+				idList[pos]=ob[i].lineid;
+				pos++;
+		}
+		Messenger.post({type:'info',message:'正在提交'});
+		$http.post(&quot;ws/s_enableLevel&quot;,{&quot;idList&quot;:idList})
+		.success(function($data){
+			Messenger.post({type:'success',message:'修改成功'});
+			$view.list.refresh();
+			
+		})
+		
+	}
+	else
+		 {Messenger.post({type:'error',message:'请选择一条数据'});
+		 return;}
+},
+
+edit_click:function($event){
+	var ob=$view.list.getSelectDatas();
+	if(ob.length!=1)
+	{
+		Messenger.post({type:'error',message:'请选择一条数据'});
+		return false;
+	}
+	var DataList=ob[0].lineid;
+	Modal.open(&quot;f/quotationDelete&quot;,{&quot;DataList&quot;:DataList},function($params){
+	$view.list.refresh();
+		});
+}</form:scripts>
+  <form:htmls>
+&lt;script type=&quot;text/ng-template&quot; id=&quot;div_html&quot;>
+&lt;h1 align=&quot;center&quot;>级别字典维护&lt;/h1>
+&lt;hr />
+&lt;/script></form:htmls>
+</form:Form>

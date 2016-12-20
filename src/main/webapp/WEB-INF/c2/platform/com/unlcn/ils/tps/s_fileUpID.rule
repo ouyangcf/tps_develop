@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="s_fileUpID" log="false" className="com.unlcn.ils.tps.services.FileUp" method="IDFileUp">
+  <instanceCreator>
+    <params/>
+  </instanceCreator>
+  <name>身份证照片上传</name>
+  <inputs>
+    <input collection="false" desc="" id="urlString" required="true" type="String"/>
+    <input collection="false" desc="" id="nameString" required="true" type="String"/>
+  </inputs>
+  <outputs>
+    <output autoValue="Result" desc="" id="result" name="方法返回值" type="boolean"/>
+  </outputs>
+  <params>
+    <param autoValue="Input.urlString" name="urlString" signature="QString;" type="String"/>
+    <param autoValue="Input.nameString" name="nameString" signature="QString;" type="String"/>
+  </params>
+  <return signature="Z" type="boolean"/>
+</CustomRule>

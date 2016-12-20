@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><mapper namespace="com.unlcn.ils.tps.E_join_driverMapper">	
+
+<!-- ElementID:column_sql,Generated=true -->
+<sql id="column_sql">
+		  tps_join_driver.lineid ,
+		  tps_join_driver.driver_name ,
+		  tps_join_driver.licenseno ,
+		  tps_join_driver.vehicle_licenseno ,
+		  tps_join_driver.cardno ,
+		  tps_join_driver.mobileno ,
+		  tps_join_driver.province_id ,
+		  tps_join_driver.province ,
+		  tps_join_driver.city_id ,
+		  tps_join_driver.city ,
+		  tps_join_driver.car_number ,
+		  tps_join_driver.check_flag ,
+		  tps_join_driver.create_time ,
+		  tps_join_driver.create_user ,
+		  tps_join_driver.active ,
+		  tps_join_driver.active_user ,
+		  tps_join_driver.active_time ,
+		  tps_join_driver.active_memo ,
+		  tps_join_driver.shipper_id 
+</sql>
+
+<!-- ElementID:whereClause_sql,Generated=true -->
+<sql id="whereClause_sql">
+	    <if test="lineid != null">and tps_join_driver.lineid = #{lineid}</if>
+	    <if test="driverName != null">and tps_join_driver.driver_name = #{driverName}</if>
+	    <if test="licenseno != null">and tps_join_driver.licenseno = #{licenseno}</if>
+	    <if test="vehicleLicenseno != null">and tps_join_driver.vehicle_licenseno = #{vehicleLicenseno}</if>
+	    <if test="cardno != null">and tps_join_driver.cardno = #{cardno}</if>
+	    <if test="mobileno != null">and tps_join_driver.mobileno = #{mobileno}</if>
+	    <if test="provinceId != null">and tps_join_driver.province_id = #{provinceId}</if>
+	    <if test="province != null">and tps_join_driver.province = #{province}</if>
+	    <if test="cityId != null">and tps_join_driver.city_id = #{cityId}</if>
+	    <if test="city != null">and tps_join_driver.city = #{city}</if>
+	    <if test="carNumber != null">and tps_join_driver.car_number = #{carNumber}</if>
+	    <if test="checkFlag != null">and tps_join_driver.check_flag = #{checkFlag}</if>
+	    <if test="createTime != null">and tps_join_driver.create_time = #{createTime}</if>
+	    <if test="createUser != null">and tps_join_driver.create_user = #{createUser}</if>
+	    <if test="active != null">and tps_join_driver.active = #{active}</if>
+	    <if test="activeUser != null">and tps_join_driver.active_user = #{activeUser}</if>
+	    <if test="activeTime != null">and tps_join_driver.active_time = #{activeTime}</if>
+	    <if test="activeMemo != null">and tps_join_driver.active_memo = #{activeMemo}</if>
+	    <if test="shipperId != null">and tps_join_driver.shipper_id = #{shipperId}</if>
+</sql>
+
+
+<!-- ElementID:E_join_driverResult,Generated=true -->
+<resultMap id="E_join_driverResult" type="com.unlcn.ils.tps.E_join_driver">
+	<id property="lineid" column="lineid"/>
+	<result property="driverName" column="driver_name"/>
+	<result property="licenseno" column="licenseno"/>
+	<result property="vehicleLicenseno" column="vehicle_licenseno"/>
+	<result property="cardno" column="cardno"/>
+	<result property="mobileno" column="mobileno"/>
+	<result property="provinceId" column="province_id"/>
+	<result property="province" column="province"/>
+	<result property="cityId" column="city_id"/>
+	<result property="city" column="city"/>
+	<result property="carNumber" column="car_number"/>
+	<result property="checkFlag" column="check_flag"/>
+	<result property="createTime" column="create_time"/>
+	<result property="createUser" column="create_user"/>
+	<result property="active" column="active"/>
+	<result property="activeUser" column="active_user"/>
+	<result property="activeTime" column="active_time"/>
+	<result property="activeMemo" column="active_memo"/>
+	<result property="shipperId" column="shipper_id"/>
+</resultMap>
+
+
+<!-- ElementName:cache,Generated=true -->
+<cache type="C2_Default_Dao_Cache"/>
+
+<!-- ElementID:count,Generated=true -->
+<select id="count" parameterType="com.unlcn.ils.tps.E_join_driver" resultType="int">
+	select count(*) from tps_join_driver 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+<!-- ElementID:update,Generated=true -->
+<update id="update" parameterType="com.unlcn.ils.tps.E_join_driver">
+	update tps_join_driver
+<set>
+	<if test="driverName != null">driver_name=#{driverName,jdbcType=VARCHAR},</if>
+	<if test="licenseno != null">licenseno=#{licenseno,jdbcType=VARCHAR},</if>
+	<if test="vehicleLicenseno != null">vehicle_licenseno=#{vehicleLicenseno,jdbcType=VARCHAR},</if>
+	<if test="cardno != null">cardno=#{cardno,jdbcType=VARCHAR},</if>
+	<if test="mobileno != null">mobileno=#{mobileno,jdbcType=VARCHAR},</if>
+	<if test="provinceId != null">province_id=#{provinceId,jdbcType=NUMERIC},</if>
+	<if test="province != null">province=#{province,jdbcType=VARCHAR},</if>
+	<if test="cityId != null">city_id=#{cityId,jdbcType=NUMERIC},</if>
+	<if test="city != null">city=#{city,jdbcType=VARCHAR},</if>
+	<if test="carNumber != null">car_number=#{carNumber,jdbcType=NUMERIC},</if>
+	<if test="checkFlag != null">check_flag=#{checkFlag,jdbcType=NUMERIC},</if>
+	<if test="createTime != null">create_time=#{createTime,jdbcType=TIMESTAMP},</if>
+	<if test="createUser != null">create_user=#{createUser,jdbcType=VARCHAR},</if>
+	<if test="active != null">active=#{active,jdbcType=NUMERIC},</if>
+	<if test="activeUser != null">active_user=#{activeUser,jdbcType=VARCHAR},</if>
+	<if test="activeTime != null">active_time=#{activeTime,jdbcType=TIMESTAMP},</if>
+	<if test="activeMemo != null">active_memo=#{activeMemo,jdbcType=VARCHAR},</if>
+	<if test="shipperId != null">shipper_id=#{shipperId,jdbcType=VARCHAR}</if>
+</set>
+<where>
+	<choose>
+        <when test="lineid != null">and lineid = #{lineid}</when>
+        <otherwise>and lineid = </otherwise>
+    </choose>
+</where>
+</update>
+
+<!-- ElementID:updateNull,Generated=true -->
+<update id="updateNull" parameterType="map">
+	update tps_join_driver
+	<set>
+		<trim suffixOverrides=",">
+		    <if test="driverName==null">driver_name = null,</if>
+		    <if test="licenseno==null">licenseno = null,</if>
+		    <if test="vehicleLicenseno==null">vehicle_licenseno = null,</if>
+		    <if test="cardno==null">cardno = null,</if>
+		    <if test="mobileno==null">mobileno = null,</if>
+		    <if test="provinceId==null">province_id = null,</if>
+		    <if test="province==null">province = null,</if>
+		    <if test="cityId==null">city_id = null,</if>
+		    <if test="city==null">city = null,</if>
+		    <if test="carNumber==null">car_number = null,</if>
+		    <if test="checkFlag==null">check_flag = null,</if>
+		    <if test="createTime==null">create_time = null,</if>
+		    <if test="createUser==null">create_user = null,</if>
+		    <if test="active==null">active = null,</if>
+		    <if test="activeUser==null">active_user = null,</if>
+		    <if test="activeTime==null">active_time = null,</if>
+		    <if test="activeMemo==null">active_memo = null,</if>
+		    <if test="shipperId==null">shipper_id = null,</if>
+		</trim>
+	</set>
+	<where>
+		<choose>
+			<when test="lineid != null">and lineid = #{lineid}</when>
+			<otherwise>and lineid = </otherwise>
+		</choose>
+	</where>
+</update>
+
+<!-- ElementID:delete,Generated=true -->
+<delete id="delete" parameterType="com.unlcn.ils.tps.E_join_driver">
+    delete from tps_join_driver where 1=1 and lineid = #{lineid}
+</delete>
+
+<!-- ElementID:select,Generated=true -->
+<select id="select" parameterType="com.unlcn.ils.tps.E_join_driver" resultMap="E_join_driverResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_join_driver 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:deleteBatch,Generated=true -->
+<delete id="deleteBatch" parameterType="List">
+	delete from tps_join_driver where lineid in
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<foreach collection="list" item="entity" separator=",">
+	#{entity.lineid}
+</foreach>
+</trim>
+</delete>
+
+<!-- ElementID:selectAll,Generated=true -->
+<select id="selectAll" resultMap="E_join_driverResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_join_driver 
+</select>
+
+<!-- ElementID:selectByID,Generated=false -->
+<select id="selectByID" parameterType="java.lang.String" resultMap="E_join_driverResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_join_driver 
+		 where tps_join_driver.lineid = #{lineid,jdbcType=VARCHAR}
+</select>
+<select id="selectByShipperID" parameterType="java.lang.Integer" resultMap="E_join_driverResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_join_driver 
+		 where tps_join_driver.shipper_lineid = #{shipperLineid,jdbcType=NUMERIC}
+</select>
+
+<!-- ElementID:selectByPage,Generated=true -->
+<select id="selectByPage" parameterType="com.unlcn.ils.tps.E_join_driver" resultMap="E_join_driverResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_join_driver 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:selectMany,Generated=true -->
+<select id="selectMany" parameterType="list" resultMap="E_join_driverResult">
+select 
+	<include refid="column_sql"/> 
+	from tps_join_driver 
+	where tps_join_driver.lineid in (
+		select distinct lineid from tps_join_driver inner join
+<foreach collection="list" item="entity" separator="inner join">
+		(select 
+			distinct lineid
+			from tps_join_driver 
+			<where>
+	        <if test="entity.lineid != null">and tps_join_driver.lineid = #{entity.lineid}</if>
+	        <if test="entity.driverName != null">and tps_join_driver.driver_name = #{entity.driverName}</if>
+	        <if test="entity.licenseno != null">and tps_join_driver.licenseno = #{entity.licenseno}</if>
+	        <if test="entity.vehicleLicenseno != null">and tps_join_driver.vehicle_licenseno = #{entity.vehicleLicenseno}</if>
+	        <if test="entity.cardno != null">and tps_join_driver.cardno = #{entity.cardno}</if>
+	        <if test="entity.mobileno != null">and tps_join_driver.mobileno = #{entity.mobileno}</if>
+	        <if test="entity.provinceId != null">and tps_join_driver.province_id = #{entity.provinceId}</if>
+	        <if test="entity.province != null">and tps_join_driver.province = #{entity.province}</if>
+	        <if test="entity.cityId != null">and tps_join_driver.city_id = #{entity.cityId}</if>
+	        <if test="entity.city != null">and tps_join_driver.city = #{entity.city}</if>
+	        <if test="entity.carNumber != null">and tps_join_driver.car_number = #{entity.carNumber}</if>
+	        <if test="entity.checkFlag != null">and tps_join_driver.check_flag = #{entity.checkFlag}</if>
+	        <if test="entity.createTime != null">and tps_join_driver.create_time = #{entity.createTime}</if>
+	        <if test="entity.createUser != null">and tps_join_driver.create_user = #{entity.createUser}</if>
+	        <if test="entity.active != null">and tps_join_driver.active = #{entity.active}</if>
+	        <if test="entity.activeUser != null">and tps_join_driver.active_user = #{entity.activeUser}</if>
+	        <if test="entity.activeTime != null">and tps_join_driver.active_time = #{entity.activeTime}</if>
+	        <if test="entity.activeMemo != null">and tps_join_driver.active_memo = #{entity.activeMemo}</if>
+	        <if test="entity.shipperId != null">and tps_join_driver.shipper_id = #{entity.shipperId}</if>
+			</where>
+		) ${entity.tableAlias} using (lineid)
+</foreach>
+)
+</select>
+
+<!-- ElementID:insert,Generated=true -->
+<insert id="insert" parameterType="com.unlcn.ils.tps.E_join_driver">
+	insert into tps_join_driver(
+	         <if test="lineid != null">lineid</if>
+	         <if test="driverName != null">,driver_name</if>
+	         <if test="licenseno != null">,licenseno</if>
+	         <if test="vehicleLicenseno != null">,vehicle_licenseno</if>
+	         <if test="cardno != null">,cardno</if>
+	         <if test="mobileno != null">,mobileno</if>
+	         <if test="provinceId != null">,province_id</if>
+	         <if test="province != null">,province</if>
+	         <if test="cityId != null">,city_id</if>
+	         <if test="city != null">,city</if>
+	         <if test="carNumber != null">,car_number</if>
+	         <if test="checkFlag != null">,check_flag</if>
+	         <if test="createTime != null">,create_time</if>
+	         <if test="createUser != null">,create_user</if>
+	         <if test="active != null">,active</if>
+	         <if test="activeUser != null">,active_user</if>
+	         <if test="activeTime != null">,active_time</if>
+	         <if test="activeMemo != null">,active_memo</if>
+	         <if test="shipperId != null">,shipper_id</if>
+	 	 	 )
+	 values (
+	         <if test="lineid != null">#{lineid,jdbcType=VARCHAR}</if>
+	         <if test="driverName != null">,#{driverName,jdbcType=VARCHAR}</if>
+	         <if test="licenseno != null">,#{licenseno,jdbcType=VARCHAR}</if>
+	         <if test="vehicleLicenseno != null">,#{vehicleLicenseno,jdbcType=VARCHAR}</if>
+	         <if test="cardno != null">,#{cardno,jdbcType=VARCHAR}</if>
+	         <if test="mobileno != null">,#{mobileno,jdbcType=VARCHAR}</if>
+	         <if test="provinceId != null">,#{provinceId,jdbcType=NUMERIC}</if>
+	         <if test="province != null">,#{province,jdbcType=VARCHAR}</if>
+	         <if test="cityId != null">,#{cityId,jdbcType=NUMERIC}</if>
+	         <if test="city != null">,#{city,jdbcType=VARCHAR}</if>
+	         <if test="carNumber != null">,#{carNumber,jdbcType=NUMERIC}</if>
+	         <if test="checkFlag != null">,#{checkFlag,jdbcType=NUMERIC}</if>
+	         <if test="createTime != null">,#{createTime,jdbcType=TIMESTAMP}</if>
+	         <if test="createUser != null">,#{createUser,jdbcType=VARCHAR}</if>
+	         <if test="active != null">,#{active,jdbcType=NUMERIC}</if>
+	         <if test="activeUser != null">,#{activeUser,jdbcType=VARCHAR}</if>
+	         <if test="activeTime != null">,#{activeTime,jdbcType=TIMESTAMP}</if>
+	         <if test="activeMemo != null">,#{activeMemo,jdbcType=VARCHAR}</if>
+	         <if test="shipperId != null">,#{shipperId,jdbcType=VARCHAR}</if>
+	 	 	 )
+</insert>
+
+<!-- ElementID:insertBatch,Generated=true -->
+<insert id="insertBatch" parameterType="list">
+	insert into tps_join_driver (lineid,driver_name,licenseno,vehicle_licenseno,cardno,mobileno,province_id,province,city_id,city,car_number,check_flag,create_time,create_user,active,active_user,active_time,active_memo,shipper_id) 
+<foreach collection="list" item="entity" index="index" separator="union all">
+		select 
+		#{entity.lineid,jdbcType = VARCHAR},
+				#{entity.driverName,jdbcType = VARCHAR},
+				#{entity.licenseno,jdbcType = VARCHAR},
+				#{entity.vehicleLicenseno,jdbcType = VARCHAR},
+				#{entity.cardno,jdbcType = VARCHAR},
+				#{entity.mobileno,jdbcType = VARCHAR},
+				#{entity.provinceId,jdbcType = NUMERIC},
+				#{entity.province,jdbcType = VARCHAR},
+				#{entity.cityId,jdbcType = NUMERIC},
+				#{entity.city,jdbcType = VARCHAR},
+				#{entity.carNumber,jdbcType = NUMERIC},
+				#{entity.checkFlag,jdbcType = NUMERIC},
+				#{entity.createTime,jdbcType = TIMESTAMP},
+				#{entity.createUser,jdbcType = VARCHAR},
+				#{entity.active,jdbcType = NUMERIC},
+				#{entity.activeUser,jdbcType = VARCHAR},
+				#{entity.activeTime,jdbcType = TIMESTAMP},
+				#{entity.activeMemo,jdbcType = VARCHAR},
+				#{entity.shipperId,jdbcType = VARCHAR}
+		from dual
+</foreach>
+</insert>
+<select id="selectByCity" parameterType="java.lang.Integer" resultMap="E_join_driverResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_join_driver 
+		 where tps_join_driver.city_id = #{city_id}
+</select>
+<select id="getMaxId" resultMap="E_join_driverResult">
+	select * from tps_join_driver ORDER BY create_time DESC;
+</select>
+<select id="selectByCityId" parameterType="java.lang.Integer" resultMap="E_join_driverResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_join_driver 
+		 where tps_join_driver.city_id = #{city_id}
+</select>
+<select id="selectByShipperIDs" parameterType="java.lang.String" resultMap="E_join_driverResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_join_driver 
+		 where tps_join_driver.shipper_id = #{shipper_id}
+</select>
+<select id="selectByCondition" parameterType="com.unlcn.ils.tps.E_join_driver" resultMap="E_join_driverResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_join_driver 
+	    <where>
+	    	<if test="driverName!=null">and tps_join_driver.driver_name like #{driverName}</if>
+	    	<if test="provinceId!=null">and tps_join_driver.province_id = #{provinceId}</if>
+	    	<if test="cityId!=null">and tps_join_driver.city_id = #{cityId}</if>
+	    </where>
+</select>
+</mapper>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><mapper namespace="com.unlcn.ils.tps.E_styleMapper">	
+
+<!-- ElementID:column_sql,Generated=true -->
+<sql id="column_sql">
+		  tps_style.lineid ,
+		  tps_style.stylename ,
+		  tps_style.customerid 
+</sql>
+
+<!-- ElementID:whereClause_sql,Generated=true -->
+<sql id="whereClause_sql">
+	    <if test="lineid != null">and tps_style.lineid = #{lineid}</if>
+	    <if test="stylename != null">and tps_style.stylename = #{stylename}</if>
+	    <if test="customerid != null">and tps_style.customerid = #{customerid}</if>
+</sql>
+
+
+<!-- ElementID:E_styleResult,Generated=true -->
+<resultMap id="E_styleResult" type="com.unlcn.ils.tps.E_style">
+	<id property="lineid" column="lineid"/>
+	<result property="stylename" column="stylename"/>
+	<result property="customerid" column="customerid"/>
+</resultMap>
+
+
+<!-- ElementName:cache,Generated=true -->
+<cache type="C2_Default_Dao_Cache"/>
+
+<!-- ElementID:count,Generated=true -->
+<select id="count" parameterType="com.unlcn.ils.tps.E_style" resultType="int">
+	select count(*) from tps_style 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+<!-- ElementID:update,Generated=true -->
+<update id="update" parameterType="com.unlcn.ils.tps.E_style">
+	update tps_style
+<set>
+	<if test="stylename != null">stylename=#{stylename,jdbcType=VARCHAR},</if>
+	<if test="customerid != null">customerid=#{customerid,jdbcType=NUMERIC}</if>
+</set>
+<where>
+	<choose>
+        <when test="lineid != null">and lineid = #{lineid}</when>
+        <otherwise>and lineid = </otherwise>
+    </choose>
+</where>
+</update>
+
+<!-- ElementID:updateNull,Generated=true -->
+<update id="updateNull" parameterType="map">
+	update tps_style
+	<set>
+		<trim suffixOverrides=",">
+		    <if test="stylename==null">stylename = null,</if>
+		    <if test="customerid==null">customerid = null,</if>
+		</trim>
+	</set>
+	<where>
+		<choose>
+			<when test="lineid != null">and lineid = #{lineid}</when>
+			<otherwise>and lineid = </otherwise>
+		</choose>
+	</where>
+</update>
+
+<!-- ElementID:delete,Generated=true -->
+<delete id="delete" parameterType="com.unlcn.ils.tps.E_style">
+    delete from tps_style where 1=1 and lineid = #{lineid}
+</delete>
+
+<!-- ElementID:select,Generated=true -->
+<select id="select" parameterType="com.unlcn.ils.tps.E_style" resultMap="E_styleResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_style 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:deleteBatch,Generated=true -->
+<delete id="deleteBatch" parameterType="List">
+	delete from tps_style where lineid in
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<foreach collection="list" item="entity" separator=",">
+	#{entity.lineid}
+</foreach>
+</trim>
+</delete>
+
+<!-- ElementID:selectAll,Generated=true -->
+<select id="selectAll" resultMap="E_styleResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_style 
+</select>
+
+<!-- ElementID:selectByID,Generated=true -->
+<select id="selectByID" parameterType="java.lang.Integer" resultMap="E_styleResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_style 
+		 where tps_style.lineid = #{lineid,jdbcType=NUMERIC}
+</select>
+
+<!-- ElementID:selectByPage,Generated=true -->
+<select id="selectByPage" parameterType="com.unlcn.ils.tps.E_style" resultMap="E_styleResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_style 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:selectMany,Generated=true -->
+<select id="selectMany" parameterType="list" resultMap="E_styleResult">
+select 
+	<include refid="column_sql"/> 
+	from tps_style 
+	where tps_style.lineid in (
+		select distinct lineid from tps_style inner join
+<foreach collection="list" item="entity" separator="inner join">
+		(select 
+			distinct lineid
+			from tps_style 
+			<where>
+	        <if test="entity.lineid != null">and tps_style.lineid = #{entity.lineid}</if>
+	        <if test="entity.stylename != null">and tps_style.stylename = #{entity.stylename}</if>
+	        <if test="entity.customerid != null">and tps_style.customerid = #{entity.customerid}</if>
+			</where>
+		) ${entity.tableAlias} using (lineid)
+</foreach>
+)
+</select>
+
+<!-- ElementID:insert,Generated=true -->
+<insert id="insert" parameterType="com.unlcn.ils.tps.E_style" useGeneratedKeys="true">
+	<selectKey keyProperty="lineid" resultType="java.lang.Integer" order="AFTER">
+        select LAST_INSERT_ID()
+    </selectKey>
+insert into tps_style(
+		<trim prefixOverrides=",">
+		    <if test="stylename != null">stylename</if>
+		    <if test="customerid != null">,customerid</if>
+		</trim>
+	 )
+	 values (
+		<trim prefixOverrides=",">
+		    <if test="stylename != null">#{stylename,jdbcType=VARCHAR}</if>
+		    <if test="customerid != null">,#{customerid,jdbcType=NUMERIC}</if>
+        </trim>
+	 )
+</insert>
+
+<!-- ElementID:insertBatch,Generated=true -->
+<insert id="insertBatch" parameterType="list" useGeneratedKeys="true">
+	insert into tps_style (stylename,customerid)
+			values 
+			<foreach collection="list" item="entity" index="index" separator=",">
+				(
+		         #{entity.stylename,jdbcType = VARCHAR},
+		         #{entity.customerid,jdbcType = NUMERIC}
+				)
+</foreach>
+</insert>
+</mapper>

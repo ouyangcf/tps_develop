@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><mapper namespace="com.unlcn.ils.tps.E_deductMapper">	
+
+<!-- ElementID:column_sql,Generated=true -->
+<sql id="column_sql">
+		  tps_deduct.lineid ,
+		  tps_deduct.checkhead_lineid ,
+		  tps_deduct.revise_lineid ,
+		  tps_deduct.deduct_money ,
+		  tps_deduct.deduct_reson ,
+		  tps_deduct.create_time ,
+		  tps_deduct.create_user ,
+		  tps_deduct.active ,
+		  tps_deduct.active_user ,
+		  tps_deduct.active_time ,
+		  tps_deduct.active_memo 
+</sql>
+
+<!-- ElementID:whereClause_sql,Generated=true -->
+<sql id="whereClause_sql">
+	    <if test="lineid != null">and tps_deduct.lineid = #{lineid}</if>
+	    <if test="checkheadLineid != null">and tps_deduct.checkhead_lineid = #{checkheadLineid}</if>
+	    <if test="reviseLineid != null">and tps_deduct.revise_lineid = #{reviseLineid}</if>
+	    <if test="deductMoney != null">and tps_deduct.deduct_money = #{deductMoney}</if>
+	    <if test="deductReson != null">and tps_deduct.deduct_reson = #{deductReson}</if>
+	    <if test="createTime != null">and tps_deduct.create_time = #{createTime}</if>
+	    <if test="createUser != null">and tps_deduct.create_user = #{createUser}</if>
+	    <if test="active != null">and tps_deduct.active = #{active}</if>
+	    <if test="activeUser != null">and tps_deduct.active_user = #{activeUser}</if>
+	    <if test="activeTime != null">and tps_deduct.active_time = #{activeTime}</if>
+	    <if test="activeMemo != null">and tps_deduct.active_memo = #{activeMemo}</if>
+</sql>
+
+
+<!-- ElementID:E_deductResult,Generated=true -->
+<resultMap id="E_deductResult" type="com.unlcn.ils.tps.E_deduct">
+	<id property="lineid" column="lineid"/>
+	<result property="checkheadLineid" column="checkhead_lineid"/>
+	<result property="reviseLineid" column="revise_lineid"/>
+	<result property="deductMoney" column="deduct_money"/>
+	<result property="deductReson" column="deduct_reson"/>
+	<result property="createTime" column="create_time"/>
+	<result property="createUser" column="create_user"/>
+	<result property="active" column="active"/>
+	<result property="activeUser" column="active_user"/>
+	<result property="activeTime" column="active_time"/>
+	<result property="activeMemo" column="active_memo"/>
+</resultMap>
+
+
+<!-- ElementName:cache,Generated=true -->
+<cache type="C2_Default_Dao_Cache"/>
+
+<!-- ElementID:count,Generated=true -->
+<select id="count" parameterType="com.unlcn.ils.tps.E_deduct" resultType="int">
+	select count(*) from tps_deduct 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+<!-- ElementID:update,Generated=true -->
+<update id="update" parameterType="com.unlcn.ils.tps.E_deduct">
+	update tps_deduct
+<set>
+	<if test="checkheadLineid != null">checkhead_lineid=#{checkheadLineid,jdbcType=VARCHAR},</if>
+	<if test="reviseLineid != null">revise_lineid=#{reviseLineid,jdbcType=VARCHAR},</if>
+	<if test="deductMoney != null">deduct_money=#{deductMoney,jdbcType=NUMERIC},</if>
+	<if test="deductReson != null">deduct_reson=#{deductReson,jdbcType=VARCHAR},</if>
+	<if test="createTime != null">create_time=#{createTime,jdbcType=TIMESTAMP},</if>
+	<if test="createUser != null">create_user=#{createUser,jdbcType=VARCHAR},</if>
+	<if test="active != null">active=#{active,jdbcType=NUMERIC},</if>
+	<if test="activeUser != null">active_user=#{activeUser,jdbcType=VARCHAR},</if>
+	<if test="activeTime != null">active_time=#{activeTime,jdbcType=TIMESTAMP},</if>
+	<if test="activeMemo != null">active_memo=#{activeMemo,jdbcType=VARCHAR}</if>
+</set>
+<where>
+	<choose>
+        <when test="lineid != null">and lineid = #{lineid}</when>
+        <otherwise>and lineid = </otherwise>
+    </choose>
+</where>
+</update>
+
+<!-- ElementID:updateNull,Generated=true -->
+<update id="updateNull" parameterType="map">
+	update tps_deduct
+	<set>
+		<trim suffixOverrides=",">
+		    <if test="checkheadLineid==null">checkhead_lineid = null,</if>
+		    <if test="reviseLineid==null">revise_lineid = null,</if>
+		    <if test="deductMoney==null">deduct_money = null,</if>
+		    <if test="deductReson==null">deduct_reson = null,</if>
+		    <if test="createTime==null">create_time = null,</if>
+		    <if test="createUser==null">create_user = null,</if>
+		    <if test="active==null">active = null,</if>
+		    <if test="activeUser==null">active_user = null,</if>
+		    <if test="activeTime==null">active_time = null,</if>
+		    <if test="activeMemo==null">active_memo = null,</if>
+		</trim>
+	</set>
+	<where>
+		<choose>
+			<when test="lineid != null">and lineid = #{lineid}</when>
+			<otherwise>and lineid = </otherwise>
+		</choose>
+	</where>
+</update>
+
+<!-- ElementID:delete,Generated=true -->
+<delete id="delete" parameterType="com.unlcn.ils.tps.E_deduct">
+    delete from tps_deduct where 1=1 and lineid = #{lineid}
+</delete>
+
+<!-- ElementID:select,Generated=true -->
+<select id="select" parameterType="com.unlcn.ils.tps.E_deduct" resultMap="E_deductResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_deduct 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:deleteBatch,Generated=true -->
+<delete id="deleteBatch" parameterType="List">
+	delete from tps_deduct where lineid in
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<foreach collection="list" item="entity" separator=",">
+	#{entity.lineid}
+</foreach>
+</trim>
+</delete>
+
+<!-- ElementID:selectAll,Generated=true -->
+<select id="selectAll" resultMap="E_deductResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_deduct 
+</select>
+
+<!-- ElementID:selectByID,Generated=true -->
+<select id="selectByID" parameterType="java.lang.String" resultMap="E_deductResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_deduct 
+		 where tps_deduct.lineid = #{lineid,jdbcType=VARCHAR}
+</select>
+
+<!-- ElementID:selectByPage,Generated=true -->
+<select id="selectByPage" parameterType="com.unlcn.ils.tps.E_deduct" resultMap="E_deductResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_deduct 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:selectMany,Generated=true -->
+<select id="selectMany" parameterType="list" resultMap="E_deductResult">
+select 
+	<include refid="column_sql"/> 
+	from tps_deduct 
+	where tps_deduct.lineid in (
+		select distinct lineid from tps_deduct inner join
+<foreach collection="list" item="entity" separator="inner join">
+		(select 
+			distinct lineid
+			from tps_deduct 
+			<where>
+	        <if test="entity.lineid != null">and tps_deduct.lineid = #{entity.lineid}</if>
+	        <if test="entity.checkheadLineid != null">and tps_deduct.checkhead_lineid = #{entity.checkheadLineid}</if>
+	        <if test="entity.reviseLineid != null">and tps_deduct.revise_lineid = #{entity.reviseLineid}</if>
+	        <if test="entity.deductMoney != null">and tps_deduct.deduct_money = #{entity.deductMoney}</if>
+	        <if test="entity.deductReson != null">and tps_deduct.deduct_reson = #{entity.deductReson}</if>
+	        <if test="entity.createTime != null">and tps_deduct.create_time = #{entity.createTime}</if>
+	        <if test="entity.createUser != null">and tps_deduct.create_user = #{entity.createUser}</if>
+	        <if test="entity.active != null">and tps_deduct.active = #{entity.active}</if>
+	        <if test="entity.activeUser != null">and tps_deduct.active_user = #{entity.activeUser}</if>
+	        <if test="entity.activeTime != null">and tps_deduct.active_time = #{entity.activeTime}</if>
+	        <if test="entity.activeMemo != null">and tps_deduct.active_memo = #{entity.activeMemo}</if>
+			</where>
+		) ${entity.tableAlias} using (lineid)
+</foreach>
+)
+</select>
+
+<!-- ElementID:insert,Generated=true -->
+<insert id="insert" parameterType="com.unlcn.ils.tps.E_deduct">
+	insert into tps_deduct(
+	         <if test="lineid != null">lineid</if>
+	         <if test="checkheadLineid != null">,checkhead_lineid</if>
+	         <if test="reviseLineid != null">,revise_lineid</if>
+	         <if test="deductMoney != null">,deduct_money</if>
+	         <if test="deductReson != null">,deduct_reson</if>
+	         <if test="createTime != null">,create_time</if>
+	         <if test="createUser != null">,create_user</if>
+	         <if test="active != null">,active</if>
+	         <if test="activeUser != null">,active_user</if>
+	         <if test="activeTime != null">,active_time</if>
+	         <if test="activeMemo != null">,active_memo</if>
+	 	 	 )
+	 values (
+	         <if test="lineid != null">#{lineid,jdbcType=VARCHAR}</if>
+	         <if test="checkheadLineid != null">,#{checkheadLineid,jdbcType=VARCHAR}</if>
+	         <if test="reviseLineid != null">,#{reviseLineid,jdbcType=VARCHAR}</if>
+	         <if test="deductMoney != null">,#{deductMoney,jdbcType=NUMERIC}</if>
+	         <if test="deductReson != null">,#{deductReson,jdbcType=VARCHAR}</if>
+	         <if test="createTime != null">,#{createTime,jdbcType=TIMESTAMP}</if>
+	         <if test="createUser != null">,#{createUser,jdbcType=VARCHAR}</if>
+	         <if test="active != null">,#{active,jdbcType=NUMERIC}</if>
+	         <if test="activeUser != null">,#{activeUser,jdbcType=VARCHAR}</if>
+	         <if test="activeTime != null">,#{activeTime,jdbcType=TIMESTAMP}</if>
+	         <if test="activeMemo != null">,#{activeMemo,jdbcType=VARCHAR}</if>
+	 	 	 )
+</insert>
+
+<!-- ElementID:insertBatch,Generated=true -->
+<insert id="insertBatch" parameterType="list">
+	insert into tps_deduct (lineid,checkhead_lineid,revise_lineid,deduct_money,deduct_reson,create_time,create_user,active,active_user,active_time,active_memo) 
+<foreach collection="list" item="entity" index="index" separator="union all">
+		select 
+		#{entity.lineid,jdbcType = VARCHAR},
+				#{entity.checkheadLineid,jdbcType = VARCHAR},
+				#{entity.reviseLineid,jdbcType = VARCHAR},
+				#{entity.deductMoney,jdbcType = NUMERIC},
+				#{entity.deductReson,jdbcType = VARCHAR},
+				#{entity.createTime,jdbcType = TIMESTAMP},
+				#{entity.createUser,jdbcType = VARCHAR},
+				#{entity.active,jdbcType = NUMERIC},
+				#{entity.activeUser,jdbcType = VARCHAR},
+				#{entity.activeTime,jdbcType = TIMESTAMP},
+				#{entity.activeMemo,jdbcType = VARCHAR}
+		from dual
+</foreach>
+</insert>
+<select id="selectByCheckHeadLineid" parameterType="java.lang.String" resultMap="E_deductResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_deduct 
+		 where tps_deduct.checkhead_lineid = #{checkhead_lineid}
+</select>
+<select id="selectByReviseLineid" parameterType="java.lang.String" resultMap="E_deductResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_deduct 
+		 where tps_deduct.revise_lineid = #{revise_lineid}
+</select>
+</mapper>

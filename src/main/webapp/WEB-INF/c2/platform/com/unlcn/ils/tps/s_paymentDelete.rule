@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="s_paymentDelete" log="false" className="com.unlcn.ils.tps.services.PaymentMethodMaintain" method="paymentDelete">
+  <name>支付方式维护删除</name>
+  <inputs>
+    <input collection="false" desc="" id="idList" required="true" type="Integer"/>
+  </inputs>
+  <outputs>
+    <output autoValue="Result" desc="@Description:支付方式维护删除" id="result" name="方法返回值" type="boolean"/>
+  </outputs>
+  <params>
+    <param autoValue="Input.idList" name="idList" signature="QInteger;" type="Integer"/>
+  </params>
+  <return signature="Z" type="boolean"/>
+</CustomRule>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="s_auditToolOpen" log="false" className="com.unlcn.ils.tps.services.AuditToolMaintain" method="auditToolOpen">
+  <name>沟通方式字典启用</name>
+  <inputs>
+    <input collection="false" desc="" id="idList" required="true" type="java.util.List"/>
+  </inputs>
+  <outputs>
+    <output autoValue="Result" desc="@Description:支付周期维护启用" id="result" name="方法返回值" type="boolean"/>
+  </outputs>
+  <params>
+    <param autoValue="Input.idList" name="idList" signature="QList&lt;QInteger;>;" type="java.util.List"/>
+  </params>
+  <return signature="Z" type="boolean"/>
+</CustomRule>

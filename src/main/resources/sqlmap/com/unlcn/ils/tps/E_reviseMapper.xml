@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><mapper namespace="com.unlcn.ils.tps.E_reviseMapper">	
+
+<!-- ElementID:column_sql,Generated=true -->
+<sql id="column_sql">
+		  tps_revise.lineid ,
+		  tps_revise.checkhead_lineid ,
+		  tps_revise.checkdetail_lineid ,
+		  tps_revise.argue_lineid ,
+		  tps_revise.revise_description ,
+		  tps_revise.revise_content ,
+		  tps_revise.dead_date ,
+		  tps_revise.approve_username ,
+		  tps_revise.approve_memo ,
+		  tps_revise.approve_time ,
+		  tps_revise.revise_status ,
+		  tps_revise.approve_status ,
+		  tps_revise.reson ,
+		  tps_revise.tempcontent ,
+		  tps_revise.longcontent ,
+		  tps_revise.precontent ,
+		  tps_revise.verifycontent ,
+		  tps_revise.contact ,
+		  tps_revise.execute_username ,
+		  tps_revise.create_time ,
+		  tps_revise.create_user ,
+		  tps_revise.active ,
+		  tps_revise.active_user ,
+		  tps_revise.active_time ,
+		  tps_revise.active_memo 
+</sql>
+
+<!-- ElementID:whereClause_sql,Generated=true -->
+<sql id="whereClause_sql">
+	    <if test="lineid != null">and tps_revise.lineid = #{lineid}</if>
+	    <if test="checkheadLineid != null">and tps_revise.checkhead_lineid = #{checkheadLineid}</if>
+	    <if test="checkdetailLineid != null">and tps_revise.checkdetail_lineid = #{checkdetailLineid}</if>
+	    <if test="argueLineid != null">and tps_revise.argue_lineid = #{argueLineid}</if>
+	    <if test="reviseDescription != null">and tps_revise.revise_description = #{reviseDescription}</if>
+	    <if test="reviseContent != null">and tps_revise.revise_content = #{reviseContent}</if>
+	    <if test="deadDate != null">and tps_revise.dead_date = #{deadDate}</if>
+	    <if test="approveUsername != null">and tps_revise.approve_username = #{approveUsername}</if>
+	    <if test="approveMemo != null">and tps_revise.approve_memo = #{approveMemo}</if>
+	    <if test="approveTime != null">and tps_revise.approve_time = #{approveTime}</if>
+	    <if test="reviseStatus != null">and tps_revise.revise_status = #{reviseStatus}</if>
+	    <if test="approveStatus != null">and tps_revise.approve_status = #{approveStatus}</if>
+	    <if test="reson != null">and tps_revise.reson = #{reson}</if>
+	    <if test="tempcontent != null">and tps_revise.tempcontent = #{tempcontent}</if>
+	    <if test="longcontent != null">and tps_revise.longcontent = #{longcontent}</if>
+	    <if test="precontent != null">and tps_revise.precontent = #{precontent}</if>
+	    <if test="verifycontent != null">and tps_revise.verifycontent = #{verifycontent}</if>
+	    <if test="contact != null">and tps_revise.contact = #{contact}</if>
+	    <if test="executeUsername != null">and tps_revise.execute_username = #{executeUsername}</if>
+	    <if test="createTime != null">and tps_revise.create_time = #{createTime}</if>
+	    <if test="createUser != null">and tps_revise.create_user = #{createUser}</if>
+	    <if test="active != null">and tps_revise.active = #{active}</if>
+	    <if test="activeUser != null">and tps_revise.active_user = #{activeUser}</if>
+	    <if test="activeTime != null">and tps_revise.active_time = #{activeTime}</if>
+	    <if test="activeMemo != null">and tps_revise.active_memo = #{activeMemo}</if>
+</sql>
+
+
+<!-- ElementID:E_reviseResult,Generated=true -->
+<resultMap id="E_reviseResult" type="com.unlcn.ils.tps.E_revise">
+	<id property="lineid" column="lineid"/>
+	<result property="checkheadLineid" column="checkhead_lineid"/>
+	<result property="checkdetailLineid" column="checkdetail_lineid"/>
+	<result property="argueLineid" column="argue_lineid"/>
+	<result property="reviseDescription" column="revise_description"/>
+	<result property="reviseContent" column="revise_content"/>
+	<result property="deadDate" column="dead_date"/>
+	<result property="approveUsername" column="approve_username"/>
+	<result property="approveMemo" column="approve_memo"/>
+	<result property="approveTime" column="approve_time"/>
+	<result property="reviseStatus" column="revise_status"/>
+	<result property="approveStatus" column="approve_status"/>
+	<result property="reson" column="reson"/>
+	<result property="tempcontent" column="tempcontent"/>
+	<result property="longcontent" column="longcontent"/>
+	<result property="precontent" column="precontent"/>
+	<result property="verifycontent" column="verifycontent"/>
+	<result property="contact" column="contact"/>
+	<result property="executeUsername" column="execute_username"/>
+	<result property="createTime" column="create_time"/>
+	<result property="createUser" column="create_user"/>
+	<result property="active" column="active"/>
+	<result property="activeUser" column="active_user"/>
+	<result property="activeTime" column="active_time"/>
+	<result property="activeMemo" column="active_memo"/>
+</resultMap>
+
+
+<!-- ElementName:cache,Generated=true -->
+<cache type="C2_Default_Dao_Cache"/>
+
+<!-- ElementID:count,Generated=true -->
+<select id="count" parameterType="com.unlcn.ils.tps.E_revise" resultType="int">
+	select count(*) from tps_revise 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+<!-- ElementID:update,Generated=true -->
+<update id="update" parameterType="com.unlcn.ils.tps.E_revise">
+	update tps_revise
+<set>
+	<if test="checkheadLineid != null">checkhead_lineid=#{checkheadLineid,jdbcType=VARCHAR},</if>
+	<if test="checkdetailLineid != null">checkdetail_lineid=#{checkdetailLineid,jdbcType=VARCHAR},</if>
+	<if test="argueLineid != null">argue_lineid=#{argueLineid,jdbcType=VARCHAR},</if>
+	<if test="reviseDescription != null">revise_description=#{reviseDescription,jdbcType=VARCHAR},</if>
+	<if test="reviseContent != null">revise_content=#{reviseContent,jdbcType=VARCHAR},</if>
+	<if test="deadDate != null">dead_date=#{deadDate,jdbcType=TIMESTAMP},</if>
+	<if test="approveUsername != null">approve_username=#{approveUsername,jdbcType=VARCHAR},</if>
+	<if test="approveMemo != null">approve_memo=#{approveMemo,jdbcType=VARCHAR},</if>
+	<if test="approveTime != null">approve_time=#{approveTime,jdbcType=TIMESTAMP},</if>
+	<if test="reviseStatus != null">revise_status=#{reviseStatus,jdbcType=NUMERIC},</if>
+	<if test="approveStatus != null">approve_status=#{approveStatus,jdbcType=NUMERIC},</if>
+	<if test="reson != null">reson=#{reson,jdbcType=VARCHAR},</if>
+	<if test="tempcontent != null">tempcontent=#{tempcontent,jdbcType=VARCHAR},</if>
+	<if test="longcontent != null">longcontent=#{longcontent,jdbcType=VARCHAR},</if>
+	<if test="precontent != null">precontent=#{precontent,jdbcType=VARCHAR},</if>
+	<if test="verifycontent != null">verifycontent=#{verifycontent,jdbcType=VARCHAR},</if>
+	<if test="contact != null">contact=#{contact,jdbcType=VARCHAR},</if>
+	<if test="executeUsername != null">execute_username=#{executeUsername,jdbcType=VARCHAR},</if>
+	<if test="createTime != null">create_time=#{createTime,jdbcType=TIMESTAMP},</if>
+	<if test="createUser != null">create_user=#{createUser,jdbcType=VARCHAR},</if>
+	<if test="active != null">active=#{active,jdbcType=NUMERIC},</if>
+	<if test="activeUser != null">active_user=#{activeUser,jdbcType=VARCHAR},</if>
+	<if test="activeTime != null">active_time=#{activeTime,jdbcType=TIMESTAMP},</if>
+	<if test="activeMemo != null">active_memo=#{activeMemo,jdbcType=VARCHAR}</if>
+</set>
+<where>
+	<choose>
+        <when test="lineid != null">and lineid = #{lineid}</when>
+        <otherwise>and lineid = </otherwise>
+    </choose>
+</where>
+</update>
+
+<!-- ElementID:updateNull,Generated=true -->
+<update id="updateNull" parameterType="map">
+	update tps_revise
+	<set>
+		<trim suffixOverrides=",">
+		    <if test="checkheadLineid==null">checkhead_lineid = null,</if>
+		    <if test="checkdetailLineid==null">checkdetail_lineid = null,</if>
+		    <if test="argueLineid==null">argue_lineid = null,</if>
+		    <if test="reviseDescription==null">revise_description = null,</if>
+		    <if test="reviseContent==null">revise_content = null,</if>
+		    <if test="deadDate==null">dead_date = null,</if>
+		    <if test="approveUsername==null">approve_username = null,</if>
+		    <if test="approveMemo==null">approve_memo = null,</if>
+		    <if test="approveTime==null">approve_time = null,</if>
+		    <if test="reviseStatus==null">revise_status = null,</if>
+		    <if test="approveStatus==null">approve_status = null,</if>
+		    <if test="reson==null">reson = null,</if>
+		    <if test="tempcontent==null">tempcontent = null,</if>
+		    <if test="longcontent==null">longcontent = null,</if>
+		    <if test="precontent==null">precontent = null,</if>
+		    <if test="verifycontent==null">verifycontent = null,</if>
+		    <if test="contact==null">contact = null,</if>
+		    <if test="executeUsername==null">execute_username = null,</if>
+		    <if test="createTime==null">create_time = null,</if>
+		    <if test="createUser==null">create_user = null,</if>
+		    <if test="active==null">active = null,</if>
+		    <if test="activeUser==null">active_user = null,</if>
+		    <if test="activeTime==null">active_time = null,</if>
+		    <if test="activeMemo==null">active_memo = null,</if>
+		</trim>
+	</set>
+	<where>
+		<choose>
+			<when test="lineid != null">and lineid = #{lineid}</when>
+			<otherwise>and lineid = </otherwise>
+		</choose>
+	</where>
+</update>
+
+<!-- ElementID:delete,Generated=true -->
+<delete id="delete" parameterType="com.unlcn.ils.tps.E_revise">
+    delete from tps_revise where 1=1 and lineid = #{lineid}
+</delete>
+
+<!-- ElementID:select,Generated=true -->
+<select id="select" parameterType="com.unlcn.ils.tps.E_revise" resultMap="E_reviseResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_revise 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:deleteBatch,Generated=true -->
+<delete id="deleteBatch" parameterType="List">
+	delete from tps_revise where lineid in
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<foreach collection="list" item="entity" separator=",">
+	#{entity.lineid}
+</foreach>
+</trim>
+</delete>
+
+<!-- ElementID:selectAll,Generated=true -->
+<select id="selectAll" resultMap="E_reviseResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_revise 
+</select>
+
+<!-- ElementID:selectByID,Generated=true -->
+<select id="selectByID" parameterType="java.lang.String" resultMap="E_reviseResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_revise 
+		 where tps_revise.lineid = #{lineid,jdbcType=VARCHAR}
+</select>
+
+<!-- ElementID:selectByPage,Generated=true -->
+<select id="selectByPage" parameterType="com.unlcn.ils.tps.E_revise" resultMap="E_reviseResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_revise 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:selectMany,Generated=true -->
+<select id="selectMany" parameterType="list" resultMap="E_reviseResult">
+select 
+	<include refid="column_sql"/> 
+	from tps_revise 
+	where tps_revise.lineid in (
+		select distinct lineid from tps_revise inner join
+<foreach collection="list" item="entity" separator="inner join">
+		(select 
+			distinct lineid
+			from tps_revise 
+			<where>
+	        <if test="entity.lineid != null">and tps_revise.lineid = #{entity.lineid}</if>
+	        <if test="entity.checkheadLineid != null">and tps_revise.checkhead_lineid = #{entity.checkheadLineid}</if>
+	        <if test="entity.checkdetailLineid != null">and tps_revise.checkdetail_lineid = #{entity.checkdetailLineid}</if>
+	        <if test="entity.argueLineid != null">and tps_revise.argue_lineid = #{entity.argueLineid}</if>
+	        <if test="entity.reviseDescription != null">and tps_revise.revise_description = #{entity.reviseDescription}</if>
+	        <if test="entity.reviseContent != null">and tps_revise.revise_content = #{entity.reviseContent}</if>
+	        <if test="entity.deadDate != null">and tps_revise.dead_date = #{entity.deadDate}</if>
+	        <if test="entity.approveUsername != null">and tps_revise.approve_username = #{entity.approveUsername}</if>
+	        <if test="entity.approveMemo != null">and tps_revise.approve_memo = #{entity.approveMemo}</if>
+	        <if test="entity.approveTime != null">and tps_revise.approve_time = #{entity.approveTime}</if>
+	        <if test="entity.reviseStatus != null">and tps_revise.revise_status = #{entity.reviseStatus}</if>
+	        <if test="entity.approveStatus != null">and tps_revise.approve_status = #{entity.approveStatus}</if>
+	        <if test="entity.reson != null">and tps_revise.reson = #{entity.reson}</if>
+	        <if test="entity.tempcontent != null">and tps_revise.tempcontent = #{entity.tempcontent}</if>
+	        <if test="entity.longcontent != null">and tps_revise.longcontent = #{entity.longcontent}</if>
+	        <if test="entity.precontent != null">and tps_revise.precontent = #{entity.precontent}</if>
+	        <if test="entity.verifycontent != null">and tps_revise.verifycontent = #{entity.verifycontent}</if>
+	        <if test="entity.contact != null">and tps_revise.contact = #{entity.contact}</if>
+	        <if test="entity.executeUsername != null">and tps_revise.execute_username = #{entity.executeUsername}</if>
+	        <if test="entity.createTime != null">and tps_revise.create_time = #{entity.createTime}</if>
+	        <if test="entity.createUser != null">and tps_revise.create_user = #{entity.createUser}</if>
+	        <if test="entity.active != null">and tps_revise.active = #{entity.active}</if>
+	        <if test="entity.activeUser != null">and tps_revise.active_user = #{entity.activeUser}</if>
+	        <if test="entity.activeTime != null">and tps_revise.active_time = #{entity.activeTime}</if>
+	        <if test="entity.activeMemo != null">and tps_revise.active_memo = #{entity.activeMemo}</if>
+			</where>
+		) ${entity.tableAlias} using (lineid)
+</foreach>
+)
+</select>
+
+<!-- ElementID:insert,Generated=true -->
+<insert id="insert" parameterType="com.unlcn.ils.tps.E_revise">
+	insert into tps_revise(
+	         <if test="lineid != null">lineid</if>
+	         <if test="checkheadLineid != null">,checkhead_lineid</if>
+	         <if test="checkdetailLineid != null">,checkdetail_lineid</if>
+	         <if test="argueLineid != null">,argue_lineid</if>
+	         <if test="reviseDescription != null">,revise_description</if>
+	         <if test="reviseContent != null">,revise_content</if>
+	         <if test="deadDate != null">,dead_date</if>
+	         <if test="approveUsername != null">,approve_username</if>
+	         <if test="approveMemo != null">,approve_memo</if>
+	         <if test="approveTime != null">,approve_time</if>
+	         <if test="reviseStatus != null">,revise_status</if>
+	         <if test="approveStatus != null">,approve_status</if>
+	         <if test="reson != null">,reson</if>
+	         <if test="tempcontent != null">,tempcontent</if>
+	         <if test="longcontent != null">,longcontent</if>
+	         <if test="precontent != null">,precontent</if>
+	         <if test="verifycontent != null">,verifycontent</if>
+	         <if test="contact != null">,contact</if>
+	         <if test="executeUsername != null">,execute_username</if>
+	         <if test="createTime != null">,create_time</if>
+	         <if test="createUser != null">,create_user</if>
+	         <if test="active != null">,active</if>
+	         <if test="activeUser != null">,active_user</if>
+	         <if test="activeTime != null">,active_time</if>
+	         <if test="activeMemo != null">,active_memo</if>
+	 	 	 )
+	 values (
+	         <if test="lineid != null">#{lineid,jdbcType=VARCHAR}</if>
+	         <if test="checkheadLineid != null">,#{checkheadLineid,jdbcType=VARCHAR}</if>
+	         <if test="checkdetailLineid != null">,#{checkdetailLineid,jdbcType=VARCHAR}</if>
+	         <if test="argueLineid != null">,#{argueLineid,jdbcType=VARCHAR}</if>
+	         <if test="reviseDescription != null">,#{reviseDescription,jdbcType=VARCHAR}</if>
+	         <if test="reviseContent != null">,#{reviseContent,jdbcType=VARCHAR}</if>
+	         <if test="deadDate != null">,#{deadDate,jdbcType=TIMESTAMP}</if>
+	         <if test="approveUsername != null">,#{approveUsername,jdbcType=VARCHAR}</if>
+	         <if test="approveMemo != null">,#{approveMemo,jdbcType=VARCHAR}</if>
+	         <if test="approveTime != null">,#{approveTime,jdbcType=TIMESTAMP}</if>
+	         <if test="reviseStatus != null">,#{reviseStatus,jdbcType=NUMERIC}</if>
+	         <if test="approveStatus != null">,#{approveStatus,jdbcType=NUMERIC}</if>
+	         <if test="reson != null">,#{reson,jdbcType=VARCHAR}</if>
+	         <if test="tempcontent != null">,#{tempcontent,jdbcType=VARCHAR}</if>
+	         <if test="longcontent != null">,#{longcontent,jdbcType=VARCHAR}</if>
+	         <if test="precontent != null">,#{precontent,jdbcType=VARCHAR}</if>
+	         <if test="verifycontent != null">,#{verifycontent,jdbcType=VARCHAR}</if>
+	         <if test="contact != null">,#{contact,jdbcType=VARCHAR}</if>
+	         <if test="executeUsername != null">,#{executeUsername,jdbcType=VARCHAR}</if>
+	         <if test="createTime != null">,#{createTime,jdbcType=TIMESTAMP}</if>
+	         <if test="createUser != null">,#{createUser,jdbcType=VARCHAR}</if>
+	         <if test="active != null">,#{active,jdbcType=NUMERIC}</if>
+	         <if test="activeUser != null">,#{activeUser,jdbcType=VARCHAR}</if>
+	         <if test="activeTime != null">,#{activeTime,jdbcType=TIMESTAMP}</if>
+	         <if test="activeMemo != null">,#{activeMemo,jdbcType=VARCHAR}</if>
+	 	 	 )
+</insert>
+
+<!-- ElementID:insertBatch,Generated=true -->
+<insert id="insertBatch" parameterType="list">
+	insert into tps_revise (lineid,checkhead_lineid,checkdetail_lineid,argue_lineid,revise_description,revise_content,dead_date,approve_username,approve_memo,approve_time,revise_status,approve_status,reson,tempcontent,longcontent,precontent,verifycontent,contact,execute_username,create_time,create_user,active,active_user,active_time,active_memo) 
+<foreach collection="list" item="entity" index="index" separator="union all">
+		select 
+		#{entity.lineid,jdbcType = VARCHAR},
+				#{entity.checkheadLineid,jdbcType = VARCHAR},
+				#{entity.checkdetailLineid,jdbcType = VARCHAR},
+				#{entity.argueLineid,jdbcType = VARCHAR},
+				#{entity.reviseDescription,jdbcType = VARCHAR},
+				#{entity.reviseContent,jdbcType = VARCHAR},
+				#{entity.deadDate,jdbcType = TIMESTAMP},
+				#{entity.approveUsername,jdbcType = VARCHAR},
+				#{entity.approveMemo,jdbcType = VARCHAR},
+				#{entity.approveTime,jdbcType = TIMESTAMP},
+				#{entity.reviseStatus,jdbcType = NUMERIC},
+				#{entity.approveStatus,jdbcType = NUMERIC},
+				#{entity.reson,jdbcType = VARCHAR},
+				#{entity.tempcontent,jdbcType = VARCHAR},
+				#{entity.longcontent,jdbcType = VARCHAR},
+				#{entity.precontent,jdbcType = VARCHAR},
+				#{entity.verifycontent,jdbcType = VARCHAR},
+				#{entity.contact,jdbcType = VARCHAR},
+				#{entity.executeUsername,jdbcType = VARCHAR},
+				#{entity.createTime,jdbcType = TIMESTAMP},
+				#{entity.createUser,jdbcType = VARCHAR},
+				#{entity.active,jdbcType = NUMERIC},
+				#{entity.activeUser,jdbcType = VARCHAR},
+				#{entity.activeTime,jdbcType = TIMESTAMP},
+				#{entity.activeMemo,jdbcType = VARCHAR}
+		from dual
+</foreach>
+</insert>
+<select id="selectByCheckDetailLineid" parameterType="java.lang.String" resultMap="E_reviseResult">
+	select 
+		<include refid="column_sql"/>
+	    from tps_revise 
+		 where tps_revise.checkdetail_lineid = #{checkdetail_lineid}
+</select>
+<select id="getMaxId" resultMap="E_reviseResult">
+	SELECT * FROM tps_revise ORDER BY create_time DESC;
+</select>
+</mapper>

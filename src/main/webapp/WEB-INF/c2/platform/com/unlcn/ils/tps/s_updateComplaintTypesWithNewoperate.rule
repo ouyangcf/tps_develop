@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="updateComplaintTypesWithNewoperate" log="false" className="com.unlcn.ils.tps.services.ComplaintTypesService" method="updateComplaintTypesWithNewoperate">
+  <instanceCreator>
+    <params/>
+  </instanceCreator>
+  <name>新增类型并关联</name>
+  <inputs>
+    <input collection="false" desc="" id="data" required="true" type="com.unlcn.ils.tps.E_crm_complaint_type"/>
+    <input collection="false" desc="" id="e_checkrule" required="true" type="com.unlcn.ils.tps.E_checkrule"/>
+  </inputs>
+  <outputs>
+    <output autoValue="Result" desc="" id="result" name="方法返回值" type="boolean"/>
+  </outputs>
+  <params>
+    <param autoValue="Input.data" name="data" signature="QE_crm_complaint_type;" type="com.unlcn.ils.tps.E_crm_complaint_type"/>
+    <param autoValue="Input.e_checkrule" name="e_checkrule" signature="QE_checkrule;" type="com.unlcn.ils.tps.E_checkrule"/>
+  </params>
+  <return signature="Z" type="boolean"/>
+</CustomRule>

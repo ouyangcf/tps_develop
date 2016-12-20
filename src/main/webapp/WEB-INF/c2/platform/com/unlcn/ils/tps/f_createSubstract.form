@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form:Form xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dync="http://www.chinacreator.com/platform/mvc/ui/dync" xmlns:form="http://www.chinacreator.com/platform/mvc/form" name="考核执行中减免单生成" sn="f_createSubstract" type="form">
+  <form:control type="page/modal">
+    <form:attributes source="page/modal"/>
+  </form:control>
+  <form:child xsi:type="form:Group" id="widgetbox" name="减免单生成">
+    <form:control type="container/widgetbox">
+      <form:attributes source="container/widgetbox"/>
+    </form:control>
+    <form:child xsi:type="form:Group" id="widgexbox_toolbar" name="widgexbox_toolbar">
+      <form:control type="container/toolbar_widget">
+        <form:attributes source="container/toolbar_widget"/>
+      </form:control>
+    </form:child>
+    <form:child xsi:type="form:Group" id="div" name="简单容器(DIV)">
+      <form:control type="container/div">
+        <form:attributes source="container/div">
+          <dync:attribute default="" group="高级自定义" id="cssClass" name="自定义class" value="condition_div">
+            <dync:render colSpan="2" height="0" multi="false" name="text"/>
+            <dync:children/>
+          </dync:attribute>
+        </form:attributes>
+      </form:control>
+      <form:child xsi:type="form:Group" id="div1" name="简单容器(DIV)">
+        <form:control type="container/div">
+          <form:attributes source="container/div">
+            <dync:attribute default="" group="高级自定义" id="cssClass" name="自定义class" value="condition_box">
+              <dync:render colSpan="2" height="0" multi="false" name="text"/>
+              <dync:children/>
+            </dync:attribute>
+          </form:attributes>
+        </form:control>
+        <form:child xsi:type="form:Field" binding="$model.e_substract.subMoney" id="subMoney" name="减免金额">
+          <form:control type="widget/text">
+            <form:attributes source="widget/text">
+              <dync:attribute default="" group="数据校验" id="pattern" name="正则表达式" value="/^[+-]?([0-9]*\.?[0-9]+|[0-9]+\.?[0-9]*)([eE][+-]?[0-9]+)?$/">
+                <dync:render colSpan="1" height="0" multi="false" name="text"/>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="" group="数据校验" id="patternError" name="正则验证失败提示" value="仅可填写整数或浮点数!">
+                <dync:render colSpan="1" height="0" multi="false" name="text"/>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="" group="数据校验" id="checkAfter" name="验证后事件" value="subMoney_checkAfter(checkResult)">
+                <dync:render colSpan="1" height="0" multi="false" name="event">
+                  <dync:item name="params" value="checkResult"/>
+                </dync:render>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="false" group="数据校验" id="required" name="必填项" value="true">
+                <dync:render colSpan="1" height="0" multi="false" name="checkboxAndExpr"/>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="6" group="基本设置" id="span" name="占位数" value="5">
+                <dync:render colSpan="1" height="0" multi="false" name="text"/>
+                <dync:children/>
+              </dync:attribute>
+            </form:attributes>
+          </form:control>
+        </form:child>
+        <form:child xsi:type="form:Group" id="div5" name="简单容器(DIV)">
+          <form:control type="container/div">
+            <form:attributes source="container/div">
+              <dync:attribute default="12" group="HTML配置" id="span" name="占位数" value="1">
+                <dync:render colSpan="1" height="0" multi="false" name="text"/>
+                <dync:children/>
+              </dync:attribute>
+            </form:attributes>
+          </form:control>
+        </form:child>
+        <form:child xsi:type="form:Field" binding="$model.e_substract.subReson" id="subReson" name="减免原因">
+          <form:control type="widget/text">
+            <form:attributes source="widget/text">
+              <dync:attribute default="false" group="数据校验" id="required" name="必填项" value="true">
+                <dync:render colSpan="1" height="0" multi="false" name="checkboxAndExpr"/>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="6" group="基本设置" id="span" name="占位数" value="5">
+                <dync:render colSpan="1" height="0" multi="false" name="text"/>
+                <dync:children/>
+              </dync:attribute>
+            </form:attributes>
+          </form:control>
+        </form:child>
+      </form:child>
+      <form:child xsi:type="form:Group" id="div9" name="简单容器(DIV)">
+        <form:control type="container/div">
+          <form:attributes source="container/div">
+            <dync:attribute default="" group="高级自定义" id="cssClass" name="自定义class" value="search_div">
+              <dync:render colSpan="2" height="0" multi="false" name="text"/>
+              <dync:children/>
+            </dync:attribute>
+          </form:attributes>
+        </form:control>
+        <form:child xsi:type="form:Field" id="button4" name="确定" customize="true">
+          <form:control type="widget/button">
+            <form:attributes source="widget/button">
+              <dync:attribute default="" group="事件设置" id="click" name="点击事件" value="button_click($event)">
+                <dync:render colSpan="1" height="0" multi="false" name="event">
+                  <dync:item name="params" value="$event"/>
+                </dync:render>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="btn-primary" group="HTML设置" id="style" name="样式" value="btn-success">
+                <dync:render colSpan="1" height="0" multi="false" name="select">
+                  <dync:item name="默认" value="btn-default"/>
+                  <dync:item name="主要" value="btn-primary"/>
+                  <dync:item name="成功" value="btn-success"/>
+                  <dync:item name="信息" value="btn-info"/>
+                  <dync:item name="警告" value="btn-warning"/>
+                  <dync:item name="危险" value="btn-danger"/>
+                  <dync:item name="链接" value="btn-link"/>
+                  <dync:item name="通用" value="btn-white no-border"/>
+                </dync:render>
+                <dync:children/>
+              </dync:attribute>
+            </form:attributes>
+          </form:control>
+          <form:validation/>
+        </form:child>
+        <form:child xsi:type="form:Field" id="button5" name="重置" customize="true">
+          <form:control type="widget/button">
+            <form:attributes source="widget/button">
+              <dync:attribute default="" group="事件设置" id="click" name="点击事件" value="button1_click($event)">
+                <dync:render colSpan="1" height="0" multi="false" name="event">
+                  <dync:item name="params" value="$event"/>
+                </dync:render>
+                <dync:children/>
+              </dync:attribute>
+              <dync:attribute default="btn-primary" group="HTML设置" id="style" name="样式" value="btn-warning">
+                <dync:render colSpan="1" height="0" multi="false" name="select">
+                  <dync:item name="默认" value="btn-default"/>
+                  <dync:item name="主要" value="btn-primary"/>
+                  <dync:item name="成功" value="btn-success"/>
+                  <dync:item name="信息" value="btn-info"/>
+                  <dync:item name="警告" value="btn-warning"/>
+                  <dync:item name="危险" value="btn-danger"/>
+                  <dync:item name="链接" value="btn-link"/>
+                  <dync:item name="通用" value="btn-white no-border"/>
+                </dync:render>
+                <dync:children/>
+              </dync:attribute>
+            </form:attributes>
+          </form:control>
+          <form:validation/>
+        </form:child>
+      </form:child>
+    </form:child>
+  </form:child>
+  <form:datasources>
+    <form:datasource xsi:type="form:Inputs"/>
+    <form:datasource xsi:type="form:EntityDataSource" id="e_substract" name="减免单" entity="entity:com.unlcn.ils.tps.e_substract"/>
+  </form:datasources>
+  <form:scripts>
+
+subMoney_checkAfter:function(checkResult){
+	var $money=$($view.subMoney.getDom());
+	var money_val=$money.val();
+	var re=/^[+-]?([0-9]*\.?[0-9]+|[0-9]+\.?[0-9]*)([eE][+-]?[0-9]+)?$/;
+	var result=  re.test($model.e_substract.subMoney);
+	if(money_val.length==0)
+	return;
+	if($.trim(money_val)==''){
+	Messenger.post({message:&quot;考核金额仅可填写整数或小数!&quot;,type:&quot;error&quot;,hideAfter:2,showCloseButton:true});		
+	return;
+	}
+	if(!result){
+		Messenger.post({message:&quot;考核金额仅可填写整数或小数!&quot;,type:&quot;error&quot;,hideAfter:2,showCloseButton:true});			
+	}		
+},
+
+button1_click:function($event){
+	$view.mainForm.clean();
+},
+
+button_click:function($event){
+		if($model.e_substract.subMoney==undefined){
+		Messenger.post({message:&quot;减免单减免金额未填写！&quot;,type:&quot;error&quot;,hideAfter:2,showCloseButton:true});	
+		return;
+		}
+		if($model.e_substract.subReson==undefined||$model.e_substract.subReson.length==0){
+		Messenger.post({message:&quot;减免单减免原因未填写!&quot;,type:&quot;error&quot;,hideAfter:2,showCloseButton:true});	
+		return;
+		}	
+		var checkMoney=$params.checkMoney*1;
+		if($model.e_substract.subMoney>checkMoney){
+			Messenger.post({message:&quot;减免金额大于预定考核金额,请重新选择!&quot;,type:&quot;error&quot;,hideAfter:2,showCloseButton:true});	
+			return;			
+		}		
+		Messenger.post({message:&quot;正在生成，请稍后&quot;,type:&quot;info&quot;,hideAfter:1,showCloseButton:true});
+		$http.post(&quot;ws/s_addSbustratct_n&quot;,{&quot;lineid&quot;:$params.lineid,&quot;e_substract&quot;:$model.e_substract})
+			.success(function(data){
+				if(data.result==true){
+					Messenger.post({message:&quot;生成成功&quot;,type:&quot;success&quot;,hideAfter:1,showCloseButton:true});	
+					Modal.instance.close();
+				}
+				else{
+					Messenger.post({message:&quot;生成失败&quot;,type:&quot;error&quot;,hideAfter:1,showCloseButton:true});	
+					Modal.instance.close();
+				}
+			})
+			.error(function(data){
+				Messenger.post({message:&quot;post异常&quot;,type:&quot;error&quot;,hideAfter:1,showCloseButton:true});		
+				Modal.instance.close();	
+			});				
+}</form:scripts>
+</form:Form>
